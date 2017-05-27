@@ -1,11 +1,19 @@
 package core;
 
+import java.io.IOException;
+import java.io.Serializable;
+
 /**
  * Armazena as informações da pontuação de uma partida.
  * @author Gabriel Toschi
  *
  */
-public class Score {
+public class Score implements Serializable{
+	/**
+	 * Necessário para implementar a interface Serializable
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Nome do jogador que está com essa pontuação.
 	 */
@@ -49,6 +57,31 @@ public class Score {
 	public void updatePoints(int offset){
 		this.points += offset;
 	}
+	
+	/**
+	 * Faz a escrita de uma pontuação em um arquivo.
+	 * Utilizado por um ObjectOutputStream.
+	 * @param stream stream de dados de saída
+	 * @throws IOException
+	 */
+	private void writeObject(java.io.ObjectOutputStream stream)
+            throws IOException {
+        stream.writeObject(playerName);
+        stream.writeInt(points);
+    }
+	
+	/**
+	 * Faz a leitura de uma pontuação em um arquivo.
+	 * Utilizado por um ObjectInputStream.
+	 * @param stream stream de dados de entrada
+	 * @throws IOException
+	 * @throws ClassNotFoundException
+	 */
+	private void readObject(java.io.ObjectInputStream stream)
+            throws IOException, ClassNotFoundException {
+        playerName = (String) stream.readObject();
+        points = stream.readInt();
+    }
 	
 	/**
 	 * Retorna uma representação em String, para depuração.
