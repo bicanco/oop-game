@@ -1,5 +1,11 @@
 package core;
 
+/**
+ * Gerencia todos os tipos de recursos que se acumulam durante
+ * uma partida, inclusive os recursos especiais.
+ * @author Gabriel Toschi (@gabrieltoschi)
+ *
+ */
 public class ResourceManager {
 	/**
 	 * Quantidade atual de Java Seeds.
