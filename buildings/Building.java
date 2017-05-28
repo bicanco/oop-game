@@ -10,12 +10,15 @@ import java.awt.Image;
 abstract public class Building {
 	public String name;
 	public String description;
-	public int creativtyCost;
+	protected static int creativityCost;
 	static public boolean[] attributesAvailable;
 	static public boolean[] methodsAvailable;
 	static int attributeNumber;
 	static int methodNumber;
 	public Image icon;
 
+	public int getCreativtyCost(){
+		return creativityCost;
+	}
 	
 }
