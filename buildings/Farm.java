@@ -3,29 +3,34 @@ package buildings;
 public class Farm extends Building{
 	private final static int FARM_CREATIVITY_COST = 0;
 	private final static int MAX_PRODUCTION = 0;
-	private final static int SEED_FERTILIZER = 0;
-	private final static int COCO_FERTILIZER = 0;
-	
-	public final static int SEED = 0;
-	public final static int COCO = 1;
+
+	public final static int FOOD_PRODUCTION = 0;
+	public final static int SEED_FERTILIZER = 1;
+	public final static int COCO_FERTILIZER = 2;
+	public final static int GREAT_PRODUCTION = 3;
+	public final static boolean SEED = false;
+	public final static boolean COCO = true;
 	
  	protected int oopyiesAllocated;
-	protected int foodType;
+	protected boolean foodType;
 	protected static int seedsPerOopy;
 	protected static int cocosPerOopy;
 	
 	static{
 		creativityCost = FARM_CREATIVITY_COST;
-		methodsAvailable = new boolean[2];
-		methodsAvailable[SEED] = false;
-		methodsAvailable[COCO] = false;
+		upgradeNumber = 4;
+		upgradesAvailable = new boolean[upgradeNumber];
+		upgradesAvailable[FOOD_PRODUCTION] = false;
+		upgradesAvailable[SEED_FERTILIZER] = false;
+		upgradesAvailable[COCO_FERTILIZER] = false;
+		upgradesAvailable[GREAT_PRODUCTION] = false;
 	}
 	
-	public Farm(int type){
-		foodType = type;
+	public Farm(){
+		foodType = SEED;
 	}
 	
-	public void setFoodType(int type){
+	public void setFoodType(boolean type){
 		foodType = type;
 	}
 	
@@ -42,20 +47,11 @@ public class Farm extends Building{
 		return 0;
 	}
 	
-	public static void seedFertilizer(int pearls) throws Exception{
-		if(methodsAvailable[SEED] == false){
-			methodsAvailable[SEED] = true;
-			seedsPerOopy *= SEED_FERTILIZER;
-		}else
-			throw new Exception("Ja possui metodo");
+	public static void seedFertilizer(int pearls){
 	}
 	
-	public static void cocoFertilizer(int pyramids) throws Exception{
-		if(methodsAvailable[SEED] == false){
-			methodsAvailable[SEED] = true;
-			cocosPerOopy *= COCO_FERTILIZER;
-		}else
-			throw new Exception("Ja possui metodo");
+	public static void cocoFertilizer(int pyramids){
+		
 	}
 	
 	public int greatProduction(int ruby){

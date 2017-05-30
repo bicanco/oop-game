@@ -11,10 +11,10 @@ abstract public class Building {
 	public String name;
 	public String description;
 	protected static int creativityCost;
-	static public boolean[] attributesAvailable;
-	static public boolean[] methodsAvailable;
-	static int attributeNumber;
-	static int methodNumber;
+//	static public boolean[] attributesAvailable;
+	static protected boolean[] upgradesAvailable;
+//	static int attributeNumber;
+	static int upgradeNumber;
 	public Image icon;
 
 	public int getCreativtyCost(){
