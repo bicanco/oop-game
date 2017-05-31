@@ -6,33 +6,33 @@ package buildings;
  *
  */
 public class Farm extends Building{
-	private final static int FARM_CREATIVITY_COST = 0;
-	private final static int MAX_PRODUCTION = 0;
-	private final static int SEEDS_PER_PEARL = 0;
-	private final static int SEEDS_PER_OOPYIE = 0;
-	private final static int COCOS_PER_OOPYIE = 0;
-	private final static int COCOS_PER_PYRAMID = 0;
+	private final static int FARM_CREATIVITY_COST = 0;//custo inicial da fazenda
+	private final static int MAX_PRODUCTION = 0;//produção máxima possível
+	private final static int SEEDS_PER_PEARL = 0;//valor de seedss produzidas por pearl
+	private final static int SEEDS_PER_OOPYIE = 0;//valor de seeds produzidas po oopyie
+	private final static int COCOS_PER_OOPYIE = 0;//valor de cocos produzidos por oopyie
+	private final static int COCOS_PER_PYRAMID = 0;//valor de cocos produzidos por pyramids
 
-	public final static int FOOD_PRODUCTION = 0;
+	public final static int FOOD_PRODUCTION = 0;//valores das posições dos métodos no vetor de up grades
 	public final static int SEED_FERTILIZER = 1;
 	public final static int COCO_FERTILIZER = 2;
 	public final static int GREAT_PRODUCTION = 3;
-	public final static int NUMBER_OF_UPGRADES = 4;
+	public final static int NUMBER_OF_UPGRADES = 4;//numero de up grades
 	
-	public final static boolean SEED = false;
+	public final static boolean SEED = false;//tipo de comida produzida
 	public final static boolean COCO = true;
 	
- 	protected int oopyiesAllocated;
-	protected boolean foodType;
+ 	protected int oopyiesAllocated;//quantidade d oopyies alocados na fazenda
+	protected boolean foodType;//tipo de comida produzida na fazenda
 	
 	static{
-		name = "Fazenda";
+		name = "Fazenda";//inicialização das variáveis estáticas que são herança da classe Building
 		description = "Produz JavaSeeds e SharpCocos";
 		creativityCost = FARM_CREATIVITY_COST;
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];
-		upgradesAvailable[FOOD_PRODUCTION] = true;
-		upgradesAvailable[SEED_FERTILIZER] = false;
+		upgradesAvailable[FOOD_PRODUCTION] = true;//o único método que começa já adquirido
+		upgradesAvailable[SEED_FERTILIZER] = false;//os outros começam como não adquiridos
 		upgradesAvailable[COCO_FERTILIZER] = false;
 		upgradesAvailable[GREAT_PRODUCTION] = false;
 	}
@@ -41,14 +41,15 @@ public class Farm extends Building{
 	 * Método construtor a classe Farm
 	 */
 	public Farm(){
-		foodType = SEED;
+		super();
+		foodType = SEED;//inicializa o objeto produzindo Seeds
 	}
 	
 	/**
 	 * Método que define o recurso a ser produzido
 	 */
 	public void setFoodType(boolean type){
-		foodType = type;
+		foodType = type;//define o tipo de comida a ser produzida
 	}
 	
 	/**
@@ -56,7 +57,7 @@ public class Farm extends Building{
 	 * @param oopyies
 	 */
 	public void allocateOopyies(int oopyies){
-		oopyiesAllocated = oopyies;
+		oopyiesAllocated = oopyies;//define a quantidade de oopyies alocados na fazenda
 	}
 	
 	/**
@@ -64,7 +65,7 @@ public class Farm extends Building{
 	 * @return O valor produzido
 	 */
 	public int foodProduction(){
-		if(foodType == SEED){
+		if(foodType == SEED){//produz os rescursos de acordo com o tipo previamente definido na fazenda
 			return oopyiesAllocated*SEEDS_PER_OOPYIE;
 		}else if(foodType == COCO){
 			return oopyiesAllocated*COCOS_PER_OOPYIE;
@@ -79,7 +80,7 @@ public class Farm extends Building{
 	 */
 	public static int seedFertilizer(int pearls){
 		if(upgradesAvailable[SEED_FERTILIZER] == false){
-			return 0;
+			return 0;//produz Seeds se o método já foi adquirido
 		}else
 			return pearls*SEEDS_PER_PEARL;
 	}
@@ -91,18 +92,18 @@ public class Farm extends Building{
 	 */
 	public static int cocoFertilizer(int pyramids){
 		if(upgradesAvailable[COCO_FERTILIZER] == false){
-			return 0;
+			return 0;//produz Cocos se o método já foi adquirido
 		}else
 			return pyramids*COCOS_PER_PYRAMID;
 	}
 	
 	/**
-	 * Método que produz a produção máxima de uma fazenda
+	 * Método que produz a produção máxima de uma fazenda, se não adquiriu o método a produção será 0
 	 * @return A produção
 	 */
 	public int greatProduction(){
 		if(upgradesAvailable[GREAT_PRODUCTION] == false){
-			return 0;
+			return 0;//produz a produção se o método já foi adquirido
 		}else
 			return MAX_PRODUCTION;
 	}
