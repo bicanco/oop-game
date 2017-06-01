@@ -14,6 +14,7 @@ abstract public class Building {
 	static protected boolean[] upgradesAvailable;
 	static int upgradeNumber;
 	public Image icon;
+	protected int oopyiesAllocated;//quantidade de oopyies alocados
 
 	public int getCreativtyCost(){
 		return creativityCost;
@@ -44,6 +45,13 @@ abstract public class Building {
 		}else{
 			return upgradesAvailable[number];
 		}
+	}
+	/**
+	 * Método que define o número de oopyies alocados
+	 * @param oopyies
+	 */
+	public void allocateOopyies(int oopyies){
+		oopyiesAllocated = oopyies;//define a quantidade de oopyies alocados
 	}
 	
 }
