@@ -22,7 +22,7 @@ public class Farm extends Building{
 	public final static boolean SEED = false;//tipo de comida produzida
 	public final static boolean COCO = true;
 	
- 	protected int oopyiesAllocated;//quantidade d oopyies alocados na fazenda
+ 	
 	protected boolean foodType;//tipo de comida produzida na fazenda
 	
 	static{
@@ -38,7 +38,7 @@ public class Farm extends Building{
 	}
 	
 	/**
-	 * Método construtor a classe Farm
+	 * Método construtor da classe Farm
 	 */
 	public Farm(){
 		super();
@@ -52,13 +52,6 @@ public class Farm extends Building{
 		foodType = type;//define o tipo de comida a ser produzida
 	}
 	
-	/**
-	 * Método que define o número de oopyies alocados
-	 * @param oopyies
-	 */
-	public void allocateOopyies(int oopyies){
-		oopyiesAllocated = oopyies;//define a quantidade de oopyies alocados na fazenda
-	}
 	
 	/**
 	 * Método que produz o rescurso de acordo com o que está definido na fazenda
@@ -78,11 +71,11 @@ public class Farm extends Building{
 	 * @param O número de pearls alocadas
 	 * @return A produção
 	 */
-	public static int seedFertilizer(int pearls){
+	public int seedFertilizer(int pearls){
 		if(upgradesAvailable[SEED_FERTILIZER] == false){
 			return 0;//produz Seeds se o método já foi adquirido
 		}else
-			return pearls*SEEDS_PER_PEARL;
+			return pearls*SEEDS_PER_PEARL*foodProduction();
 	}
 	
 	/**
@@ -90,11 +83,11 @@ public class Farm extends Building{
 	 * @param O número de pyramids alocadas
 	 * @return A produção
 	 */
-	public static int cocoFertilizer(int pyramids){
+	public int cocoFertilizer(int pyramids){
 		if(upgradesAvailable[COCO_FERTILIZER] == false){
 			return 0;//produz Cocos se o método já foi adquirido
 		}else
-			return pyramids*COCOS_PER_PYRAMID;
+			return pyramids*COCOS_PER_PYRAMID*foodProduction();
 	}
 	
 	/**
