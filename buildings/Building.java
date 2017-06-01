@@ -53,5 +53,8 @@ abstract public class Building {
 	public void allocateOopyies(int oopyies){
 		oopyiesAllocated = oopyies;//define a quantidade de oopyies alocados
 	}
-	
+
+	public void reset(){
+		oopyiesAllocated = 0;
+	}
 }

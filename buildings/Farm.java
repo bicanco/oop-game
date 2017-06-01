@@ -25,6 +25,7 @@ public class Farm extends Building{
  	
 	protected boolean foodType;//tipo de comida produzida na fazenda
 	
+	
 	static{
 		name = "Fazenda";//inicialização das variáveis estáticas que são herança da classe Building
 		description = "Produz JavaSeeds e SharpCocos";
@@ -65,6 +66,19 @@ public class Farm extends Building{
 	 * Método que produz o rescurso de acordo com o que está definido na fazenda
 	 * @return O valor produzido
 	 */
+	public int foodProduction(int boost){
+		if(foodType == SEED){//produz os rescursos de acordo com o tipo previamente definido na fazenda
+			return oopyiesAllocated*SEEDS_PER_OOPYIE*seedFertilizer(boost);
+		}else if(foodType == COCO){
+			return oopyiesAllocated*COCOS_PER_OOPYIE*cocoFertilizer(boost);
+		}
+		return 0;
+	}
+	
+	/**
+	 * Método que produz o rescurso de acordo com o que está definido na fazenda
+	 * @return O valor produzido
+	 */
 	public int foodProduction(){
 		if(foodType == SEED){//produz os rescursos de acordo com o tipo previamente definido na fazenda
 			return oopyiesAllocated*SEEDS_PER_OOPYIE;
@@ -74,6 +88,7 @@ public class Farm extends Building{
 		return 0;
 	}
 	
+	
 	/**
 	 * Método que produz seeds em função do número de pearls alocadas, se não adquiriu o método a produção será 0
 	 * @param O número de pearls alocadas
@@ -81,9 +96,11 @@ public class Farm extends Building{
 	 */
 	public int seedFertilizer(int pearls){
 		if(upgradesAvailable[SEED_FERTILIZER] == false){
-			return 0;//produz Seeds se o método já foi adquirido
-		}else
-			return pearls*SEEDS_PER_PEARL*foodProduction();
+			return 1;//produz Seeds se o método já foi adquirido
+		}else{
+			setFoodType(SEED);
+			return pearls*SEEDS_PER_PEARL;
+		}
 	}
 	
 	/**
@@ -93,9 +110,11 @@ public class Farm extends Building{
 	 */
 	public int cocoFertilizer(int pyramids){
 		if(upgradesAvailable[COCO_FERTILIZER] == false){
-			return 0;//produz Cocos se o método já foi adquirido
-		}else
-			return pyramids*COCOS_PER_PYRAMID*foodProduction();
+			return 1;//produz Cocos se o método já foi adquirido
+		}else{
+			setFoodType(COCO);
+			return pyramids*COCOS_PER_PYRAMID;
+		}
 	}
 	
 	/**
@@ -108,4 +127,5 @@ public class Farm extends Building{
 		}else
 			return MAX_PRODUCTION;
 	}
+	
 }
