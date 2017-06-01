@@ -52,6 +52,14 @@ public class Farm extends Building{
 		foodType = type;//define o tipo de comida a ser produzida
 	}
 	
+	/**
+	 * Método que retorna o tipo de alimento produzido
+	 * @return o tipo de alimento produzido
+	 */
+	public boolean getFoodType(){
+		return foodType;//retorna o tipo de alimento produzido
+	}
+	
 	
 	/**
 	 * Método que produz o rescurso de acordo com o que está definido na fazenda
