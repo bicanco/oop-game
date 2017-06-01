@@ -58,6 +58,20 @@ public class TurnManager {
 	 */
 	private boolean increasePayTurn = false;
 	
+	
+	/**
+	 * Número de Oopyies que compõem cada grupo de comida.
+	 */
+	private int oopyiesPerFoodGroup = 5;
+	/**
+	 * Número de Java Seeds usadas para alimentar cada grupo de comida.
+	 */
+	private int seedsPerFoodGroup = 2;
+	/**
+	 * Número de Sharp Cocos usados para alimentar cada grupo de comida.
+	 */
+	private int cocosPerFoodGroup = 2;
+	
 	/**
 	 * Construtor padrão, inicia a partida no turno inicial.
 	 */
@@ -152,6 +166,36 @@ public class TurnManager {
 		nextPayTurn();
 		
 		return paymentExecuted;
+	}
+	
+	/**
+	 * Alimenta os Oopyies para um turno de jogo, a partir de grupos de comida. Cada grupo de comida precisa
+	 * ser alimentado com um número fixo de Java Seeds e Sharp Cocos por turno. Caso não tenha comida suficiente
+	 * para um grupo, eles saem da vila. 
+	 * 
+	 * @param resources gerenciador de recursos
+	 * @return número de oopyies que saíram da vila por falta de comida
+	 */
+	public int feedOopyies(ResourceManager resources){
+		int oopyiesGone = 0;
+		int foodGroups = resources.getOopyies() / oopyiesPerFoodGroup;
+		
+		// para cada um dos grupos de oopyies
+		for (int i = 0; i < foodGroups; i++){
+			// se houver comida suficiente para alimentá-los
+			if (resources.getJavaSeeds() >= seedsPerFoodGroup &&
+					resources.getSharpCocos() >= cocosPerFoodGroup){
+				// diminuia os recursos, mantenha os oopyies
+				resources.updateJavaSeeds(-seedsPerFoodGroup);
+				resources.updateSharpCocos(-cocosPerFoodGroup);
+			} else {
+				// oopyies foram embora da cidade
+				oopyiesGone += oopyiesPerFoodGroup;
+				resources.updateOopyies(-oopyiesPerFoodGroup);
+			}
+		}
+		
+		return oopyiesGone;
 	}
 	
 	/**

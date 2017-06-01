@@ -13,18 +13,14 @@ public class Game {
 	public static void main(String[] args) {
 		System.out.println(highScores);
 		
-		resources.updateGreatRubies(500);
+		resources.updateOopyies(10);
+		resources.updateJavaSeeds(3);
+		resources.updateSharpCocos(3);
 		System.out.println(resources);
 		
-		int j = turnManager.getNextPayTurn() + 1;
-		
-		for (int i = 0; i < j; i++){
-			System.out.println(turnManager);
-			if (turnManager.isPayTurn()) turnManager.executePayTurn(resources);
-			turnManager.nextTurn();
-		}
-		
+		int gone = turnManager.feedOopyies(resources);
 		System.out.println(resources);
+		System.out.println("Oopyies Gone = " + gone);
 		
 	}
 }
