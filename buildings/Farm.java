@@ -8,7 +8,7 @@ package buildings;
 public class Farm extends Building{
 	private final static int FARM_CREATIVITY_COST = 0;//custo inicial da fazenda
 	private final static int MAX_PRODUCTION = 0;//produção máxima possível
-	private final static int SEEDS_PER_PEARL = 0;//valor de seedss produzidas por pearl
+	private final static int SEEDS_PER_PERL = 0;//valor de seedss produzidas por perl
 	private final static int SEEDS_PER_OOPYIE = 0;//valor de seeds produzidas po oopyie
 	private final static int COCOS_PER_OOPYIE = 0;//valor de cocos produzidos por oopyie
 	private final static int COCOS_PER_PYRAMID = 0;//valor de cocos produzidos por pyramids
@@ -91,16 +91,16 @@ public class Farm extends Building{
 	
 	
 	/**
-	 * Método que produz seeds em função do número de pearls alocadas, se não adquiriu o método a produção será 0
-	 * @param O número de pearls alocadas
+	 * Método que produz seeds em função do número de perls alocadas, se não adquiriu o método a produção será 0
+	 * @param O número de perls alocadas
 	 * @return A produção
 	 */
-	public int seedFertilizer(int pearls){
+	public int seedFertilizer(int perls){
 		if(upgradesAvailable[SEED_FERTILIZER] == false){
 			return 1;//produz Seeds se o método já foi adquirido
 		}else{
 			setFoodType(SEED);
-			return pearls*SEEDS_PER_PEARL;
+			return perls*SEEDS_PER_PERL;
 		}
 	}
 	

@@ -12,6 +12,7 @@ abstract public class Building {
 	protected static String description;
 	protected static int creativityCost;
 	static protected boolean[] upgradesAvailable;
+	static protected int[] upgradesCost;//add cost
 	static int upgradeNumber;
 	public Image icon;
 	protected int oopyiesAllocated;//quantidade de oopyies alocados
@@ -36,7 +37,7 @@ abstract public class Building {
 	 * @param O número do Up Grade desejado
 	 * @exception IllegalArgumentException Se o up grade já foi adquirido
 	 */
-	public void setUpgrade(int number){
+	public void setUpgrade(int number)throws Exception{
 		if(upgradesAvailable[number] == true){
 			throw new IllegalArgumentException("Position already set");
 		}else{
@@ -50,7 +51,7 @@ abstract public class Building {
 	 * @return true se sim e false se não
 	 * @exception IllegalArgumentException Se o número for maior que o número de upgrades ou se for menor do que 0
 	 */
-	public boolean getUpgrade(int number){
+	public boolean getUpgrade(int number)throws Exception{
 		if(number >= upgradeNumber || number < 0){
 			throw new IllegalArgumentException("Number out of range");
 		}else{
@@ -72,27 +73,11 @@ abstract public class Building {
 		oopyiesAllocated = 0;
 	}
 	
-	/**
-	 * Retorna o nome da construção.
-	 * @return nome da construção
-	 */
-	public String getName(){
-		return name;
+	public int getUpgradeCost(int number){
+		return upgradesCost[number];
 	}
 	
-	/**
-	 * Retorna o texto de descrição da construção.
-	 * @return descrição da construção
-	 */
-	public String getDescription(){
-		return description;
-	}
-	
-	/**
-	 * Retorna o ícone da construção.
-	 * @return ícone da construção
-	 */
-	public Image getIcon(){
-		return icon;
+	protected void setUpgradeCost(int value, int upgrade){
+		upgradesCost[upgrade] = value;
 	}
 }
