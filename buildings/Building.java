@@ -16,6 +16,17 @@ abstract public class Building {
 	public Image icon;
 	protected int oopyiesAllocated;//quantidade de oopyies alocados
 
+	/**
+	 * Método construtor para utilização das classes que extendem esta classe abstrata
+	 */
+	public Building(){
+		oopyiesAllocated = 0;
+	}
+	
+	/**
+	 * Método que retorna o custo de criatividade do edifício
+	 * @return
+	 */
 	public int getCreativtyCost(){
 		return creativityCost;
 	}
@@ -54,6 +65,9 @@ abstract public class Building {
 		oopyiesAllocated = oopyies;//define a quantidade de oopyies alocados
 	}
 
+	/**
+	 * Método que reinicializa a quantidade de oopyies alocados
+	 */
 	public void reset(){
 		oopyiesAllocated = 0;
 	}

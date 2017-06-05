@@ -34,6 +34,14 @@ public class Mine extends Building{
 		super();
 	}
 	
+	/**
+	 * Método que produz as Scala Stones e aumaneta a produção de acordo com o a quantidade de recurso passada como parâmetro
+	 * @param A quantidade de recurso para o boost
+	 * @return O valor produzido
+	 */
+	public int stoneProduction(int boost){
+		return oopyiesAllocated*STONES_PER_OOPYIE*usePickaxe(boost);
+	}
 	
 	/**
 	 * Método que produz as Scala Stones
@@ -49,11 +57,11 @@ public class Mine extends Building{
 	 * @param O número de seeds alocadas
 	 * @return A produção
 	 */
-	public int cocoFertilizer(int seeds){
+	public int usePickaxe(int seeds){
 		if(upgradesAvailable[USE_PICKAXE] == false){
 			return 0;//produz Stones se o método já foi adquirido
 		}else
-			return seeds*STONES_PER_SEED*stoneProduction();
+			return seeds*STONES_PER_SEED;
 	}
 	
 	/**

@@ -63,11 +63,12 @@ public class Farm extends Building{
 	
 	
 	/**
-	 * Método que produz o rescurso de acordo com o que está definido na fazenda
+	 * Método que produz o rescurso de acordo com o que está definido na fazenda e aumenta a produção de acordo com o a quantidade de recurso passada como parâmetro
+	 * @param A quantidade de recurso para o boost
 	 * @return O valor produzido
 	 */
 	public int foodProduction(int boost){
-		if(foodType == SEED){//produz os rescursos de acordo com o tipo previamente definido na fazenda
+		if(foodType == SEED){//produz os rescursos de acordo com o tipo previamente definido na fazenda e faz o boost
 			return oopyiesAllocated*SEEDS_PER_OOPYIE*seedFertilizer(boost);
 		}else if(foodType == COCO){
 			return oopyiesAllocated*COCOS_PER_OOPYIE*cocoFertilizer(boost);
