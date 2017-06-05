@@ -71,4 +71,28 @@ abstract public class Building {
 	public void reset(){
 		oopyiesAllocated = 0;
 	}
+	
+	/**
+	 * Retorna o nome da construção.
+	 * @return nome da construção
+	 */
+	public String getName(){
+		return name;
+	}
+	
+	/**
+	 * Retorna o texto de descrição da construção.
+	 * @return descrição da construção
+	 */
+	public String getDescription(){
+		return description;
+	}
+	
+	/**
+	 * Retorna o ícone da construção.
+	 * @return ícone da construção
+	 */
+	public Image getIcon(){
+		return icon;
+	}
 }
