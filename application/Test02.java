@@ -1,4 +1,4 @@
-package Classes;
+package application;
 
 import java.awt.Color;
 
