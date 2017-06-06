@@ -645,7 +645,6 @@ public class Mapa extends javax.swing.JFrame {
             btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
             btn0x2.setEnabled(false);
         
-            
         }
     }//GEN-LAST:event_btn0x2ActionPerformed
 
