@@ -1,6 +1,6 @@
 package application;
 
-import core.ResourceManager;
+import core.GameManager;
 import java.awt.Color;
 
 /*
@@ -17,19 +17,19 @@ public class Test02 extends javax.swing.JFrame {
    
     Mapa jf = new Mapa(0);
   
-    ResourceManager resources;
+    GameManager gameData;
    
     /**
      * Creates new form Test02
      */
-    public Test02(int image, String str, ResourceManager r) {
+    public Test02(int image, String str, GameManager gameData) {
         this.getContentPane().setBackground(Color.white);
         initComponents();
         setImage(image);
-        resources = r;
+        this.gameData = gameData;
         jLabelName.setText(str);
-        labelCriatividade.setText(Integer.toString(resources.getCreativity()));
-        qtddOopyies.setText(Integer.toString(resources.getOopyies()));
+        labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+        qtddOopyies.setText(Integer.toString(gameData.resources.getOopyies()));
     }
    
     private void setImage(int image){
@@ -82,10 +82,7 @@ public class Test02 extends javax.swing.JFrame {
             }
         });
 
-        labelImage.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        labelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Captura de Tela 2017-05-30 às 10.34.11.png"))); // NOI18N
-
-        jLabel2.setText("Usuário:");
+        jLabel2.setText("Usu�rio:");
 
         jLabelName.setText("NomedoUsuario");
 
@@ -224,7 +221,7 @@ public class Test02 extends javax.swing.JFrame {
 
     private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosActionPerformed
             // TODO add your handling code here:
-              new Recursos(resources).setVisible(true); 
+              new Recursos(gameData).setVisible(true); 
             
     }//GEN-LAST:event_btnRecursosActionPerformed
  

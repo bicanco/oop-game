@@ -5,26 +5,26 @@
  */
 package application;
 
-import core.ResourceManager;
+import core.GameManager;
 
 /**
  *
  * @author Fer
  */
 public class Recursos extends javax.swing.JFrame {
-    ResourceManager resources;
+    GameManager gameData;
     /**
      * Creates new form Recursos
      */
-    public Recursos(ResourceManager r) {
+    public Recursos(GameManager gameData) {
         initComponents();
-        resources = r;
-        labelGreatRubies.setText(Integer.toString(r.getGreatRubies()));
-        labelJavaSeeds.setText(Integer.toString(r.getJavaSeeds()));
-        labelMagicPerls.setText(Integer.toString(r.getMagicPerls()));
-        labelPyramids.setText(Integer.toString(r.getJavaSeeds()));
-        labelScalaStones.setText(Integer.toString(r.getScalaStones()));
-        labelSharpCocos.setText(Integer.toString(r.getSharpCocos()));
+        this.gameData = gameData;
+        labelGreatRubies.setText(Integer.toString(this.gameData.resources.getGreatRubies()));
+        labelJavaSeeds.setText(Integer.toString(this.gameData.resources.getJavaSeeds()));
+        labelMagicPerls.setText(Integer.toString(this.gameData.resources.getMagicPerls()));
+        labelPyramids.setText(Integer.toString(this.gameData.resources.getPyramids()));
+        labelScalaStones.setText(Integer.toString(this.gameData.resources.getScalaStones()));
+        labelSharpCocos.setText(Integer.toString(this.gameData.resources.getSharpCocos()));
     }
 
     /**
