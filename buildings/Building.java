@@ -73,6 +73,18 @@ abstract public class Building {
 		oopyiesAllocated = 0;
 	}
 	
+	public String getName(){
+		return name;
+	}
+	
+	public String getDescription(){
+		return description;
+	}
+	
+	public Image getIcon(){
+		return icon;
+	}
+	
 	public int getUpgradeCost(int number){
 		return upgradesCost[number];
 	}
