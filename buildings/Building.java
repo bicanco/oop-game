@@ -67,6 +67,20 @@ abstract public class Building {
 	}
 
 	/**
+	 * Método que compra um Upgrade
+	 * @param b Uma construção da classe que se quer comprar o Upgrade
+	 * @param upgrade O número do Upgrade
+	 * @param creativity Quanta criatividade está gastando
+	 * @throws IllegalArgumentException lança se o valor gasto nao for compatível com o custo
+	 */
+	public void buyUpGrade(Building b, int upgrade, int creativity )throws Exception{
+		if(Building.getUpgradeCost(upgrade) != creativity){
+			throw new IllegalArgumentException("Creativity value not compatible with creativity cost");
+		}
+		b.setUpgrade(upgrade);
+	}
+	
+	/**
 	 * Método que reinicializa a quantidade de oopyies alocados
 	 */
 	public void reset(){
@@ -85,11 +99,11 @@ abstract public class Building {
 		return icon;
 	}
 	
-	public int getUpgradeCost(int number){
+	public static int getUpgradeCost(int number){
 		return upgradesCost[number];
 	}
 	
-	protected void setUpgradeCost(int value, int upgrade){
+	protected static void setUpgradeCost(int value, int upgrade){
 		upgradesCost[upgrade] = value;
 	}
 }

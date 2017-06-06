@@ -11,7 +11,7 @@ public class CocoFarm extends Farm {
 	private final static int MAX_PRODUCTION = 0;//produção máxima possível
 	
 	public final static int FOOD_PRODUCTION = 0;//valores das posições dos métodos no vetor de up grades
-	public final static int SEED_FERTILIZER = 1;
+	public final static int COCO_FERTILIZER = 1;
 	public final static int GREAT_PRODUCTION = 2;
 	public final static int NUMBER_OF_UPGRADES = 3;//numero de up grades
 	
@@ -22,8 +22,12 @@ public class CocoFarm extends Farm {
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];
 		upgradesAvailable[FOOD_PRODUCTION] = true;//o único método que começa já adquirido
-		upgradesAvailable[SEED_FERTILIZER] = false;//os outros começam como não adquiridos
+		upgradesAvailable[COCO_FERTILIZER] = false;//os outros começam como não adquiridos
 		upgradesAvailable[GREAT_PRODUCTION] = false;
+		upgradesCost = new int[upgradeNumber];
+		Farm.setUpgradeCost(0, FOOD_PRODUCTION);
+		Farm.setUpgradeCost(0, COCO_FERTILIZER);
+		Farm.setUpgradeCost(0, GREAT_PRODUCTION);
 	}
 	
 	/**

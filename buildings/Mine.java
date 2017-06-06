@@ -25,6 +25,11 @@ public class Mine extends Building{
 		upgradesAvailable[STONE_PRODUCTION] = true;//o único método que começa já adquirido
 		upgradesAvailable[USE_PICKAXE] = false;//os outros começam como não adquiridos
 		upgradesAvailable[GREAT_ESCAVATION] = false;
+		upgradesCost = new int[upgradeNumber];
+		Mine.setUpgradeCost(0, STONE_PRODUCTION);
+		Mine.setUpgradeCost(0, USE_PICKAXE);
+		Mine.setUpgradeCost(0, GREAT_ESCAVATION);
+
 	}
 	
 	/**
