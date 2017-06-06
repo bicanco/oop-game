@@ -5,18 +5,22 @@
  */
 package application;
 
+import core.GameManager;
+
 /**
  *
  * @author Fer
  */
 public class MinhasClasses extends javax.swing.JFrame {
     Mapa map;
+    GameManager gameData;
     /**
      * Creates new form MinhasClasses
      */
-    public MinhasClasses(Mapa mapinha) {
+    public MinhasClasses(Mapa mapinha, GameManager gameData) {
         initComponents();
         map = mapinha;
+        this.gameData = gameData;
     }
     private void SettingButtons(){
         btnDropFarm.setEnabled(true);

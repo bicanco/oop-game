@@ -259,7 +259,7 @@ public class Test02 extends javax.swing.JFrame {
 //                }
     private void btnClassesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClassesActionPerformed
         // TODO add your handling code here:
-        new MinhasClasses(jf).setVisible(true); 
+        new MinhasClasses(jf, gameData).setVisible(true); 
     }//GEN-LAST:event_btnClassesActionPerformed
 
     private void btnLojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLojaActionPerformed

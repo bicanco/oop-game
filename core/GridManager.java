@@ -101,4 +101,9 @@ public class GridManager {
 			return null;
 		}	
 	}
+	
+	public boolean isEmpty(int row, int col){
+		if (grid[row][col] == null) return true;
+		return false;
+	}
 }
