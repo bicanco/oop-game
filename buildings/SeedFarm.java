@@ -24,6 +24,10 @@ public class SeedFarm extends Farm{
 		upgradesAvailable[FOOD_PRODUCTION] = true;//o único método que começa já adquirido
 		upgradesAvailable[SEED_FERTILIZER] = false;//os outros começam como não adquiridos
 		upgradesAvailable[GREAT_PRODUCTION] = false;
+		upgradesCost = new int[upgradeNumber];
+		Farm.setUpgradeCost(0, FOOD_PRODUCTION);
+		Farm.setUpgradeCost(0, SEED_FERTILIZER);
+		Farm.setUpgradeCost(0, GREAT_PRODUCTION);
 	}
 	
 	/**
