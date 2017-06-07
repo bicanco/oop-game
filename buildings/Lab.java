@@ -15,13 +15,12 @@ public class Lab extends Building{
 	public final static int GREAT_RESEARCH = 2;
 	public final static int NUMBER_OF_UPGRADES = 3;//numero de up grades
 	
-	
 	static{
 		name = "Lab";//inicialização das variáveis estáticas que são herança da classe Building
 		description = "Produz Criatividade";
 		iconPath = "Lab.png";
 		creativityCost = MINE_CREATIVITY_COST;
-		buildCost = 1;
+		Lab.buildCost = 1;
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];
 		upgradesAvailable[CREATIVITY_PRODUCTION] = true;//o único método que começa já adquirido

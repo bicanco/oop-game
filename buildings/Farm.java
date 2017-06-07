@@ -6,7 +6,7 @@ package buildings;
  *
  */
 public class Farm extends Building{
-	private final static int FARM_CREATIVITY_COST = 0;//custo inicial da fazenda
+	private final static int FARM_CREATIVITY_COST = 20;//custo inicial da fazenda
 	private final static int MAX_PRODUCTION = 0;//produção máxima possível
 	private final static int SEEDS_PER_PERL = 0;//valor de seedss produzidas por perl
 	private final static int SEEDS_PER_OOPYIE = 0;//valor de seeds produzidas po oopyie
@@ -31,7 +31,7 @@ public class Farm extends Building{
 		description = "Produz JavaSeeds e SharpCocos";
 		iconPath = "Farm.png"; 
 		creativityCost = FARM_CREATIVITY_COST;
-		buildCost = 1;
+		Farm.buildCost = 1;
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];
 		upgradesAvailable[FOOD_PRODUCTION] = true;//o único método que começa já adquirido

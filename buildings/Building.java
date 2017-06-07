@@ -17,7 +17,7 @@ abstract public class Building {
 	protected static String description;
 	protected static String iconPath;
 	protected static int creativityCost;
-	protected static int buildCost;
+	protected static int buildCost = 200;
 	static protected boolean[] upgradesAvailable;
 	static protected int[] upgradesCost;//add cost
 	static int upgradeNumber;
