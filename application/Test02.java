@@ -15,7 +15,7 @@ import java.awt.Color;
  */
 public class Test02 extends javax.swing.JFrame {
    
-    Mapa jf = new Mapa(0);
+    Mapa jf;
   
     GameManager gameData;
    
@@ -26,6 +26,7 @@ public class Test02 extends javax.swing.JFrame {
         this.getContentPane().setBackground(Color.white);
         initComponents();
         setImage(image);
+         jf = new Mapa(0, gameData);
         this.gameData = gameData;
         jLabelName.setText(str);
         labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));

@@ -5,6 +5,7 @@
  */
 package application;
 
+import core.GameManager;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -17,13 +18,14 @@ import javax.swing.Icon;
  */
 public class Mapa extends javax.swing.JFrame {
     int type; // se for 0 eh pq abriu pelo Mapa, se for 1 abriu pelo Construir
-    
+    GameManager gameData;
     /**
      * Creates new form Mapa
      */
-    public Mapa(int check) {
+    public Mapa(int check, GameManager gameData) {
         initComponents();
         type = 0;
+        this.gameData = gameData;
        checking(check);
         
     }
@@ -178,16 +180,21 @@ public class Mapa extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        btn0x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn0x0.setText("Sale");
-        btn0x0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn0x0ActionPerformed(evt);
-            }
-        });
-
+        
+        if(gameData.grid.isEmpty(0, 0)){
+            btn0x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+            btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn0x0.setText("Sale");
+            btn0x0.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn0x0ActionPerformed(evt);
+                }
+            });
+        }else{
+            btn0x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+            //btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getIcon()))); // NOI18N
+            btn0x0.setText("Sale");
+        }
         btn0x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
         btn0x1.setText("Sale");
