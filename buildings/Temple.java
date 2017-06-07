@@ -27,8 +27,9 @@ public class Temple extends Building{
 	
 	
 	static{
-		name = "Templo";//inicializa��o das vari�veis est�ticas que s�o heran�a da classe Building
+		name = "Temple";//inicializa��o das vari�veis est�ticas que s�o heran�a da classe Building
 		description = "Produz Magic Perls e PYramids";
+		iconPath = "Temple.png";
 		creativityCost = TEMPLE_CREATIVITY_COST;
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];

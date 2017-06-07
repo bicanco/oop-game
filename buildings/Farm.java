@@ -26,9 +26,10 @@ public class Farm extends Building{
 	protected boolean foodType;//tipo de comida produzida na fazenda
 	
 	
-	static{
-		name = "Fazenda";//inicialização das variáveis estáticas que são herança da classe Building
+	static {
+		name = "Farm";//inicialização das variáveis estáticas que são herança da classe Building
 		description = "Produz JavaSeeds e SharpCocos";
+		iconPath = "Farm.png"; 
 		creativityCost = FARM_CREATIVITY_COST;
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];

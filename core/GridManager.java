@@ -94,7 +94,7 @@ public class GridManager {
 	 * @param col coluna da grade
 	 * @return ícone da construção
 	 */
-	public Image getIcon(int row, int col){
+	public String getIcon(int row, int col){
 		if (grid[row][col] != null){
 			return grid[row][col].getIcon();
 		} else {

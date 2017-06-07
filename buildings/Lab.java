@@ -17,8 +17,9 @@ public class Lab extends Building{
 	
 	
 	static{
-		name = "Laboratorio";//inicialização das variáveis estáticas que são herança da classe Building
+		name = "Lab";//inicialização das variáveis estáticas que são herança da classe Building
 		description = "Produz Criatividade";
+		iconPath = "Lab.png";
 		creativityCost = MINE_CREATIVITY_COST;
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];

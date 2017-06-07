@@ -17,8 +17,9 @@ public class Mine extends Building{
 	
 	
 	static{
-		name = "Mina";//inicialização das variáveis estáticas que são herança da classe Building
+		name = "Mine";//inicialização das variáveis estáticas que são herança da classe Building
 		description = "Produz Scala Stones";
+		iconPath = "Mine.png";
 		creativityCost = MINE_CREATIVITY_COST;
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];

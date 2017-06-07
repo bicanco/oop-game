@@ -10,11 +10,11 @@ import java.awt.Image;
 abstract public class Building {
 	protected static String name;
 	protected static String description;
+	protected static String iconPath;
 	protected static int creativityCost;
 	static protected boolean[] upgradesAvailable;
 	static protected int[] upgradesCost;//add cost
 	static int upgradeNumber;
-	public Image icon;
 	protected int oopyiesAllocated;//quantidade de oopyies alocados
 
 	/**
@@ -95,8 +95,8 @@ abstract public class Building {
 		return description;
 	}
 	
-	public Image getIcon(){
-		return icon;
+	public String getIcon(){
+		return iconPath;
 	}
 	
 	public static int getUpgradeCost(int number){
