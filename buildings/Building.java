@@ -8,10 +8,10 @@ import java.awt.Image;
  *
  */
 abstract public class Building {
-	static final int FARM = 1;
-	static final int LAB = 2;
-	static final int TEMPLE = 3;
-	static final int MINE = 4;
+	public static final int FARM = 1;
+	public static final int LAB = 2;
+	public static final int TEMPLE = 3;
+	public static final int MINE = 4;
 	
 	protected static String name;
 	protected static String description;
