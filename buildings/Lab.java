@@ -21,6 +21,7 @@ public class Lab extends Building{
 		description = "Produz Criatividade";
 		iconPath = "Lab.png";
 		creativityCost = MINE_CREATIVITY_COST;
+		buildCost = 1;
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];
 		upgradesAvailable[CREATIVITY_PRODUCTION] = true;//o único método que começa já adquirido

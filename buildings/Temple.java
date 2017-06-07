@@ -31,6 +31,7 @@ public class Temple extends Building{
 		description = "Produz Magic Perls e PYramids";
 		iconPath = "Temple.png";
 		creativityCost = TEMPLE_CREATIVITY_COST;
+		buildCost = 1;
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];
 		upgradesAvailable[GEM_PRODUCTION] = true;//o �nico m�todo que come�a j� adquirido

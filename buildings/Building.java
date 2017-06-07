@@ -8,10 +8,16 @@ import java.awt.Image;
  *
  */
 abstract public class Building {
+	static final int FARM = 1;
+	static final int LAB = 2;
+	static final int TEMPLE = 3;
+	static final int MINE = 4;
+	
 	protected static String name;
 	protected static String description;
 	protected static String iconPath;
 	protected static int creativityCost;
+	protected static int buildCost;
 	static protected boolean[] upgradesAvailable;
 	static protected int[] upgradesCost;//add cost
 	static int upgradeNumber;
@@ -25,11 +31,45 @@ abstract public class Building {
 	}
 	
 	/**
-	 * Método que retorna o custo de criatividade do edifício
+	 * Método que retorna o custo de criatividade do edifício para ser descoberto
 	 * @return
 	 */
-	public int getCreativtyCost(){
+	public int getCreativityCost(){
 		return creativityCost;
+	}
+	
+	/**
+	 * Retorna o custo de construção de uma certa classe, de acordo com sua identificação,
+	 * feita por constantes na classe Building.
+	 * @param reference identificação da classe
+	 * @return custo de construção de um objeto dessa classe
+	 */
+	public static int getBuildCost(int reference){
+		switch (reference){
+		case Building.FARM: return Farm.buildCost;
+		case Building.LAB:	return Lab.buildCost;
+		case Building.TEMPLE: return Temple.buildCost;
+		case Building.MINE: return Mine.buildCost;
+		}
+		
+		return -1;
+	}
+	
+	/**
+	 * Instancia uma construção a partir da identificação de uma classe, feita por
+	 * constantes na classe Building.
+	 * @param reference identificação da classe
+	 * @return objeto de construção instanciado
+	 */
+	public static Building instantiateBuilding(int reference){
+		switch (reference){
+		case Building.FARM: return new Farm();
+		case Building.LAB: return new Lab();
+		case Building.TEMPLE: return new Temple();
+		case Building.MINE: return new Mine();
+		}
+		
+		return null;
 	}
 	
 	/**

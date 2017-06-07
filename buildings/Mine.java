@@ -21,6 +21,7 @@ public class Mine extends Building{
 		description = "Produz Scala Stones";
 		iconPath = "Mine.png";
 		creativityCost = MINE_CREATIVITY_COST;
+		buildCost = 1;
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];
 		upgradesAvailable[STONE_PRODUCTION] = true;//o único método que começa já adquirido
