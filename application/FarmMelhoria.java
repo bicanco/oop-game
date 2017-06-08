@@ -6,6 +6,7 @@
 package application;
 
 import core.GameManager;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +21,8 @@ public class FarmMelhoria extends javax.swing.JFrame {
         this.gameData = gameData;
         initComponents();
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+        
+        
         
     }
 
@@ -63,6 +66,11 @@ public class FarmMelhoria extends javax.swing.JFrame {
         labelGP.setText("Great Production");
 
         btnFoodProduction.setText("Locked: 30");
+        btnFoodProduction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFoodProductionActionPerformed(evt);
+            }
+        });
 
         btnSeedFertilizer.setText("Locked: 30");
 
@@ -175,6 +183,13 @@ public class FarmMelhoria extends javax.swing.JFrame {
         this.dispose();
         new LojaVirtual(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnFoodProductionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFoodProductionActionPerformed
+        // TODO add your handling code here:
+        btnFoodProduction.setText("Unlocked");
+        btnFoodProduction.setEnabled(false);
+   
+    }//GEN-LAST:event_btnFoodProductionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCocoFertilizer;

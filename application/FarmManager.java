@@ -6,6 +6,7 @@
 package application;
 
 import core.GameManager;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -19,6 +20,8 @@ public class FarmManager extends javax.swing.JFrame {
     public FarmManager(GameManager gameData) {
         this.gameData = gameData;
         initComponents();
+        String[] messageStrings = {"Seeds", "Cocos"};
+        JComboBox<String> ComboBoxFoodProduction = new JComboBox<String>(messageStrings);
     }
 
     /**
@@ -39,7 +42,6 @@ public class FarmManager extends javax.swing.JFrame {
         btnSair = new javax.swing.JButton();
         btnResources = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        CheckBoxFoodProduction = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -50,6 +52,7 @@ public class FarmManager extends javax.swing.JFrame {
         SpinnerMagicPerls = new javax.swing.JSpinner();
         SpinnerPyramids = new javax.swing.JSpinner();
         CheckBoxGreatProduction = new javax.swing.JCheckBox();
+        ComboBoxFoodProduction = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -110,6 +113,8 @@ public class FarmManager extends javax.swing.JFrame {
             }
         });
 
+        ComboBoxFoodProduction.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seeds", "Cocos", " " }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -121,51 +126,52 @@ public class FarmManager extends javax.swing.JFrame {
                         .addComponent(btnSair))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(CheckBoxFoodProduction))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
-                                        .addComponent(SpinnerOopyies, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(CheckBoxCocoFertilizer))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(SpinnerMagicPerls, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel9)
-                                        .addGap(135, 135, 135)
-                                        .addComponent(SpinnerPyramids, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addGap(184, 184, 184)
-                                        .addComponent(CheckBoxGreatProduction)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addGap(79, 79, 79)
-                                    .addComponent(labelOopyiesEdit))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addGap(68, 68, 68)
-                                            .addComponent(btnResources))
+                                            .addComponent(jLabel3)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                                            .addComponent(SpinnerOopyies, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel8)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(CheckBoxCocoFertilizer))
                                         .addGroup(layout.createSequentialGroup()
-                                            .addGap(81, 81, 81)
-                                            .addComponent(jLabel1)))))
+                                            .addComponent(jLabel7)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(SpinnerMagicPerls, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel9)
+                                            .addGap(135, 135, 135)
+                                            .addComponent(SpinnerPyramids, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel10)
+                                            .addGap(184, 184, 184)
+                                            .addComponent(CheckBoxGreatProduction)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(79, 79, 79)
+                                        .addComponent(labelOopyiesEdit))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(68, 68, 68)
+                                                .addComponent(btnResources))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(81, 81, 81)
+                                                .addComponent(jLabel1)))))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CheckBoxSeedFertilizer)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(CheckBoxSeedFertilizer)))))
-                .addContainerGap(44, Short.MAX_VALUE))
+                                .addComponent(jLabel5)
+                                .addGap(127, 127, 127)
+                                .addComponent(ComboBoxFoodProduction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,7 +195,7 @@ public class FarmManager extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(CheckBoxFoodProduction)
+                                .addComponent(ComboBoxFoodProduction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(SpinnerOopyies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -213,7 +219,7 @@ public class FarmManager extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel10))
                     .addComponent(CheckBoxGreatProduction))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(btnSair)
                 .addGap(31, 31, 31))
         );
@@ -240,9 +246,9 @@ public class FarmManager extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox CheckBoxCocoFertilizer;
-    private javax.swing.JCheckBox CheckBoxFoodProduction;
     private javax.swing.JCheckBox CheckBoxGreatProduction;
     private javax.swing.JCheckBox CheckBoxSeedFertilizer;
+    private javax.swing.JComboBox<String> ComboBoxFoodProduction;
     private javax.swing.JSpinner SpinnerMagicPerls;
     private javax.swing.JSpinner SpinnerOopyies;
     private javax.swing.JSpinner SpinnerPyramids;
