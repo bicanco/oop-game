@@ -22,8 +22,6 @@ public class Farm implements Building {
 	public final static boolean SEED = false;//tipo de comida produzida
 	public final static boolean COCO = true;
 	
-	protected boolean foodType;//tipo de comida produzida na fazenda
-	
 	private static String name = "Farm";//inicialização das variáveis estáticas que são herança da classe Building
 	private static String description = "Produz JavaSeeds e SharpCocos";
 	private static String iconPath = "Farm.png"; 
@@ -33,23 +31,26 @@ public class Farm implements Building {
 	private static boolean[] upgradesAvailable = new boolean[upgradeNumber];
 	private static int[] upgradesCost = new int[upgradeNumber];
 	
-	private static int oopyiesAllocated;
-	
-	/**
-	 * Método construtor da classe Farm
-	 */
-	public Farm(){
-		foodType = SEED;//inicializa o objeto produzindo Seeds
-		
+	static {
 		upgradesAvailable[FOOD_PRODUCTION] = true;//o único método que começa já adquirido
 		upgradesAvailable[SEED_FERTILIZER] = false;//os outros começam como não adquiridos
 		upgradesAvailable[COCO_FERTILIZER] = false;
 		upgradesAvailable[GREAT_PRODUCTION] = false;
 		
-		setUpgradeCost(0, FOOD_PRODUCTION);
-		setUpgradeCost(0, SEED_FERTILIZER);
-		setUpgradeCost(0, COCO_FERTILIZER);
-		setUpgradeCost(0, GREAT_PRODUCTION);
+		upgradesCost[FOOD_PRODUCTION] = 0;
+		upgradesCost[SEED_FERTILIZER] = 0;
+		upgradesCost[COCO_FERTILIZER] = 0;
+		upgradesCost[GREAT_PRODUCTION] = 0;
+	}
+	
+	protected boolean foodType;//tipo de comida produzida na fazenda
+	protected static int oopyiesAllocated;
+	
+	/**
+	 * Método construtor da classe Farm
+	 */
+	public Farm(){
+		reset();
 	}
 	
 	/**
@@ -200,6 +201,7 @@ public class Farm implements Building {
 
 	@Override
 	public void reset() {
+		foodType = SEED; //inicializa o objeto produzindo Seeds
 		oopyiesAllocated = 0;
 	}
 }
