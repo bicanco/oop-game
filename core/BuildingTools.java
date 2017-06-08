@@ -15,7 +15,7 @@ public class BuildingTools {
 	
 	/**
 	 * Retorna o custo de construção de uma certa classe, de acordo com sua identificação,
-	 * feita por constantes na classe Building.
+	 * feita por constantes em BuildingTools.
 	 * @param reference identificação da classe
 	 * @return custo de construção de um objeto dessa classe
 	 */
@@ -31,8 +31,42 @@ public class BuildingTools {
 	}
 	
 	/**
+	 * Retorna o nome de uma certa classe, de acordo com sua identificação,
+	 * feita por constantes em BuildingTools.
+	 * @param reference identificação da classe
+	 * @return nome da classe
+	 */
+	public static String getName(int reference){
+		switch (reference){
+		case FARM: return farm.getName();
+		case LAB: return lab.getName();
+		case TEMPLE: return temple.getName();
+		case MINE: return mine.getName();
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * Retorna o caminho do ícone de uma certa classe, de acordo com sua identificação,
+	 * feita por constantes em BuildingTools.
+	 * @param reference identificação da classe
+	 * @return caminho do ícone da classe
+	 */
+	public static String getIcon(int reference){
+		switch (reference){
+		case FARM: return farm.getIcon();
+		case LAB: return lab.getIcon();
+		case TEMPLE: return temple.getIcon();
+		case MINE: return mine.getIcon();
+		}
+		
+		return null;
+	}
+	
+	/**
 	 * Instancia uma construção a partir da identificação de uma classe, feita por
-	 * constantes na classe Building.
+	 * constantes em BuildingTools.
 	 * @param reference identificação da classe
 	 * @return objeto de construção instanciado
 	 */
