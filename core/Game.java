@@ -15,12 +15,12 @@ public class Game {
 	public static void main(String[] args) {
 		gameData.resources.updateJavaSeeds(500);
 		
-		/* java.awt.EventQueue.invokeLater(new Runnable() {
+		 java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
                 new Login(gameData).setVisible(true);
             }
-        });*/
+        });
 		
 		System.out.println(BuildingTools.getBuildCost(BuildingTools.TEMPLE));
 		System.out.println();

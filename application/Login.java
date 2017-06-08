@@ -132,7 +132,7 @@ public class Login extends javax.swing.JFrame {
        
         
        this.dispose();
-        new Test02(image, s, gameData).setVisible(true);
+        new Principal(image, s, gameData).setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

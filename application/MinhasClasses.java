@@ -5,6 +5,8 @@
  */
 package application;
 
+import buildings.Building;
+import core.BuildingTools;
 import core.GameManager;
 
 /**
@@ -12,14 +14,14 @@ import core.GameManager;
  * @author Fer
  */
 public class MinhasClasses extends javax.swing.JFrame {
-    Mapa map;
+
     GameManager gameData;
     /**
      * Creates new form MinhasClasses
      */
-    public MinhasClasses(Mapa mapinha, GameManager gameData) {
+    public MinhasClasses(GameManager gameData) {
         initComponents();
-        map = mapinha;
+       
         this.gameData = gameData;
     }
     private void SettingButtons(){
@@ -259,30 +261,22 @@ public class MinhasClasses extends javax.swing.JFrame {
 
     private void btnDropFarmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDropFarmActionPerformed
         // TODO add your handling code here:
-        map.checking(1);
-        map.changeType(1);
-        map.setVisible(true);
+        new Mapa(gameData, BuildingTools.getBuildCost(BuildingTools.FARM)).setVisible(true);
     }//GEN-LAST:event_btnDropFarmActionPerformed
 
     private void btnDropLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDropLabActionPerformed
         // TODO add your handling code here:
-         map.checking(1);
-          map.changeType(2);
-        map.setVisible(true);
+        new Mapa(gameData, BuildingTools.getBuildCost(BuildingTools.LAB)).setVisible(true);
     }//GEN-LAST:event_btnDropLabActionPerformed
 
     private void btnDropTempleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDropTempleActionPerformed
         // TODO add your handling code here:
-         map.checking(1);
-          map.changeType(3);
-        map.setVisible(true);
+        
     }//GEN-LAST:event_btnDropTempleActionPerformed
 
     private void btnDropMineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDropMineActionPerformed
         // TODO add your handling code here:
-         map.checking(1);
-          map.changeType(4);
-        map.setVisible(true);
+     
     }//GEN-LAST:event_btnDropMineActionPerformed
 
 

@@ -5,17 +5,26 @@
  */
 package application;
 
+import core.BuildingTools;
+import core.GameManager;
+
 /**
  *
  * @author Fer
  */
 public class LojaVirtual extends javax.swing.JFrame {
-
+    GameManager gameData;
     /**
      * Creates new form LojaVirtual
      */
-    public LojaVirtual() {
+    public LojaVirtual(GameManager gameData) {
+        this.gameData = gameData;
         initComponents();
+        //labelCriatividade.setText();
+        labelFarm.setText("");
+        labelLab.setText("");
+        labelTemple.setText("");
+        labelMine.setText("");
     }
 
     /**
@@ -39,10 +48,10 @@ public class LojaVirtual extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        labelFarm = new javax.swing.JLabel();
+        labelLab = new javax.swing.JLabel();
+        labelTemple = new javax.swing.JLabel();
+        labelMine = new javax.swing.JLabel();
         btnLabBuy = new javax.swing.JButton();
         btnTempleBuy = new javax.swing.JButton();
         btnMineBuy = new javax.swing.JButton();
@@ -50,7 +59,7 @@ public class LojaVirtual extends javax.swing.JFrame {
         btnTempleUpgrade = new javax.swing.JButton();
         btnMineUpgrade = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        labelCriatividade = new javax.swing.JLabel();
         btnAboutLab = new javax.swing.JButton();
         btnAboutFarm = new javax.swing.JButton();
         btnAboutTemple = new javax.swing.JButton();
@@ -82,7 +91,12 @@ public class LojaVirtual extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); // NOI18N
         jLabel5.setText("Mina");
 
-        btnFarmBuy.setText("Comprar");
+        btnFarmBuy.setText("Construir");
+        btnFarmBuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFarmBuyActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("--------------");
 
@@ -92,19 +106,34 @@ public class LojaVirtual extends javax.swing.JFrame {
 
         jLabel9.setText("--------------");
 
-        jLabel10.setText("$400,00");
+        labelFarm.setText("$400,00");
 
-        jLabel11.setText("$400,00");
+        labelLab.setText("$400,00");
 
-        jLabel12.setText("$400,00");
+        labelTemple.setText("$400,00");
 
-        jLabel13.setText("$400,00");
+        labelMine.setText("$400,00");
 
-        btnLabBuy.setText("Comprar");
+        btnLabBuy.setText("Construir");
+        btnLabBuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLabBuyActionPerformed(evt);
+            }
+        });
 
-        btnTempleBuy.setText("Comprar");
+        btnTempleBuy.setText("Construir");
+        btnTempleBuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTempleBuyActionPerformed(evt);
+            }
+        });
 
-        btnMineBuy.setText("Comprar");
+        btnMineBuy.setText("Construir");
+        btnMineBuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMineBuyActionPerformed(evt);
+            }
+        });
 
         btnLabUpgrade.setText("Upgrades");
 
@@ -112,9 +141,9 @@ public class LojaVirtual extends javax.swing.JFrame {
 
         btnMineUpgrade.setText("Upgrades");
 
-        jLabel14.setText("Money:");
+        jLabel14.setText("Criatividade:");
 
-        jLabel15.setText("$500,00");
+        labelCriatividade.setText("$500,00");
 
         btnAboutLab.setText("Info");
         btnAboutLab.addActionListener(new java.awt.event.ActionListener() {
@@ -151,16 +180,6 @@ public class LojaVirtual extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6))
-                        .addGap(141, 141, 141))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -182,15 +201,23 @@ public class LojaVirtual extends javax.swing.JFrame {
                                     .addComponent(jLabel4))
                                 .addGap(183, 183, 183)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel13)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel12)
-                                            .addComponent(jLabel10))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)))))))
+                                    .addComponent(labelMine, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelLab, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelTemple, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelFarm, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelCriatividade)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnFarmBuy)
@@ -213,9 +240,7 @@ public class LojaVirtual extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel14)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel15))
+                        .addComponent(jLabel14))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(261, 261, 261)
                         .addComponent(jButton1))
@@ -232,20 +257,20 @@ public class LojaVirtual extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jLabel15))
+                    .addComponent(labelCriatividade))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFarmUpgrade)
                     .addComponent(jLabel2)
                     .addComponent(btnFarmBuy)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel10)
+                    .addComponent(labelFarm)
                     .addComponent(btnAboutFarm))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel11)
+                    .addComponent(labelLab)
                     .addComponent(btnLabBuy)
                     .addComponent(btnLabUpgrade)
                     .addComponent(btnAboutLab))
@@ -253,7 +278,7 @@ public class LojaVirtual extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel12)
+                    .addComponent(labelTemple)
                     .addComponent(btnTempleBuy)
                     .addComponent(btnTempleUpgrade)
                     .addComponent(btnAboutTemple))
@@ -261,7 +286,7 @@ public class LojaVirtual extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel13)
+                    .addComponent(labelMine)
                     .addComponent(btnMineBuy)
                     .addComponent(btnMineUpgrade)
                     .addComponent(btnAboutMine))
@@ -298,40 +323,27 @@ public class LojaVirtual extends javax.swing.JFrame {
           new InfoMine().setVisible(true);
     }//GEN-LAST:event_btnAboutMineActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LojaVirtual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LojaVirtual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LojaVirtual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LojaVirtual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnFarmBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFarmBuyActionPerformed
+        // TODO add your handling code here:
+        new Mapa(gameData, BuildingTools.FARM).setVisible(true);
+        
+        
+    }//GEN-LAST:event_btnFarmBuyActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LojaVirtual().setVisible(true);
-            }
-        });
-    }
+    private void btnLabBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLabBuyActionPerformed
+        // TODO add your handling code here:
+         new Mapa(gameData, BuildingTools.LAB).setVisible(true);
+    }//GEN-LAST:event_btnLabBuyActionPerformed
+
+    private void btnTempleBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTempleBuyActionPerformed
+        // TODO add your handling code here:
+         new Mapa(gameData, BuildingTools.TEMPLE).setVisible(true);
+    }//GEN-LAST:event_btnTempleBuyActionPerformed
+
+    private void btnMineBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMineBuyActionPerformed
+        // TODO add your handling code here:
+         new Mapa(gameData, BuildingTools.MINE).setVisible(true);
+    }//GEN-LAST:event_btnMineBuyActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAboutFarm;
@@ -348,12 +360,7 @@ public class LojaVirtual extends javax.swing.JFrame {
     private javax.swing.JButton btnTempleUpgrade;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -362,5 +369,10 @@ public class LojaVirtual extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel labelCriatividade;
+    private javax.swing.JLabel labelFarm;
+    private javax.swing.JLabel labelLab;
+    private javax.swing.JLabel labelMine;
+    private javax.swing.JLabel labelTemple;
     // End of variables declaration//GEN-END:variables
 }

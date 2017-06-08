@@ -5,6 +5,8 @@
  */
 package application;
 
+import buildings.Building;
+import core.BuildingTools;
 import core.GameManager;
 import java.io.File;
 import java.io.IOException;
@@ -17,125 +19,29 @@ import javax.swing.Icon;
  * @author Fer
  */
 public class Mapa extends javax.swing.JFrame {
-    int type; // se for 0 eh pq abriu pelo Mapa, se for 1 abriu pelo Construir
+    int type; // se for 0 eh pq abriu pelo Mapa, se for >0 abriu pelo Construir
     GameManager gameData;
+    
     /**
      * Creates new form Mapa
      */
-    public Mapa(int check, GameManager gameData) {
+    public Mapa(GameManager gameData, int build) {
+         this.gameData = gameData;
+         type = build;
         initComponents();
-        type = 0;
-        this.gameData = gameData;
-       checking(check);
-        
+        if(build > 0){
+        labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+        labelParaConstruir.setText(Integer.toString(BuildingTools.getBuildCost(build)));
+        }else{
+            labelCriatividade.setVisible(false);
+            labelParaConstruir.setVisible(false);
+            jLabel1.setVisible(false);
+             jLabel2.setVisible(false);
+        }
+       
     }
 
-    public void checking(int check){
-        Enabling();
   
-        if(check == 0){
-        if(btn0x0.getText().equals("Sale")) btn0x0.setEnabled(false);
-        if(btn0x1.getText().equals("Sale")) btn0x1.setEnabled(false);
-        if(btn0x2.getText().equals("Sale")) btn0x2.setEnabled(false);
-        if(btn0x4.getText().equals("Sale")) btn0x4.setEnabled(false);
-        if(btn0x3.getText().equals("Sale")) btn0x3.setEnabled(false);
-        if(btn1x0.getText().equals("Sale")) btn1x0.setEnabled(false);
-        if(btn2x0.getText().equals("Sale")) btn2x0.setEnabled(false);
-        if(btn3x0.getText().equals("Sale")) btn3x0.setEnabled(false);
-        if(btn4x0.getText().equals("Sale")) btn4x0.setEnabled(false);
-        if(btn5x0.getText().equals("Sale")) btn5x0.setEnabled(false); 
-        if(btn1x1.getText().equals("Sale")) btn1x1.setEnabled(false);
-        if(btn1x2.getText().equals("Sale")) btn1x2.setEnabled(false);
-        if(btn1x4.getText().equals("Sale")) btn1x4.setEnabled(false);
-        if(btn1x3.getText().equals("Sale")) btn1x3.setEnabled(false);
-        if(btn2x1.getText().equals("Sale")) btn2x1.setEnabled(false);
-        if(btn2x2.getText().equals("Sale")) btn2x2.setEnabled(false);
-        if(btn2x3.getText().equals("Sale")) btn2x3.setEnabled(false);
-        if(btn2x4.getText().equals("Sale")) btn2x4.setEnabled(false);
-        if(btn3x4.getText().equals("Sale")) btn3x4.setEnabled(false);
-        if(btn3x1.getText().equals("Sale")) btn3x1.setEnabled(false);
-        if(btn3x2.getText().equals("Sale")) btn3x2.setEnabled(false);
-        if(btn3x3.getText().equals("Sale")) btn3x3.setEnabled(false);
-        if(btn4x1.getText().equals("Sale")) btn4x1.setEnabled(false);
-        if(btn4x2.getText().equals("Sale")) btn4x2.setEnabled(false);
-        if(btn4x3.getText().equals("Sale")) btn4x3.setEnabled(false);
-        if(btn4x4.getText().equals("Sale")) btn4x4.setEnabled(false);
-        if(btn5x1.getText().equals("Sale")) btn5x1.setEnabled(false);
-        if(btn5x2.getText().equals("Sale")) btn5x2.setEnabled(false);
-        if(btn5x3.getText().equals("Sale")) btn5x3.setEnabled(false);
-        if(btn5x4.getText().equals("Sale")) btn5x4.setEnabled(false);  
-        }else if( check == 1){
-        if(!btn0x0.getText().equals("Sale")) btn0x0.setEnabled(false);
-        if(!btn0x1.getText().equals("Sale")) btn0x1.setEnabled(false);
-        if(!btn0x2.getText().equals("Sale")) btn0x2.setEnabled(false);
-        if(!btn0x4.getText().equals("Sale")) btn0x4.setEnabled(false);
-        if(!btn0x3.getText().equals("Sale")) btn0x3.setEnabled(false);
-        if(!btn1x0.getText().equals("Sale")) btn1x0.setEnabled(false);
-        if(!btn2x0.getText().equals("Sale")) btn2x0.setEnabled(false);
-        if(!btn3x0.getText().equals("Sale")) btn3x0.setEnabled(false);
-        if(!btn4x0.getText().equals("Sale")) btn4x0.setEnabled(false);
-        if(!btn5x0.getText().equals("Sale")) btn5x0.setEnabled(false); 
-        if(!btn1x1.getText().equals("Sale")) btn1x1.setEnabled(false);
-        if(!btn1x2.getText().equals("Sale")) btn1x2.setEnabled(false);
-        if(!btn1x4.getText().equals("Sale")) btn1x4.setEnabled(false);
-        if(!btn1x3.getText().equals("Sale")) btn1x3.setEnabled(false);
-        if(!btn2x1.getText().equals("Sale")) btn2x1.setEnabled(false);
-        if(!btn2x2.getText().equals("Sale")) btn2x2.setEnabled(false);
-        if(!btn2x3.getText().equals("Sale")) btn2x3.setEnabled(false);
-        if(!btn2x4.getText().equals("Sale")) btn2x4.setEnabled(false);
-        if(!btn3x4.getText().equals("Sale")) btn3x4.setEnabled(false);
-        if(!btn3x1.getText().equals("Sale")) btn3x1.setEnabled(false);
-        if(!btn3x2.getText().equals("Sale")) btn3x2.setEnabled(false);
-        if(!btn3x3.getText().equals("Sale")) btn3x3.setEnabled(false);
-        if(!btn4x1.getText().equals("Sale")) btn4x1.setEnabled(false);
-        if(!btn4x2.getText().equals("Sale")) btn4x2.setEnabled(false);
-        if(!btn4x3.getText().equals("Sale")) btn4x3.setEnabled(false);
-        if(!btn4x4.getText().equals("Sale")) btn4x4.setEnabled(false);
-        if(!btn5x1.getText().equals("Sale")) btn5x1.setEnabled(false);
-        if(!btn5x2.getText().equals("Sale")) btn5x2.setEnabled(false);
-        if(!btn5x3.getText().equals("Sale")) btn5x3.setEnabled(false);
-        if(!btn5x4.getText().equals("Sale")) btn5x4.setEnabled(false);  
-    
-        }
-        
-    }
-     
-    private void Enabling(){
-        btn0x0.setEnabled(true);
-        btn0x1.setEnabled(true);
-        btn0x2.setEnabled(true);
-        btn0x4.setEnabled(true);
-        btn0x3.setEnabled(true);
-        btn1x0.setEnabled(true);
-        btn2x0.setEnabled(true);
-        btn3x0.setEnabled(true);
-        btn4x0.setEnabled(true);
-        btn5x0.setEnabled(true);
-        btn1x1.setEnabled(true);
-        btn1x2.setEnabled(true);
-        btn1x4.setEnabled(true);
-        btn1x3.setEnabled(true);
-        btn2x1.setEnabled(true);
-        btn2x2.setEnabled(true);
-        btn2x3.setEnabled(true);
-        btn2x4.setEnabled(true);
-        btn3x4.setEnabled(true);
-        btn3x1.setEnabled(true);
-        btn3x2.setEnabled(true);
-        btn3x3.setEnabled(true);
-        btn4x1.setEnabled(true);
-        btn4x2.setEnabled(true);
-        btn4x3.setEnabled(true);
-        btn4x4.setEnabled(true);
-        btn5x1.setEnabled(true);
-        btn5x2.setEnabled(true);
-        btn5x3.setEnabled(true);
-        btn5x4.setEnabled(true);
-    }
-    public void changeType(int t){
-        type  = t;
-    }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -177,24 +83,23 @@ public class Mapa extends javax.swing.JFrame {
         btn5x3 = new javax.swing.JButton();
         btn5x4 = new javax.swing.JButton();
         sair = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        labelCriatividade = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        labelParaConstruir = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        
-        if(gameData.grid.isEmpty(0, 0)){
-            btn0x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-            btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn0x0.setText("Sale");
-            btn0x0.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn0x0ActionPerformed(evt);
-                }
-            });
-        }else{
-            btn0x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-            //btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getIcon()))); // NOI18N
-            btn0x0.setText("Sale");
-        }
+
+        btn0x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+        btn0x0.setText("Sale");
+        btn0x0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn0x0ActionPerformed(evt);
+            }
+        });
+
         btn0x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
         btn0x1.setText("Sale");
@@ -462,16 +367,20 @@ public class Mapa extends javax.swing.JFrame {
                 sairActionPerformed(evt);
             }
         });
+
+        jLabel1.setText("Criatividade:");
+
+        labelCriatividade.setText("QttdCriatividade");
+
+        jLabel2.setText("Custo para Construir:");
+
+        labelParaConstruir.setText("QttdParaConstruir");
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(272, 272, 272)
-                .addComponent(sair)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -536,7 +445,22 @@ public class Mapa extends javax.swing.JFrame {
                         .addComponent(btn5x3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn5x4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 147, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(272, 272, 272)
+                        .addComponent(sair))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGap(32, 32, 32)
+                        .addComponent(labelCriatividade)
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(labelParaConstruir)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn0x0, btn0x1, btn0x2, btn0x3, btn0x4, btn1x0, btn1x1, btn1x2, btn1x3, btn1x4, btn2x0, btn2x1, btn2x2, btn2x3, btn2x4, btn3x0, btn3x1, btn3x2, btn3x3, btn3x4, btn4x0, btn4x1, btn4x2, btn4x3, btn4x4, btn5x0, btn5x1, btn5x2, btn5x3, btn5x4});
@@ -544,6 +468,14 @@ public class Mapa extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelCriatividade, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(labelParaConstruir)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -599,7 +531,7 @@ public class Mapa extends javax.swing.JFrame {
                     .addComponent(btn5x2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn5x3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn5x4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(sair))
         );
 
@@ -1305,7 +1237,11 @@ public class Mapa extends javax.swing.JFrame {
     private javax.swing.JButton btn5x3;
     private javax.swing.JButton btn5x4;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel labelCriatividade;
+    private javax.swing.JLabel labelParaConstruir;
     private javax.swing.JButton sair;
     // End of variables declaration//GEN-END:variables
 }
