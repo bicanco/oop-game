@@ -42,7 +42,7 @@ public class ResourceManager {
 	private int greatRubies;
 	
 	/**
-	 * Construtor padrão, zera todos os recursos.
+	 * Construtor padrï¿½o, zera todos os recursos.
 	 */
 	public ResourceManager(){
 		javaSeeds = 0;
@@ -193,9 +193,10 @@ public class ResourceManager {
 		this.greatRubies += offset;
 		if (greatRubies < 0) greatRubies = 0;
 	}
+        
 	
 	/**
-	 * Retorna uma representação em String, para depuração.
+	 * Retorna uma representaï¿½ï¿½o em String, para depuraï¿½ï¿½o.
 	 */
 	@Override
 	public String toString(){

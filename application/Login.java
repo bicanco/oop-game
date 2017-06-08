@@ -129,18 +129,22 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       
+       gameData.username = s;
+       gameData.iconname = image;
         
        this.dispose();
-        new Principal(image, s, gameData).setVisible(true);
+        new Principal(gameData).setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
        s = jTextField1.getText(); 
-       jTextField1.setEnabled(false);
+       if(!s.equals("")){
+            jTextField1.setEnabled(false);
        jButton1.setEnabled(true);
+       }
+      
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

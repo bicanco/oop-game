@@ -4,21 +4,27 @@
  * and open the template in the editor.
  */
 package application;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import static java.lang.Thread.sleep;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import core.GameManager;
+
 
 /**
  *
  * @author Fer
  */
 public class Principal extends javax.swing.JFrame {
-
+    int value;
     GameManager gameData;
-    public Principal(int image, String str, GameManager gameData) {
+    public Principal(GameManager gameData) {
         initComponents();  
-        setImage(image);
-         this.gameData = gameData;
-        labelUser.setText(str);
+        setImage(gameData.iconname);
+        value = 0;
+        this.gameData = gameData;
+        labelUser.setText(gameData.username);
         labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
         labelOopyies.setText(Integer.toString(gameData.resources.getOopyies()));
     }
@@ -36,6 +42,24 @@ public class Principal extends javax.swing.JFrame {
         }
         
     }
+    
+    
+     public class atualiza implements ActionListener{
+         public void actionPerformed(ActionEvent evt){
+        int n = value;
+        if(n<100){
+            n++;
+                
+        }else{
+          labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           timer.stop();
+           value  = 0;
+           timer.start();
+        }
+     
+         
+         }
+     }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,6 +84,14 @@ public class Principal extends javax.swing.JFrame {
         labelCriatividade = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         labelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/CatBig.png"))); // NOI18N
 
@@ -196,16 +228,20 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosActionPerformed
         // TODO add your handling code here:
+        this.dispose();
         new Recursos(gameData).setVisible(true); 
     }//GEN-LAST:event_btnRecursosActionPerformed
 
     private void btnLojaVirtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLojaVirtualActionPerformed
         // TODO add your handling code here:
+         this.dispose();
         new LojaVirtual(gameData).setVisible(true);
+        
     }//GEN-LAST:event_btnLojaVirtualActionPerformed
 
     private void btnMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
         // TODO add your handling code here:
+         this.dispose();
         new Mapa(gameData).setVisible(true);
     }//GEN-LAST:event_btnMapaActionPerformed
 
@@ -215,9 +251,28 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTurnoActionPerformed
         // TODO add your handling code here:
-        new Turno().setVisible(true);
+         this.dispose();
+        new Turno(gameData).setVisible(true);
     }//GEN-LAST:event_btnTurnoActionPerformed
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+      timer = new Timer(100, new atualiza());
+        
+        timer.start();
+        
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        
+        timer = new Timer(100, new atualiza());
+        
+        timer.start();
+        
+    }//GEN-LAST:event_formWindowActivated
+    private Timer timer;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLojaVirtual;
     private javax.swing.JButton btnMapa;

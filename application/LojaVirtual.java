@@ -7,6 +7,7 @@ package application;
 
 import core.BuildingTools;
 import core.GameManager;
+import javax.swing.Timer;
 
 /**
  *
@@ -14,13 +15,14 @@ import core.GameManager;
  */
 public class LojaVirtual extends javax.swing.JFrame {
     GameManager gameData;
+    
     /**
      * Creates new form LojaVirtual
      */
     public LojaVirtual(GameManager gameData) {
         this.gameData = gameData;
         initComponents();
-        //labelCriatividade.setText();
+        
         labelFarm.setText("");
         labelLab.setText("");
         labelTemple.setText("");
@@ -37,7 +39,7 @@ public class LojaVirtual extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
         btnFarmUpgrade = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -70,10 +72,10 @@ public class LojaVirtual extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Lucida Fax", 0, 24)); // NOI18N
         jLabel1.setText("Loja Virtual");
 
-        jButton1.setText("Finalizar Compra");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSair.setText("Finalizar Compra");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSairActionPerformed(evt);
             }
         });
 
@@ -243,7 +245,7 @@ public class LojaVirtual extends javax.swing.JFrame {
                         .addComponent(jLabel14))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(261, 261, 261)
-                        .addComponent(jButton1))
+                        .addComponent(btnSair))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(275, 275, 275)
                         .addComponent(jLabel1)))
@@ -291,17 +293,18 @@ public class LojaVirtual extends javax.swing.JFrame {
                     .addComponent(btnMineUpgrade)
                     .addComponent(btnAboutMine))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnSair)
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+        new Principal(gameData).setVisible(true);
+    }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnAboutLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutLabActionPerformed
         // TODO add your handling code here:
@@ -344,7 +347,7 @@ public class LojaVirtual extends javax.swing.JFrame {
         // TODO add your handling code here:
          new MapaParaConstruir(gameData, BuildingTools.MINE).setVisible(true);
     }//GEN-LAST:event_btnMineBuyActionPerformed
-
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAboutFarm;
     private javax.swing.JButton btnAboutLab;
@@ -356,9 +359,9 @@ public class LojaVirtual extends javax.swing.JFrame {
     private javax.swing.JButton btnLabUpgrade;
     private javax.swing.JButton btnMineBuy;
     private javax.swing.JButton btnMineUpgrade;
+    private javax.swing.JButton btnSair;
     private javax.swing.JButton btnTempleBuy;
     private javax.swing.JButton btnTempleUpgrade;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;

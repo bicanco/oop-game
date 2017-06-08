@@ -5,6 +5,7 @@
  */
 package application;
 
+import core.GameManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static java.lang.Thread.sleep;
@@ -15,12 +16,12 @@ import javax.swing.Timer;
  * @author Fer
  */
 public class Turno extends javax.swing.JFrame {
-
+    GameManager gameData;
     /**
      * Creates new form Turno
      */
-    public Turno() {
-        
+    public Turno(GameManager gameData) {
+        this.gameData = gameData;
              
         initComponents();
         jProgressBar1.setValue(0);
@@ -132,6 +133,7 @@ public class Turno extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        new Principal(gameData).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 //
 //    /**
