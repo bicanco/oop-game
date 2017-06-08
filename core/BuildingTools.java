@@ -80,4 +80,35 @@ public class BuildingTools {
 		
 		return null;
 	}
+	
+	public static boolean getUpgrade(int reference, int upgradeId) throws Exception {
+		switch (reference){
+		case FARM: return farm.getUpgrade(upgradeId);
+		case LAB: return lab.getUpgrade(upgradeId);
+		case TEMPLE: return temple.getUpgrade(upgradeId);
+		case MINE: return mine.getUpgrade(upgradeId);
+		}
+		
+		return false;
+	}
+	
+	public static int getUpgradeCost(int reference, int upgradeId) throws Exception {
+		switch (reference){
+		case FARM: return farm.getUpgradeCost(upgradeId);
+		case LAB: return lab.getUpgradeCost(upgradeId);
+		case TEMPLE: return temple.getUpgradeCost(upgradeId);
+		case MINE: return mine.getUpgradeCost(upgradeId);
+		}
+		
+		return -1;
+	}
+	
+	public static void unlockUpgrade(int reference, int upgradeId) throws Exception {
+		switch (reference){
+		case FARM: farm.unlockUpgrade(upgradeId);
+		case LAB:  lab.unlockUpgrade(upgradeId);
+		case TEMPLE: temple.unlockUpgrade(upgradeId);
+		case MINE: mine.unlockUpgrade(upgradeId);
+		}
+	}
 }
