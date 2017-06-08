@@ -206,7 +206,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
         // TODO add your handling code here:
-        new Mapa(gameData, 0).setVisible(true);
+        new Mapa(gameData).setVisible(true);
     }//GEN-LAST:event_btnMapaActionPerformed
 
     private void btnTrocasDiariasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocasDiariasActionPerformed

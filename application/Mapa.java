@@ -25,19 +25,16 @@ public class Mapa extends javax.swing.JFrame {
     /**
      * Creates new form Mapa
      */
-    public Mapa(GameManager gameData, int build) {
+    public Mapa(GameManager gameData) {
          this.gameData = gameData;
-         type = build;
+         
         initComponents();
-        if(build > 0){
-        labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
-        labelParaConstruir.setText(Integer.toString(BuildingTools.getBuildCost(build)));
-        }else{
+        
             labelCriatividade.setVisible(false);
             labelParaConstruir.setVisible(false);
             jLabel1.setVisible(false);
              jLabel2.setVisible(false);
-        }
+        
        
     }
 

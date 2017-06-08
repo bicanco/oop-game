@@ -14,7 +14,7 @@ public class Game {
 	
 	public static void main(String[] args) {
 		gameData.resources.updateJavaSeeds(500);
-		
+		gameData.resources.updateCreativity(100000);
 		 java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
