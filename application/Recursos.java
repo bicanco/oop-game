@@ -13,11 +13,13 @@ import core.GameManager;
  */
 public class Recursos extends javax.swing.JFrame {
     GameManager gameData;
+    int from;
     /**
      * Creates new form Recursos
      */
-    public Recursos(GameManager gameData) {
+    public Recursos(GameManager gameData, int from) {
         initComponents();
+        this.from = from;
         this.gameData = gameData;
         labelGreatRubies.setText(Integer.toString(this.gameData.resources.getGreatRubies()));
         labelJavaSeeds.setText(Integer.toString(this.gameData.resources.getJavaSeeds()));
@@ -161,7 +163,10 @@ public class Recursos extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Principal(gameData).setVisible(true);
+        if(from==0){
+            new Principal(gameData).setVisible(true);
+        }
+        
        
     }//GEN-LAST:event_jButton1ActionPerformed
 

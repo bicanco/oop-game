@@ -328,6 +328,7 @@ public class LojaVirtual extends javax.swing.JFrame {
 
     private void btnFarmBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFarmBuyActionPerformed
         // TODO add your handling code here:
+       this.dispose();
         new MapaParaConstruir(gameData, BuildingTools.FARM).setVisible(true);
         
         
@@ -335,17 +336,20 @@ public class LojaVirtual extends javax.swing.JFrame {
 
     private void btnLabBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLabBuyActionPerformed
         // TODO add your handling code here:
-         new MapaParaConstruir(gameData, BuildingTools.LAB).setVisible(true);
+        this.dispose();
+        new MapaParaConstruir(gameData, BuildingTools.LAB).setVisible(true);
     }//GEN-LAST:event_btnLabBuyActionPerformed
 
     private void btnTempleBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTempleBuyActionPerformed
         // TODO add your handling code here:
-         new MapaParaConstruir(gameData, BuildingTools.TEMPLE).setVisible(true);
+        this.dispose();
+        new MapaParaConstruir(gameData, BuildingTools.TEMPLE).setVisible(true);
     }//GEN-LAST:event_btnTempleBuyActionPerformed
 
     private void btnMineBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMineBuyActionPerformed
         // TODO add your handling code here:
-         new MapaParaConstruir(gameData, BuildingTools.MINE).setVisible(true);
+        this.dispose();
+        new MapaParaConstruir(gameData, BuildingTools.MINE).setVisible(true);
     }//GEN-LAST:event_btnMineBuyActionPerformed
   
     // Variables declaration - do not modify//GEN-BEGIN:variables

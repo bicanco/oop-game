@@ -229,7 +229,7 @@ public class Principal extends javax.swing.JFrame {
     private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Recursos(gameData).setVisible(true); 
+        new Recursos(gameData,0).setVisible(true); 
     }//GEN-LAST:event_btnRecursosActionPerformed
 
     private void btnLojaVirtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLojaVirtualActionPerformed
@@ -251,7 +251,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTurnoActionPerformed
         // TODO add your handling code here:
-         this.dispose();
+        this.dispose();
         new Turno(gameData).setVisible(true);
     }//GEN-LAST:event_btnTurnoActionPerformed
 

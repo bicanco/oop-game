@@ -5,8 +5,6 @@
  */
 package application;
 
-import buildings.Building;
-import core.BuildingTools;
 import core.GameManager;
 import java.io.File;
 import java.io.IOException;
@@ -19,26 +17,17 @@ import javax.swing.Icon;
  * @author Fer
  */
 public class Mapa extends javax.swing.JFrame {
-    int type; // se for 0 eh pq abriu pelo Mapa, se for >0 abriu pelo Construir
+    int type; // se for 0 eh pq abriu pelo Mapa, se for 1 abriu pelo Construir
     GameManager gameData;
-    
     /**
      * Creates new form Mapa
      */
     public Mapa(GameManager gameData) {
-         this.gameData = gameData;
-         
         initComponents();
+        this.gameData = gameData;
         
-            labelCriatividade.setVisible(false);
-            labelParaConstruir.setVisible(false);
-            jLabel1.setVisible(false);
-             jLabel2.setVisible(false);
-        
-       
     }
 
-  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -81,9 +70,8 @@ public class Mapa extends javax.swing.JFrame {
         btn5x4 = new javax.swing.JButton();
         sair = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        labelCriatividade = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        labelParaConstruir = new javax.swing.JLabel();
+        labelOopyiesDisponiveis = new javax.swing.JLabel();
+        btnRecursos = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -365,13 +353,16 @@ public class Mapa extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Criatividade:");
+        jLabel1.setText("Oopyies Disponíveis:");
 
-        labelCriatividade.setText("QttdCriatividade");
+        labelOopyiesDisponiveis.setText("0");
 
-        jLabel2.setText("Custo para Construir:");
-
-        labelParaConstruir.setText("QttdParaConstruir");
+        btnRecursos.setText("Recursos");
+        btnRecursos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecursosActionPerformed(evt);
+            }
+        });
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -379,6 +370,10 @@ public class Mapa extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(272, 272, 272)
+                .addComponent(sair))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn4x0, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -441,23 +436,14 @@ public class Mapa extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn5x3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn5x4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 147, Short.MAX_VALUE))
+                        .addComponent(btn5x4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(272, 272, 272)
-                        .addComponent(sair))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addGap(32, 32, 32)
-                        .addComponent(labelCriatividade)
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(labelParaConstruir)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addComponent(jLabel1)
+                .addGap(27, 27, 27)
+                .addComponent(labelOopyiesDisponiveis)
+                .addGap(228, 228, 228)
+                .addComponent(btnRecursos))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btn0x0, btn0x1, btn0x2, btn0x3, btn0x4, btn1x0, btn1x1, btn1x2, btn1x3, btn1x4, btn2x0, btn2x1, btn2x2, btn2x3, btn2x4, btn3x0, btn3x1, btn3x2, btn3x3, btn3x4, btn4x0, btn4x1, btn4x2, btn4x3, btn4x4, btn5x0, btn5x1, btn5x2, btn5x3, btn5x4});
@@ -465,13 +451,11 @@ public class Mapa extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelCriatividade, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(labelParaConstruir)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(labelOopyiesDisponiveis)
+                    .addComponent(btnRecursos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -528,7 +512,7 @@ public class Mapa extends javax.swing.JFrame {
                     .addComponent(btn5x2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn5x3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn5x4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sair))
         );
 
@@ -537,7 +521,8 @@ public class Mapa extends javax.swing.JFrame {
 
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
+        this.dispose();
+        new Principal(gameData).setVisible(true);
     }//GEN-LAST:event_sairActionPerformed
 
     private void btn0x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x0ActionPerformed
@@ -1166,6 +1151,12 @@ public class Mapa extends javax.swing.JFrame {
             btn5x4.setEnabled(false);   
         }
     }//GEN-LAST:event_btn5x4ActionPerformed
+
+    private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosActionPerformed
+        // TODO add your handling code here:
+        
+        new Recursos(gameData, 1).setVisible(true);
+    }//GEN-LAST:event_btnRecursosActionPerformed
 //
 //    /**
 //     * @param args the command line arguments
@@ -1233,12 +1224,11 @@ public class Mapa extends javax.swing.JFrame {
     private javax.swing.JButton btn5x2;
     private javax.swing.JButton btn5x3;
     private javax.swing.JButton btn5x4;
+    private javax.swing.JButton btnRecursos;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JLabel labelCriatividade;
-    private javax.swing.JLabel labelParaConstruir;
+    private javax.swing.JLabel labelOopyiesDisponiveis;
     private javax.swing.JButton sair;
     // End of variables declaration//GEN-END:variables
 }
