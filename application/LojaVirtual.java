@@ -27,6 +27,7 @@ public class LojaVirtual extends javax.swing.JFrame {
         labelLab.setText("");
         labelTemple.setText("");
         labelMine.setText("");
+        labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
     }
 
     /**
@@ -374,22 +375,26 @@ public class LojaVirtual extends javax.swing.JFrame {
 
     private void btnFarmUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFarmUpgradeActionPerformed
         // TODO add your handling code here:
-        new FarmMelhoria().setVisible(true);
+         this.dispose();
+        new FarmMelhoria(gameData).setVisible(true);
     }//GEN-LAST:event_btnFarmUpgradeActionPerformed
 
     private void btnLabUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLabUpgradeActionPerformed
         // TODO add your handling code here:
-        new LabMelhoria().setVisible(true);
+         this.dispose();
+        new LabMelhoria(gameData).setVisible(true);
     }//GEN-LAST:event_btnLabUpgradeActionPerformed
 
     private void btnTempleUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTempleUpgradeActionPerformed
         // TODO add your handling code here:
-         new TempleMelhoria().setVisible(true);
+         this.dispose();
+         new TempleMelhoria(gameData).setVisible(true);
     }//GEN-LAST:event_btnTempleUpgradeActionPerformed
 
     private void btnMineUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMineUpgradeActionPerformed
         // TODO add your handling code here:
-         new MineMelhoria().setVisible(true);
+        this.dispose();
+         new MineMelhoria(gameData).setVisible(true);
     }//GEN-LAST:event_btnMineUpgradeActionPerformed
   
     // Variables declaration - do not modify//GEN-BEGIN:variables

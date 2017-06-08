@@ -5,17 +5,22 @@
  */
 package application;
 
+import core.GameManager;
+
 /**
  *
  * @author Fer
  */
 public class FarmMelhoria extends javax.swing.JFrame {
-
+    GameManager gameData;
     /**
      * Creates new form FarmUso
      */
-    public FarmMelhoria() {
+    public FarmMelhoria(GameManager gameData) {
+        this.gameData = gameData;
         initComponents();
+        labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+        
     }
 
     /**
@@ -39,7 +44,7 @@ public class FarmMelhoria extends javax.swing.JFrame {
         btnGreatProduction = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         labelCreativityDONTEDIT = new javax.swing.JLabel();
-        labelCreativityEdit = new javax.swing.JLabel();
+        labelCreativity = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -66,10 +71,15 @@ public class FarmMelhoria extends javax.swing.JFrame {
         btnGreatProduction.setText("Locked: 60");
 
         btnSair.setText("Close");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         labelCreativityDONTEDIT.setText("Creativity:");
 
-        labelCreativityEdit.setText("0");
+        labelCreativity.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,7 +114,7 @@ public class FarmMelhoria extends javax.swing.JFrame {
                                 .addComponent(labelFARM))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
-                                .addComponent(labelCreativityEdit)))
+                                .addComponent(labelCreativity)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGap(114, 114, 114)
@@ -135,7 +145,7 @@ public class FarmMelhoria extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCreativityDONTEDIT)
-                    .addComponent(labelCreativityEdit))
+                    .addComponent(labelCreativity))
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelFP)
@@ -160,6 +170,12 @@ public class FarmMelhoria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new LojaVirtual(gameData).setVisible(true);
+    }//GEN-LAST:event_btnSairActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCocoFertilizer;
     private javax.swing.JButton btnFoodProduction;
@@ -167,8 +183,8 @@ public class FarmMelhoria extends javax.swing.JFrame {
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSeedFertilizer;
     private javax.swing.JLabel labelCF;
+    private javax.swing.JLabel labelCreativity;
     private javax.swing.JLabel labelCreativityDONTEDIT;
-    private javax.swing.JLabel labelCreativityEdit;
     private javax.swing.JLabel labelFARM;
     private javax.swing.JLabel labelFP;
     private javax.swing.JLabel labelGP;

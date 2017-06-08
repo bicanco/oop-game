@@ -5,17 +5,21 @@
  */
 package application;
 
+import core.GameManager;
+
 /**
  *
  * @author Fer
  */
 public class LabMelhoria extends javax.swing.JFrame {
-
+    GameManager gameData;
     /**
      * Creates new form LabMelhoria
      */
-    public LabMelhoria() {
+    public LabMelhoria(GameManager gameData) {
+        this.gameData = gameData;
         initComponents();
+        labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     }
 
     /**
@@ -59,6 +63,11 @@ public class LabMelhoria extends javax.swing.JFrame {
         btnGreatResearch.setText("Locked: 30");
 
         btnSair.setText("Close");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Creativity:");
 
@@ -140,40 +149,13 @@ public class LabMelhoria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LabMelhoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LabMelhoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LabMelhoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LabMelhoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</edibtnCP>
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new LojaVirtual(gameData).setVisible(true);
+    }//GEN-LAST:event_btnSairActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LabMelhoria().setVisible(true);
-            }
-        });
-    }
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBasicResearch;
