@@ -79,7 +79,12 @@ public class LojaVirtual extends javax.swing.JFrame {
             }
         });
 
-        btnFarmUpgrade.setText("Upgrades");
+        btnFarmUpgrade.setText("Melhorias");
+        btnFarmUpgrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFarmUpgradeActionPerformed(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); // NOI18N
         jLabel2.setText("Fazenda");
@@ -137,11 +142,26 @@ public class LojaVirtual extends javax.swing.JFrame {
             }
         });
 
-        btnLabUpgrade.setText("Upgrades");
+        btnLabUpgrade.setText("Melhorias");
+        btnLabUpgrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLabUpgradeActionPerformed(evt);
+            }
+        });
 
-        btnTempleUpgrade.setText("Upgrades");
+        btnTempleUpgrade.setText("Melhorias");
+        btnTempleUpgrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTempleUpgradeActionPerformed(evt);
+            }
+        });
 
-        btnMineUpgrade.setText("Upgrades");
+        btnMineUpgrade.setText("Melhorias");
+        btnMineUpgrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMineUpgradeActionPerformed(evt);
+            }
+        });
 
         jLabel14.setText("Criatividade:");
 
@@ -223,21 +243,21 @@ public class LojaVirtual extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnFarmBuy)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnFarmUpgrade))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnLabBuy)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnLabUpgrade))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnTempleBuy)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnTempleUpgrade))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnMineBuy)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnMineUpgrade)))
-                .addGap(25, 25, 25))
+                .addGap(35, 35, 35))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -351,6 +371,26 @@ public class LojaVirtual extends javax.swing.JFrame {
         this.dispose();
         new MapaParaConstruir(gameData, BuildingTools.MINE).setVisible(true);
     }//GEN-LAST:event_btnMineBuyActionPerformed
+
+    private void btnFarmUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFarmUpgradeActionPerformed
+        // TODO add your handling code here:
+        new FarmMelhoria().setVisible(true);
+    }//GEN-LAST:event_btnFarmUpgradeActionPerformed
+
+    private void btnLabUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLabUpgradeActionPerformed
+        // TODO add your handling code here:
+        new LabMelhoria().setVisible(true);
+    }//GEN-LAST:event_btnLabUpgradeActionPerformed
+
+    private void btnTempleUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTempleUpgradeActionPerformed
+        // TODO add your handling code here:
+         new TempleMelhoria().setVisible(true);
+    }//GEN-LAST:event_btnTempleUpgradeActionPerformed
+
+    private void btnMineUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMineUpgradeActionPerformed
+        // TODO add your handling code here:
+         new MineMelhoria().setVisible(true);
+    }//GEN-LAST:event_btnMineUpgradeActionPerformed
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAboutFarm;

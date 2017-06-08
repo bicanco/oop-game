@@ -81,26 +81,26 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="btnFarmBuy" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnFarmUpgrade" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="btnLabBuy" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnLabUpgrade" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="btnTempleBuy" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnTempleUpgrade" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="btnMineBuy" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnMineUpgrade" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
@@ -193,8 +193,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnFarmUpgrade">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Upgrades"/>
+        <Property name="text" type="java.lang.String" value="Melhorias"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFarmUpgradeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -302,18 +305,27 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnLabUpgrade">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Upgrades"/>
+        <Property name="text" type="java.lang.String" value="Melhorias"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLabUpgradeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnTempleUpgrade">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Upgrades"/>
+        <Property name="text" type="java.lang.String" value="Melhorias"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTempleUpgradeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnMineUpgrade">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Upgrades"/>
+        <Property name="text" type="java.lang.String" value="Melhorias"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMineUpgradeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
       <Properties>

@@ -65,7 +65,10 @@
     <Component class="javax.swing.JProgressBar" name="jProgressBar1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="99" red="ff" type="rgb"/>
+          <Color blue="ff" green="cd" id="Realce de Texto" palette="2" red="a4" type="palette"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="stringPainted" type="boolean" value="true"/>
       </Properties>

@@ -81,7 +81,8 @@ public class Turno extends javax.swing.JFrame {
             }
         });
 
-        jProgressBar1.setBackground(new java.awt.Color(255, 153, 0));
+        jProgressBar1.setBackground(java.awt.SystemColor.textHighlight);
+        jProgressBar1.setForeground(new java.awt.Color(255, 255, 255));
         jProgressBar1.setStringPainted(true);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/wow.gif"))); // NOI18N

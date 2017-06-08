@@ -5,28 +5,28 @@ package buildings;
  * @author Marcelo
  */
 public class Lab implements Building {
-	private final static int MINE_CREATIVITY_COST = 0;//custo inicial do laboratorio
-	private final static int MAX_PRODUCTION = 0;//produção máxima possível
+	private final static int LAB_CREATIVITY_COST = 0;//custo inicial do laboratorio
+	private final static int MAX_PRODUCTION = 0;//produï¿½ï¿½o mï¿½xima possï¿½vel
 	private final static int CREATIVITY_PER_OOPYIE = 0;//valor de criatividades produzidas por oopyie
 	private final static int CREATIVITY_PER_COCO = 0;//valor de criativades produzidas por cocos
 
-	public final static int CREATIVITY_PRODUCTION = 0;//valores das posições dos métodos no vetor de up grades
+	public final static int CREATIVITY_PRODUCTION = 0;//valores das posiï¿½ï¿½es dos mï¿½todos no vetor de up grades
 	public final static int BASIC_RESEARCH = 1;
 	public final static int GREAT_RESEARCH = 2;
 	public final static int NUMBER_OF_UPGRADES = 3;//numero de up grades
 	
-	private static String name = "Lab";//inicialização das variáveis estáticas que são herança da classe Building
+	private static String name = "Lab";//inicializaï¿½ï¿½o das variï¿½veis estï¿½ticas que sï¿½o heranï¿½a da classe Building
 	private static String description = "Produz Criatividade";
 	private static String iconPath = "Lab.png";
-	private static int unlockCost = MINE_CREATIVITY_COST;
+	private static int unlockCost = LAB_CREATIVITY_COST;
 	private static int buildCost = 456;
 	private static int upgradeNumber = NUMBER_OF_UPGRADES;
 	private static boolean[] upgradesAvailable = new boolean[upgradeNumber];
 	private static int[] upgradesCost = new int[upgradeNumber];
 	
 	static {
-		upgradesAvailable[CREATIVITY_PRODUCTION] = true;//o único método que começa já adquirido
-		upgradesAvailable[BASIC_RESEARCH] = false;//os outros começam como não adquiridos
+		upgradesAvailable[CREATIVITY_PRODUCTION] = true;//o ï¿½nico mï¿½todo que comeï¿½a jï¿½ adquirido
+		upgradesAvailable[BASIC_RESEARCH] = false;//os outros comeï¿½am como nï¿½o adquiridos
 		upgradesAvailable[GREAT_RESEARCH] = false;
 		
 		upgradesCost[CREATIVITY_PRODUCTION] = 0;
@@ -37,14 +37,14 @@ public class Lab implements Building {
 	protected static int oopyiesAllocated;
 	
 	/**
-	 * Método construtor da classe Lab
+	 * Mï¿½todo construtor da classe Lab
 	 */
 	public Lab(){
 		reset();
 	}
 	
 	/**
-	 * Método que produz as Criatividade e aumaneta a produção de acordo com o a quantidade de recurso passada como parâmetro
+	 * Mï¿½todo que produz as Criatividade e aumaneta a produï¿½ï¿½o de acordo com o a quantidade de recurso passada como parï¿½metro
 	 * @param A quantidade de recurso para o boost
 	 * @return O valor produzido
 	 */
@@ -53,7 +53,7 @@ public class Lab implements Building {
 	}
 	
 	/**
-	 * Método que produz Criatividade
+	 * Mï¿½todo que produz Criatividade
 	 * @return O valor produzido
 	 */
 	public int creativityProduction(){
@@ -62,24 +62,24 @@ public class Lab implements Building {
 	
 	
 	/**
-	 * Método que produz Criatividade em função do número de Cocos alocados, se não adquiriu o método a produção será 0
-	 * @param O número de cocos alocados
-	 * @return A produção
+	 * Mï¿½todo que produz Criatividade em funï¿½ï¿½o do nï¿½mero de Cocos alocados, se nï¿½o adquiriu o mï¿½todo a produï¿½ï¿½o serï¿½ 0
+	 * @param O nï¿½mero de cocos alocados
+	 * @return A produï¿½ï¿½o
 	 */
 	public int basicResearch(int cocos){
 		if(upgradesAvailable[BASIC_RESEARCH] == false){
-			return 0;//produz Criatividade se o método já foi adquirido
+			return 0;//produz Criatividade se o mï¿½todo jï¿½ foi adquirido
 		}else
 			return cocos*CREATIVITY_PER_COCO;
 	}
 	
 	/**
-	 * Método que produz a produção máxima de um laboratorio, se não adquiriu o método a produção será 0
-	 * @return A produção
+	 * Mï¿½todo que produz a produï¿½ï¿½o mï¿½xima de um laboratorio, se nï¿½o adquiriu o mï¿½todo a produï¿½ï¿½o serï¿½ 0
+	 * @return A produï¿½ï¿½o
 	 */
 	public int greatProduction(){
 		if(upgradesAvailable[GREAT_RESEARCH] == false){
-			return 0;//produz a produção se o método já foi adquirido
+			return 0;//produz a produï¿½ï¿½o se o mï¿½todo jï¿½ foi adquirido
 		}else
 			return MAX_PRODUCTION;
 	}
