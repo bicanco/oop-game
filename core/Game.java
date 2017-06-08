@@ -22,7 +22,7 @@ public class Game {
             }
         });*/
 		
-		System.out.println(Building.getBuildCost(Building.FARM));
+		System.out.println(BuildingTools.getBuildCost(BuildingTools.FARM));
 		System.out.println();
 	}
 }

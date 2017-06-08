@@ -1,17 +1,32 @@
 package buildings;
 
-import java.awt.Image;
+public interface Building {
+	String getName();
+	String getDescription();
+	String getIcon();
+	
+	int getUnlockCost();
+	int getBuildCost();
+	
+	int getOopyiesAllocated();
+	void allocateOopyies(int oopyies);
+	
+	void unlockUpgrade(int upgradeId) throws Exception;
+	boolean getUpgrade(int upgradeId) throws Exception;
+	
+	int getUpgradeCost(int upgradeId);
+	void setUpgradeCost(int value, int upgrade);
+	
+	void reset();
+}
 
 /**
  * Classe abstrata que representa uma construção
  * @author David
  *
  */
-abstract public class Building {
-	public static final int FARM = 1;
-	public static final int LAB = 2;
-	public static final int TEMPLE = 3;
-	public static final int MINE = 4;
+/*abstract public class Building {
+	
 	
 	protected static String name;
 	protected static String description;
@@ -25,7 +40,7 @@ abstract public class Building {
 
 	/**
 	 * Método construtor para utilização das classes que extendem esta classe abstrata
-	 */
+	 
 	public Building(){
 		oopyiesAllocated = 0;
 	}
@@ -33,50 +48,20 @@ abstract public class Building {
 	/**
 	 * Método que retorna o custo de criatividade do edifício para ser descoberto
 	 * @return
-	 */
+	 
 	public int getCreativityCost(){
 		return creativityCost;
 	}
 	
-	/**
-	 * Retorna o custo de construção de uma certa classe, de acordo com sua identificação,
-	 * feita por constantes na classe Building.
-	 * @param reference identificação da classe
-	 * @return custo de construção de um objeto dessa classe
-	 */
-	public static int getBuildCost(int reference){
-		switch (reference){
-		case Building.FARM: return Farm.buildCost;
-		case Building.LAB:	return Lab.buildCost;
-		case Building.TEMPLE: return Temple.buildCost;
-		case Building.MINE: return Mine.buildCost;
-		}
-		
-		return -1;
-	}
 	
-	/**
-	 * Instancia uma construção a partir da identificação de uma classe, feita por
-	 * constantes na classe Building.
-	 * @param reference identificação da classe
-	 * @return objeto de construção instanciado
-	 */
-	public static Building instantiateBuilding(int reference){
-		switch (reference){
-		case Building.FARM: return new Farm();
-		case Building.LAB: return new Lab();
-		case Building.TEMPLE: return new Temple();
-		case Building.MINE: return new Mine();
-		}
-		
-		return null;
-	}
+	
+	
 	
 	/**
 	 * Método que serve para adquirir os Up grades
 	 * @param O número do Up Grade desejado
 	 * @exception IllegalArgumentException Se o up grade já foi adquirido
-	 */
+	 
 	public void setUpgrade(int number)throws Exception{
 		if(upgradesAvailable[number] == true){
 			throw new IllegalArgumentException("Position already set");
@@ -90,7 +75,7 @@ abstract public class Building {
 	 * @param O número do Up Grade desejado
 	 * @return true se sim e false se não
 	 * @exception IllegalArgumentException Se o número for maior que o número de upgrades ou se for menor do que 0
-	 */
+	 
 	public boolean getUpgrade(int number)throws Exception{
 		if(number >= upgradeNumber || number < 0){
 			throw new IllegalArgumentException("Number out of range");
@@ -101,7 +86,7 @@ abstract public class Building {
 	/**
 	 * Método que define o número de oopyies alocados
 	 * @param oopyies
-	 */
+	 
 	public void allocateOopyies(int oopyies){
 		oopyiesAllocated = oopyies;//define a quantidade de oopyies alocados
 	}
@@ -112,7 +97,7 @@ abstract public class Building {
 	 * @param upgrade O número do Upgrade
 	 * @param creativity Quanta criatividade está gastando
 	 * @throws IllegalArgumentException lança se o valor gasto nao for compatível com o custo
-	 */
+	 
 	public void buyUpGrade(Building b, int upgrade, int creativity )throws Exception{
 		if(Building.getUpgradeCost(upgrade) != creativity){
 			throw new IllegalArgumentException("Creativity value not compatible with creativity cost");
@@ -122,7 +107,7 @@ abstract public class Building {
 	
 	/**
 	 * Método que reinicializa a quantidade de oopyies alocados
-	 */
+	 
 	public void reset(){
 		oopyiesAllocated = 0;
 	}
@@ -146,4 +131,4 @@ abstract public class Building {
 	protected static void setUpgradeCost(int value, int upgrade){
 		upgradesCost[upgrade] = value;
 	}
-}
+}*/

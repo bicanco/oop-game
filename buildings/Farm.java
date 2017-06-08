@@ -5,7 +5,7 @@ package buildings;
  * @author David
  *
  */
-public class Farm extends Building{
+public class Farm implements Building {
 	private final static int FARM_CREATIVITY_COST = 20;//custo inicial da fazenda
 	private final static int MAX_PRODUCTION = 0;//produção máxima possível
 	private final static int SEEDS_PER_PERL = 0;//valor de seedss produzidas por perl
@@ -17,40 +17,39 @@ public class Farm extends Building{
 	public final static int SEED_FERTILIZER = 1;
 	public final static int COCO_FERTILIZER = 2;
 	public final static int GREAT_PRODUCTION = 3;
-	public final static int NUMBER_OF_UPGRADES = 4;//numero de up grades
+	public final static int NUMBER_OF_UPGRADES = 4;//numero de upgrades
 	
 	public final static boolean SEED = false;//tipo de comida produzida
 	public final static boolean COCO = true;
 	
- 	
 	protected boolean foodType;//tipo de comida produzida na fazenda
 	
+	private static String name = "Farm";//inicialização das variáveis estáticas que são herança da classe Building
+	private static String description = "Produz JavaSeeds e SharpCocos";
+	private static String iconPath = "Farm.png"; 
+	private static int unlockCost = FARM_CREATIVITY_COST;
+	private static int buildCost = 123;
+	private static int upgradeNumber = NUMBER_OF_UPGRADES;
+	private static boolean[] upgradesAvailable = new boolean[upgradeNumber];
+	private static int[] upgradesCost = new int[upgradeNumber];
 	
-	static {
-		name = "Farm";//inicialização das variáveis estáticas que são herança da classe Building
-		description = "Produz JavaSeeds e SharpCocos";
-		iconPath = "Farm.png"; 
-		creativityCost = FARM_CREATIVITY_COST;
-		Farm.buildCost = 1;
-		upgradeNumber = NUMBER_OF_UPGRADES;
-		upgradesAvailable = new boolean[upgradeNumber];
-		upgradesAvailable[FOOD_PRODUCTION] = true;//o único método que começa já adquirido
-		upgradesAvailable[SEED_FERTILIZER] = false;//os outros começam como não adquiridos
-		upgradesAvailable[COCO_FERTILIZER] = false;
-		upgradesAvailable[GREAT_PRODUCTION] = false;
-		upgradesCost = new int[upgradeNumber];
-		Farm.setUpgradeCost(0, FOOD_PRODUCTION);
-		Farm.setUpgradeCost(0, SEED_FERTILIZER);
-		Farm.setUpgradeCost(0, COCO_FERTILIZER);
-		Farm.setUpgradeCost(0, GREAT_PRODUCTION);
-	}
+	private static int oopyiesAllocated;
 	
 	/**
 	 * Método construtor da classe Farm
 	 */
 	public Farm(){
-		super();
 		foodType = SEED;//inicializa o objeto produzindo Seeds
+		
+		upgradesAvailable[FOOD_PRODUCTION] = true;//o único método que começa já adquirido
+		upgradesAvailable[SEED_FERTILIZER] = false;//os outros começam como não adquiridos
+		upgradesAvailable[COCO_FERTILIZER] = false;
+		upgradesAvailable[GREAT_PRODUCTION] = false;
+		
+		setUpgradeCost(0, FOOD_PRODUCTION);
+		setUpgradeCost(0, SEED_FERTILIZER);
+		setUpgradeCost(0, COCO_FERTILIZER);
+		setUpgradeCost(0, GREAT_PRODUCTION);
 	}
 	
 	/**
@@ -135,5 +134,72 @@ public class Farm extends Building{
 		}else
 			return MAX_PRODUCTION;
 	}
-	
+
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	@Override
+	public String getIcon() {
+		return iconPath;
+	}
+
+	@Override
+	public int getUnlockCost() {
+		return unlockCost;
+	}
+
+	@Override
+	public int getBuildCost() {
+		return buildCost;
+	}
+
+	@Override
+	public int getOopyiesAllocated() {
+		return oopyiesAllocated;
+	}
+
+	@Override
+	public void allocateOopyies(int oopyies) {
+		oopyiesAllocated = oopyies;
+	}
+
+	@Override
+	public void unlockUpgrade(int upgradeId) throws Exception {
+		if(upgradesAvailable[upgradeId] == true){
+			throw new IllegalArgumentException("Position already unlocked");
+		}else{
+			upgradesAvailable[upgradeId] = true;
+		}
+	}
+
+	@Override
+	public boolean getUpgrade(int upgradeId) throws Exception {
+		if(upgradeId >= upgradeNumber || upgradeId < 0){
+			throw new IllegalArgumentException("Number out of range");
+		} else {
+			return upgradesAvailable[upgradeId];
+		}
+	}
+
+	@Override
+	public int getUpgradeCost(int upgradeId) {
+		return upgradesCost[upgradeId];
+	}
+
+	@Override
+	public void setUpgradeCost(int value, int upgrade) {
+		upgradesCost[upgrade] = value;
+	}
+
+	@Override
+	public void reset() {
+		oopyiesAllocated = 0;
+	}
 }
