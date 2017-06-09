@@ -79,6 +79,39 @@ public class MapaParaUso extends javax.swing.JFrame {
         btnRecursos = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
 
+        btn0x0.setEnabled(true);
+        btn0x1.setEnabled(true);
+        btn0x2.setEnabled(true);
+        btn0x4.setEnabled(true);
+        btn0x3.setEnabled(true);
+        btn1x0.setEnabled(true);
+        btn2x0.setEnabled(true);
+        btn3x0.setEnabled(true);
+        btn4x0.setEnabled(true);
+        btn5x0.setEnabled(true);
+        btn1x1.setEnabled(true);
+        btn1x2.setEnabled(true);
+        btn1x4.setEnabled(true);
+        btn1x3.setEnabled(true);
+        btn2x1.setEnabled(true);
+        btn2x2.setEnabled(true);
+        btn2x3.setEnabled(true);
+        btn2x4.setEnabled(true);
+        btn3x4.setEnabled(true);
+        btn3x1.setEnabled(true);
+        btn3x2.setEnabled(true);
+        btn3x3.setEnabled(true);
+        btn4x1.setEnabled(true);
+        btn4x2.setEnabled(true);
+        btn4x3.setEnabled(true);
+        btn4x4.setEnabled(true);
+        btn5x1.setEnabled(true);
+        btn5x2.setEnabled(true);
+        btn5x3.setEnabled(true);
+        btn5x4.setEnabled(true);
+        
+        
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         
         btn0x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
@@ -204,7 +237,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
          btn1x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn1x1ActionPerformed(evt);
                 }
             });
           
@@ -222,7 +255,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
           btn1x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn1x2ActionPerformed(evt);
                 }
             });
           
@@ -240,7 +273,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
           btn1x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn1x3ActionPerformed(evt);
                 }
             });
           
@@ -258,7 +291,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
           btn1x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn1x4ActionPerformed(evt);
                 }
             });
           
@@ -277,7 +310,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
           btn2x0.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn2x0ActionPerformed(evt);
                 }
             });
           
@@ -295,7 +328,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
           btn2x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn2x1ActionPerformed(evt);
                 }
             });
           
@@ -313,7 +346,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }  
         btn2x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn2x2ActionPerformed(evt);
                 }
             });
           btn2x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
@@ -330,7 +363,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
           btn2x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn2x3ActionPerformed(evt);
                 }
             });
           
@@ -347,7 +380,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn2x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn2x4ActionPerformed(evt);
                 }
             });
         
@@ -365,7 +398,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn3x0.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn3x0ActionPerformed(evt);
                 }
             });
         
@@ -383,7 +416,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn3x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn3x1ActionPerformed(evt);
                 }
             });
         
@@ -401,7 +434,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn3x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn3x2ActionPerformed(evt);
                 }
             });
         
@@ -419,7 +452,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn3x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn3x3ActionPerformed(evt);
                 }
             });
         
@@ -437,7 +470,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn3x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn3x4ActionPerformed(evt);
                 }
             });
         
@@ -456,7 +489,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         
             btn4x0.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn4x0ActionPerformed(evt);
                 }
             });
         
@@ -475,7 +508,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn4x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn4x1ActionPerformed(evt);
                 }
             });
         
@@ -493,7 +526,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn4x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn4x2ActionPerformed(evt);
                 }
             });
         
@@ -511,7 +544,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn4x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn4x3ActionPerformed(evt);
                 }
             });
         
@@ -529,7 +562,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn4x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn4x4ActionPerformed(evt);
                 }
             });
         
@@ -547,7 +580,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn5x0.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn5x0ActionPerformed(evt);
                 }
             });
         
@@ -565,7 +598,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn5x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn5x1ActionPerformed(evt);
                 }
             });
         
@@ -585,7 +618,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         
             btn5x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn5x2ActionPerformed(evt);
                 }
             });
         
@@ -604,7 +637,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn5x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn5x3ActionPerformed(evt);
                 }
             });
         
@@ -622,7 +655,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }
             btn5x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
+                    btn5x4ActionPerformed(evt);
                 }
             });
         

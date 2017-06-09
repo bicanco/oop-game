@@ -81,6 +81,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         labelParaConstruir = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        
         btn0x0.setEnabled(true);
         btn0x1.setEnabled(true);
         btn0x2.setEnabled(true);
@@ -122,13 +123,14 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
             btn0x0.setText("Sale");
-            btn0x0.addActionListener(new java.awt.event.ActionListener() {
+            
+         }
+         btn0x0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn0x0ActionPerformed(evt);
             }
              });
 
-         }
         btn0x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(0, 1)){
             btn0x1.setText(gameData.grid.getName(0, 1));

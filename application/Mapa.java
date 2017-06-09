@@ -24,12 +24,7 @@ public class Mapa extends javax.swing.JFrame {
      * Creates new form Mapa
      */
     public Mapa(GameManager gameData) {
-        this.setResizable(false);
-        //this.setLocationRelativeTo(null);
-        this.gameData = gameData;
-        initComponents();
-        
-        
+        this.se
     }
 
     /**

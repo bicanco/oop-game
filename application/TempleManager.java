@@ -241,7 +241,7 @@ public class TempleManager extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
          this.dispose();
-         new Mapa(gameData).setVisible(true);
+         new MapaParaUso(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
