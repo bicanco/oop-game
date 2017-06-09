@@ -81,7 +81,36 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         labelParaConstruir = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-
+        btn0x0.setEnabled(true);
+        btn0x1.setEnabled(true);
+        btn0x2.setEnabled(true);
+        btn0x4.setEnabled(true);
+        btn0x3.setEnabled(true);
+        btn1x0.setEnabled(true);
+        btn2x0.setEnabled(true);
+        btn3x0.setEnabled(true);
+        btn4x0.setEnabled(true);
+        btn5x0.setEnabled(true);
+        btn1x1.setEnabled(true);
+        btn1x2.setEnabled(true);
+        btn1x4.setEnabled(true);
+        btn1x3.setEnabled(true);
+        btn2x1.setEnabled(true);
+        btn2x2.setEnabled(true);
+        btn2x3.setEnabled(true);
+        btn2x4.setEnabled(true);
+        btn3x4.setEnabled(true);
+        btn3x1.setEnabled(true);
+        btn3x2.setEnabled(true);
+        btn3x3.setEnabled(true);
+        btn4x1.setEnabled(true);
+        btn4x2.setEnabled(true);
+        btn4x3.setEnabled(true);
+        btn4x4.setEnabled(true);
+        btn5x1.setEnabled(true);
+        btn5x2.setEnabled(true);
+        btn5x3.setEnabled(true);
+        btn5x4.setEnabled(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btn0x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
@@ -137,7 +166,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn0x3.setText(gameData.grid.getName(0, 3));
             btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(0,3))));
             btn0x3.setEnabled(false);
-          
+           
         }else {
              // NOI18N
             btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N

@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.logging.Level;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -747,7 +746,21 @@ public class Mapa extends javax.swing.JFrame {
     }//GEN-LAST:event_sairActionPerformed
 
     private void btn0x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x0ActionPerformed
-      
+        
+//        if(gameData.grid.)){
+//             this.dispose();
+//            new FarmManager(gameData).setVisible(true);
+//        }else if(gameData.grid.getName(0,0).equals(BuildingTools.getName(BuildingTools.LAB))){
+//             this.dispose();
+//             new LabManager(gameData).setVisible(true);
+//        }else if(gameData.grid.getName(0,0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+//             this.dispose();
+//             new TempleManager(gameData).setVisible(true);
+//        }else if(gameData.grid.getName(0,0).equals(BuildingTools.getName(BuildingTools.MINE))){
+//             this.dispose();
+//             new MineManager(gameData).setVisible(true);
+//        }
+        
     }//GEN-LAST:event_btn0x0ActionPerformed
 
     private void btn0x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x2ActionPerformed

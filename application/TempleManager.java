@@ -105,6 +105,11 @@ public class TempleManager extends javax.swing.JFrame {
         });
 
         btnSair.setText("Close");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,6 +236,12 @@ public class TempleManager extends javax.swing.JFrame {
     private void CheckBoxGreatRitualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxGreatRitualActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CheckBoxGreatRitualActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+         this.dispose();
+         new Mapa(gameData).setVisible(true);
+    }//GEN-LAST:event_btnSairActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox CheckBoxGemProduction;

@@ -180,7 +180,7 @@ public class MapaParaUso extends javax.swing.JFrame {
                 }
             });
         }else {
-           
+            btn1x0.setEnabled(false);
             btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
             btn1x0.setText("Sale");
            
@@ -785,612 +785,488 @@ public class MapaParaUso extends javax.swing.JFrame {
     }                                    
 
     private void btn0x0ActionPerformed(java.awt.event.ActionEvent evt) {                                     
-        this.dispose();
-         new Principal(gameData).setVisible(true);
+      if(!gameData.grid.isEmpty(0, 0)){
+          this.dispose();
+          if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+       
     }                                      
-
-    private void btn0x2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-         if(type == 1 && btn0x2.getText().equals("Sale")){
-            btn0x2.setText("Farm");
-            btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn0x2.setEnabled(false);
-        }else if(type == 2 && btn0x2.getText().equals("Sale")){
-            btn0x2.setText("Lab");
-            btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn0x2.setEnabled(false);
-        }else if(type == 3 && btn0x2.getText().equals("Sale")){
-            btn0x2.setText("Temple");
-            btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn0x2.setEnabled(false);
-        }else if(type == 4 && btn0x2.getText().equals("Sale")){
-            btn0x2.setText("Mine");
-            btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn0x2.setEnabled(false);
-        
-        }
-    }                                      
-
-    private void btn0x1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-         if(type == 1 && btn0x1.getText().equals("Sale")){
-            btn0x1.setText("Farm");
-          
-            btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn0x1.setEnabled(false);
-        }else if(type == 2 && btn0x1.getText().equals("Sale")){
-            btn0x1.setText("Lab");
-
-            btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn0x1.setEnabled(false);
-        }else if(type == 3 && btn0x1.getText().equals("Sale")){
-            btn0x1.setText("Temple");
-
-            btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn0x1.setEnabled(false);
-        }else if(type == 4 && btn0x1.getText().equals("Sale")){
-            btn0x1.setText("Mine");
-   
-            btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn0x1.setEnabled(false);
-        }
+    private void btn0x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x1ActionPerformed
+       if(!gameData.grid.isEmpty(0, 1)){
+          this.dispose();
+          if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
         
         
-    }                                      
-
-    private void btn0x3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-         if(type == 1 && btn0x3.getText().equals("Sale")){
-            btn0x3.setText("Farm");
-            btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn0x3.setEnabled(false);
-        }else if(type == 2 && btn0x3.getText().equals("Sale")){
-            btn0x3.setText("Lab");
-            btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn0x3.setEnabled(false);
-        }else if(type == 3 && btn0x3.getText().equals("Sale")){
-            btn0x3.setText("Temple");
-            btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn0x3.setEnabled(false);
-        }else if(type == 4 && btn0x3.getText().equals("Sale")){
-            btn0x3.setText("Mine");
-            btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn0x3.setEnabled(false);
-          
-        }
-    }                                      
-
-    private void btn0x4ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-         if(type == 1 && btn0x4.getText().equals("Sale")){
-            btn0x4.setText("Farm");
-            btn0x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn0x4.setEnabled(false);
-        }else if(type == 2 && btn0x4.getText().equals("Sale")){
-            btn0x4.setText("Lab");
-            btn0x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn0x4.setEnabled(false);
-        }else if(type == 3 && btn0x4.getText().equals("Sale")){
-            btn0x4.setText("Temple");
-            btn0x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn0x4.setEnabled(false);
-        }else if(type == 4 && btn0x4.getText().equals("Sale")){
-            btn0x4.setText("Mine");
-            btn0x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn0x4.setEnabled(false);
+    }//GEN-LAST:event_btn0x1ActionPerformed
+     private void btn0x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x2ActionPerformed
+         if(!gameData.grid.isEmpty(0, 2)){
+          this.dispose();
+          if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
         
-            
-        }
-    }                                      
+        
+       
+    }//GEN-LAST:event_btn0x2ActionPerformed
 
-    private void btn1x0ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-         if(type == 1 && btn1x0.getText().equals("Sale")){
-            btn1x0.setText("Farm");
-            btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn1x0.setEnabled(false);
-        }else if(type == 2 && btn1x0.getText().equals("Sale")){
-            btn1x0.setText("Lab");
-            btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn1x0.setEnabled(false);
-        }else if(type == 3 && btn1x0.getText().equals("Sale")){
-            btn1x0.setText("Temple");
-            btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn1x0.setEnabled(false);
-        }else if(type == 4 && btn1x0.getText().equals("Sale")){
-            btn1x0.setText("Mine");
-            btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn1x0.setEnabled(false);   
-        }
-    }                                      
+    private void btn0x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x3ActionPerformed
+         if(!gameData.grid.isEmpty(0, 3)){
+          this.dispose();
+          if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn0x3ActionPerformed
 
-    private void btn1x1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-         if(type == 1 && btn1x1.getText().equals("Sale")){
-            btn1x1.setText("Farm");
-            btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn1x1.setEnabled(false);
-        }else if(type == 2 && btn1x1.getText().equals("Sale")){
-            btn1x1.setText("Lab");
-            btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn1x1.setEnabled(false);
-        }else if(type == 3 && btn1x1.getText().equals("Sale")){
-            btn1x1.setText("Temple");
-            btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn1x1.setEnabled(false);
-        }else if(type == 4 && btn1x1.getText().equals("Sale")){
-            btn1x1.setText("Mine");
-            btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn1x1.setEnabled(false);   
-        }
-    }                                      
+    private void btn0x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x4ActionPerformed
+        if(!gameData.grid.isEmpty(0, 4)){
+          this.dispose();
+          if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn0x4ActionPerformed
 
-    private void btn1x2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-           if(type == 1 && btn1x2.getText().equals("Sale")){
-            btn1x2.setText("Farm");
-            btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn1x2.setEnabled(false);
-        }else if(type == 2 && btn1x2.getText().equals("Sale")){
-            btn1x2.setText("Lab");
-            btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn1x2.setEnabled(false);
-        }else if(type == 3 && btn1x2.getText().equals("Sale")){
-            btn1x2.setText("Temple");
-            btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn1x2.setEnabled(false);
-        }else if(type == 4 && btn1x2.getText().equals("Sale")){
-            btn1x2.setText("Mine");
-            btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn1x2.setEnabled(false);   
-        }
-    }                                      
+    private void btn1x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x0ActionPerformed
+         if(!gameData.grid.isEmpty(1, 0)){
+          this.dispose();
+          if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn1x0ActionPerformed
 
-    private void btn1x3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-           if(type == 1 && btn1x3.getText().equals("Sale")){
-            btn1x3.setText("Farm");
-            btn1x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn1x3.setEnabled(false);
-        }else if(type == 2 && btn1x3.getText().equals("Sale")){
-            btn1x3.setText("Lab");
-            btn1x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn1x3.setEnabled(false);
-        }else if(type == 3 && btn1x3.getText().equals("Sale")){
-            btn1x3.setText("Temple");
-            btn1x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn1x3.setEnabled(false);
-        }else if(type == 4 && btn1x3.getText().equals("Sale")){
-            btn1x3.setText("Mine");
-            btn1x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn1x3.setEnabled(false);   
-        }
-    }                                      
+    private void btn1x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x1ActionPerformed
+         if(!gameData.grid.isEmpty(1, 1)){
+          this.dispose();
+          if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn1x1ActionPerformed
 
-    private void btn1x4ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-           if(type == 1 && btn1x4.getText().equals("Sale")){
-            btn1x4.setText("Farm");
-            btn1x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn1x4.setEnabled(false);
-        }else if(type == 2 && btn1x4.getText().equals("Sale")){
-            btn1x4.setText("Lab");
-            btn1x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn1x4.setEnabled(false);
-        }else if(type == 3 && btn1x4.getText().equals("Sale")){
-            btn1x4.setText("Temple");
-            btn1x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn1x4.setEnabled(false);
-        }else if(type == 4 && btn1x4.getText().equals("Sale")){
-            btn1x4.setText("Mine");
-            btn1x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn1x4.setEnabled(false);   
-        }
-    }                                      
+    private void btn1x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x2ActionPerformed
+        if(!gameData.grid.isEmpty(1, 2)){
+          this.dispose();
+          if(gameData.grid.getName(1,2).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(1, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(1, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(1, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn1x2ActionPerformed
 
-    private void btn2x0ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-        if(type == 1 && btn2x0.getText().equals("Sale")){
-            btn2x0.setText("Farm");
-            btn2x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn2x0.setEnabled(false);
-        }else if(type == 2 && btn2x0.getText().equals("Sale")){
-            btn2x0.setText("Lab");
-            btn2x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn2x0.setEnabled(false);
-        }else if(type == 3 && btn2x0.getText().equals("Sale")){
-            btn2x0.setText("Temple");
-            btn2x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn2x0.setEnabled(false);
-        }else if(type == 4 && btn2x0.getText().equals("Sale")){
-            btn2x0.setText("Mine");
-            btn2x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn2x0.setEnabled(false);   
-        }
-    }                                      
+    private void btn1x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x3ActionPerformed
+        if(!gameData.grid.isEmpty(1, 3)){
+          this.dispose();
+          if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn1x3ActionPerformed
 
-    private void btn2x1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-        if(type == 1 && btn2x1.getText().equals("Sale")){
-            btn2x1.setText("Farm");
-            btn2x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn2x1.setEnabled(false);
-        }else if(type == 2 && btn2x1.getText().equals("Sale")){
-            btn2x1.setText("Lab");
-            btn2x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn2x1.setEnabled(false);
-        }else if(type == 3 && btn2x1.getText().equals("Sale")){
-            btn2x1.setText("Temple");
-            btn2x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn2x1.setEnabled(false);
-        }else if(type == 4 && btn2x1.getText().equals("Sale")){
-            btn2x1.setText("Mine");
-            btn2x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn2x1.setEnabled(false);   
-        }
-    }                                      
+    private void btn1x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x4ActionPerformed
+        if(!gameData.grid.isEmpty(1, 4)){
+          this.dispose();
+          if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn1x4ActionPerformed
 
-    private void btn2x2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-        if(type == 1 && btn2x2.getText().equals("Sale")){
-            btn2x2.setText("Farm");
-            btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn2x2.setEnabled(false);
-        }else if(type == 2 && btn2x2.getText().equals("Sale")){
-            btn2x2.setText("Lab");
-            btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn2x2.setEnabled(false);
-        }else if(type == 3 && btn2x2.getText().equals("Sale")){
-            btn2x2.setText("Temple");
-            btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn2x2.setEnabled(false);
-        }else if(type == 4 && btn2x2.getText().equals("Sale")){
-            btn2x2.setText("Mine");
-            btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn2x2.setEnabled(false);   
-        }
-    }                                      
+    private void btn2x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x0ActionPerformed
+        if(!gameData.grid.isEmpty(2, 0)){
+          this.dispose();
+          if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn2x0ActionPerformed
 
-    private void btn2x3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-        if(type == 1 && btn2x3.getText().equals("Sale")){
-            btn2x3.setText("Farm");
-            btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn2x3.setEnabled(false);
-        }else if(type == 2 && btn2x3.getText().equals("Sale")){
-            btn2x3.setText("Lab");
-            btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn2x3.setEnabled(false);
-        }else if(type == 3 && btn2x3.getText().equals("Sale")){
-            btn2x3.setText("Temple");
-            btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn2x3.setEnabled(false);
-        }else if(type == 4 && btn2x3.getText().equals("Sale")){
-            btn2x3.setText("Mine");
-            btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn2x3.setEnabled(false);   
-        }
-    }                                      
+    private void btn2x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x1ActionPerformed
+        if(!gameData.grid.isEmpty(2, 1)){
+          this.dispose();
+          if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn2x1ActionPerformed
 
-    private void btn2x4ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-        if(type == 1 && btn2x4.getText().equals("Sale")){
-            btn2x4.setText("Farm");
-            btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn2x4.setEnabled(false);
-        }else if(type == 2 && btn2x4.getText().equals("Sale")){
-            btn2x4.setText("Lab");
-            btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn2x4.setEnabled(false);
-        }else if(type == 3 && btn2x4.getText().equals("Sale")){
-            btn2x4.setText("Temple");
-            btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn2x4.setEnabled(false);
-        }else if(type == 4 && btn2x4.getText().equals("Sale")){
-            btn2x4.setText("Mine");
-            btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn2x4.setEnabled(false);   
-        }
-    }                                      
+    private void btn2x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x2ActionPerformed
+        if(!gameData.grid.isEmpty(2, 2)){
+          this.dispose();
+          if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn2x2ActionPerformed
 
-    private void btn3x0ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn3x0.getText().equals("Sale")){
-            btn3x0.setText("Farm");
-            btn3x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn3x0.setEnabled(false);
-        }else if(type == 2 && btn3x0.getText().equals("Sale")){
-            btn3x0.setText("Lab");
-            btn3x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn3x0.setEnabled(false);
-        }else if(type == 3 && btn3x0.getText().equals("Sale")){
-            btn3x0.setText("Temple");
-            btn3x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn3x0.setEnabled(false);
-        }else if(type == 4 && btn3x0.getText().equals("Sale")){
-            btn3x0.setText("Mine");
-            btn3x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn3x0.setEnabled(false);   
-        }
-    }                                      
+    private void btn2x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x3ActionPerformed
+        if(!gameData.grid.isEmpty(2, 3)){
+          this.dispose();
+          if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn2x3ActionPerformed
 
-    private void btn3x1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn3x1.getText().equals("Sale")){
-            btn3x1.setText("Farm");
-            btn3x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn3x1.setEnabled(false);
-        }else if(type == 2 && btn3x1.getText().equals("Sale")){
-            btn3x1.setText("Lab");
-            btn3x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn3x1.setEnabled(false);
-        }else if(type == 3 && btn3x1.getText().equals("Sale")){
-            btn3x1.setText("Temple");
-            btn3x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn3x1.setEnabled(false);
-        }else if(type == 4 && btn3x1.getText().equals("Sale")){
-            btn3x1.setText("Mine");
-            btn3x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn3x1.setEnabled(false);   
-        }
-    }                                      
+    private void btn2x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x4ActionPerformed
+        if(!gameData.grid.isEmpty(2, 4)){
+          this.dispose();
+          if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+      }
+    }//GEN-LAST:event_btn2x4ActionPerformed
 
-    private void btn3x2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-        if(type == 1 && btn3x2.getText().equals("Sale")){
-            btn3x2.setText("Farm");
-            btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn3x2.setEnabled(false);
-        }else if(type == 2 && btn3x2.getText().equals("Sale")){
-            btn3x2.setText("Lab");
-            btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn3x2.setEnabled(false);
-        }else if(type == 3 && btn3x2.getText().equals("Sale")){
-            btn3x2.setText("Temple");
-            btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn3x2.setEnabled(false);
-        }else if(type == 4 && btn3x2.getText().equals("Sale")){
-            btn3x2.setText("Mine");
-            btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn3x2.setEnabled(false);   
+    private void btn3x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x0ActionPerformed
+        if(!gameData.grid.isEmpty(3, 0)){
+          this.dispose();
+          if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
-    }                                      
+    }//GEN-LAST:event_btn3x0ActionPerformed
 
-    private void btn3x3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn3x3.getText().equals("Sale")){
-            btn3x3.setText("Farm");
-            btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn3x3.setEnabled(false);
-        }else if(type == 2 && btn3x3.getText().equals("Sale")){
-            btn3x3.setText("Lab");
-            btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn3x3.setEnabled(false);
-        }else if(type == 3 && btn3x3.getText().equals("Sale")){
-            btn3x3.setText("Temple");
-            btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn3x3.setEnabled(false);
-        }else if(type == 4 && btn3x3.getText().equals("Sale")){
-            btn3x3.setText("Mine");
-            btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn3x3.setEnabled(false);   
+    private void btn3x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x1ActionPerformed
+        if(!gameData.grid.isEmpty(3, 1)){
+          this.dispose();
+          if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
-    }                                      
+    }//GEN-LAST:event_btn3x1ActionPerformed
 
-    private void btn3x4ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn3x4.getText().equals("Sale")){
-            btn3x4.setText("Farm");
-            btn3x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn3x4.setEnabled(false);
-        }else if(type == 2 && btn3x4.getText().equals("Sale")){
-            btn3x4.setText("Lab");
-            btn3x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn3x4.setEnabled(false);
-        }else if(type == 3 && btn3x4.getText().equals("Sale")){
-            btn3x4.setText("Temple");
-            btn3x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn3x4.setEnabled(false);
-        }else if(type == 4 && btn3x4.getText().equals("Sale")){
-            btn3x4.setText("Mine");
-            btn3x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn3x4.setEnabled(false);   
+    private void btn3x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x2ActionPerformed
+        if(!gameData.grid.isEmpty(3, 2)){
+          this.dispose();
+          if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
-    }                                      
+    }//GEN-LAST:event_btn3x2ActionPerformed
 
-    private void btn4x0ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn4x0.getText().equals("Sale")){
-            btn4x0.setText("Farm");
-            btn4x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn4x0.setEnabled(false);
-        }else if(type == 2 && btn4x0.getText().equals("Sale")){
-            btn4x0.setText("Lab");
-            btn4x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn4x0.setEnabled(false);
-        }else if(type == 3 && btn4x0.getText().equals("Sale")){
-            btn4x0.setText("Temple");
-            btn4x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn4x0.setEnabled(false);
-        }else if(type == 4 && btn4x0.getText().equals("Sale")){
-            btn4x0.setText("Mine");
-            btn4x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn4x0.setEnabled(false);   
+    private void btn3x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x3ActionPerformed
+        if(!gameData.grid.isEmpty(3, 3)){
+          this.dispose();
+          if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
-    }                                      
+    }//GEN-LAST:event_btn3x3ActionPerformed
 
-    private void btn4x1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn4x1.getText().equals("Sale")){
-            btn4x1.setText("Farm");
-            btn4x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn4x1.setEnabled(false);
-        }else if(type == 2 && btn4x1.getText().equals("Sale")){
-            btn4x1.setText("Lab");
-            btn4x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn4x1.setEnabled(false);
-        }else if(type == 3 && btn4x1.getText().equals("Sale")){
-            btn4x1.setText("Temple");
-            btn4x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn4x1.setEnabled(false);
-        }else if(type == 4 && btn4x1.getText().equals("Sale")){
-            btn4x1.setText("Mine");
-            btn4x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn4x1.setEnabled(false);   
+    private void btn3x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x4ActionPerformed
+        if(!gameData.grid.isEmpty(3, 4)){
+          this.dispose();
+          if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
-    }                                      
+    }//GEN-LAST:event_btn3x4ActionPerformed
 
-    private void btn4x2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn4x2.getText().equals("Sale")){
-            btn4x2.setText("Farm");
-            btn4x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn4x2.setEnabled(false);
-        }else if(type == 2 && btn4x2.getText().equals("Sale")){
-            btn4x2.setText("Lab");
-            btn4x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn4x2.setEnabled(false);
-        }else if(type == 3 && btn4x2.getText().equals("Sale")){
-            btn4x2.setText("Temple");
-            btn4x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn4x2.setEnabled(false);
-        }else if(type == 4 && btn4x2.getText().equals("Sale")){
-            btn4x2.setText("Mine");
-            btn4x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn4x2.setEnabled(false);   
-        }   
-    }                                      
-
-    private void btn4x3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn4x3.getText().equals("Sale")){
-            btn4x3.setText("Farm");
-            btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn4x3.setEnabled(false);
-        }else if(type == 2 && btn4x3.getText().equals("Sale")){
-            btn4x3.setText("Lab");
-            btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn4x3.setEnabled(false);
-        }else if(type == 3 && btn4x3.getText().equals("Sale")){
-            btn4x3.setText("Temple");
-            btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn4x3.setEnabled(false);
-        }else if(type == 4 && btn4x3.getText().equals("Sale")){
-            btn4x3.setText("Mine");
-            btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn4x3.setEnabled(false);   
+    private void btn4x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x0ActionPerformed
+        if(!gameData.grid.isEmpty(4, 0)){
+          this.dispose();
+          if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
-    }                                      
+    }//GEN-LAST:event_btn4x0ActionPerformed
 
-    private void btn4x4ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn4x4.getText().equals("Sale")){
-            btn4x4.setText("Farm");
-            btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn4x4.setEnabled(false);
-        }else if(type == 2 && btn4x4.getText().equals("Sale")){
-            btn4x4.setText("Lab");
-            btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn4x4.setEnabled(false);
-        }else if(type == 3 && btn4x4.getText().equals("Sale")){
-            btn4x4.setText("Temple");
-            btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn4x4.setEnabled(false);
-        }else if(type == 4 && btn4x4.getText().equals("Sale")){
-            btn4x4.setText("Mine");
-            btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn4x4.setEnabled(false);   
+    private void btn4x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x1ActionPerformed
+        if(!gameData.grid.isEmpty(4, 1)){
+          this.dispose();
+          if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
-    }                                      
+    }//GEN-LAST:event_btn4x1ActionPerformed
 
-    private void btn5x0ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn5x0.getText().equals("Sale")){
-            btn5x0.setText("Farm");
-            btn5x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn5x0.setEnabled(false);
-        }else if(type == 2 && btn5x0.getText().equals("Sale")){
-            btn5x0.setText("Lab");
-            btn5x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn5x0.setEnabled(false);
-        }else if(type == 3 && btn5x0.getText().equals("Sale")){
-            btn5x0.setText("Temple");
-            btn5x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn5x0.setEnabled(false);
-        }else if(type == 4 && btn5x0.getText().equals("Sale")){
-            btn5x0.setText("Mine");
-            btn5x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn5x0.setEnabled(false);   
+    private void btn4x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x2ActionPerformed
+        if(!gameData.grid.isEmpty(4, 2)){
+          this.dispose();
+          if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
-    }                                      
+    }//GEN-LAST:event_btn4x2ActionPerformed
 
-    private void btn5x1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn5x1.getText().equals("Sale")){
-            btn5x1.setText("Farm");
-            btn5x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn5x1.setEnabled(false);
-        }else if(type == 2 && btn5x1.getText().equals("Sale")){
-            btn5x1.setText("Lab");
-            btn5x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn5x1.setEnabled(false);
-        }else if(type == 3 && btn5x1.getText().equals("Sale")){
-            btn5x1.setText("Temple");
-            btn5x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn5x1.setEnabled(false);
-        }else if(type == 4 && btn5x1.getText().equals("Sale")){
-            btn5x1.setText("Mine");
-            btn5x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn5x1.setEnabled(false);   
+    private void btn4x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x3ActionPerformed
+        if(!gameData.grid.isEmpty(4, 3)){
+          this.dispose();
+          if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
-    }                                      
+    }//GEN-LAST:event_btn4x3ActionPerformed
 
-    private void btn5x2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn5x2.getText().equals("Sale")){
-            btn5x2.setText("Farm");
-            btn5x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn5x2.setEnabled(false);
-        }else if(type == 2 && btn5x2.getText().equals("Sale")){
-            btn5x2.setText("Lab");
-            btn5x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn5x2.setEnabled(false);
-        }else if(type == 3 && btn5x2.getText().equals("Sale")){
-            btn5x2.setText("Temple");
-            btn5x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn5x2.setEnabled(false);
-        }else if(type == 4 && btn5x2.getText().equals("Sale")){
-            btn5x2.setText("Mine");
-            btn5x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn5x2.setEnabled(false);   
+    private void btn4x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x4ActionPerformed
+        if(!gameData.grid.isEmpty(4, 4)){
+          this.dispose();
+          if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
-    }                                      
+    }//GEN-LAST:event_btn4x4ActionPerformed
 
-    private void btn5x3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn5x3.getText().equals("Sale")){
-            btn5x3.setText("Farm");
-            btn5x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn5x3.setEnabled(false);
-        }else if(type == 2 && btn5x3.getText().equals("Sale")){
-            btn5x3.setText("Lab");
-            btn5x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn5x3.setEnabled(false);
-        }else if(type == 3 && btn5x3.getText().equals("Sale")){
-            btn5x3.setText("Temple");
-            btn5x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn5x3.setEnabled(false);
-        }else if(type == 4 && btn5x3.getText().equals("Sale")){
-            btn5x3.setText("Mine");
-            btn5x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn5x3.setEnabled(false);   
+    private void btn5x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x0ActionPerformed
+        if(!gameData.grid.isEmpty(5, 0)){
+          this.dispose();
+          if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
-    }                                      
+    }//GEN-LAST:event_btn5x0ActionPerformed
 
-    private void btn5x4ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        if(type == 1 && btn5x4.getText().equals("Sale")){
-            btn5x4.setText("Farm");
-            btn5x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn5x4.setEnabled(false);
-        }else if(type == 2 && btn5x4.getText().equals("Sale")){
-            btn5x4.setText("Lab");
-            btn5x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn5x4.setEnabled(false);
-        }else if(type == 3 && btn5x4.getText().equals("Sale")){
-            btn5x4.setText("Temple");
-            btn5x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn5x4.setEnabled(false);
-        }else if(type == 4 && btn5x4.getText().equals("Sale")){
-            btn5x4.setText("Mine");
-            btn5x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn5x4.setEnabled(false);   
+    private void btn5x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x1ActionPerformed
+        if(!gameData.grid.isEmpty(5, 1)){
+          this.dispose();
+          if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
         }
+    }//GEN-LAST:event_btn5x1ActionPerformed
+
+    private void btn5x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x2ActionPerformed
+        if(!gameData.grid.isEmpty(5, 2)){
+          this.dispose();
+          if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+        }
+    }//GEN-LAST:event_btn5x2ActionPerformed
+
+    private void btn5x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x3ActionPerformed
+        if(!gameData.grid.isEmpty(5, 3)){
+          this.dispose();
+          if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+        }
+    }//GEN-LAST:event_btn5x3ActionPerformed
+
+    private void btn5x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x4ActionPerformed
+        if(!gameData.grid.isEmpty(5, 4)){
+          this.dispose();
+          if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData).setVisible(true);
+          }else if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData).setVisible(true);  
+          }else if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData).setVisible(true);
+          }
+      
+        
+        }//GEN-LAST:event_btn5x4ActionPerformed
     }                                      
 
     private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {                                            
