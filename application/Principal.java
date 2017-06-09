@@ -22,10 +22,11 @@ public class Principal extends javax.swing.JFrame {
     public Principal(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
-        initComponents();  
-        setImage(gameData.iconname);
+      
         value = 0;
         this.gameData = gameData;
+        initComponents();  
+          setImage(gameData.iconname);
         labelUser.setText(gameData.username);
         labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
         labelOopyies.setText(Integer.toString(gameData.resources.getOopyies()));

@@ -5,6 +5,7 @@
  */
 package application;
 
+import core.BuildingTools;
 import core.GameManager;
 import java.io.File;
 import java.io.IOException;
@@ -745,26 +746,24 @@ public class Mapa extends javax.swing.JFrame {
     }//GEN-LAST:event_sairActionPerformed
 
     private void btn0x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x0ActionPerformed
-        // TODO add your handling code here:
-        if(type == 1 && btn0x0.getText().equals("Sale")){
-            btn0x0.setText("Farm");
-            btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); 
-            btn0x0.setEnabled(false);
-        }else if(type == 2 && btn0x0.getText().equals("Sale")){
-            btn0x0.setText("Lab");
-            btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab.png"))); 
-            btn0x0.setEnabled(false);
-        }else if(type == 3 && btn0x0.getText().equals("Sale")){
-            btn0x0.setText("Temple");
-            btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); 
-            btn0x0.setEnabled(false);
-        }else if(type == 4 && btn0x0.getText().equals("Sale")){
-            btn0x0.setText("Mine");
-            btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Mine.png"))); 
-            btn0x0.setEnabled(false);
+            if(gameData.grid.getName(0,0).equals(BuildingTools.getName(BuildingTools.FARM))){
+                  this.dispose();
+               new FarmManager(gameData).setVisible(true);
+            }
+//        if(gameData.grid.)){
+//             this.dispose();
+//            new FarmManager(gameData).setVisible(true);
+//        }else if(gameData.grid.getName(0,0).equals(BuildingTools.getName(BuildingTools.LAB))){
+//             this.dispose();
+//             new LabManager(gameData).setVisible(true);
+//        }else if(gameData.grid.getName(0,0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+//             this.dispose();
+//             new TempleManager(gameData).setVisible(true);
+//        }else if(gameData.grid.getName(0,0).equals(BuildingTools.getName(BuildingTools.MINE))){
+//             this.dispose();
+//             new MineManager(gameData).setVisible(true);
+//        }
         
-            
-        }
     }//GEN-LAST:event_btn0x0ActionPerformed
 
     private void btn0x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x2ActionPerformed

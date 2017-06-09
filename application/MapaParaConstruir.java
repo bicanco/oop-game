@@ -771,6 +771,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         // TODO add your handling code here:
          if(gameData.grid.isEmpty(0, 1)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
             btn0x1.setText(BuildingTools.getName(type));
             btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn0x1.setEnabled(false);
@@ -782,6 +783,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
      private void btn0x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x2ActionPerformed
         if(gameData.grid.isEmpty(0, 2)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
             btn0x2.setText(BuildingTools.getName(type));
             btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn0x2.setEnabled(false);
@@ -795,7 +797,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn0x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x3ActionPerformed
         if(gameData.grid.isEmpty(0, 3)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn0x3.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity())); 
+           btn0x3.setText(BuildingTools.getName(type));
             btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn0x3.setEnabled(false);
             gameData.grid.build(0, 3, BuildingTools.instantiateBuilding(type));
@@ -805,7 +808,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn0x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x4ActionPerformed
        if(gameData.grid.isEmpty(0, 4)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn0x4.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn0x4.setText(BuildingTools.getName(type));
             btn0x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn0x4.setEnabled(false);
             gameData.grid.build(0, 4, BuildingTools.instantiateBuilding(type));
@@ -815,7 +819,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn1x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x0ActionPerformed
         if(gameData.grid.isEmpty(1, 0)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn1x0.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn1x0.setText(BuildingTools.getName(type));
             btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn1x0.setEnabled(false);
             gameData.grid.build(1, 0, BuildingTools.instantiateBuilding(type));
@@ -825,7 +830,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn1x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x1ActionPerformed
         if(gameData.grid.isEmpty(1,1)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn1x1.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn1x1.setText(BuildingTools.getName(type));
             btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn1x1.setEnabled(false);
             gameData.grid.build(1,1, BuildingTools.instantiateBuilding(type));
@@ -835,7 +841,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn1x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x2ActionPerformed
         if(gameData.grid.isEmpty(1,2)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn1x2.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn1x2.setText(BuildingTools.getName(type));
             btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn1x2.setEnabled(false);
             gameData.grid.build(1,2, BuildingTools.instantiateBuilding(type));
@@ -845,7 +852,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn1x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x3ActionPerformed
         if(gameData.grid.isEmpty(1,3)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn1x3.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn1x3.setText(BuildingTools.getName(type));
             btn1x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn1x3.setEnabled(false);
             gameData.grid.build(1,3, BuildingTools.instantiateBuilding(type));
@@ -855,7 +863,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn1x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x4ActionPerformed
         if(gameData.grid.isEmpty(1,4)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn1x4.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn1x4.setText(BuildingTools.getName(type));
             btn1x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn1x4.setEnabled(false);
             gameData.grid.build(1,4, BuildingTools.instantiateBuilding(type));
@@ -865,7 +874,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn2x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x0ActionPerformed
         if(gameData.grid.isEmpty(2,0)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn2x0.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn2x0.setText(BuildingTools.getName(type));
             btn2x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn2x0.setEnabled(false);
             gameData.grid.build(2,0, BuildingTools.instantiateBuilding(type));
@@ -875,7 +885,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn2x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x1ActionPerformed
         if(gameData.grid.isEmpty(2,1)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn2x1.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn2x1.setText(BuildingTools.getName(type));
             btn2x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn2x1.setEnabled(false);
             gameData.grid.build(2,1, BuildingTools.instantiateBuilding(type));
@@ -885,7 +896,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn2x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x2ActionPerformed
         if(gameData.grid.isEmpty(2,2)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn2x2.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn2x2.setText(BuildingTools.getName(type));
             btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn2x2.setEnabled(false);
             gameData.grid.build(2,2, BuildingTools.instantiateBuilding(type));
@@ -895,7 +907,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn2x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x3ActionPerformed
         if(gameData.grid.isEmpty(2,3)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn2x3.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn2x3.setText(BuildingTools.getName(type));
             btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn2x3.setEnabled(false);
             gameData.grid.build(2,3, BuildingTools.instantiateBuilding(type));
@@ -905,7 +918,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn2x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x4ActionPerformed
         if(gameData.grid.isEmpty(2,4)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn2x4.setText(BuildingTools.getName(type));
+          labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn2x4.setText(BuildingTools.getName(type));
             btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn2x4.setEnabled(false);
             gameData.grid.build(2,4, BuildingTools.instantiateBuilding(type));
@@ -915,7 +929,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn3x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x0ActionPerformed
         if(gameData.grid.isEmpty(3,0)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn3x0.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn3x0.setText(BuildingTools.getName(type));
             btn3x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn3x0.setEnabled(false);
             gameData.grid.build(3,0, BuildingTools.instantiateBuilding(type));
@@ -925,7 +940,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn3x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x1ActionPerformed
         if(gameData.grid.isEmpty(3,1)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn3x1.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn3x1.setText(BuildingTools.getName(type));
             btn3x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn3x1.setEnabled(false);
             gameData.grid.build(3,1, BuildingTools.instantiateBuilding(type));
@@ -935,7 +951,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn3x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x2ActionPerformed
         if(gameData.grid.isEmpty(3,2)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn3x2.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn3x2.setText(BuildingTools.getName(type));
             btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn3x2.setEnabled(false);
             gameData.grid.build(3,2, BuildingTools.instantiateBuilding(type));
@@ -945,7 +962,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn3x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x3ActionPerformed
         if(gameData.grid.isEmpty(3,3)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn3x3.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn3x3.setText(BuildingTools.getName(type));
             btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn3x3.setEnabled(false);
             gameData.grid.build(3,3, BuildingTools.instantiateBuilding(type));
@@ -955,7 +973,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn3x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x4ActionPerformed
         if(gameData.grid.isEmpty(3,4)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn3x4.setText(BuildingTools.getName(type));
+           
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));btn3x4.setText(BuildingTools.getName(type));
             btn3x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn3x4.setEnabled(false);
             gameData.grid.build(3,4, BuildingTools.instantiateBuilding(type));
@@ -965,7 +984,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn4x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x0ActionPerformed
         if(gameData.grid.isEmpty(4,0)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn4x0.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn4x0.setText(BuildingTools.getName(type));
             btn4x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn4x0.setEnabled(false);
             gameData.grid.build(4,0, BuildingTools.instantiateBuilding(type));
@@ -975,7 +995,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn4x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x1ActionPerformed
          if(gameData.grid.isEmpty(4,1)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn4x1.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn4x1.setText(BuildingTools.getName(type));
             btn4x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn4x1.setEnabled(false);
             gameData.grid.build(4,1, BuildingTools.instantiateBuilding(type));
@@ -985,7 +1006,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn4x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x2ActionPerformed
          if(gameData.grid.isEmpty(4,2)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn4x2.setText(BuildingTools.getName(type));
+          labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn4x2.setText(BuildingTools.getName(type));
             btn4x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn4x2.setEnabled(false);
             gameData.grid.build(4,2, BuildingTools.instantiateBuilding(type));
@@ -995,7 +1017,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn4x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x3ActionPerformed
          if(gameData.grid.isEmpty(4,3)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn4x3.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn4x3.setText(BuildingTools.getName(type));
             btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn4x3.setEnabled(false);
             gameData.grid.build(4,3, BuildingTools.instantiateBuilding(type));
@@ -1005,7 +1028,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn4x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x4ActionPerformed
          if(gameData.grid.isEmpty(4,4)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn4x4.setText(BuildingTools.getName(type));
+          labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn4x4.setText(BuildingTools.getName(type));
             btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn4x4.setEnabled(false);
             gameData.grid.build(4,4, BuildingTools.instantiateBuilding(type));
@@ -1015,7 +1039,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn5x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x0ActionPerformed
         if(gameData.grid.isEmpty(5,0)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn5x0.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn5x0.setText(BuildingTools.getName(type));
             btn5x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn5x0.setEnabled(false);
             gameData.grid.build(5,0, BuildingTools.instantiateBuilding(type));
@@ -1025,7 +1050,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn5x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x1ActionPerformed
         if(gameData.grid.isEmpty(5,1)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn5x1.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn5x1.setText(BuildingTools.getName(type));
             btn5x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn5x1.setEnabled(false);
             gameData.grid.build(5,1, BuildingTools.instantiateBuilding(type));
@@ -1035,7 +1061,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn5x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x2ActionPerformed
         if(gameData.grid.isEmpty(5,2)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn5x2.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn5x2.setText(BuildingTools.getName(type));
             btn5x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn5x2.setEnabled(false);
             gameData.grid.build(5,2, BuildingTools.instantiateBuilding(type));
@@ -1045,7 +1072,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn5x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x3ActionPerformed
         if(gameData.grid.isEmpty(5,3)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn5x3.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn5x3.setText(BuildingTools.getName(type));
             btn5x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn5x3.setEnabled(false);
             gameData.grid.build(5,3, BuildingTools.instantiateBuilding(type));
@@ -1055,7 +1083,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void btn5x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x4ActionPerformed
         if(gameData.grid.isEmpty(5,4)&& gameData.resources.getCreativity() >= BuildingTools.getBuildCost(type)){
            gameData.resources.updateCreativity(-BuildingTools.getBuildCost(type));
-            btn5x4.setText(BuildingTools.getName(type));
+           labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+           btn5x4.setText(BuildingTools.getName(type));
             btn5x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + BuildingTools.getIcon(type))));
             btn5x4.setEnabled(false);
             gameData.grid.build(5,4, BuildingTools.instantiateBuilding(type));

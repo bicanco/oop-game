@@ -20,9 +20,10 @@ public class Recursos extends javax.swing.JFrame {
     public Recursos(GameManager gameData, int from) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
-        initComponents();
+        
         this.from = from;
         this.gameData = gameData;
+        initComponents();
         labelGreatRubies.setText(Integer.toString(this.gameData.resources.getGreatRubies()));
         labelJavaSeeds.setText(Integer.toString(this.gameData.resources.getJavaSeeds()));
         labelMagicPerls.setText(Integer.toString(this.gameData.resources.getMagicPerls()));
