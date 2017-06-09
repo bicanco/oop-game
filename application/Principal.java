@@ -46,24 +46,24 @@ public class Principal extends javax.swing.JFrame {
         
     }
     
-    
-     public class atualiza implements ActionListener{
-         public void actionPerformed(ActionEvent evt){
-        int n = value;
-        if(n<100){
-            n++;
-                
-        }else{
-          labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
-           timer.stop();
-           value  = 0;
-           timer.start();
-        }
-     
-         
-         }
-     }
-    
+//    
+//     public class atualiza implements ActionListener{
+//         public void actionPerformed(ActionEvent evt){
+//        int n = value;
+//        if(n<100){
+//            n++;
+//                
+//        }else{
+//          labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+//           timer.stop();
+//           value  = 0;
+//           timer.start();
+//        }
+//     
+//         
+//         }
+//     }
+//    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -90,6 +90,9 @@ public class Principal extends javax.swing.JFrame {
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
             }
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -245,7 +248,7 @@ public class Principal extends javax.swing.JFrame {
     private void btnMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
         // TODO add your handling code here:
          this.dispose();
-        new Mapa(gameData).setVisible(true);
+        new MapaParaUso(gameData).setVisible(true);
     }//GEN-LAST:event_btnMapaActionPerformed
 
     private void btnTrocasDiariasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocasDiariasActionPerformed
@@ -260,21 +263,20 @@ public class Principal extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-      timer = new Timer(100, new atualiza());
-        
-        timer.start();
-        
+    
         
     }//GEN-LAST:event_formWindowOpened
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         
-        timer = new Timer(100, new atualiza());
-        
-        timer.start();
-        
     }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosing
+   
+    
     private Timer timer;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLojaVirtual;
