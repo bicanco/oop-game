@@ -3,6 +3,8 @@ package core;
 import application.Login;
 import buildings.Building;
 import buildings.Farm;
+import java.awt.Frame;
+import javax.swing.JFrame;
 
 /**
  * Classe que gerencia o núcleo do jogo e da partida.
@@ -19,6 +21,7 @@ public class Game {
             public void run() {
                 
                 new Login(gameData).setVisible(true);
+                
             }
         });
 		

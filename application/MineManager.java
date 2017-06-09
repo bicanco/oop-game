@@ -17,6 +17,8 @@ public class MineManager extends javax.swing.JFrame {
      * Creates new form MineManager
      */
     public MineManager(GameManager gameData) {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
     }

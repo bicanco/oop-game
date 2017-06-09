@@ -20,6 +20,8 @@ public class LojaVirtual extends javax.swing.JFrame {
      * Creates new form LojaVirtual
      */
     public LojaVirtual(GameManager gameData) {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
         

@@ -20,6 +20,8 @@ public class Principal extends javax.swing.JFrame {
     int value;
     GameManager gameData;
     public Principal(GameManager gameData) {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         initComponents();  
         setImage(gameData.iconname);
         value = 0;

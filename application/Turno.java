@@ -21,6 +21,8 @@ public class Turno extends javax.swing.JFrame {
      * Creates new form Turno
      */
     public Turno(GameManager gameData) {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         this.gameData = gameData;
              
         initComponents();

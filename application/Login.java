@@ -17,11 +17,14 @@ import javax.swing.event.DocumentEvent;
 public class Login extends javax.swing.JFrame {
     String s = new String("User");
     GameManager gameData;
+    
     int image; //0 => cat, 1=>Man, 2=>Mask
     /**
      * Creates new form Login
      */
     public Login(GameManager data) {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         initComponents();
         jButton1.setEnabled(false);
         gameData = data;

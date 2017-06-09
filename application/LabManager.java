@@ -17,6 +17,8 @@ public class LabManager extends javax.swing.JFrame {
      * Creates new form LabManager
      */
     public LabManager(GameManager gameData) {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
     }

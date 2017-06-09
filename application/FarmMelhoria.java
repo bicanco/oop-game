@@ -18,6 +18,8 @@ public class FarmMelhoria extends javax.swing.JFrame {
      * Creates new form FarmUso
      */
     public FarmMelhoria(GameManager gameData) {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));

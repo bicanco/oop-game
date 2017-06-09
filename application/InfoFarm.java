@@ -15,6 +15,7 @@ public class InfoFarm extends javax.swing.JFrame {
      * Creates new form InfoFarm
      */
     public InfoFarm() {
+        this.setResizable(false);
         initComponents();
     }
 

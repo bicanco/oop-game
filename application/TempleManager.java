@@ -17,6 +17,8 @@ public class TempleManager extends javax.swing.JFrame {
      * Creates new form TempleManager
      */
     public TempleManager(GameManager gameData) {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
     }

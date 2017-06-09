@@ -17,6 +17,8 @@ public class LabMelhoria extends javax.swing.JFrame {
      * Creates new form LabMelhoria
      */
     public LabMelhoria(GameManager gameData) {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));

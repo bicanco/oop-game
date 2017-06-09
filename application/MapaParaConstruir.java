@@ -22,6 +22,8 @@ public class MapaParaConstruir extends javax.swing.JFrame {
      * Creates new form Mapa
      */
     public MapaParaConstruir(GameManager gameData, int build) {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
          this.gameData = gameData;
          type = build;
         initComponents();

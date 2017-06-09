@@ -15,6 +15,7 @@ public class InfoTemple extends javax.swing.JFrame {
      * Creates new form InfoTemple
      */
     public InfoTemple() {
+        this.setResizable(false);
         initComponents();
     }
 

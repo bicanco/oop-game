@@ -17,6 +17,8 @@ public class MineMelhoria extends javax.swing.JFrame {
      * Creates new form MineMelhoria
      */
     public MineMelhoria(GameManager gameData) {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));

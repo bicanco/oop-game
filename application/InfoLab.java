@@ -15,6 +15,7 @@ public class InfoLab extends javax.swing.JFrame {
      * Creates new form InfoLab
      */
     public InfoLab() {
+        this.setResizable(false);
         initComponents();
     }
 

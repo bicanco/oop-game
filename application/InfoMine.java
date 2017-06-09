@@ -15,6 +15,7 @@ public class InfoMine extends javax.swing.JFrame {
      * Creates new form InfoMine
      */
     public InfoMine() {
+        this.setResizable(false);
         initComponents();
     }
 
