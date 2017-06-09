@@ -18,7 +18,7 @@ public class MineManager extends javax.swing.JFrame {
      */
     public MineManager(GameManager gameData) {
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+       // this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
     }

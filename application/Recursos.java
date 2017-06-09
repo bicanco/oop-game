@@ -19,7 +19,7 @@ public class Recursos extends javax.swing.JFrame {
      */
     public Recursos(GameManager gameData, int from) {
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
         initComponents();
         this.from = from;
         this.gameData = gameData;

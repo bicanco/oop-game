@@ -24,9 +24,10 @@ public class Mapa extends javax.swing.JFrame {
      */
     public Mapa(GameManager gameData) {
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
-        initComponents();
+        //this.setLocationRelativeTo(null);
         this.gameData = gameData;
+        initComponents();
+        
         
     }
 
@@ -77,277 +78,493 @@ public class Mapa extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         btn0x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn0x0.setText("Sale");
-        btn0x0.addActionListener(new java.awt.event.ActionListener() {
+         if(!gameData.grid.isEmpty(0, 0)){
+            btn0x0.setText(gameData.grid.getName(0, 0));
+            btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(0,0))));
+           
+          
+        }else {
+              btn0x0.setEnabled(false);
+            btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn0x0.setText("Sale");
+            btn0x0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn0x0ActionPerformed(evt);
             }
-        });
+             });
 
+         }
         btn0x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn0x1.setText("Sale");
-        btn0x1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn0x1ActionPerformed(evt);
-            }
-        });
-
-        btn0x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn0x2.setText("Sale");
-        btn0x2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn0x2ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(0, 1)){
+            btn0x1.setText(gameData.grid.getName(0, 1));
+            btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(0,1))));
+            
+          
+        }else {
+            btn0x1.setEnabled(false);
+            btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn0x1.setText("Sale");
+            btn0x1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn0x1ActionPerformed(evt);
+                }
+            });
+        }
+         btn0x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(0, 2)){
+            btn0x2.setText(gameData.grid.getName(0, 2));
+            btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(0,2))));
+            
+          
+        }else {
+           btn0x2.setEnabled(false);
+            btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn0x2.setText("Sale");
+            btn0x2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn0x2ActionPerformed(evt);
+                }
+            });
+        }
+        btn0x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11));
+        if(!gameData.grid.isEmpty(0, 3)){
+            btn0x3.setText(gameData.grid.getName(0, 3));
+            btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(0,3))));
+            
+          
+        }else {
+            btn0x3.setEnabled(false);
+            btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn0x3.setText("Sale");
+            btn0x3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn0x3ActionPerformed(evt);
+                }
+            });
+        }
         btn0x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn0x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn0x4.setText("Sale");
-        btn0x4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn0x4ActionPerformed(evt);
-            }
-        });
-
-        btn0x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn0x3.setText("Sale");
-        btn0x3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn0x3ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(0, 4)){
+            btn0x4.setText(gameData.grid.getName(0, 4));
+            btn0x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(0,4))));
+           
+          
+        }else {
+             btn0x4.setEnabled(false);
+            btn0x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn0x4.setText("Sale");
+            btn0x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn0x4ActionPerformed(evt);
+                }
+            });
+        }
+        
         btn1x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn1x0.setText("Sale");
-        btn1x0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1x0ActionPerformed(evt);
-            }
-        });
-
-        btn2x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn2x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn2x0.setText("Sale");
-        btn2x0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2x0ActionPerformed(evt);
-            }
-        });
-
-        btn3x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn3x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn3x0.setText("Sale");
-        btn3x0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3x0ActionPerformed(evt);
-            }
-        });
-
-        btn4x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn4x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn4x0.setText("Sale");
-        btn4x0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn4x0ActionPerformed(evt);
-            }
-        });
-
-        btn5x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn5x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn5x0.setText("Sale");
-        btn5x0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn5x0ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(1, 0)){
+            btn1x0.setText(gameData.grid.getName(1, 0));
+            btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(1,0))));
+           
+          
+        }else {
+             btn1x0.setEnabled(false);
+            btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn1x0.setText("Sale");
+            btn1x0.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+        }
         btn1x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn1x1.setText("Sale");
-        btn1x1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1x1ActionPerformed(evt);
-            }
-        });
-
-        btn1x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn1x2.setText("Sale");
-        btn1x2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1x2ActionPerformed(evt);
-            }
-        });
-
-        btn1x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn1x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn1x4.setText("Sale");
-        btn1x4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1x4ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(1, 1)){
+            btn1x1.setText(gameData.grid.getName(1, 1));
+            btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(1,1))));
+           
+          
+        }else {
+             btn1x1.setEnabled(false);
+            btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn1x1.setText("Sale");
+            btn1x1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x1ActionPerformed(evt);
+                }
+            });
+        }
+        btn1x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18Nbtn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+        if(!gameData.grid.isEmpty(1, 2)){
+            btn1x2.setText(gameData.grid.getName(1, 2));
+            btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(1,2))));
+            
+          
+        }else {
+            btn1x2.setEnabled(false);
+            btn1x2.setText("Sale");
+            btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png")));
+            btn1x2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x2ActionPerformed(evt);
+                }
+            });
+        }
         btn1x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn1x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn1x3.setText("Sale");
-        btn1x3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1x3ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(1, 3)){
+            btn1x3.setText(gameData.grid.getName(1, 3));
+            btn1x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(1,3))));
+           
+          
+        }else {
+             btn1x3.setEnabled(false);
+            btn1x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn1x3.setText("Sale");
+            btn1x3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x3ActionPerformed(evt);
+                }
+            });
+        }
+        btn1x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(1, 4)){
+            btn1x4.setText(gameData.grid.getName(1, 4));
+            btn1x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(1,4))));
+           
+          
+        }else {
+            btn1x4.setEnabled(false);
+            btn1x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn1x4.setText("Sale");
+            btn1x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x4ActionPerformed(evt);
+                }
+            });
+        }
+        
+        btn2x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(2, 0)){
+            btn2x0.setText(gameData.grid.getName(2, 0));
+            btn2x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(2,0))));
+           
+          
+        }else {
+             btn2x0.setEnabled(false);
+            btn2x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn2x0.setText("Sale");
+            btn2x0.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn2x0ActionPerformed(evt);
+                }
+            });
+        }
         btn2x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn2x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn2x1.setText("Sale");
-        btn2x1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2x1ActionPerformed(evt);
-            }
-        });
-
-        btn2x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn2x2.setText("Sale");
-        btn2x2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2x2ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(2,1)){
+            btn2x1.setText(gameData.grid.getName(2,1));
+            btn2x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(2,1))));
+           
+          
+        }else {
+             btn2x1.setEnabled(false);
+            btn2x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn2x1.setText("Sale");
+            btn2x1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn2x1ActionPerformed(evt);
+                }
+            });
+        }
+         btn2x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(2,2)){
+            btn2x2.setText(gameData.grid.getName(2,2));
+            btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(2,2))));
+            
+          
+        }else {
+           btn2x2.setEnabled(false);
+            btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn2x2.setText("Sale");
+            btn2x2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn2x2ActionPerformed(evt);
+                }
+            });
+        }
         btn2x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn2x3.setText("Sale");
-        btn2x3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2x3ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(2,3)){
+            btn2x3.setText(gameData.grid.getName(2,3));
+            btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(2,3))));
+            
+          
+        }else {
+            btn2x3.setEnabled(false);
+            btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn2x3.setText("Sale");
+            btn2x3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn2x3ActionPerformed(evt);
+                }
+            });
+        }
         btn2x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn2x4.setText("Sale");
-        btn2x4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2x4ActionPerformed(evt);
-            }
-        });
-
-        btn3x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn3x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn3x4.setText("Sale");
-        btn3x4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3x4ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(2,4)){
+            btn2x4.setText(gameData.grid.getName(2,4));
+            btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(2,4))));
+            
+          
+        }else {
+           btn2x4.setEnabled(false); 
+            btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn2x4.setText("Sale");
+            btn2x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn2x4ActionPerformed(evt);
+                }
+            });
+        }
+        
+        btn3x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(3, 0)){
+            btn3x0.setText(gameData.grid.getName(3, 0));
+            btn3x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,0))));
+            
+          
+        }else {
+            btn3x0.setEnabled(false);
+            btn3x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn3x0.setText("Sale");
+            btn3x0.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn3x0ActionPerformed(evt);
+                }
+            });
+        }
+        
         btn3x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn3x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn3x1.setText("Sale");
-        btn3x1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3x1ActionPerformed(evt);
-            }
-        });
-
-        btn3x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn3x2.setText("Sale");
-        btn3x2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3x2ActionPerformed(evt);
-            }
-        });
-
-        btn3x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn3x3.setText("Sale");
-        btn3x3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3x3ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(3,1)){
+            btn3x1.setText(gameData.grid.getName(3,1));
+            btn3x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,1))));
+           
+          
+        }else {
+            btn3x1.setEnabled(false);
+            btn3x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn3x1.setText("Sale");
+            btn3x1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn3x1ActionPerformed(evt);
+                }
+            });
+        }
+         btn3x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(3,2)){
+            btn3x2.setText(gameData.grid.getName(3,2));
+            btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,2))));
+           
+          
+        }else {
+            btn3x2.setEnabled(false);
+            btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn3x2.setText("Sale");
+            btn3x2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn3x2ActionPerformed(evt);
+                }
+            });
+        }
+         btn3x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(3,3)){
+            btn3x3.setText(gameData.grid.getName(3,3));
+            btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,3))));
+           
+          
+        }else {
+            btn3x3.setEnabled(false);
+            btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn3x3.setText("Sale");
+            btn3x3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn3x3ActionPerformed(evt);
+                }
+            });
+        }
+        btn3x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(3,4)){
+            btn3x4.setText(gameData.grid.getName(3,4));
+            btn3x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,4))));
+            
+          
+        }else {
+            btn3x4.setEnabled(false);
+            btn3x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn3x4.setText("Sale");
+            btn3x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn3x4ActionPerformed(evt);
+                }
+            });
+        }
+        btn4x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(4, 0)){
+            btn4x0.setText(gameData.grid.getName(4, 0));
+            btn4x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,0))));
+           
+          
+        }else {
+             btn4x0.setEnabled(false);
+            btn4x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn4x0.setText("Sale");
+            btn4x0.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn4x0ActionPerformed(evt);
+                }
+            });
+        }
         btn4x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn4x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn4x1.setText("Sale");
-        btn4x1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn4x1ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(4,1)){
+            btn4x1.setText(gameData.grid.getName(4,1));
+            btn4x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,1))));
+            
+          
+        }else {
+            btn4x1.setEnabled(false);
+            btn4x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn4x1.setText("Sale");
+            btn4x1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn4x1ActionPerformed(evt);
+                }
+            });
+        }
         btn4x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn4x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn4x2.setText("Sale");
-        btn4x2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn4x2ActionPerformed(evt);
-            }
-        });
-
-        btn4x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn4x3.setText("Sale");
-        btn4x3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn4x3ActionPerformed(evt);
-            }
-        });
-
-        btn4x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn4x4.setText("Sale");
-        btn4x4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn4x4ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(4,2)){
+            btn4x2.setText(gameData.grid.getName(4,2));
+            btn4x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,2))));
+           
+          
+        }else {
+             btn4x2.setEnabled(false);
+            btn4x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn4x2.setText("Sale");
+            btn4x2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn4x2ActionPerformed(evt);
+                }
+            });
+        }
+         btn4x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(4,3)){
+            btn4x3.setText(gameData.grid.getName(4,3));
+            btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,3))));
+            
+        }else {
+           btn4x3.setEnabled(false);
+          
+            btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn4x3.setText("Sale");
+            btn4x3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn4x3ActionPerformed(evt);
+                }
+            });
+        }
+         btn4x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(4,4)){
+            btn4x4.setText(gameData.grid.getName(4,4));
+            btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,4))));
+           
+          
+        }else {
+            btn4x4.setEnabled(false);
+            btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn4x4.setText("Sale");
+            btn4x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn4x4ActionPerformed(evt);
+                }
+            });
+        }
+        btn5x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(5, 0)){
+            btn5x0.setText(gameData.grid.getName(5, 0));
+            btn5x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(5,0))));
+            
+          
+        }else {
+            btn5x0.setEnabled(false);
+            btn5x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn5x0.setText("Sale");
+            btn5x0.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn5x0ActionPerformed(evt);
+                }
+            });
+        }
+        
         btn5x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn5x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn5x1.setText("Sale");
-        btn5x1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn5x1ActionPerformed(evt);
-            }
-        });
+        if(!gameData.grid.isEmpty(5,1)){
+            btn5x1.setText(gameData.grid.getName(5,1));
+            btn5x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(5,1))));
+           
+          
+        }else {
+             btn5x1.setEnabled(false);
+            btn5x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn5x1.setText("Sale");
+            btn5x1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn5x1ActionPerformed(evt);
+                }
+            });
+        }
+         btn5x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(5,2)){
+            btn5x2.setText(gameData.grid.getName(5,2));
+            btn5x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(5,2))));
+           
+          
+        }else {
+            btn5x2.setEnabled(false);
+            btn5x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn5x2.setText("Sale");
+            btn5x2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn5x2ActionPerformed(evt);
+                }
+            });
+        }
+         btn5x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
 
-        btn5x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn5x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn5x2.setText("Sale");
-        btn5x2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn5x2ActionPerformed(evt);
-            }
-        });
-
-        btn5x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn5x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn5x3.setText("Sale");
-        btn5x3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn5x3ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(5,3)){
+            btn5x3.setText(gameData.grid.getName(5,3));
+            btn5x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(5,3))));
+           
+          
+        }else {
+             btn5x3.setEnabled(false);
+                       btn5x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn5x3.setText("Sale");
+            btn5x3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn5x3ActionPerformed(evt);
+                }
+            });
+        }
         btn5x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        btn5x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-        btn5x4.setText("Sale");
-        btn5x4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn5x4ActionPerformed(evt);
-            }
-        });
-
+        if(!gameData.grid.isEmpty(5,4)){
+            btn5x4.setText(gameData.grid.getName(5,4));
+            btn5x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(5,4))));
+           
+          
+        }else {
+             btn5x4.setEnabled(false);
+            btn5x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
+            btn5x4.setText("Sale");
+            btn5x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn5x4ActionPerformed(evt);
+                }
+            });
+        }
         sair.setText("Sair");
         sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

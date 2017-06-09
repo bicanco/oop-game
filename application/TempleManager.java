@@ -18,7 +18,7 @@ public class TempleManager extends javax.swing.JFrame {
      */
     public TempleManager(GameManager gameData) {
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
     }

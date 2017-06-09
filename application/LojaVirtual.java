@@ -21,7 +21,7 @@ public class LojaVirtual extends javax.swing.JFrame {
      */
     public LojaVirtual(GameManager gameData) {
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
         

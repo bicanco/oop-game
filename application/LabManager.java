@@ -18,7 +18,7 @@ public class LabManager extends javax.swing.JFrame {
      */
     public LabManager(GameManager gameData) {
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+       // this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
     }

@@ -18,7 +18,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
      */
     public TempleMelhoria(GameManager gameData) {
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));

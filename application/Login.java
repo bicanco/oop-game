@@ -24,7 +24,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login(GameManager data) {
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+      //  this.setLocationRelativeTo(null);
         initComponents();
         jButton1.setEnabled(false);
         gameData = data;

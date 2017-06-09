@@ -22,7 +22,7 @@ public class Turno extends javax.swing.JFrame {
      */
     public Turno(GameManager gameData) {
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
         this.gameData = gameData;
              
         initComponents();

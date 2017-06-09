@@ -21,7 +21,7 @@ public class Principal extends javax.swing.JFrame {
     GameManager gameData;
     public Principal(GameManager gameData) {
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
         initComponents();  
         setImage(gameData.iconname);
         value = 0;

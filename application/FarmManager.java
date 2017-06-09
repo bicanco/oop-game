@@ -19,7 +19,7 @@ public class FarmManager extends javax.swing.JFrame {
      */
     public FarmManager(GameManager gameData) {
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
         String[] messageStrings = {"Seeds", "Cocos"};
