@@ -21,6 +21,7 @@ public class TempleManager extends javax.swing.JFrame {
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
+        labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
     }
 
     /**

@@ -24,6 +24,7 @@ public class FarmManager extends javax.swing.JFrame {
         initComponents();
         String[] messageStrings = {"Seeds", "Cocos"};
         JComboBox<String> ComboBoxFoodProduction = new JComboBox<String>(messageStrings);
+        labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
     }
 
     /**

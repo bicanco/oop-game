@@ -86,11 +86,6 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn0x0.setText(gameData.grid.getName(0, 0));
             btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(0,0))));
             btn0x0.setEnabled(true);
-            btn0x0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn0x0ActionPerformed(evt);
-            }
-             });
             
           
         }else {
@@ -100,33 +95,35 @@ public class MapaParaUso extends javax.swing.JFrame {
             
 
          }
+         btn0x0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn0x0ActionPerformed(evt);
+            }
+             });
+            
         btn0x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(0, 1)){
             btn0x1.setText(gameData.grid.getName(0, 1));
             btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(0,1))));
             btn0x1.setEnabled(true);
-            btn0x1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn0x1ActionPerformed(evt);
-                }
-            });
-          
+            
         }else {
             btn0x1.setEnabled(false);
             btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
             btn0x1.setText("Sale");
             
         }
+        btn0x1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn0x1ActionPerformed(evt);
+                }
+            });
+          
          btn0x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(0, 2)){
             btn0x2.setText(gameData.grid.getName(0, 2));
             btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(0,2))));
              btn0x2.setEnabled(true); 
-            btn0x2.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn0x2ActionPerformed(evt);
-                }
-            });
           
         }else {
            btn0x2.setEnabled(false);
@@ -134,16 +131,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn0x2.setText("Sale");
            
         }
+          btn0x2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn0x2ActionPerformed(evt);
+                }
+            });
+          
         btn0x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11));
         if(!gameData.grid.isEmpty(0, 3)){
             btn0x3.setText(gameData.grid.getName(0, 3));
             btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(0,3))));
              btn0x3.setEnabled(true);
-            btn0x3.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn0x3ActionPerformed(evt);
-                }
-            });
           
         }else {
             btn0x3.setEnabled(false);
@@ -151,16 +149,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn0x3.setText("Sale");
             
         }
+          btn0x3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn0x3ActionPerformed(evt);
+                }
+            });
+          
         btn0x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(0, 4)){
             btn0x4.setText(gameData.grid.getName(0, 4));
             btn0x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(0,4))));
            btn0x4.setEnabled(true);
-            btn0x4.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn0x4ActionPerformed(evt);
-                }
-            });
           
         }else {
              btn0x4.setEnabled(false);
@@ -168,50 +167,52 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn0x4.setText("Sale");
             
         }
-        
+          btn0x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn0x4ActionPerformed(evt);
+                }
+            });
+          
         btn1x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(1, 0)){
             btn1x0.setText(gameData.grid.getName(1, 0));
             btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(1,0))));
              btn1x0.setEnabled(true);
-            btn1x0.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
+          
         }else {
             btn1x0.setEnabled(false);
             btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
             btn1x0.setText("Sale");
            
         }
+          btn1x0.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
         btn1x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(1, 1)){
             btn1x1.setText(gameData.grid.getName(1, 1));
             btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(1,1))));
             btn1x1.setEnabled(true);
-            btn1x1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
-          
+           
         }else {
              btn1x1.setEnabled(false);
             btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
             btn1x1.setText("Sale");
             
         }
+         btn1x1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+          
         btn1x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18Nbtn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
         if(!gameData.grid.isEmpty(1, 2)){
             btn1x2.setText(gameData.grid.getName(1, 2));
             btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(1,2))));
              btn1x2.setEnabled(true);
-            btn1x2.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
             btn1x2.setEnabled(false);
@@ -219,16 +220,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png")));
            
         }
+          btn1x2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+          
         btn1x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(1, 3)){
             btn1x3.setText(gameData.grid.getName(1, 3));
             btn1x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(1,3))));
             btn1x3.setEnabled(true);
-            btn1x3.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
              btn1x3.setEnabled(false);
@@ -236,16 +238,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn1x3.setText("Sale");
             
         }
+          btn1x3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+          
         btn1x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(1, 4)){
             btn1x4.setText(gameData.grid.getName(1, 4));
             btn1x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(1,4))));
              btn1x4.setEnabled(true);
-            btn1x4.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
             btn1x4.setEnabled(false);
@@ -253,17 +256,18 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn1x4.setText("Sale");
             
         }
+          btn1x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+          
         
         btn2x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(2, 0)){
             btn2x0.setText(gameData.grid.getName(2, 0));
             btn2x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(2,0))));
             btn2x0.setEnabled(true);
-            btn2x0.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
              btn2x0.setEnabled(false);
@@ -271,16 +275,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn2x0.setText("Sale");
             
         }
+          btn2x0.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+          
         btn2x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(2,1)){
             btn2x1.setText(gameData.grid.getName(2,1));
             btn2x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(2,1))));
             btn2x1.setEnabled(true);
-            btn2x1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
              btn2x1.setEnabled(false);
@@ -288,33 +293,34 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn2x1.setText("Sale");
             
         }
+          btn2x1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+          
          btn2x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(2,2)){
             btn2x2.setText(gameData.grid.getName(2,2));
             btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(2,2))));
             btn2x2.setEnabled(true);
-            btn2x2.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
            btn2x2.setEnabled(false);
             btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
             btn2x2.setText("Sale");
             
-        }
-        btn2x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        if(!gameData.grid.isEmpty(2,3)){
-            btn2x3.setText(gameData.grid.getName(2,3));
-            btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(2,3))));
-            btn2x3.setEnabled(true);
-            btn2x3.addActionListener(new java.awt.event.ActionListener() {
+        }  
+        btn2x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn1x0ActionPerformed(evt);
                 }
             });
+          btn2x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(2,3)){
+            btn2x3.setText(gameData.grid.getName(2,3));
+            btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(2,3))));
+            btn2x3.setEnabled(true);
           
         }else {
             btn2x3.setEnabled(false);
@@ -322,33 +328,34 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn2x3.setText("Sale");
             
         }
+          btn2x3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+          
         btn2x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(2,4)){
             btn2x4.setText(gameData.grid.getName(2,4));
             btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(2,4))));
             btn2x4.setEnabled(true);
-            btn2x4.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
            btn2x4.setEnabled(false); 
             btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
             btn2x4.setText("Sale");
         }
+            btn2x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
         
         btn3x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(3, 0)){
             btn3x0.setText(gameData.grid.getName(3, 0));
             btn3x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,0))));
             btn3x0.setEnabled(true);
-            btn3x0.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
             btn3x0.setEnabled(false);
@@ -356,17 +363,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn3x0.setText("Sale");
             
         }
+            btn3x0.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
         
         btn3x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(3,1)){
             btn3x1.setText(gameData.grid.getName(3,1));
             btn3x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,1))));
             btn3x1.setEnabled(true);
-            btn3x1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
             btn3x1.setEnabled(false);
@@ -374,16 +381,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn3x1.setText("Sale");
             
         }
-         btn3x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        if(!gameData.grid.isEmpty(3,2)){
-            btn3x2.setText(gameData.grid.getName(3,2));
-            btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,2))));
-            btn3x2.setEnabled(true);
-            btn3x2.addActionListener(new java.awt.event.ActionListener() {
+            btn3x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn1x0ActionPerformed(evt);
                 }
             });
+        
+        btn3x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(3,2)){
+            btn3x2.setText(gameData.grid.getName(3,2));
+            btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,2))));
+            btn3x2.setEnabled(true);
           
         }else {
             btn3x2.setEnabled(false);
@@ -391,16 +399,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn3x2.setText("Sale");
             
         }
-         btn3x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        if(!gameData.grid.isEmpty(3,3)){
-            btn3x3.setText(gameData.grid.getName(3,3));
-            btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,3))));
-            btn3x3.setEnabled(true);
-            btn3x3.addActionListener(new java.awt.event.ActionListener() {
+            btn3x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn1x0ActionPerformed(evt);
                 }
             });
+        
+        btn3x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(3,3)){
+            btn3x3.setText(gameData.grid.getName(3,3));
+            btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,3))));
+            btn3x3.setEnabled(true);
           
         }else {
             btn3x3.setEnabled(false);
@@ -408,16 +417,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn3x3.setText("Sale");
             
         }
+            btn3x3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+        
         btn3x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(3,4)){
             btn3x4.setText(gameData.grid.getName(3,4));
             btn3x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(3,4))));
             btn3x4.setEnabled(true);
-            btn3x4.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
             btn3x4.setEnabled(false);
@@ -425,16 +435,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn3x4.setText("Sale");
             
         }
+            btn3x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+        
         btn4x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(4, 0)){
             btn4x0.setText(gameData.grid.getName(4, 0));
             btn4x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,0))));
             btn4x0.setEnabled(true);
-            btn4x0.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
              btn4x0.setEnabled(false);
@@ -443,6 +454,11 @@ public class MapaParaUso extends javax.swing.JFrame {
             
         }
         
+            btn4x0.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
         
         
         btn4x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
@@ -450,11 +466,6 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn4x1.setText(gameData.grid.getName(4,1));
             btn4x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,1))));
             btn4x1.setEnabled(true);
-            btn4x1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
             btn4x1.setEnabled(false);
@@ -462,16 +473,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn4x1.setText("Sale");
             
         }
+            btn4x1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+        
         btn4x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(4,2)){
             btn4x2.setText(gameData.grid.getName(4,2));
             btn4x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,2))));
             btn4x2.setEnabled(true);
-            btn4x2.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
              btn4x2.setEnabled(false);
@@ -479,16 +491,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn4x2.setText("Sale");
             
         }
-         btn4x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        if(!gameData.grid.isEmpty(4,3)){
-            btn4x3.setText(gameData.grid.getName(4,3));
-            btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,3))));
-            btn4x3.setEnabled(true);
-            btn4x3.addActionListener(new java.awt.event.ActionListener() {
+            btn4x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn1x0ActionPerformed(evt);
                 }
             });
+        
+        btn4x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(4,3)){
+            btn4x3.setText(gameData.grid.getName(4,3));
+            btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,3))));
+            btn4x3.setEnabled(true);
         }else {
            btn4x3.setEnabled(false);
           
@@ -496,16 +509,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn4x3.setText("Sale");
             
         }
-         btn4x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
-        if(!gameData.grid.isEmpty(4,4)){
-            btn4x4.setText(gameData.grid.getName(4,4));
-            btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,4))));
-            btn4x4.setEnabled(true);
-            btn4x4.addActionListener(new java.awt.event.ActionListener() {
+            btn4x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn1x0ActionPerformed(evt);
                 }
             });
+        
+        btn4x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
+        if(!gameData.grid.isEmpty(4,4)){
+            btn4x4.setText(gameData.grid.getName(4,4));
+            btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(4,4))));
+            btn4x4.setEnabled(true);
           
         }else {
             btn4x4.setEnabled(false);
@@ -513,16 +527,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn4x4.setText("Sale");
             
         }
+            btn4x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+        
         btn5x0.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(5, 0)){
             btn5x0.setText(gameData.grid.getName(5, 0));
             btn5x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(5,0))));
             btn5x0.setEnabled(true);
-            btn5x0.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
             btn5x0.setEnabled(false);
@@ -530,17 +545,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn5x0.setText("Sale");
             
         }
+            btn5x0.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
         
         btn5x1.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(5,1)){
             btn5x1.setText(gameData.grid.getName(5,1));
             btn5x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(5,1))));
             btn5x1.setEnabled(true);
-            btn5x1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
              btn5x1.setEnabled(false);
@@ -548,6 +563,11 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn5x1.setText("Sale");
             
         }
+            btn5x1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
         
         
          btn5x2.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
@@ -555,11 +575,6 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn5x2.setText(gameData.grid.getName(5,2));
             btn5x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(5,2))));
             btn5x2.setEnabled(true);
-            btn5x2.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
             btn5x2.setEnabled(false);
@@ -568,6 +583,11 @@ public class MapaParaUso extends javax.swing.JFrame {
            
         }
         
+            btn5x2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
         
          btn5x3.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
 
@@ -575,11 +595,6 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn5x3.setText(gameData.grid.getName(5,3));
             btn5x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(5,3))));
             btn5x3.setEnabled(true);
-            btn5x3.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
              btn5x3.setEnabled(false);
@@ -587,17 +602,17 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn5x3.setText("Sale");
             
         }
+            btn5x3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
         
         btn5x4.setFont(new java.awt.Font("BlairMdITC TT", 0, 11)); // NOI18N
         if(!gameData.grid.isEmpty(5,4)){
             btn5x4.setText(gameData.grid.getName(5,4));
             btn5x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/" + gameData.grid.getIcon(5,4))));
             btn5x4.setEnabled(true);
-            btn5x4.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn1x0ActionPerformed(evt);
-                }
-            });
           
         }else {
              btn5x4.setEnabled(false);
@@ -605,6 +620,12 @@ public class MapaParaUso extends javax.swing.JFrame {
             btn5x4.setText("Sale");
             
         }
+            btn5x4.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn1x0ActionPerformed(evt);
+                }
+            });
+        
         sair.setText("Sair");
         sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

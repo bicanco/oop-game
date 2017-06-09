@@ -21,6 +21,7 @@ public class MineManager extends javax.swing.JFrame {
        // this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
+        labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
     }
 
     /**
@@ -41,7 +42,7 @@ public class MineManager extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         btnResources = new javax.swing.JButton();
-        labelOopyiesAvailable = new javax.swing.JLabel();
+        labelOopyiesEdit = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
         CheckBoxGreatEscavation = new javax.swing.JCheckBox();
         SpinnerOopyies = new javax.swing.JSpinner();
@@ -70,7 +71,7 @@ public class MineManager extends javax.swing.JFrame {
 
         btnResources.setText("Resources");
 
-        labelOopyiesAvailable.setText("0");
+        labelOopyiesEdit.setText("0");
 
         btnSair.setText("Close");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +111,7 @@ public class MineManager extends javax.swing.JFrame {
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(jLabel3)
                                             .addGap(56, 56, 56)
-                                            .addComponent(labelOopyiesAvailable))
+                                            .addComponent(labelOopyiesEdit))
                                         .addComponent(jLabel8)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +146,7 @@ public class MineManager extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(labelOopyiesAvailable))
+                    .addComponent(labelOopyiesEdit))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -198,6 +199,6 @@ public class MineManager extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel labelImage;
     private javax.swing.JLabel labelMINE;
-    private javax.swing.JLabel labelOopyiesAvailable;
+    private javax.swing.JLabel labelOopyiesEdit;
     // End of variables declaration//GEN-END:variables
 }
