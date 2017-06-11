@@ -14,14 +14,17 @@ import javax.swing.JOptionPane;
  */
 public class FarmMelhoria extends javax.swing.JFrame {
     GameManager gameData;
+    GameManager gameDataTomorrow;
     /**
      * Creates new form FarmUso
      */
-    public FarmMelhoria(GameManager gameData) {
+    public FarmMelhoria(GameManager gameData, GameManager gameDataTomorrow) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
+        this.gameDataTomorrow = gameDataTomorrow;
         initComponents();
+        
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
         
         
@@ -183,7 +186,7 @@ public class FarmMelhoria extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new LojaVirtual(gameData).setVisible(true);
+        new LojaVirtual(gameData,gameDataTomorrow).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnFoodProductionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFoodProductionActionPerformed

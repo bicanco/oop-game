@@ -19,11 +19,13 @@ import core.GameManager;
 public class Principal extends javax.swing.JFrame {
     int value;
     GameManager gameData;
-    public Principal(GameManager gameData) {
+    GameManager gameDataTomorrow;
+    public Principal(GameManager gameData, GameManager gameDataTomorrow) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
       
         value = 0;
+        this.gameDataTomorrow = gameDataTomorrow;
         this.gameData = gameData;
         initComponents();  
           setImage(gameData.iconname);
@@ -235,20 +237,20 @@ public class Principal extends javax.swing.JFrame {
     private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Recursos(gameData,0).setVisible(true); 
+        new Recursos(gameData,gameDataTomorrow,0).setVisible(true); 
     }//GEN-LAST:event_btnRecursosActionPerformed
 
     private void btnLojaVirtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLojaVirtualActionPerformed
         // TODO add your handling code here:
          this.dispose();
-        new LojaVirtual(gameData).setVisible(true);
+        new LojaVirtual(gameData,gameDataTomorrow).setVisible(true);
         
     }//GEN-LAST:event_btnLojaVirtualActionPerformed
 
     private void btnMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
         // TODO add your handling code here:
          this.dispose();
-        new MapaParaUso(gameData).setVisible(true);
+        new MapaParaUso(gameData,gameDataTomorrow).setVisible(true);
     }//GEN-LAST:event_btnMapaActionPerformed
 
     private void btnTrocasDiariasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocasDiariasActionPerformed
@@ -258,7 +260,7 @@ public class Principal extends javax.swing.JFrame {
     private void btnTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTurnoActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Turno(gameData).setVisible(true);
+        new Turno(gameData,gameDataTomorrow).setVisible(true);
     }//GEN-LAST:event_btnTurnoActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

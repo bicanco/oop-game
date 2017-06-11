@@ -14,15 +14,16 @@ import core.GameManager;
  * @author Fer
  */
 public class MinhasClasses extends javax.swing.JFrame {
-
+    GameManager gameDataTomorrow;
     GameManager gameData;
     /**
      * Creates new form MinhasClasses
      */
-    public MinhasClasses(GameManager gameData) {
+    public MinhasClasses(GameManager gameData, GameManager gameDataTomorrow) {
         initComponents();
        
         this.gameData = gameData;
+        this.gameDataTomorrow = gameDataTomorrow;
     }
     private void SettingButtons(){
         btnDropFarm.setEnabled(true);

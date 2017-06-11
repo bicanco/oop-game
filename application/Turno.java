@@ -17,14 +17,15 @@ import javax.swing.Timer;
  */
 public class Turno extends javax.swing.JFrame {
     GameManager gameData;
+    GameManager gameDataTomorrow;
     /**
      * Creates new form Turno
      */
-    public Turno(GameManager gameData) {
+    public Turno(GameManager gameData,GameManager gameDataTomorrow) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-             
+        this.gameDataTomorrow = gameDataTomorrow;     
         initComponents();
         jProgressBar1.setValue(0);
         
@@ -136,7 +137,7 @@ public class Turno extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Principal(gameData).setVisible(true);
+        new Principal(gameData, gameDataTomorrow).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 //
 //    /**

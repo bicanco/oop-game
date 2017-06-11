@@ -194,6 +194,18 @@ public class ResourceManager {
 		if (greatRubies < 0) greatRubies = 0;
 	}
         
+        public void resetAll(){
+            javaSeeds = 0;
+		sharpCocos = 0;
+		magicPerls = 0;
+		pyramids = 0;
+		scalaStones = 0;
+		
+		creativity = 0;
+		oopyies = 0;
+		greatRubies = 0;
+        }
+        
 	
 	/**
 	 * Retorna uma representa��o em String, para depura��o.

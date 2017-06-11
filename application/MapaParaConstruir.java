@@ -17,14 +17,16 @@ import javax.swing.Icon;
 public class MapaParaConstruir extends javax.swing.JFrame {
     int type; // se for 0 eh pq abriu pelo Mapa, se for >0 abriu pelo Construir
     GameManager gameData;
+    GameManager gameDataTomorrow;
     
     /**
      * Creates new form Mapa
      */
-    public MapaParaConstruir(GameManager gameData, int build) {
+    public MapaParaConstruir(GameManager gameData, GameManager gameDataTomorrow, int build) {
         this.setResizable(false);
        // this.setLocationRelativeTo(null);
          this.gameData = gameData;
+         this.gameDataTomorrow = gameDataTomorrow;
          type = build;
         initComponents();
         
@@ -779,7 +781,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
         // TODO add your handling code here:
          this.dispose();
-         new LojaVirtual(gameData).setVisible(true);
+         new LojaVirtual(gameData, gameDataTomorrow).setVisible(true);
     }//GEN-LAST:event_sairActionPerformed
 
     private void btn0x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x0ActionPerformed

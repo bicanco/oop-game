@@ -48,7 +48,7 @@ public class Lab implements Building {
 	 * @param A quantidade de recurso para o boost
 	 * @return O valor produzido
 	 */
-	public int crativityProduction(int boost){
+	public int creativityProduction(int boost){
 		return oopyiesAllocated*CREATIVITY_PER_OOPYIE*basicResearch(boost);
 	}
 	

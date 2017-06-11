@@ -13,13 +13,15 @@ import core.GameManager;
  */
 public class LabManager extends javax.swing.JFrame {
     GameManager gameData;
+    GameManager gameDataTomorrow;
     /**
      * Creates new form LabManager
      */
-    public LabManager(GameManager gameData) {
+    public LabManager(GameManager gameData, GameManager gameDataTomorrow) {
         this.setResizable(false);
        // this.setLocationRelativeTo(null);
         this.gameData = gameData;
+        this.gameDataTomorrow = gameDataTomorrow;
         initComponents();
         labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
     }
@@ -220,7 +222,7 @@ public class LabManager extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
          this.dispose();
-         new MapaParaUso(gameData).setVisible(true);
+         new MapaParaUso(gameData, gameDataTomorrow).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
 
