@@ -14,15 +14,15 @@ import core.ResourceManager;
  */
 public class LabManager extends javax.swing.JFrame {
     GameManager gameData;
-    ResourceManager ResourceTomorrow;
+    ResourceManager resourceTomorrow;
     /**
      * Creates new form LabManager
      */
-    public LabManager(GameManager gameData, ResourceManager ResourceTomorrow) {
+    public LabManager(GameManager gameData, ResourceManager resourceTomorrow) {
         this.setResizable(false);
        // this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.ResourceTomorrow = ResourceTomorrow;
+        this.resourceTomorrow = resourceTomorrow;
         initComponents();
         labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
     }
@@ -72,6 +72,11 @@ public class LabManager extends javax.swing.JFrame {
         jLabel6.setText("Basic Research");
 
         btnResources.setText("Resources");
+        btnResources.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResourcesActionPerformed(evt);
+            }
+        });
 
         btnSair.setText("Close");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -223,8 +228,14 @@ public class LabManager extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
          this.dispose();
-         new MapaParaUso(gameData, ResourceTomorrow).setVisible(true);
+         new MapaParaUso(gameData, resourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResourcesActionPerformed
+        // TODO add your handling code here:
+        
+        new Recursos(gameData, resourceTomorrow,1).setVisible(true);
+    }//GEN-LAST:event_btnResourcesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

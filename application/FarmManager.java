@@ -15,15 +15,15 @@ import javax.swing.JComboBox;
  */
 public class FarmManager extends javax.swing.JFrame {
     GameManager gameData;
-    ResourceManager ResourceTomorrow;
+    ResourceManager resourceTomorrow;
     /**
      * Creates new form FarmManager
      */
-    public FarmManager(GameManager gameData, ResourceManager ResourceTomorrow) {
+    public FarmManager(GameManager gameData, ResourceManager resourceTomorrow) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.ResourceTomorrow =ResourceTomorrow;
+        this.resourceTomorrow =resourceTomorrow;
         initComponents();
         String[] messageStrings = {"Seeds", "Cocos"};
         JComboBox<String> ComboBoxFoodProduction = new JComboBox<String>(messageStrings);
@@ -88,6 +88,11 @@ public class FarmManager extends javax.swing.JFrame {
         });
 
         btnResources.setText("Resources");
+        btnResources.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResourcesActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Food Production:");
 
@@ -250,7 +255,7 @@ public class FarmManager extends javax.swing.JFrame {
         
         
         this.dispose();
-         new MapaParaUso(gameData,ResourceTomorrow).setVisible(true);
+         new MapaParaUso(gameData,resourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void CheckBoxSeedFertilizerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxSeedFertilizerActionPerformed
@@ -272,6 +277,7 @@ public class FarmManager extends javax.swing.JFrame {
             SpinnerPyramids.setEnabled(false);
             CheckBoxSeedFertilizer.setEnabled(true);
             SpinnerMagicPerls.setEnabled(true);
+            CheckBoxCocoFertilizer.setSelected(false);
             SpinnerPyramids.setValue(0);
         } else if(ComboBoxFoodProduction.getSelectedItem().toString().equals("Cocos")){
             CheckBoxSeedFertilizer.setEnabled(false);
@@ -279,9 +285,16 @@ public class FarmManager extends javax.swing.JFrame {
             CheckBoxCocoFertilizer.setEnabled(true);
             SpinnerPyramids.setEnabled(true);
             SpinnerMagicPerls.setValue(0);
+            CheckBoxSeedFertilizer.setSelected(false);
         }
         
     }//GEN-LAST:event_ComboBoxFoodProductionActionPerformed
+
+    private void btnResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResourcesActionPerformed
+        // TODO add your handling code here:
+ 
+        new Recursos(gameData, resourceTomorrow,1).setVisible(true);
+    }//GEN-LAST:event_btnResourcesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox CheckBoxCocoFertilizer;

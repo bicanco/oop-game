@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  */
 public class Game {
 	public static GameManager gameData = new GameManager();
-        public static GameManager gameDataTomorrow = new GameManager();
+        public static ResourceManager resourceTomorrow = new ResourceManager();
 	
 	public static void main(String[] args) {
 		gameData.resources.updateJavaSeeds(500);
@@ -21,7 +21,7 @@ public class Game {
 		 java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
-                new Login(gameData,gameDataTomorrow).setVisible(true);
+                new Login(gameData,resourceTomorrow).setVisible(true);
                 
             }
         });

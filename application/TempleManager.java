@@ -73,6 +73,11 @@ public class TempleManager extends javax.swing.JFrame {
         jLabel6.setText("Oopyies Allocated:");
 
         btnResources.setText("Resources");
+        btnResources.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResourcesActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Perl Ritual:");
 
@@ -246,6 +251,12 @@ public class TempleManager extends javax.swing.JFrame {
          this.dispose();
          new MapaParaUso(gameData, resourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResourcesActionPerformed
+        // TODO add your handling code here:
+        
+        new Recursos(gameData, resourceTomorrow,1).setVisible(true);
+    }//GEN-LAST:event_btnResourcesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox CheckBoxGemProduction;
