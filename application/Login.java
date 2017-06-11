@@ -18,18 +18,16 @@ import javax.swing.event.DocumentEvent;
 public class Login extends javax.swing.JFrame {
     String s = new String("User");
     GameManager gameData;
-    ResourceManager resourceTomorrow;
     int image; //0 => cat, 1=>Man, 2=>Mask
     /**
      * Creates new form Login
      */
-    public Login(GameManager data, ResourceManager resourceTomorrow) {
+    public Login(GameManager data) {
         this.setResizable(false);
       //  this.setLocationRelativeTo(null);
         initComponents();
         jButton1.setEnabled(false);
         gameData = data;
-        this.resourceTomorrow = resourceTomorrow;
     }
 
     /**
@@ -138,7 +136,7 @@ public class Login extends javax.swing.JFrame {
        gameData.iconname = image;
         
        this.dispose();
-        new Principal(gameData, resourceTomorrow).setVisible(true);
+        new Principal(gameData).setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

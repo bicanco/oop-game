@@ -8,11 +8,11 @@ public class GridManager {
 	/**
 	 * Número de linhas na grade de construções.
 	 */
-	private final int GRID_ROW_NUM = 6;
+	public static final int GRID_ROW_NUM = 6;
 	/**
 	 * Número de colunas na grade de construções.
 	 */
-	private final int GRID_COL_NUM = 5;
+	public static final int GRID_COL_NUM = 5;
 	
 	/**
 	 * Grade de construções atuais na partida.
@@ -75,6 +75,20 @@ public class GridManager {
 	}
 	
 	/**
+	 * Retorna uma construção da grade.
+	 * @param row linha da grade
+	 * @param col coluna da grade
+	 * @return construção
+	 */
+	public Building getBuilding(int row, int col){
+		if (grid[row][col] != null){
+			return grid[row][col];
+		} else {
+			return null;
+		}	
+	}
+	
+	/**
 	 * Retorna o nome de uma construção da grade.
 	 * @param row linha da grade
 	 * @param col coluna da grade
@@ -106,4 +120,27 @@ public class GridManager {
 		if (grid[row][col] == null) return true;
 		return false;
 	}
+	
+	public ResourceManager runTurn(){
+		ResourceManager tomorrow = new ResourceManager();
+		
+		for (int i = 0; i < GRID_ROW_NUM; i++){
+			for (int j = 0; j < GRID_COL_NUM; j++){
+				if (grid[i][j] != null)
+					grid[i][j].runTurn(tomorrow);
+			}
+		}
+		
+		return tomorrow;
+	}
+	
+	public void reset(){	
+		for (int i = 0; i < GRID_ROW_NUM; i++){
+			for (int j = 0; j < GRID_COL_NUM; j++){
+				if (grid[i][j] != null)
+					grid[i][j].reset();
+			}
+		}
+	}
 }
+	

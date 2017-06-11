@@ -5,9 +5,12 @@
  */
 package application;
 
+import core.BuildingTools;
 import core.GameManager;
 import core.ResourceManager;
 import javax.swing.JOptionPane;
+
+import buildings.Farm;
 
 /**
  *
@@ -15,15 +18,13 @@ import javax.swing.JOptionPane;
  */
 public class FarmMelhoria extends javax.swing.JFrame {
     GameManager gameData;
-    ResourceManager ResourceTomorrow;
     /**
      * Creates new form FarmUso
      */
-    public FarmMelhoria(GameManager gameData, ResourceManager ResourceTomorrow) {
+    public FarmMelhoria(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.ResourceTomorrow = ResourceTomorrow;
         initComponents();
         
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
@@ -71,18 +72,53 @@ public class FarmMelhoria extends javax.swing.JFrame {
 
         labelGP.setText("Great Production");
 
-        btnFoodProduction.setText("Locked: 30");
-        btnFoodProduction.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFoodProductionActionPerformed(evt);
-            }
-        });
-
-        btnSeedFertilizer.setText("Locked: 30");
-
-        btnCocoFertilizer.setText("Locked: 30");
-
-        btnGreatProduction.setText("Locked: 60");
+    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.FOOD_PRODUCTION)){
+    		btnFoodProduction.setText("Unlocked");
+    		btnFoodProduction.setEnabled(false);
+    	} else {
+    		btnFoodProduction.setText("Locked: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.FOOD_PRODUCTION));
+            btnFoodProduction.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnFoodProductionActionPerformed(evt);
+                }
+            });
+    	}
+    	
+    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.SEED_FERTILIZER)){
+    		btnSeedFertilizer.setText("Unlocked");
+    		btnSeedFertilizer.setEnabled(false);
+    	} else {
+        	btnSeedFertilizer.setText("Locked: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.SEED_FERTILIZER));
+        	btnSeedFertilizer.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnSeedFertilizerActionPerformed(evt);
+                }
+            });
+    	}
+    	
+    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER)){
+    		btnCocoFertilizer.setText("Unlocked");
+    		btnCocoFertilizer.setEnabled(false);
+    	} else {
+    		btnCocoFertilizer.setText("Locked: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.COCO_FERTILIZER));
+    		btnCocoFertilizer.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnCocoFertilizerActionPerformed(evt);
+                }
+            });
+    	}
+    	
+    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.GREAT_PRODUCTION)){
+    		btnGreatProduction.setText("Unlocked");
+    		btnGreatProduction.setEnabled(false);
+    	} else {
+    		btnGreatProduction.setText("Locked: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.GREAT_PRODUCTION));
+    		btnGreatProduction.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnGreatProductionActionPerformed(evt);
+                }
+            });
+    	}
 
         btnSair.setText("Close");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -187,15 +223,68 @@ public class FarmMelhoria extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new LojaVirtual(gameData,ResourceTomorrow).setVisible(true);
+        new LojaVirtual(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void btnFoodProductionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFoodProductionActionPerformed
-        // TODO add your handling code here:
-        btnFoodProduction.setText("Unlocked");
-        btnFoodProduction.setEnabled(false);
-   
-    }//GEN-LAST:event_btnFoodProductionActionPerformed
+    private void btnFoodProductionActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.FOOD_PRODUCTION)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.FOOD_PRODUCTION));
+    		BuildingTools.unlockUpgrade(BuildingTools.FARM, Farm.FOOD_PRODUCTION);
+    		
+    		btnFoodProduction.setText("Unlocked");
+    		btnFoodProduction.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
+    
+    private void btnSeedFertilizerActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.SEED_FERTILIZER)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.SEED_FERTILIZER));
+    		BuildingTools.unlockUpgrade(BuildingTools.FARM, Farm.SEED_FERTILIZER);
+    		
+    		btnSeedFertilizer.setText("Unlocked");
+    		btnSeedFertilizer.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
+    
+    private void btnCocoFertilizerActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.COCO_FERTILIZER)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.COCO_FERTILIZER));
+    		BuildingTools.unlockUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER);
+    		
+    		btnCocoFertilizer.setText("Unlocked");
+    		btnCocoFertilizer.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
+    
+    private void btnGreatProductionActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.GREAT_PRODUCTION)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.GREAT_PRODUCTION));
+    		BuildingTools.unlockUpgrade(BuildingTools.FARM, Farm.GREAT_PRODUCTION);
+    		
+    		btnGreatProduction.setText("Unlocked");
+    		btnGreatProduction.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCocoFertilizer;

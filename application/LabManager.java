@@ -14,15 +14,16 @@ import core.ResourceManager;
  */
 public class LabManager extends javax.swing.JFrame {
     GameManager gameData;
-    ResourceManager resourceTomorrow;
+    int row, col;
     /**
      * Creates new form LabManager
      */
-    public LabManager(GameManager gameData, ResourceManager resourceTomorrow) {
+    public LabManager(GameManager gameData, int row, int col) {
         this.setResizable(false);
        // this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.resourceTomorrow = resourceTomorrow;
+        this.row = row;
+        this.col = col;
         initComponents();
         labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
     }
@@ -228,13 +229,13 @@ public class LabManager extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
          this.dispose();
-         new MapaParaUso(gameData, resourceTomorrow).setVisible(true);
+         new MapaParaUso(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResourcesActionPerformed
         // TODO add your handling code here:
         
-        new Recursos(gameData, resourceTomorrow,1).setVisible(true);
+        new Recursos(gameData, 1).setVisible(true);
     }//GEN-LAST:event_btnResourcesActionPerformed
 
 

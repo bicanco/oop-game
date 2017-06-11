@@ -18,15 +18,13 @@ import javax.swing.Timer;
  */
 public class Turno extends javax.swing.JFrame {
     GameManager gameData;
-    ResourceManager resourceTomorrow;
     /**
      * Creates new form Turno
      */
-    public Turno(GameManager gameData,ResourceManager resourceTomorrow) {
+    public Turno(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.resourceTomorrow = resourceTomorrow;     
         initComponents();
         jProgressBar1.setValue(0);
         
@@ -54,16 +52,7 @@ public class Turno extends javax.swing.JFrame {
         }
     
 }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -136,9 +125,14 @@ public class Turno extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    	ResourceManager tomorrow = gameData.grid.runTurn();
+    	JOptionPane.showMessageDialog(null, tomorrow.resultsToString(), "Batendo o Ponto",
+				JOptionPane.INFORMATION_MESSAGE);
+    	gameData.resources.incorpore(tomorrow);
+    	gameData.grid.reset();
+    	
         this.dispose();
-        new Principal(gameData, resourceTomorrow).setVisible(true);
+        new Principal(gameData).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 //
 //    /**

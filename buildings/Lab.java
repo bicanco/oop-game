@@ -1,5 +1,7 @@
 package buildings;
 
+import core.ResourceManager;
+
 /**
  * Classe que representa um laboratorio
  * @author Marcelo
@@ -150,5 +152,17 @@ public class Lab implements Building {
 	@Override
 	public void reset() {
 		oopyiesAllocated = 0;
+	}
+	
+	@Override
+	public void reconfig(ResourceManager resources) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void runTurn(ResourceManager resources) {
+		// TODO Auto-generated method stub
+		
 	}
 }

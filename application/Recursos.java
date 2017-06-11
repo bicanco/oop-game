@@ -14,18 +14,16 @@ import core.ResourceManager;
  */
 public class Recursos extends javax.swing.JFrame {
     GameManager gameData;
-    ResourceManager resourceTomorrow;
     int from;
     /**
      * Creates new form Recursos
      */
-    public Recursos(GameManager gameData, ResourceManager resourceTomorrow, int from) {
+    public Recursos(GameManager gameData, int from) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         
         this.from = from;
         this.gameData = gameData;
-        this.resourceTomorrow = resourceTomorrow;
         initComponents();
         labelGreatRubies.setText(Integer.toString(this.gameData.resources.getGreatRubies()));
         labelJavaSeeds.setText(Integer.toString(this.gameData.resources.getJavaSeeds()));
@@ -170,7 +168,7 @@ public class Recursos extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
         if(from==0){
-            new Principal(gameData,resourceTomorrow).setVisible(true);
+            new Principal(gameData).setVisible(true);
         }
         
        

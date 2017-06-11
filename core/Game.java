@@ -1,10 +1,6 @@
 package core;
 
 import application.Login;
-import buildings.Building;
-import buildings.Farm;
-import java.awt.Frame;
-import javax.swing.JFrame;
 
 /**
  * Classe que gerencia o núcleo do jogo e da partida.
@@ -13,15 +9,17 @@ import javax.swing.JFrame;
  */
 public class Game {
 	public static GameManager gameData = new GameManager();
-        public static ResourceManager resourceTomorrow = new ResourceManager();
 	
 	public static void main(String[] args) {
-		gameData.resources.updateJavaSeeds(500);
-		gameData.resources.updateCreativity(100000);
+		gameData.resources.updateMagicPerls(500);
+		gameData.resources.updatePyramids(500);
+		gameData.resources.updateGreatRubies(500);
+		gameData.resources.updateOopyies(1000);
+		gameData.resources.updateCreativity(1000000);
 		 java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
-                new Login(gameData,resourceTomorrow).setVisible(true);
+                new Login(gameData).setVisible(true);
                 
             }
         });

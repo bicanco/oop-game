@@ -22,18 +22,15 @@ import javax.swing.JOptionPane;
 public class MapaParaUso extends javax.swing.JFrame {
     int type; // se for 0 eh pq abriu pelo Mapa, se for 1 abriu pelo Construir
     GameManager gameData;
-    ResourceManager resourceTomorrow;
     /**
      * Creates new form Mapa
      */
-    public MapaParaUso(GameManager gameData, ResourceManager resourceTomorrow) {
+    public MapaParaUso(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.resourceTomorrow = resourceTomorrow;
         initComponents();
-        
-        
+        labelOopyiesDisponiveis.setText(Integer.toString(gameData.resources.getOopyies())); 
     }
 
     /**
@@ -669,7 +666,7 @@ public class MapaParaUso extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Oopyies DisponÃ­veis:");
+        jLabel1.setText("Oopyies Disponíveis:");
 
         labelOopyiesDisponiveis.setText("0");
 
@@ -838,498 +835,524 @@ public class MapaParaUso extends javax.swing.JFrame {
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {                                     
         // TODO add your handling code here:
         this.dispose();
-        new Principal(gameData,resourceTomorrow).setVisible(true);
+        new Principal(gameData).setVisible(true);
     }                                    
 
-    private void btn0x0ActionPerformed(java.awt.event.ActionEvent evt) {                                     
-      if(!gameData.grid.isEmpty(0, 0)){
+    private void btn0x0ActionPerformed(java.awt.event.ActionEvent evt) {
+      int x = 0; int y = 0;
+      if(!gameData.grid.isEmpty(x, y)){
           this.dispose();
-          if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
+          if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+              new FarmManager(gameData, x, y).setVisible(true);
+          }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+              new LabManager(gameData, x, y).setVisible(true);
+          }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                new TempleManager(gameData, x, y).setVisible(true);  
+          }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                new MineManager(gameData, x, y).setVisible(true);
           }
       
       }
-       
     }                                      
     private void btn0x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x1ActionPerformed
-       if(!gameData.grid.isEmpty(0, 1)){
-          this.dispose();
-          if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 0; int y = 1;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
       }
         
         
-    }//GEN-LAST:event_btn0x1ActionPerformed
+    //GEN-LAST:event_btn0x1ActionPerformed
      private void btn0x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x2ActionPerformed
-         if(!gameData.grid.isEmpty(0, 2)){
-          this.dispose();
-          if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	 int x = 0; int y = 2;
+         if(!gameData.grid.isEmpty(x, y)){
+             this.dispose();
+             if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                 new FarmManager(gameData, x, y).setVisible(true);
+             }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                 new LabManager(gameData, x, y).setVisible(true);
+             }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                   new TempleManager(gameData, x, y).setVisible(true);  
+             }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                   new MineManager(gameData, x, y).setVisible(true);
+             }
+         
+         }
       }
-        
-        
-       
-    }//GEN-LAST:event_btn0x2ActionPerformed
 
     private void btn0x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x3ActionPerformed
-         if(!gameData.grid.isEmpty(0, 3)){
-          this.dispose();
-          if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 0; int y = 3;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn0x3ActionPerformed
 
     private void btn0x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x4ActionPerformed
-        if(!gameData.grid.isEmpty(0, 4)){
-          this.dispose();
-          if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 0; int y = 4;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn0x4ActionPerformed
 
     private void btn1x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x0ActionPerformed
-         if(!gameData.grid.isEmpty(1, 0)){
-          this.dispose();
-          if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 1; int y = 0;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn1x0ActionPerformed
 
     private void btn1x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x1ActionPerformed
-         if(!gameData.grid.isEmpty(1, 1)){
-          this.dispose();
-          if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 1; int y = 1;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn1x1ActionPerformed
 
     private void btn1x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x2ActionPerformed
-        if(!gameData.grid.isEmpty(1, 2)){
-          this.dispose();
-          if(gameData.grid.getName(1,2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(1, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(1, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(1, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 1; int y = 2;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn1x2ActionPerformed
 
     private void btn1x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x3ActionPerformed
-        if(!gameData.grid.isEmpty(1, 3)){
-          this.dispose();
-          if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 1; int y = 3;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn1x3ActionPerformed
 
     private void btn1x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1x4ActionPerformed
-        if(!gameData.grid.isEmpty(1, 4)){
-          this.dispose();
-          if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 1; int y = 4;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn1x4ActionPerformed
 
     private void btn2x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x0ActionPerformed
-        if(!gameData.grid.isEmpty(2, 0)){
-          this.dispose();
-          if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 2; int y = 0;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn2x0ActionPerformed
 
     private void btn2x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x1ActionPerformed
-        if(!gameData.grid.isEmpty(2, 1)){
-          this.dispose();
-          if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 2; int y = 1;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn2x1ActionPerformed
 
     private void btn2x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x2ActionPerformed
-        if(!gameData.grid.isEmpty(2, 2)){
-          this.dispose();
-          if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 2; int y = 2;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn2x2ActionPerformed
 
     private void btn2x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x3ActionPerformed
-        if(!gameData.grid.isEmpty(2, 3)){
-          this.dispose();
-          if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 2; int y = 3;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn2x3ActionPerformed
 
     private void btn2x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2x4ActionPerformed
-        if(!gameData.grid.isEmpty(2, 4)){
-          this.dispose();
-          if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
-      }
+    	int x = 2; int y = 4;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
+        }
     }//GEN-LAST:event_btn2x4ActionPerformed
 
     private void btn3x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x0ActionPerformed
-        if(!gameData.grid.isEmpty(3, 0)){
-          this.dispose();
-          if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 3; int y = 0;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn3x0ActionPerformed
 
     private void btn3x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x1ActionPerformed
-        if(!gameData.grid.isEmpty(3, 1)){
-          this.dispose();
-          if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 3; int y = 1;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn3x1ActionPerformed
 
     private void btn3x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x2ActionPerformed
-        if(!gameData.grid.isEmpty(3, 2)){
-          this.dispose();
-          if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 3; int y = 2;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn3x2ActionPerformed
 
     private void btn3x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x3ActionPerformed
-        if(!gameData.grid.isEmpty(3, 3)){
-          this.dispose();
-          if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 3; int y = 3;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn3x3ActionPerformed
 
     private void btn3x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3x4ActionPerformed
-        if(!gameData.grid.isEmpty(3, 4)){
-          this.dispose();
-          if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 3; int y = 4;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn3x4ActionPerformed
 
     private void btn4x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x0ActionPerformed
-        if(!gameData.grid.isEmpty(4, 0)){
-          this.dispose();
-          if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 4; int y = 0;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn4x0ActionPerformed
 
     private void btn4x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x1ActionPerformed
-        if(!gameData.grid.isEmpty(4, 1)){
-          this.dispose();
-          if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 4; int y = 1;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn4x1ActionPerformed
 
     private void btn4x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x2ActionPerformed
-        if(!gameData.grid.isEmpty(4, 2)){
-          this.dispose();
-          if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 4; int y = 2;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn4x2ActionPerformed
 
     private void btn4x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x3ActionPerformed
-        if(!gameData.grid.isEmpty(4, 3)){
-          this.dispose();
-          if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 4; int y = 3;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn4x3ActionPerformed
 
     private void btn4x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4x4ActionPerformed
-        if(!gameData.grid.isEmpty(4, 4)){
-          this.dispose();
-          if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 4; int y = 4;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn4x4ActionPerformed
 
     private void btn5x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x0ActionPerformed
-        if(!gameData.grid.isEmpty(5, 0)){
-          this.dispose();
-          if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 5; int y = 0;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn5x0ActionPerformed
 
     private void btn5x1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x1ActionPerformed
-        if(!gameData.grid.isEmpty(5, 1)){
-          this.dispose();
-          if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 5; int y = 1;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn5x1ActionPerformed
 
     private void btn5x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x2ActionPerformed
-        if(!gameData.grid.isEmpty(5, 2)){
-          this.dispose();
-          if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 5; int y = 2;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn5x2ActionPerformed
 
     private void btn5x3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x3ActionPerformed
-        if(!gameData.grid.isEmpty(5, 3)){
-          this.dispose();
-          if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 5; int y = 3;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
+        
         }
     }//GEN-LAST:event_btn5x3ActionPerformed
 
     private void btn5x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5x4ActionPerformed
-        if(!gameData.grid.isEmpty(5, 4)){
-          this.dispose();
-          if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,resourceTomorrow).setVisible(true);
-          }else if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
-          }else if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,resourceTomorrow).setVisible(true);
-          }
-      
+    	int x = 5; int y = 4;
+        if(!gameData.grid.isEmpty(x, y)){
+            this.dispose();
+            if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.FARM))){
+                new FarmManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.LAB))){
+                new LabManager(gameData, x, y).setVisible(true);
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
+                  new TempleManager(gameData, x, y).setVisible(true);  
+            }else if(gameData.grid.getName(x, y).equals(BuildingTools.getName(BuildingTools.MINE))){
+                  new MineManager(gameData, x, y).setVisible(true);
+            }
         
-        }//GEN-LAST:event_btn5x4ActionPerformed
+        }
     }                                      
 
     private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
         
-        new Recursos(gameData,resourceTomorrow, 1).setVisible(true);
+        new Recursos(gameData, 1).setVisible(true);
     }                                           
 //
 //    /**

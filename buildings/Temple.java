@@ -1,5 +1,7 @@
 package buildings;
 
+import core.ResourceManager;
+
 /**
  * Classe que representa um Templo
  * @author Marcelo
@@ -204,5 +206,17 @@ public class Temple implements Building {
 	public void reset() {
 		gemType = PERL;//inicializa o objeto produzindo Perls
 		oopyiesAllocated = 0;
+	}
+
+	@Override
+	public void reconfig(ResourceManager resources) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void runTurn(ResourceManager resources) {
+		// TODO Auto-generated method stub
+		
 	}
 }

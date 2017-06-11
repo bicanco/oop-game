@@ -223,4 +223,26 @@ public class ResourceManager {
 		str += "Great Rubies: " + greatRubies + "\n";
 		return str;
 	}
+	
+	public String resultsToString(){
+		String str = "Durante o dia, os Oopyies produziram:\n";
+		str += "Java Seeds: " + javaSeeds + "\n";
+		str += "Sharp Cocos: " + sharpCocos + "\n";
+		str += "Magic Perls: " + magicPerls + "\n";
+		str += "PYramids: " + pyramids + "\n";
+		str += "Scala Stones: " + scalaStones + "\n";
+		str += "Pontos de Criatividade: " + creativity + "\n";
+		return str;
+	}
+	
+	public void incorpore(ResourceManager r2){
+		this.updateCreativity(r2.getCreativity());
+		this.updateGreatRubies(r2.getGreatRubies());
+		this.updateJavaSeeds(r2.getJavaSeeds());
+		this.updateMagicPerls(r2.getMagicPerls());
+		this.updateOopyies(r2.getOopyies());
+		this.updatePyramids(r2.getPyramids());
+		this.updateScalaStones(r2.getScalaStones());
+		this.updateSharpCocos(r2.getSharpCocos());
+	}
 }

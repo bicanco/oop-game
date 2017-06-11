@@ -20,16 +20,14 @@ import core.ResourceManager;
 public class Principal extends javax.swing.JFrame {
     int value;
     GameManager gameData;
-    ResourceManager resourceTomorrow;
-    public Principal(GameManager gameData, ResourceManager resourceTomorrow) {
+    public Principal(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
       
         value = 0;
-        this.resourceTomorrow = resourceTomorrow;
         this.gameData = gameData;
         initComponents();  
-          setImage(gameData.iconname);
+        setImage(gameData.iconname);
         labelUser.setText(gameData.username);
         labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
         labelOopyies.setText(Integer.toString(gameData.resources.getOopyies()));
@@ -102,7 +100,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        labelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/CatBig.png"))); // NOI18N
+        labelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/nascerdosol.png"))); // NOI18N
 
         jLabel2.setText("Usuario:");
 
@@ -238,20 +236,20 @@ public class Principal extends javax.swing.JFrame {
     private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Recursos(gameData,resourceTomorrow,0).setVisible(true); 
+        new Recursos(gameData, 0).setVisible(true); 
     }//GEN-LAST:event_btnRecursosActionPerformed
 
     private void btnLojaVirtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLojaVirtualActionPerformed
         // TODO add your handling code here:
          this.dispose();
-        new LojaVirtual(gameData,resourceTomorrow).setVisible(true);
+        new LojaVirtual(gameData).setVisible(true);
         
     }//GEN-LAST:event_btnLojaVirtualActionPerformed
 
     private void btnMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
         // TODO add your handling code here:
          this.dispose();
-        new MapaParaUso(gameData,resourceTomorrow).setVisible(true);
+        new MapaParaUso(gameData).setVisible(true);
     }//GEN-LAST:event_btnMapaActionPerformed
 
     private void btnTrocasDiariasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocasDiariasActionPerformed
@@ -261,7 +259,7 @@ public class Principal extends javax.swing.JFrame {
     private void btnTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTurnoActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Turno(gameData,resourceTomorrow).setVisible(true);
+        new Turno(gameData).setVisible(true);
     }//GEN-LAST:event_btnTurnoActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

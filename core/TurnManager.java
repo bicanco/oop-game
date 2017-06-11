@@ -208,4 +208,5 @@ public class TurnManager {
 		str += "Next Pay Turn: " + nextPayTurn + " (" + payTurnRubies + " rubies)\n";
 		return str;
 	}
+	
 }

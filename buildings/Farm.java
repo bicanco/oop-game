@@ -1,5 +1,7 @@
 package buildings;
 
+import core.ResourceManager;
+
 /**
  * Classe que representa uma fazenda
  * @author David
@@ -7,11 +9,11 @@ package buildings;
  */
 public class Farm implements Building {
 	private final static int FARM_CREATIVITY_COST = 20;//custo inicial da fazenda
-	private final static int MAX_PRODUCTION = 0;//produção máxima possível
-	private final static int SEEDS_PER_PERL = 0;//valor de seedss produzidas por perl
-	private final static int SEEDS_PER_OOPYIE = 0;//valor de seeds produzidas po oopyie
-	private final static int COCOS_PER_OOPYIE = 0;//valor de cocos produzidos por oopyie
-	private final static int COCOS_PER_PYRAMID = 0;//valor de cocos produzidos por pyramids
+	private final static int MAX_PRODUCTION = 500;//produção máxima possível
+	private final static int SEEDS_PER_PERL = 2;//valor de seedss produzidas por perl
+	private final static int SEEDS_PER_OOPYIE = 1;//valor de seeds produzidas po oopyie
+	private final static int COCOS_PER_OOPYIE = 1;//valor de cocos produzidos por oopyie
+	private final static int COCOS_PER_PYRAMID = 2;//valor de cocos produzidos por pyramids
 
 	public final static int FOOD_PRODUCTION = 0;//valores das posições dos métodos no vetor de up grades
 	public final static int SEED_FERTILIZER = 1;
@@ -26,7 +28,7 @@ public class Farm implements Building {
 	private static String description = "Produz JavaSeeds e SharpCocos";
 	private static String iconPath = "Farm.png"; 
 	private static int unlockCost = FARM_CREATIVITY_COST;
-	private static int buildCost = 123;
+	private static int buildCost = 250;
 	private static int upgradeNumber = NUMBER_OF_UPGRADES;
 	private static boolean[] upgradesAvailable = new boolean[upgradeNumber];
 	private static int[] upgradesCost = new int[upgradeNumber];
@@ -38,13 +40,16 @@ public class Farm implements Building {
 		upgradesAvailable[GREAT_PRODUCTION] = false;
 		
 		upgradesCost[FOOD_PRODUCTION] = 0;
-		upgradesCost[SEED_FERTILIZER] = 0;
-		upgradesCost[COCO_FERTILIZER] = 0;
-		upgradesCost[GREAT_PRODUCTION] = 0;
+		upgradesCost[SEED_FERTILIZER] = 300;
+		upgradesCost[COCO_FERTILIZER] = 300;
+		upgradesCost[GREAT_PRODUCTION] = 750;
 	}
 	
 	protected boolean foodType;//tipo de comida produzida na fazenda
-	protected static int oopyiesAllocated;
+	protected int oopyiesAllocated;
+	protected int perlsUsed;
+	protected int pyramidsUsed;
+	protected boolean greatProductionActivated;
 	
 	/**
 	 * Método construtor da classe Farm
@@ -68,6 +73,17 @@ public class Farm implements Building {
 		return foodType;//retorna o tipo de alimento produzido
 	}
 	
+	public void setPerls(int perls){
+		perlsUsed = perls;
+	}
+	
+	public void setPyramids(int pyramids){
+		pyramidsUsed = pyramids;
+	}
+	
+	public void checkGreatProduction(boolean toUse){
+		greatProductionActivated = toUse;
+	}
 	
 	/**
 	 * Método que produz o rescurso de acordo com o que está definido na fazenda e aumenta a produção de acordo com o a quantidade de recurso passada como parâmetro
@@ -96,7 +112,6 @@ public class Farm implements Building {
 		return 0;
 	}
 	
-	
 	/**
 	 * Método que produz seeds em função do número de perls alocadas, se não adquiriu o método a produção será 0
 	 * @param O número de perls alocadas
@@ -106,7 +121,6 @@ public class Farm implements Building {
 		if(upgradesAvailable[SEED_FERTILIZER] == false){
 			return 1;//produz Seeds se o método já foi adquirido
 		}else{
-			setFoodType(SEED);
 			return perls*SEEDS_PER_PERL;
 		}
 	}
@@ -120,7 +134,6 @@ public class Farm implements Building {
 		if(upgradesAvailable[COCO_FERTILIZER] == false){
 			return 1;//produz Cocos se o método já foi adquirido
 		}else{
-			setFoodType(COCO);
 			return pyramids*COCOS_PER_PYRAMID;
 		}
 	}
@@ -135,7 +148,7 @@ public class Farm implements Building {
 		}else
 			return MAX_PRODUCTION;
 	}
-
+	
 	@Override
 	public String getName() {
 		return name;
@@ -203,5 +216,35 @@ public class Farm implements Building {
 	public void reset() {
 		foodType = SEED; //inicializa o objeto produzindo Seeds
 		oopyiesAllocated = 0;
+		perlsUsed = 0;
+		pyramidsUsed = 0;
+		greatProductionActivated = false;
+	}
+	
+	public void reconfig(ResourceManager resources){
+		resources.updateOopyies(oopyiesAllocated);
+		resources.updateMagicPerls(perlsUsed);
+		resources.updatePyramids(pyramidsUsed);
+		if (greatProductionActivated) resources.updateGreatRubies(1);
+		this.reset();
+	}
+	
+	@Override
+	public void runTurn(ResourceManager resources){
+		if (foodType == SEED){
+			if (greatProductionActivated)
+				resources.updateJavaSeeds(greatProduction());
+			else {
+				if (perlsUsed > 0) resources.updateJavaSeeds(foodProduction(perlsUsed));
+				else resources.updateJavaSeeds(foodProduction());
+			}
+		} else { // foodType == COCO
+			if (greatProductionActivated)
+				resources.updateSharpCocos(greatProduction());
+			else {
+				if (pyramidsUsed > 0) resources.updateSharpCocos(foodProduction(pyramidsUsed));
+				else resources.updateSharpCocos(foodProduction());
+			}
+		}
 	}
 }

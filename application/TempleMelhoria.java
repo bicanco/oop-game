@@ -14,15 +14,13 @@ import core.ResourceManager;
  */
 public class TempleMelhoria extends javax.swing.JFrame {
     GameManager gameData;
-    ResourceManager resourceTomorrow;
     /**
      * Creates new form TempleMelhoria
      */
-    public TempleMelhoria(GameManager gameData, ResourceManager resourceTomorrow) {
+    public TempleMelhoria(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.resourceTomorrow = resourceTomorrow;
         initComponents();
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     }
@@ -170,7 +168,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
          this.dispose();
-         new LojaVirtual(gameData, resourceTomorrow).setVisible(true);
+         new LojaVirtual(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
    

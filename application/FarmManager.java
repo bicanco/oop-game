@@ -5,9 +5,13 @@
  */
 package application;
 
+import core.BuildingTools;
 import core.GameManager;
-import core.ResourceManager;
+
+import javax.annotation.Resources;
 import javax.swing.JComboBox;
+
+import buildings.Farm;
 
 /**
  *
@@ -15,23 +19,35 @@ import javax.swing.JComboBox;
  */
 public class FarmManager extends javax.swing.JFrame {
     GameManager gameData;
-    ResourceManager resourceTomorrow;
+    int row, col;
     /**
      * Creates new form FarmManager
      */
-    public FarmManager(GameManager gameData, ResourceManager resourceTomorrow) {
+    public FarmManager(GameManager gameData, int row, int col) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.resourceTomorrow =resourceTomorrow;
+        this.row = row;
+        this.col = col;
+        
+        Farm farm = (Farm) gameData.grid.getBuilding(row, col);
+        farm.reconfig(gameData.resources);
+        
         initComponents();
         String[] messageStrings = {"Seeds", "Cocos"};
         JComboBox<String> ComboBoxFoodProduction = new JComboBox<String>(messageStrings);
         labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
-         CheckBoxCocoFertilizer.setEnabled(false);
-            SpinnerPyramids.setEnabled(false);
-             CheckBoxSeedFertilizer.setEnabled(true);
-            SpinnerMagicPerls.setEnabled(true);
+        
+        ComboBoxFoodProduction.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.FOOD_PRODUCTION));
+        SpinnerOopyies.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.FOOD_PRODUCTION));   
+        CheckBoxCocoFertilizer.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER));  
+        SpinnerPyramids.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER));  
+        CheckBoxSeedFertilizer.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.SEED_FERTILIZER));  
+        SpinnerMagicPerls.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.SEED_FERTILIZER));
+        CheckBoxGreatProduction.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.GREAT_PRODUCTION));
+        
+        CheckBoxCocoFertilizer.setEnabled(false);
+        SpinnerPyramids.setEnabled(false);
     }
 
     /**
@@ -247,15 +263,39 @@ public class FarmManager extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // TODO add your handling code here:
-        if(CheckBoxSeedFertilizer.isSelected()){
-           // gameDataTomorrow.resources.setSharpCocos()
+    	Farm farm = (Farm) gameData.grid.getBuilding(row, col);
+    	
+        if(CheckBoxGreatProduction.isSelected()){
+        	// great production
+        	farm.checkGreatProduction(true);
+        } else {
+        	// food type
+        	if(ComboBoxFoodProduction.getSelectedItem().toString().equals("Seeds"))
+        		farm.setFoodType(Farm.SEED);
+        	else farm.setFoodType(Farm.COCO);
+        	
+        	// oopyies allocated
+        	int oopyies = (Integer) SpinnerOopyies.getValue();
+        	farm.allocateOopyies(oopyies);
+        	gameData.resources.updateOopyies(-oopyies);
+        	
+        	// seed fertilizer
+        	if (CheckBoxSeedFertilizer.isSelected()){
+        		int perls = (Integer) SpinnerMagicPerls.getValue();
+        		farm.setPerls(perls);
+        		gameData.resources.updateMagicPerls(-perls);
+        	}
+        	
+        	// seed fertilizer
+        	if (CheckBoxCocoFertilizer.isSelected()){
+        		int pyramids = (Integer) SpinnerPyramids.getValue();
+        		farm.setPyramids(pyramids);
+        		gameData.resources.updatePyramids(-pyramids);
+        	}
         }
         
-        
-        
         this.dispose();
-         new MapaParaUso(gameData,resourceTomorrow).setVisible(true);
+        new MapaParaUso(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void CheckBoxSeedFertilizerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxSeedFertilizerActionPerformed
@@ -267,25 +307,47 @@ public class FarmManager extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckBoxCocoFertilizerActionPerformed
 
     private void CheckBoxGreatProductionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxGreatProductionActionPerformed
-        // TODO add your handling code here:
+    	if (CheckBoxGreatProduction.isSelected()){
+    		ComboBoxFoodProduction.setEnabled(false);
+            SpinnerOopyies.setEnabled(false);   
+            CheckBoxCocoFertilizer.setEnabled(false);  
+            SpinnerPyramids.setEnabled(false);  
+            CheckBoxSeedFertilizer.setEnabled(false);  
+            SpinnerMagicPerls.setEnabled(false);
+    	} else {
+    		ComboBoxFoodProduction.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.FOOD_PRODUCTION));
+            SpinnerOopyies.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.FOOD_PRODUCTION));   
+            CheckBoxCocoFertilizer.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER));  
+            SpinnerPyramids.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER));  
+            CheckBoxSeedFertilizer.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.SEED_FERTILIZER));  
+            SpinnerMagicPerls.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.SEED_FERTILIZER));
+            
+            CheckBoxCocoFertilizer.setEnabled(false);
+            SpinnerPyramids.setEnabled(false);
+    	}
     }//GEN-LAST:event_CheckBoxGreatProductionActionPerformed
 
     private void ComboBoxFoodProductionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxFoodProductionActionPerformed
-        // TODO add your handling code here:
         if(ComboBoxFoodProduction.getSelectedItem().toString().equals("Seeds")){
             CheckBoxCocoFertilizer.setEnabled(false);
-            SpinnerPyramids.setEnabled(false);
-            CheckBoxSeedFertilizer.setEnabled(true);
-            SpinnerMagicPerls.setEnabled(true);
             CheckBoxCocoFertilizer.setSelected(false);
+            SpinnerPyramids.setEnabled(false);
             SpinnerPyramids.setValue(0);
+            
+            if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.SEED_FERTILIZER)){
+            	CheckBoxSeedFertilizer.setEnabled(true);
+                SpinnerMagicPerls.setEnabled(true);
+            }
         } else if(ComboBoxFoodProduction.getSelectedItem().toString().equals("Cocos")){
             CheckBoxSeedFertilizer.setEnabled(false);
-            SpinnerMagicPerls.setEnabled(false);
-            CheckBoxCocoFertilizer.setEnabled(true);
-            SpinnerPyramids.setEnabled(true);
-            SpinnerMagicPerls.setValue(0);
             CheckBoxSeedFertilizer.setSelected(false);
+            SpinnerMagicPerls.setEnabled(false);
+            SpinnerMagicPerls.setValue(0);
+            
+            if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER)){
+            	CheckBoxCocoFertilizer.setEnabled(true);
+            	SpinnerPyramids.setEnabled(true);
+            }
         }
         
     }//GEN-LAST:event_ComboBoxFoodProductionActionPerformed
@@ -293,7 +355,7 @@ public class FarmManager extends javax.swing.JFrame {
     private void btnResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResourcesActionPerformed
         // TODO add your handling code here:
  
-        new Recursos(gameData, resourceTomorrow,1).setVisible(true);
+        new Recursos(gameData, 1).setVisible(true);
     }//GEN-LAST:event_btnResourcesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,5 +1,7 @@
 package buildings;
 
+import core.ResourceManager;
+
 public interface Building {
 	String getName();
 	String getDescription();
@@ -18,6 +20,8 @@ public interface Building {
 	void setUpgradeCost(int value, int upgrade);
 	
 	void reset();
+	void reconfig(ResourceManager resources);
+	void runTurn(ResourceManager resources);
 }
 
 /**
