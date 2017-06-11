@@ -6,6 +6,7 @@
 package application;
 
 import core.GameManager;
+import core.ResourceManager;
 
 /**
  *
@@ -13,15 +14,15 @@ import core.GameManager;
  */
 public class TempleMelhoria extends javax.swing.JFrame {
     GameManager gameData;
-    GameManager gameDataTomorrow;
+    ResourceManager resourceTomorrow;
     /**
      * Creates new form TempleMelhoria
      */
-    public TempleMelhoria(GameManager gameData, GameManager gameDataTomorrow) {
+    public TempleMelhoria(GameManager gameData, ResourceManager resourceTomorrow) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.gameDataTomorrow = gameDataTomorrow;
+        this.resourceTomorrow = resourceTomorrow;
         initComponents();
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     }
@@ -169,7 +170,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
          this.dispose();
-         new LojaVirtual(gameData, gameDataTomorrow).setVisible(true);
+         new LojaVirtual(gameData, resourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
    

@@ -6,6 +6,7 @@
 package application;
 
 import core.GameManager;
+import core.ResourceManager;
 
 /**
  *
@@ -13,15 +14,15 @@ import core.GameManager;
  */
 public class LabMelhoria extends javax.swing.JFrame {
     GameManager gameData;
-    GameManager gameDataTomorrow;
+    ResourceManager ResourceTomorrow;
     /**
      * Creates new form LabMelhoria
      */
-    public LabMelhoria(GameManager gameData, GameManager gameDataTomorrow) {
+    public LabMelhoria(GameManager gameData, ResourceManager ResourceTomorrow) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.gameDataTomorrow = gameDataTomorrow;
+        this.ResourceTomorrow = ResourceTomorrow;
         initComponents();
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     }
@@ -156,7 +157,7 @@ public class LabMelhoria extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new LojaVirtual(gameData,gameDataTomorrow).setVisible(true);
+        new LojaVirtual(gameData,ResourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
   

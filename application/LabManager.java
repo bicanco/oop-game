@@ -6,6 +6,7 @@
 package application;
 
 import core.GameManager;
+import core.ResourceManager;
 
 /**
  *
@@ -13,15 +14,15 @@ import core.GameManager;
  */
 public class LabManager extends javax.swing.JFrame {
     GameManager gameData;
-    GameManager gameDataTomorrow;
+    ResourceManager ResourceTomorrow;
     /**
      * Creates new form LabManager
      */
-    public LabManager(GameManager gameData, GameManager gameDataTomorrow) {
+    public LabManager(GameManager gameData, ResourceManager ResourceTomorrow) {
         this.setResizable(false);
        // this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.gameDataTomorrow = gameDataTomorrow;
+        this.ResourceTomorrow = ResourceTomorrow;
         initComponents();
         labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
     }
@@ -222,7 +223,7 @@ public class LabManager extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
          this.dispose();
-         new MapaParaUso(gameData, gameDataTomorrow).setVisible(true);
+         new MapaParaUso(gameData, ResourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
 

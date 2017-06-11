@@ -6,6 +6,7 @@
 package application;
 
 import core.GameManager;
+import core.ResourceManager;
 import java.util.Scanner;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
@@ -17,18 +18,18 @@ import javax.swing.event.DocumentEvent;
 public class Login extends javax.swing.JFrame {
     String s = new String("User");
     GameManager gameData;
-    GameManager gameDataTomorrow;
+    ResourceManager resourceTomorrow;
     int image; //0 => cat, 1=>Man, 2=>Mask
     /**
      * Creates new form Login
      */
-    public Login(GameManager data, GameManager gameDataTomorrow) {
+    public Login(GameManager data, ResourceManager resourceTomorrow) {
         this.setResizable(false);
       //  this.setLocationRelativeTo(null);
         initComponents();
         jButton1.setEnabled(false);
         gameData = data;
-        this.gameDataTomorrow = gameDataTomorrow;
+        this.resourceTomorrow = resourceTomorrow;
     }
 
     /**
@@ -137,7 +138,7 @@ public class Login extends javax.swing.JFrame {
        gameData.iconname = image;
         
        this.dispose();
-        new Principal(gameData, gameDataTomorrow).setVisible(true);
+        new Principal(gameData, resourceTomorrow).setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

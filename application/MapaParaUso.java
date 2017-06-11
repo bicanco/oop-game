@@ -1,4 +1,4 @@
-/*
+		/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,6 +7,7 @@ package application;
 
 import core.BuildingTools;
 import core.GameManager;
+import core.ResourceManager;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -21,15 +22,15 @@ import javax.swing.JOptionPane;
 public class MapaParaUso extends javax.swing.JFrame {
     int type; // se for 0 eh pq abriu pelo Mapa, se for 1 abriu pelo Construir
     GameManager gameData;
-    GameManager gameDataTomorrow;
+    ResourceManager resourceTomorrow;
     /**
      * Creates new form Mapa
      */
-    public MapaParaUso(GameManager gameData, GameManager gameDataTomorrow) {
+    public MapaParaUso(GameManager gameData, ResourceManager resourceTomorrow) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.gameDataTomorrow = gameDataTomorrow;
+        this.resourceTomorrow = resourceTomorrow;
         initComponents();
         
         
@@ -837,20 +838,20 @@ public class MapaParaUso extends javax.swing.JFrame {
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {                                     
         // TODO add your handling code here:
         this.dispose();
-        new Principal(gameData,gameDataTomorrow).setVisible(true);
+        new Principal(gameData,resourceTomorrow).setVisible(true);
     }                                    
 
     private void btn0x0ActionPerformed(java.awt.event.ActionEvent evt) {                                     
       if(!gameData.grid.isEmpty(0, 0)){
           this.dispose();
           if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(0, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -860,13 +861,13 @@ public class MapaParaUso extends javax.swing.JFrame {
        if(!gameData.grid.isEmpty(0, 1)){
           this.dispose();
           if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(0, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -877,13 +878,13 @@ public class MapaParaUso extends javax.swing.JFrame {
          if(!gameData.grid.isEmpty(0, 2)){
           this.dispose();
           if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(0, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -896,13 +897,13 @@ public class MapaParaUso extends javax.swing.JFrame {
          if(!gameData.grid.isEmpty(0, 3)){
           this.dispose();
           if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(0, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -912,13 +913,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(0, 4)){
           this.dispose();
           if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(0, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -928,13 +929,13 @@ public class MapaParaUso extends javax.swing.JFrame {
          if(!gameData.grid.isEmpty(1, 0)){
           this.dispose();
           if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(1, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -944,13 +945,13 @@ public class MapaParaUso extends javax.swing.JFrame {
          if(!gameData.grid.isEmpty(1, 1)){
           this.dispose();
           if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(1, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -960,13 +961,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(1, 2)){
           this.dispose();
           if(gameData.grid.getName(1,2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(1, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(1, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(1, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -976,13 +977,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(1, 3)){
           this.dispose();
           if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(1, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -992,13 +993,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(1, 4)){
           this.dispose();
           if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(1, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -1008,13 +1009,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(2, 0)){
           this.dispose();
           if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(2, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -1024,13 +1025,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(2, 1)){
           this.dispose();
           if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(2, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -1040,13 +1041,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(2, 2)){
           this.dispose();
           if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(2, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -1056,13 +1057,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(2, 3)){
           this.dispose();
           if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(2, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -1072,13 +1073,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(2, 4)){
           this.dispose();
           if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(2, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
       }
@@ -1088,13 +1089,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(3, 0)){
           this.dispose();
           if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(3, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1104,13 +1105,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(3, 1)){
           this.dispose();
           if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(3, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1120,13 +1121,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(3, 2)){
           this.dispose();
           if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(3, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1136,13 +1137,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(3, 3)){
           this.dispose();
           if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(3, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1152,13 +1153,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(3, 4)){
           this.dispose();
           if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(3, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1168,13 +1169,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(4, 0)){
           this.dispose();
           if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(4, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1184,13 +1185,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(4, 1)){
           this.dispose();
           if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(4, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1200,13 +1201,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(4, 2)){
           this.dispose();
           if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(4, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1216,13 +1217,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(4, 3)){
           this.dispose();
           if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(4, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1232,13 +1233,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(4, 4)){
           this.dispose();
           if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(4, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1248,13 +1249,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(5, 0)){
           this.dispose();
           if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(5, 0).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1264,13 +1265,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(5, 1)){
           this.dispose();
           if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(5, 1).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1280,13 +1281,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(5, 2)){
           this.dispose();
           if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(5, 2).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1296,13 +1297,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(5, 3)){
           this.dispose();
           if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(5, 3).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         }
@@ -1312,13 +1313,13 @@ public class MapaParaUso extends javax.swing.JFrame {
         if(!gameData.grid.isEmpty(5, 4)){
           this.dispose();
           if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.FARM))){
-              new FarmManager(gameData,gameDataTomorrow).setVisible(true);
+              new FarmManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.LAB))){
-              new LabManager(gameData,gameDataTomorrow).setVisible(true);
+              new LabManager(gameData,resourceTomorrow).setVisible(true);
           }else if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.TEMPLE))){
-                new TempleManager(gameData,gameDataTomorrow).setVisible(true);  
+                new TempleManager(gameData,resourceTomorrow).setVisible(true);  
           }else if(gameData.grid.getName(5, 4).equals(BuildingTools.getName(BuildingTools.MINE))){
-                new MineManager(gameData,gameDataTomorrow).setVisible(true);
+                new MineManager(gameData,resourceTomorrow).setVisible(true);
           }
       
         
@@ -1328,7 +1329,7 @@ public class MapaParaUso extends javax.swing.JFrame {
     private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
         
-        new Recursos(gameData,gameDataTomorrow, 1).setVisible(true);
+        new Recursos(gameData,resourceTomorrow, 1).setVisible(true);
     }                                           
 //
 //    /**

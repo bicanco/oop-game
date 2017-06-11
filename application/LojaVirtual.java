@@ -7,6 +7,7 @@ package application;
 
 import core.BuildingTools;
 import core.GameManager;
+import core.ResourceManager;
 import javax.swing.Timer;
 
 /**
@@ -15,17 +16,17 @@ import javax.swing.Timer;
  */
 public class LojaVirtual extends javax.swing.JFrame {
     GameManager gameData;
-    GameManager gameDataTomorrow;
+    ResourceManager resourceTomorrow;
     
     /**
      * Creates new form LojaVirtual
      */
-    public LojaVirtual(GameManager gameData, GameManager gameDataTomorrow) {
+    public LojaVirtual(GameManager gameData, ResourceManager ResourceTomorrow) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
-        this.gameDataTomorrow = gameDataTomorrow;
+        this.resourceTomorrow = ResourceTomorrow;
         labelFarm.setText("");
         labelLab.setText("");
         labelTemple.setText("");
@@ -327,7 +328,7 @@ public class LojaVirtual extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Principal(gameData,gameDataTomorrow).setVisible(true);
+        new Principal(gameData,resourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnAboutLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutLabActionPerformed
@@ -353,7 +354,7 @@ public class LojaVirtual extends javax.swing.JFrame {
     private void btnFarmBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFarmBuyActionPerformed
         // TODO add your handling code here:
        this.dispose();
-        new MapaParaConstruir(gameData,gameDataTomorrow, BuildingTools.FARM).setVisible(true);
+        new MapaParaConstruir(gameData,resourceTomorrow, BuildingTools.FARM).setVisible(true);
         
         
     }//GEN-LAST:event_btnFarmBuyActionPerformed
@@ -361,43 +362,43 @@ public class LojaVirtual extends javax.swing.JFrame {
     private void btnLabBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLabBuyActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new MapaParaConstruir(gameData,gameDataTomorrow, BuildingTools.LAB).setVisible(true);
+        new MapaParaConstruir(gameData,resourceTomorrow, BuildingTools.LAB).setVisible(true);
     }//GEN-LAST:event_btnLabBuyActionPerformed
 
     private void btnTempleBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTempleBuyActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new MapaParaConstruir(gameData,gameDataTomorrow, BuildingTools.TEMPLE).setVisible(true);
+        new MapaParaConstruir(gameData,resourceTomorrow, BuildingTools.TEMPLE).setVisible(true);
     }//GEN-LAST:event_btnTempleBuyActionPerformed
 
     private void btnMineBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMineBuyActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new MapaParaConstruir(gameData,gameDataTomorrow, BuildingTools.MINE).setVisible(true);
+        new MapaParaConstruir(gameData,resourceTomorrow, BuildingTools.MINE).setVisible(true);
     }//GEN-LAST:event_btnMineBuyActionPerformed
 
     private void btnFarmUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFarmUpgradeActionPerformed
         // TODO add your handling code here:
          this.dispose();
-        new FarmMelhoria(gameData,gameDataTomorrow).setVisible(true);
+        new FarmMelhoria(gameData,resourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnFarmUpgradeActionPerformed
 
     private void btnLabUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLabUpgradeActionPerformed
         // TODO add your handling code here:
          this.dispose();
-        new LabMelhoria(gameData,gameDataTomorrow).setVisible(true);
+        new LabMelhoria(gameData,resourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnLabUpgradeActionPerformed
 
     private void btnTempleUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTempleUpgradeActionPerformed
         // TODO add your handling code here:
          this.dispose();
-         new TempleMelhoria(gameData,gameDataTomorrow).setVisible(true);
+         new TempleMelhoria(gameData,resourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnTempleUpgradeActionPerformed
 
     private void btnMineUpgradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMineUpgradeActionPerformed
         // TODO add your handling code here:
         this.dispose();
-         new MineMelhoria(gameData,gameDataTomorrow).setVisible(true);
+         new MineMelhoria(gameData,resourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnMineUpgradeActionPerformed
   
     // Variables declaration - do not modify//GEN-BEGIN:variables

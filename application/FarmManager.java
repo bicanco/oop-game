@@ -6,6 +6,7 @@
 package application;
 
 import core.GameManager;
+import core.ResourceManager;
 import javax.swing.JComboBox;
 
 /**
@@ -14,15 +15,15 @@ import javax.swing.JComboBox;
  */
 public class FarmManager extends javax.swing.JFrame {
     GameManager gameData;
-    GameManager gameDataTomorrow;
+    ResourceManager ResourceTomorrow;
     /**
      * Creates new form FarmManager
      */
-    public FarmManager(GameManager gameData, GameManager gameDataTomorrow) {
+    public FarmManager(GameManager gameData, ResourceManager ResourceTomorrow) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.gameDataTomorrow = gameDataTomorrow;
+        this.ResourceTomorrow =ResourceTomorrow;
         initComponents();
         String[] messageStrings = {"Seeds", "Cocos"};
         JComboBox<String> ComboBoxFoodProduction = new JComboBox<String>(messageStrings);
@@ -249,7 +250,7 @@ public class FarmManager extends javax.swing.JFrame {
         
         
         this.dispose();
-         new MapaParaUso(gameData,gameDataTomorrow).setVisible(true);
+         new MapaParaUso(gameData,ResourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void CheckBoxSeedFertilizerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxSeedFertilizerActionPerformed

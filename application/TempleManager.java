@@ -6,6 +6,7 @@
 package application;
 
 import core.GameManager;
+import core.ResourceManager;
 
 /**
  *
@@ -13,15 +14,15 @@ import core.GameManager;
  */
 public class TempleManager extends javax.swing.JFrame {
     GameManager gameData;
-    GameManager gameDataTomorrow;
+    ResourceManager resourceTomorrow;
     /**
      * Creates new form TempleManager
      */
-    public TempleManager(GameManager gameData, GameManager gameDataTomorrow) {
+    public TempleManager(GameManager gameData, ResourceManager resourceTomorrow) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
-        this.gameDataTomorrow = gameDataTomorrow;
+        this.resourceTomorrow = resourceTomorrow;
         initComponents();
         labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
     }
@@ -243,7 +244,7 @@ public class TempleManager extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
          this.dispose();
-         new MapaParaUso(gameData, gameDataTomorrow).setVisible(true);
+         new MapaParaUso(gameData, resourceTomorrow).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
