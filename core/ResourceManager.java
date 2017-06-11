@@ -42,6 +42,11 @@ public class ResourceManager {
 	private int greatRubies;
 	
 	/**
+	 * Quantidade atual de Buildins no mapa
+	 */
+	private int buildings;
+	
+	/**
 	 * Construtor padr�o, zera todos os recursos.
 	 */
 	public ResourceManager(){
@@ -54,6 +59,8 @@ public class ResourceManager {
 		creativity = 0;
 		oopyies = 0;
 		greatRubies = 0;
+		
+		buildings = 0;
 	}
 	
 	/**
@@ -193,8 +200,28 @@ public class ResourceManager {
 		this.greatRubies += offset;
 		if (greatRubies < 0) greatRubies = 0;
 	}
+	
+	/**
+	 * Retorna a quantidade atual de Buildings no mapa
+	 * @return quantidade de atual de Buildings 
+	 */
+	public int getBuildings(){
+		return buildings;
+	}
+	
+	/**
+	 * Atualiza quantidade de Buildings, a partir de uma quantidade a ser somada.
+	 * @param offset quantidade a ser somada
+	 */
+	public void updateBuildings(int offset){
+		this.buildings += offset;
+		if (buildings < 0) buildings = 0;
+	}
         
-        public void resetAll(){
+    /**
+     * Reseta todos os recursos para zero
+     */
+	public void resetAll(){
             javaSeeds = 0;
 		sharpCocos = 0;
 		magicPerls = 0;
@@ -204,7 +231,7 @@ public class ResourceManager {
 		creativity = 0;
 		oopyies = 0;
 		greatRubies = 0;
-        }
+    }
         
 	
 	/**
