@@ -9,11 +9,11 @@ import core.ResourceManager;
  */ 
 public class Temple implements Building {
 	private final static int TEMPLE_CREATIVITY_COST = 0;//custo inicial do Templo
-	private final static int MAX_PRODUCTION = 0;//produ��o m�xima poss�vel
-	private final static int PERL_PER_SEED = 0;//valor de Perls produzidos por Seed
-	private final static int PERL_PER_OOPYIE = 0;//valor de Perls produzidos por oopyie
-	private final static int PYRAMID_PER_OOPYIE = 0;//valor de Pyramids produzidos por oopyie
-	private final static int PYRAMID_PER_COCO = 0;//valor de Pyramids produzidos por cocos
+	private final static int MAX_PRODUCTION = 200;//produ��o m�xima poss�vel
+	private final static int PERL_PER_SEED = 2;//valor de Perls produzidos por Seed
+	private final static int PERL_PER_OOPYIE = 1;//valor de Perls produzidos por oopyie
+	private final static int PYRAMID_PER_OOPYIE = 1;//valor de Pyramids produzidos por oopyie
+	private final static int PYRAMID_PER_COCO = 2;//valor de Pyramids produzidos por cocos
 
 	public final static int GEM_PRODUCTION = 0;//valores das posi��es dos m�todos no vetor de up grades
 	public final static int PERL_RITUAL = 1;
@@ -28,7 +28,7 @@ public class Temple implements Building {
 	private static String description = "Produz Magic Perls e PYramids";
 	private static String iconPath = "Temple.png";
 	private static int unlockCost = TEMPLE_CREATIVITY_COST;
-	private static int buildCost = 100100;
+	private static int buildCost = 300;
 	private static int upgradeNumber = NUMBER_OF_UPGRADES;
 	private static boolean[] upgradesAvailable = new boolean[upgradeNumber];
 		
@@ -41,13 +41,16 @@ public class Temple implements Building {
 		upgradesAvailable[GREAT_RITUAL] = false;
 		
 		upgradesCost[GEM_PRODUCTION] = 0;
-		upgradesCost[PERL_RITUAL] = 0;
-		upgradesCost[PYRAMID_RITUAL] = 0;
-		upgradesCost[GREAT_RITUAL] = 0;
+		upgradesCost[PERL_RITUAL] = 300;
+		upgradesCost[PYRAMID_RITUAL] = 300;
+		upgradesCost[GREAT_RITUAL] = 750;
 	}
 	
 	protected boolean gemType; //tipo de gema produzida no templo
-	protected int oopyiesAllocated; 
+	protected int oopyiesAllocated;
+	protected int seedsUsed;
+	protected int cocosUsed;
+	protected boolean greatRitualActivated;
 	
 	/**
 	 * M�todo construtor da classe Temple
@@ -206,17 +209,36 @@ public class Temple implements Building {
 	public void reset() {
 		gemType = PERL;//inicializa o objeto produzindo Perls
 		oopyiesAllocated = 0;
+		seedsUsed = 0;
+		cocosUsed = 0;
+		greatRitualActivated = false;
 	}
 
 	@Override
 	public void reconfig(ResourceManager resources) {
-		// TODO Auto-generated method stub
-		
+		resources.updateOopyies(oopyiesAllocated);
+		resources.updateJavaSeeds(seedsUsed);
+		resources.updateSharpCocos(cocosUsed);
+		if (greatRitualActivated) resources.updateGreatRubies(1);
+		this.reset();
 	}
 
 	@Override
 	public void runTurn(ResourceManager resources) {
-		// TODO Auto-generated method stub
-		
+		if (gemType == PERL){
+			if (greatRitualActivated)
+				resources.updateMagicPerls(greatRitual());
+			else {
+				if (seedsUsed > 0) resources.updateMagicPerls(gemProduction(seedsUsed));
+				else resources.updateMagicPerls(gemProduction());
+			}
+		} else { // gemType == PYRAMID
+			if (greatRitualActivated)
+				resources.updatePyramids(greatRitual());
+			else {
+				if (cocosUsed > 0) resources.updatePyramids(gemProduction(cocosUsed));
+				else resources.updatePyramids(gemProduction());
+			}
+		}
 	}
 }
