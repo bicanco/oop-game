@@ -12,8 +12,14 @@ public class DailyChangesManager {
 	
 	public void turnDay(){
 		for(int i = 0 ; i < 3; i++){
-			options[i] = new DailyChangeOption(R.nextInt(4)+1);
-			options[i].setDailayChageOption(R.ints(options[i].getSize(), 0, 5).toArray(), R.ints(options[i].getSize(),100,1000).toArray());
+			options[i] = new DailyChangeOption();
+			for(int j = 0; j < 3; j++){
+				try{
+					options[i].setDailyChageOption(i, R.nextInt(5), R.nextInt(901)+100);
+				}catch (Exception e){
+					j--;
+				}
+			}
 		}
 	}
 	
