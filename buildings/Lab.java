@@ -37,6 +37,8 @@ public class Lab implements Building {
 	}
 	
 	protected static int oopyiesAllocated;
+	protected int cocosUsed;
+	protected boolean greatResearchActivated;
 	
 	/**
 	 * M�todo construtor da classe Lab
@@ -79,7 +81,7 @@ public class Lab implements Building {
 	 * M�todo que produz a produ��o m�xima de um laboratorio, se n�o adquiriu o m�todo a produ��o ser� 0
 	 * @return A produ��o
 	 */
-	public int greatProduction(){
+	public int greatResearch(){
 		if(upgradesAvailable[GREAT_RESEARCH] == false){
 			return 0;//produz a produ��o se o m�todo j� foi adquirido
 		}else
@@ -120,6 +122,14 @@ public class Lab implements Building {
 	public void allocateOopyies(int oopyies) {
 		oopyiesAllocated = oopyies;
 	}
+	
+	public int getCocosUsed(){
+		return cocosUsed;
+	}
+	
+	public void updateCocosUsed(int cocos){
+		cocosUsed = cocos;
+	}
 
 	@Override
 	public void unlockUpgrade(int upgradeId) throws Exception {
@@ -156,13 +166,39 @@ public class Lab implements Building {
 	
 	@Override
 	public void reconfig(ResourceManager resources) {
-		// TODO Auto-generated method stub
-		
+		resources.updateOopyies(oopyiesAllocated);
+		resources.updateSharpCocos(cocosUsed);
+		if (greatResearchActivated) resources.updateGreatRubies(1);
+		this.reset();
 	}
+		
+
 
 	@Override
 	public void runTurn(ResourceManager resources) {
-		// TODO Auto-generated method stub
+		if (greatResearchActivated)
+			resources.updateCreativity(greatResearch());
+		else {
+			if (cocosUsed > 0) resources.updateCreativity(creativityProduction(cocosUsed));
+			else resources.updateCreativity(creativityProduction());
+		}
 		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
