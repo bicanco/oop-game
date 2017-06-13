@@ -134,14 +134,25 @@ public class Turno extends javax.swing.JFrame {
     	gameData.turns.nextTurn();
     	
     	// alimentar oopyies
-    	int oopyiesGone = gameData.turns.feedOopyies(gameData.resources);
-    	if (oopyiesGone > 0) {
-    		JOptionPane.showMessageDialog(this, "Por falta de comida, " + oopyiesGone + " Oopyies foram embora. Triste. "
+    	gameData.turns.feedOopyies(gameData.resources);
+    	if (gameData.turns.getLastOopyiesGone() > 0) {
+    		JOptionPane.showMessageDialog(this, "Por falta de comida, " + gameData.turns.getLastOopyiesGone() + " Oopyies foram embora. Triste. "
     				+ "Não deixe mais isso acontecer. Eles não merecem.", "Bando de Antropólogos Noruegueses Dando Estruturas de Comida para Oopyies",
 					JOptionPane.ERROR_MESSAGE);
     	} else {
-    		
+    		JOptionPane.showMessageDialog(this, "Todos os seus Oopyies foram alimentados. Seus armazéns, agora, tem "
+    				+ gameData.turns.getLastSeedsUsed() + " Java Seeds e " + gameData.turns.getLastCocosUsed()
+    				+ " Sharp Cocos a menos.", "Bando de Antropólogos Noruegueses Dando Estruturas de Comida para Oopyies",
+					JOptionPane.INFORMATION_MESSAGE);
     	}
+    	
+    	// novos oopyies
+    	int newOopyies = gameData.turns.newOopyies(gameData.resources);
+    	int acceptOopyies = JOptionPane.showConfirmDialog(this, "Acabaram de chegar "
+    			+ newOopyies + " Oopyies por aqui. Eles querem trabalhar para você."
+    					+ " Você aceita?", "Êxodo Oopyral", JOptionPane.YES_NO_OPTION);
+    	if (acceptOopyies == JOptionPane.YES_OPTION)
+    		gameData.resources.updateOopyies(newOopyies);
     	
     	// checagem do dia de pagamento
     	if (gameData.turns.isPayTurn()){

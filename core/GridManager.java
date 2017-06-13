@@ -38,9 +38,10 @@ public class GridManager {
 	 * @param col coluna da grade
 	 * @param building construção a ser colocada
 	 */
-	public void build(int row, int col, Building building){		
+	public void build(int row, int col, Building building, ResourceManager resources){		
 		if (grid[row][col] == null){
 			grid[row][col] = building;
+			resources.updateBuildings(1);
 		} else {
 			throw new IllegalArgumentException("Grid space already full.");
 		}	

@@ -17,7 +17,7 @@ public class Game {
 		gameData.resources.updateJavaSeeds(500);
 		gameData.resources.updateSharpCocos(500);
 		gameData.resources.updateGreatRubies(500);
-		gameData.resources.updateOopyies(80000);
+		gameData.resources.updateOopyies(10);
 		gameData.resources.updateCreativity(1000000);
 		 java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

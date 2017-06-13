@@ -72,6 +72,10 @@ public class TurnManager {
 	 */
 	private int cocosPerFoodGroup = 2;
 	
+	private int lastOopyiesGone = 0;
+	private int lastSeedsUsed = 0;
+	private int lastCocosUsed = 0;
+	
 	/**
 	 * Construtor padr�o, inicia a partida no turno inicial.
 	 */
@@ -175,10 +179,12 @@ public class TurnManager {
 	 * para um grupo, eles saem da vila. 
 	 * 
 	 * @param resources gerenciador de recursos
-	 * @return n�mero de oopyies que sa�ram da vila por falta de comida
 	 */
-	public int feedOopyies(ResourceManager resources){
-		int oopyiesGone = 0;
+	public void feedOopyies(ResourceManager resources){
+		lastOopyiesGone = 0;
+		lastSeedsUsed = 0;
+		lastCocosUsed = 0;
+		
 		int foodGroups = resources.getOopyies() / oopyiesPerFoodGroup;
 		
 		// para cada um dos grupos de oopyies
@@ -189,14 +195,26 @@ public class TurnManager {
 				// diminuia os recursos, mantenha os oopyies
 				resources.updateJavaSeeds(-seedsPerFoodGroup);
 				resources.updateSharpCocos(-cocosPerFoodGroup);
+				lastSeedsUsed += seedsPerFoodGroup;
+				lastCocosUsed += cocosPerFoodGroup;
 			} else {
 				// oopyies foram embora da cidade
-				oopyiesGone += oopyiesPerFoodGroup;
+				lastOopyiesGone += oopyiesPerFoodGroup;
 				resources.updateOopyies(-oopyiesPerFoodGroup);
 			}
 		}
-		
-		return oopyiesGone;
+	}
+	
+	public int getLastOopyiesGone(){
+		return lastOopyiesGone;
+	}
+	
+	public int getLastSeedsUsed(){
+		return lastSeedsUsed;
+	}
+	
+	public int getLastCocosUsed(){
+		return lastCocosUsed;
 	}
 	
 	/**
@@ -207,8 +225,8 @@ public class TurnManager {
 	public int newOopyies(ResourceManager resources){
 		int oopyiesNumber = 0;
 		
-		oopyiesNumber = (rand.nextInt(resources.getBuildings()) * currentTurn)/2; 
-		return oopyiesNumber;
+		oopyiesNumber = (rand.nextInt(resources.getBuildings() + 1) * currentTurn)/2; 
+		return oopyiesNumber + 2;
 	}
 	
 	/**
