@@ -309,14 +309,12 @@ public class FarmManager extends javax.swing.JFrame {
 
     private void CheckBoxGreatProductionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxGreatProductionActionPerformed
     	if (CheckBoxGreatProduction.isSelected()){
-    		ComboBoxFoodProduction.setEnabled(false);
             SpinnerOopyies.setEnabled(false);   
             CheckBoxCocoFertilizer.setEnabled(false);  
             SpinnerPyramids.setEnabled(false);  
             CheckBoxSeedFertilizer.setEnabled(false);  
             SpinnerMagicPerls.setEnabled(false);
     	} else {
-    		ComboBoxFoodProduction.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.FOOD_PRODUCTION));
             SpinnerOopyies.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.FOOD_PRODUCTION));   
             CheckBoxCocoFertilizer.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER));  
             SpinnerPyramids.setEnabled(BuildingTools.getUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER));  
