@@ -59,21 +59,21 @@ public class MineManager extends javax.swing.JFrame {
         labelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/MineBig.png"))); // NOI18N
 
         labelMINE.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        labelMINE.setText("MINE");
+        labelMINE.setText("MINA");
 
-        jLabel3.setText("Oopyies Available:");
+        jLabel3.setText("Oopyies Disponíveis:");
 
-        jLabel4.setText("Stone Production:");
+        jLabel4.setText("Produção de Pedra:");
 
-        jLabel5.setText("Oopyies Used:");
+        jLabel5.setText("Oopyies Usados:");
 
-        jLabel6.setText("Pick Axe:");
+        jLabel6.setText("Usar Machado:");
 
-        jLabel7.setText("Seeds Used:");
+        jLabel7.setText("Sementes Usadas:");
 
-        jLabel8.setText("Great Escavation:");
+        jLabel8.setText("Grande Escavação:");
 
-        btnResources.setText("Resources");
+        btnResources.setText("Recursos");
         btnResources.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResourcesActionPerformed(evt);
@@ -82,7 +82,7 @@ public class MineManager extends javax.swing.JFrame {
 
         labelOopyiesEdit.setText("0");
 
-        btnSair.setText("Close");
+        btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -113,16 +113,17 @@ public class MineManager extends javax.swing.JFrame {
                                 .addComponent(CheckBoxPickAxe)
                                 .addGap(14, 14, 14))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnSair)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel7)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel3)
-                                            .addGap(56, 56, 56)
-                                            .addComponent(labelOopyiesEdit))
-                                        .addComponent(jLabel8)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(56, 56, 56)
+                                        .addComponent(labelOopyiesEdit))
+                                    .addComponent(jLabel8)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(111, 111, 111)
+                                        .addComponent(btnSair)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(SpinnerSeeds, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -178,9 +179,9 @@ public class MineManager extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(CheckBoxGreatEscavation)
                     .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(btnSair)
-                .addGap(42, 42, 42))
+                .addGap(41, 41, 41))
         );
 
         pack();

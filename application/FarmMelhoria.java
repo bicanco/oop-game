@@ -62,63 +62,28 @@ public class FarmMelhoria extends javax.swing.JFrame {
         labelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FarmBig.png"))); // NOI18N
 
         labelFARM.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        labelFARM.setText("FARM");
+        labelFARM.setText("ROÃ‡A");
 
-        labelFP.setText("Food Production");
+        labelFP.setText("ProduÃ§Ã£o de Comida:");
 
-        labelSF.setText("Seed Fertilizer");
+        labelSF.setText("Fertilizador de Semente:");
 
-        labelCF.setText("Coco Fertilizer");
+        labelCF.setText("Fertilizador de Coco:");
 
-        labelGP.setText("Great Production");
+        labelGP.setText("Grande ProduÃ§Ã£o:");
 
-    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.FOOD_PRODUCTION)){
-    		btnFoodProduction.setText("Unlocked");
-    		btnFoodProduction.setEnabled(false);
-    	} else {
-    		btnFoodProduction.setText("Locked: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.FOOD_PRODUCTION));
-            btnFoodProduction.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnFoodProductionActionPerformed(evt);
-                }
-            });
-    	}
-    	
-    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.SEED_FERTILIZER)){
-    		btnSeedFertilizer.setText("Unlocked");
-    		btnSeedFertilizer.setEnabled(false);
-    	} else {
-        	btnSeedFertilizer.setText("Locked: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.SEED_FERTILIZER));
-        	btnSeedFertilizer.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnSeedFertilizerActionPerformed(evt);
-                }
-            });
-    	}
-    	
-    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER)){
-    		btnCocoFertilizer.setText("Unlocked");
-    		btnCocoFertilizer.setEnabled(false);
-    	} else {
-    		btnCocoFertilizer.setText("Locked: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.COCO_FERTILIZER));
-    		btnCocoFertilizer.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnCocoFertilizerActionPerformed(evt);
-                }
-            });
-    	}
-    	
-    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.GREAT_PRODUCTION)){
-    		btnGreatProduction.setText("Unlocked");
-    		btnGreatProduction.setEnabled(false);
-    	} else {
-    		btnGreatProduction.setText("Locked: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.GREAT_PRODUCTION));
-    		btnGreatProduction.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnGreatProductionActionPerformed(evt);
-                }
-            });
-    	}
+        btnFoodProduction.setText("Locked: 30");
+        btnFoodProduction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFoodProductionActionPerformed(evt);
+            }
+        });
+
+        btnSeedFertilizer.setText("Locked: 30");
+
+        btnCocoFertilizer.setText("Locked: 30");
+
+        btnGreatProduction.setText("Locked: 60");
 
         btnSair.setText("Close");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +92,7 @@ public class FarmMelhoria extends javax.swing.JFrame {
             }
         });
 
-        labelCreativityDONTEDIT.setText("Creativity:");
+        labelCreativityDONTEDIT.setText("Criatividade:");
 
         labelCreativity.setText("0");
 
@@ -144,18 +109,12 @@ public class FarmMelhoria extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelSF)
-                            .addComponent(labelFP)))
+                            .addComponent(labelFP)
+                            .addComponent(labelCF)
+                            .addComponent(labelGP)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(labelGP)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(labelImage)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(labelCF)
-                                .addGap(15, 15, 15)))))
+                        .addGap(88, 88, 88)
+                        .addComponent(labelImage)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,19 +124,15 @@ public class FarmMelhoria extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
                                 .addComponent(labelCreativity)))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnFoodProduction)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCocoFertilizer)
-                                    .addComponent(btnGreatProduction)
-                                    .addComponent(btnSeedFertilizer))
-                                .addContainerGap(42, Short.MAX_VALUE))))))
+                            .addComponent(btnSeedFertilizer)
+                            .addComponent(btnFoodProduction)
+                            .addComponent(btnCocoFertilizer)
+                            .addComponent(btnGreatProduction))
+                        .addGap(34, 34, 34))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(154, 154, 154)
                 .addComponent(btnSair)
@@ -236,7 +191,7 @@ public class FarmMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Vocï¿½ nï¿½o estï¿½ inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }
@@ -251,7 +206,7 @@ public class FarmMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Vocï¿½ nï¿½o estï¿½ inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }
@@ -266,7 +221,7 @@ public class FarmMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Vocï¿½ nï¿½o estï¿½ inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }
@@ -281,7 +236,7 @@ public class FarmMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Vocï¿½ nï¿½o estï¿½ inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }

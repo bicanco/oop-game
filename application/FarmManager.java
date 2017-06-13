@@ -84,43 +84,43 @@ public class FarmManager extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        jLabel1.setText("FARM");
+        jLabel1.setText("ROÇA");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FarmBig.png"))); // NOI18N
 
-        jLabel3.setText("Oopyies Allocated:");
+        jLabel3.setText("Oopyies Alocados:");
 
         SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 300, 1));
 
-        jLabel4.setText("Oopyies Available:");
+        jLabel4.setText("Oopyies Disponíveis:");
 
         labelOopyiesEdit.setText("0");
 
-        btnSair.setText("Close");
+        btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
             }
         });
 
-        btnResources.setText("Resources");
+        btnResources.setText("Recursos");
         btnResources.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResourcesActionPerformed(evt);
             }
         });
 
-        jLabel5.setText("Food Production:");
+        jLabel5.setText("Alimento a ser Produzido:");
 
-        jLabel6.setText("Seed Fertilizer:");
+        jLabel6.setText("Fertilizador de Semente:");
 
-        jLabel7.setText("Magic Perls Used:");
+        jLabel7.setText("Magic Perls Usadas:");
 
-        jLabel8.setText("Coco Fertilizer:");
+        jLabel8.setText("Fertilizador de Cocos");
 
-        jLabel9.setText("Pyramids Used:");
+        jLabel9.setText("Pyramids Usadas:");
 
-        jLabel10.setText("Great Production:");
+        jLabel10.setText("Grande Produção:");
 
         CheckBoxSeedFertilizer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,7 +184,7 @@ public class FarmManager extends javax.swing.JFrame {
                                         .addComponent(ComboBoxFoodProduction, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(SpinnerOopyies, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(jLabel8)
@@ -200,13 +200,13 @@ public class FarmManager extends javax.swing.JFrame {
                                         .addComponent(SpinnerPyramids, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel10)
-                                        .addGap(184, 184, 184)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(CheckBoxGreatProduction))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(CheckBoxSeedFertilizer)))))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

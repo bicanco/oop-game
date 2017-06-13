@@ -64,33 +64,33 @@ public class LabManager extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         jLabel2.setText("LAB");
 
-        jLabel3.setText("Oopyies Available:");
+        jLabel3.setText("Oopyies Disponíveis:");
 
         labelOopyiesEdit.setText("0");
 
-        jLabel5.setText("Creativity Production:");
+        jLabel5.setText("Produção de Criatividade:");
 
-        jLabel6.setText("Basic Research");
+        jLabel6.setText("Pesquisa Básica:");
 
-        btnResources.setText("Resources");
+        btnResources.setText("Recursos");
         btnResources.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResourcesActionPerformed(evt);
             }
         });
 
-        btnSair.setText("Close");
+        btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
             }
         });
 
-        jLabel7.setText("Cocos Used:");
+        jLabel7.setText("Cocos Usados:");
 
-        jLabel8.setText("Oopyies Allocated:");
+        jLabel8.setText("Oopyies Alocados:");
 
-        jLabel9.setText("Great Research");
+        jLabel9.setText("Grande Pesquisa:");
 
         SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
 
@@ -136,13 +136,13 @@ public class LabManager extends javax.swing.JFrame {
                                         .addGap(190, 190, 190)
                                         .addComponent(CheckBoxGreatResearch))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(SpinnerCocos, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(CheckBoxBasicResearch)))
-                        .addContainerGap(54, Short.MAX_VALUE))
+                        .addContainerGap(43, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()

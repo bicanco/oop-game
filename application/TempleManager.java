@@ -49,7 +49,6 @@ public class TempleManager extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        CheckBoxGemProduction = new javax.swing.JCheckBox();
         CheckBoxPerlRitual = new javax.swing.JCheckBox();
         CheckBoxPyramidRitual = new javax.swing.JCheckBox();
         CheckBoxGreatRitual = new javax.swing.JCheckBox();
@@ -57,23 +56,24 @@ public class TempleManager extends javax.swing.JFrame {
         SpinnerSeeds = new javax.swing.JSpinner();
         SpinnerCoco = new javax.swing.JSpinner();
         btnSair = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         labelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/TempleBig.png"))); // NOI18N
 
         labelTEMPLE.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        labelTEMPLE.setText("TEMPLE");
+        labelTEMPLE.setText("TEMPLO");
 
-        jLabel3.setText("Oopyies Available:");
+        jLabel3.setText("Oopyies Disponíveis:");
 
         labelOopyiesEdit.setText("0");
 
-        jLabel5.setText("Gem Production:");
+        jLabel5.setText("Produção de Gema:");
 
-        jLabel6.setText("Oopyies Allocated:");
+        jLabel6.setText("Oopyies Alocados:");
 
-        btnResources.setText("Resources");
+        btnResources.setText("Recursos");
         btnResources.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResourcesActionPerformed(evt);
@@ -82,19 +82,13 @@ public class TempleManager extends javax.swing.JFrame {
 
         jLabel7.setText("Perl Ritual:");
 
-        jLabel8.setText("Seeds Used:");
+        jLabel8.setText("Sementes Usadas:");
 
         jLabel9.setText("Pyramid Ritual:");
 
-        jLabel10.setText("Coco Used:");
+        jLabel10.setText("Cocos Usados:");
 
-        jLabel11.setText("Great Ritual:");
-
-        CheckBoxGemProduction.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckBoxGemProductionActionPerformed(evt);
-            }
-        });
+        jLabel11.setText("Grande Ritual:");
 
         CheckBoxPerlRitual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,12 +108,14 @@ public class TempleManager extends javax.swing.JFrame {
             }
         });
 
-        btnSair.setText("Close");
+        btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
             }
         });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perl", "Pyramid", " " }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,10 +141,6 @@ public class TempleManager extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(CheckBoxPerlRitual))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(CheckBoxGemProduction))
-                                .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel9)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(CheckBoxPyramidRitual))
@@ -156,11 +148,6 @@ public class TempleManager extends javax.swing.JFrame {
                                     .addComponent(jLabel11)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(CheckBoxGreatRitual))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(labelOopyiesEdit)
-                                    .addGap(0, 0, Short.MAX_VALUE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel6)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -172,11 +159,20 @@ public class TempleManager extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel10)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(SpinnerCoco, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(SpinnerCoco, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(labelOopyiesEdit)
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(130, 130, 130)
                         .addComponent(btnSair)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,9 +193,9 @@ public class TempleManager extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CheckBoxGemProduction)
-                            .addComponent(jLabel5))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
@@ -223,17 +219,13 @@ public class TempleManager extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(CheckBoxGreatRitual, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(btnSair)
                 .addGap(17, 17, 17))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void CheckBoxGemProductionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxGemProductionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CheckBoxGemProductionActionPerformed
 
     private void CheckBoxPerlRitualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxPerlRitualActionPerformed
         // TODO add your handling code here:
@@ -260,7 +252,6 @@ public class TempleManager extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResourcesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox CheckBoxGemProduction;
     private javax.swing.JCheckBox CheckBoxGreatRitual;
     private javax.swing.JCheckBox CheckBoxPerlRitual;
     private javax.swing.JCheckBox CheckBoxPyramidRitual;
@@ -269,6 +260,7 @@ public class TempleManager extends javax.swing.JFrame {
     private javax.swing.JSpinner SpinnerSeeds;
     private javax.swing.JButton btnResources;
     private javax.swing.JButton btnSair;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;

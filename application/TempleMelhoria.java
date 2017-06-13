@@ -53,7 +53,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/TempleBig.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        jLabel2.setText("Temple");
+        jLabel2.setText("TEMPLO");
 
         jLabel3.setText("Gem Production:");
 
@@ -61,26 +61,26 @@ public class TempleMelhoria extends javax.swing.JFrame {
 
         jLabel5.setText("Pyramid Ritual:");
 
-        jLabel6.setText("Great Ritual:");
+        jLabel6.setText("Grande Ritual:");
 
-        btnSair.setText("Close");
+        btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
             }
         });
 
-        jLabel11.setText("Creativity:");
+        jLabel11.setText("Criatividade:");
 
         labelCreativity.setText("0");
 
-        btnGemProduction.setText("Locked: 30");
+        btnGemProduction.setText("Bloqueado: 30");
 
-        btnPerlR.setText("Locked: 30");
+        btnPerlR.setText("Bloqueado: 30");
 
-        btnPyR.setText("Locked: 30");
+        btnPyR.setText("Bloqueado: 30");
 
-        btnGreatRitual.setText("Locked: 30");
+        btnGreatRitual.setText("Bloqueado: 30");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,7 +91,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addGap(30, 30, 30))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -106,18 +106,16 @@ public class TempleMelhoria extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnGreatRitual))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnPyR))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnPerlR))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addGap(74, 74, 74)
-                                    .addComponent(btnGemProduction))))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel5))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btnPyR, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnPerlR, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnGemProduction, javax.swing.GroupLayout.Alignment.TRAILING)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(88, 88, 88))
             .addGroup(layout.createSequentialGroup()

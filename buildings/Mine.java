@@ -8,16 +8,16 @@ import core.ResourceManager;
  */
 public class Mine implements Building {
 	private final static int MINE_CREATIVITY_COST = 0;//custo inicial da mina
-	private final static int MAX_PRODUCTION = 0;//produção máxima possível
+	private final static int MAX_PRODUCTION = 0;//produï¿½ï¿½o mï¿½xima possï¿½vel
 	private final static int STONES_PER_OOPYIE = 0;//valor de stones produzidas por oopyie
 	private final static int STONES_PER_SEED = 0;//valor de stones produzidas por seeds
 
-	public final static int STONE_PRODUCTION = 0;//valores das posições dos métodos no vetor de up grades
+	public final static int STONE_PRODUCTION = 0;//valores das posiï¿½ï¿½es dos mï¿½todos no vetor de up grades
 	public final static int USE_PICKAXE = 1;
 	public final static int GREAT_ESCAVATION = 2;
 	public final static int NUMBER_OF_UPGRADES = 3;//numero de up grades
 	
-	private static String name = "Mine";//inicialização das variáveis estáticas que são herança da classe Building
+	private static String name = "Mina";//inicializaï¿½ï¿½o das variï¿½veis estï¿½ticas que sï¿½o heranï¿½a da classe Building
 	private static String description = "Produz Scala Stones";
 	private static String iconPath = "Mine.png";
 	private static int unlockCost = MINE_CREATIVITY_COST;
@@ -27,8 +27,8 @@ public class Mine implements Building {
 	private static int[] upgradesCost = new int[upgradeNumber];
 	
 	static {
-		upgradesAvailable[STONE_PRODUCTION] = true;//o único método que começa já adquirido
-		upgradesAvailable[USE_PICKAXE] = false;//os outros começam como não adquiridos
+		upgradesAvailable[STONE_PRODUCTION] = true;//o ï¿½nico mï¿½todo que comeï¿½a jï¿½ adquirido
+		upgradesAvailable[USE_PICKAXE] = false;//os outros comeï¿½am como nï¿½o adquiridos
 		upgradesAvailable[GREAT_ESCAVATION] = false;
 		
 		upgradesCost[STONE_PRODUCTION] = 0;
@@ -39,14 +39,14 @@ public class Mine implements Building {
 	protected int oopyiesAllocated;
 
 	/**
-	 * Método construtor da classe Mine
+	 * Mï¿½todo construtor da classe Mine
 	 */
 	public Mine(){
 		reset();
 	}
 	
 	/**
-	 * Método que produz as Scala Stones e aumaneta a produção de acordo com o a quantidade de recurso passada como parâmetro
+	 * Mï¿½todo que produz as Scala Stones e aumaneta a produï¿½ï¿½o de acordo com o a quantidade de recurso passada como parï¿½metro
 	 * @param A quantidade de recurso para o boost
 	 * @return O valor produzido
 	 */
@@ -55,7 +55,7 @@ public class Mine implements Building {
 	}
 	
 	/**
-	 * Método que produz as Scala Stones
+	 * Mï¿½todo que produz as Scala Stones
 	 * @return O valor produzido
 	 */
 	public int stoneProduction(){
@@ -64,24 +64,24 @@ public class Mine implements Building {
 	
 	
 	/**
-	 * Método que produz Stones em função do número de seeds alocadas, se não adquiriu o método a produção será 0
-	 * @param O número de seeds alocadas
-	 * @return A produção
+	 * Mï¿½todo que produz Stones em funï¿½ï¿½o do nï¿½mero de seeds alocadas, se nï¿½o adquiriu o mï¿½todo a produï¿½ï¿½o serï¿½ 0
+	 * @param O nï¿½mero de seeds alocadas
+	 * @return A produï¿½ï¿½o
 	 */
 	public int usePickaxe(int seeds){
 		if(upgradesAvailable[USE_PICKAXE] == false){
-			return 0;//produz Stones se o método já foi adquirido
+			return 0;//produz Stones se o mï¿½todo jï¿½ foi adquirido
 		}else
 			return seeds*STONES_PER_SEED;
 	}
 	
 	/**
-	 * Método que produz a produção máxima de uma mina, se não adquiriu o método a produção será 0
-	 * @return A produção
+	 * Mï¿½todo que produz a produï¿½ï¿½o mï¿½xima de uma mina, se nï¿½o adquiriu o mï¿½todo a produï¿½ï¿½o serï¿½ 0
+	 * @return A produï¿½ï¿½o
 	 */
 	public int greatProduction(){
 		if(upgradesAvailable[GREAT_ESCAVATION] == false){
-			return 0;//produz a produção se o método já foi adquirido
+			return 0;//produz a produï¿½ï¿½o se o mï¿½todo jï¿½ foi adquirido
 		}else
 			return MAX_PRODUCTION;
 	}

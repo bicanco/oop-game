@@ -37,23 +37,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="labelSF" min="-2" max="-2" attributes="0"/>
                           <Component id="labelFP" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelCF" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelGP" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Component id="labelGP" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                  <Component id="labelImage" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="labelCF" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="labelImage" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -70,22 +60,15 @@
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="86" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="btnFoodProduction" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnCocoFertilizer" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnGreatProduction" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnSeedFertilizer" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="42" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="btnSeedFertilizer" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnFoodProduction" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCocoFertilizer" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGreatProduction" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -152,27 +135,27 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Bangla Sangam MN" size="24" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="FARM"/>
+        <Property name="text" type="java.lang.String" value="RO&#xc7;A"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelFP">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Food Production"/>
+        <Property name="text" type="java.lang.String" value="Produ&#xe7;&#xe3;o de Comida:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelSF">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Seed Fertilizer"/>
+        <Property name="text" type="java.lang.String" value="Fertilizador de Semente:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelCF">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Coco Fertilizer"/>
+        <Property name="text" type="java.lang.String" value="Fertilizador de Coco:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelGP">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Great Production"/>
+        <Property name="text" type="java.lang.String" value="Grande Produ&#xe7;&#xe3;o:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnFoodProduction">
@@ -208,7 +191,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="labelCreativityDONTEDIT">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Creativity:"/>
+        <Property name="text" type="java.lang.String" value="Criatividade:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelCreativity">

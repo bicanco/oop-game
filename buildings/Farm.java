@@ -9,13 +9,13 @@ import core.ResourceManager;
  */
 public class Farm implements Building {
 	private final static int FARM_CREATIVITY_COST = 20;//custo inicial da fazenda
-	private final static int MAX_PRODUCTION = 500;//produção máxima possível
+	private final static int MAX_PRODUCTION = 500;//produï¿½ï¿½o mï¿½xima possï¿½vel
 	private final static int SEEDS_PER_PERL = 2;//valor de seedss produzidas por perl
 	private final static int SEEDS_PER_OOPYIE = 1;//valor de seeds produzidas po oopyie
 	private final static int COCOS_PER_OOPYIE = 1;//valor de cocos produzidos por oopyie
 	private final static int COCOS_PER_PYRAMID = 2;//valor de cocos produzidos por pyramids
 
-	public final static int FOOD_PRODUCTION = 0;//valores das posições dos métodos no vetor de up grades
+	public final static int FOOD_PRODUCTION = 0;//valores das posiï¿½ï¿½es dos mï¿½todos no vetor de up grades
 	public final static int SEED_FERTILIZER = 1;
 	public final static int COCO_FERTILIZER = 2;
 	public final static int GREAT_PRODUCTION = 3;
@@ -24,7 +24,7 @@ public class Farm implements Building {
 	public final static boolean SEED = false;//tipo de comida produzida
 	public final static boolean COCO = true;
 	
-	private static String name = "Farm";//inicialização das variáveis estáticas que são herança da classe Building
+	private static String name = "RoÃ§a";//inicializaï¿½ï¿½o das variï¿½veis estï¿½ticas que sï¿½o heranï¿½a da classe Building
 	private static String description = "Produz JavaSeeds e SharpCocos";
 	private static String iconPath = "Farm.png"; 
 	private static int unlockCost = FARM_CREATIVITY_COST;
@@ -34,8 +34,8 @@ public class Farm implements Building {
 	private static int[] upgradesCost = new int[upgradeNumber];
 	
 	static {
-		upgradesAvailable[FOOD_PRODUCTION] = true;//o único método que começa já adquirido
-		upgradesAvailable[SEED_FERTILIZER] = false;//os outros começam como não adquiridos
+		upgradesAvailable[FOOD_PRODUCTION] = true;//o ï¿½nico mï¿½todo que comeï¿½a jï¿½ adquirido
+		upgradesAvailable[SEED_FERTILIZER] = false;//os outros comeï¿½am como nï¿½o adquiridos
 		upgradesAvailable[COCO_FERTILIZER] = false;
 		upgradesAvailable[GREAT_PRODUCTION] = false;
 		
@@ -52,21 +52,21 @@ public class Farm implements Building {
 	protected boolean greatProductionActivated;
 	
 	/**
-	 * Método construtor da classe Farm
+	 * Mï¿½todo construtor da classe Farm
 	 */
 	public Farm(){
 		reset();
 	}
 	
 	/**
-	 * Método que define o recurso a ser produzido
+	 * Mï¿½todo que define o recurso a ser produzido
 	 */
 	public void setFoodType(boolean type){
 		foodType = type;//define o tipo de comida a ser produzida
 	}
 	
 	/**
-	 * Método que retorna o tipo de alimento produzido
+	 * Mï¿½todo que retorna o tipo de alimento produzido
 	 * @return o tipo de alimento produzido
 	 */
 	public boolean getFoodType(){
@@ -86,7 +86,7 @@ public class Farm implements Building {
 	}
 	
 	/**
-	 * Método que produz o rescurso de acordo com o que está definido na fazenda e aumenta a produção de acordo com o a quantidade de recurso passada como parâmetro
+	 * Mï¿½todo que produz o rescurso de acordo com o que estï¿½ definido na fazenda e aumenta a produï¿½ï¿½o de acordo com o a quantidade de recurso passada como parï¿½metro
 	 * @param A quantidade de recurso para o boost
 	 * @return O valor produzido
 	 */
@@ -100,7 +100,7 @@ public class Farm implements Building {
 	}
 	
 	/**
-	 * Método que produz o rescurso de acordo com o que está definido na fazenda
+	 * Mï¿½todo que produz o rescurso de acordo com o que estï¿½ definido na fazenda
 	 * @return O valor produzido
 	 */
 	public int foodProduction(){
@@ -113,38 +113,38 @@ public class Farm implements Building {
 	}
 	
 	/**
-	 * Método que produz seeds em função do número de perls alocadas, se não adquiriu o método a produção será 0
-	 * @param O número de perls alocadas
-	 * @return A produção
+	 * Mï¿½todo que produz seeds em funï¿½ï¿½o do nï¿½mero de perls alocadas, se nï¿½o adquiriu o mï¿½todo a produï¿½ï¿½o serï¿½ 0
+	 * @param O nï¿½mero de perls alocadas
+	 * @return A produï¿½ï¿½o
 	 */
 	public int seedFertilizer(int perls){
 		if(upgradesAvailable[SEED_FERTILIZER] == false){
-			return 1;//produz Seeds se o método já foi adquirido
+			return 1;//produz Seeds se o mï¿½todo jï¿½ foi adquirido
 		}else{
 			return perls*SEEDS_PER_PERL;
 		}
 	}
 	
 	/**
-	 * Método que produz cocos em função do número de pyramids alocadas, se não adquiriu o método a produção será 0
-	 * @param O número de pyramids alocadas
-	 * @return A produção
+	 * Mï¿½todo que produz cocos em funï¿½ï¿½o do nï¿½mero de pyramids alocadas, se nï¿½o adquiriu o mï¿½todo a produï¿½ï¿½o serï¿½ 0
+	 * @param O nï¿½mero de pyramids alocadas
+	 * @return A produï¿½ï¿½o
 	 */
 	public int cocoFertilizer(int pyramids){
 		if(upgradesAvailable[COCO_FERTILIZER] == false){
-			return 1;//produz Cocos se o método já foi adquirido
+			return 1;//produz Cocos se o mï¿½todo jï¿½ foi adquirido
 		}else{
 			return pyramids*COCOS_PER_PYRAMID;
 		}
 	}
 	
 	/**
-	 * Método que produz a produção máxima de uma fazenda, se não adquiriu o método a produção será 0
-	 * @return A produção
+	 * Mï¿½todo que produz a produï¿½ï¿½o mï¿½xima de uma fazenda, se nï¿½o adquiriu o mï¿½todo a produï¿½ï¿½o serï¿½ 0
+	 * @return A produï¿½ï¿½o
 	 */
 	public int greatProduction(){
 		if(upgradesAvailable[GREAT_PRODUCTION] == false){
-			return 0;//produz a produção se o método já foi adquirido
+			return 0;//produz a produï¿½ï¿½o se o mï¿½todo jï¿½ foi adquirido
 		}else
 			return MAX_PRODUCTION;
 	}

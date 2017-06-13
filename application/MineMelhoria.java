@@ -51,25 +51,25 @@ public class MineMelhoria extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/MineBig.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        jLabel2.setText("MINE");
+        jLabel2.setText("MINA");
 
-        jLabel3.setText("Stone Production:");
+        jLabel3.setText("Produção de Pedras:");
 
-        jLabel4.setText("Pick Axe:");
+        jLabel4.setText("Machado:");
 
-        jLabel5.setText("Great Escavation:");
+        jLabel5.setText("Grande Escavação:");
 
-        jLabel6.setText("Creativity:");
+        jLabel6.setText("Criatividade:");
 
         labelCreativity.setText("0");
 
-        btnStoneProduction.setText("Locked: 30");
+        btnStoneProduction.setText("Bloqueado: 30");
 
-        btnPickAxe.setText("Locked: 30");
+        btnPickAxe.setText("Bloqueado: 30");
 
-        btnGreatEscavation.setText("Locked: 30");
+        btnGreatEscavation.setText("Bloqueado: 30");
 
-        btnSair.setText("Close");
+        btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -81,30 +81,35 @@ public class MineMelhoria extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(labelCreativity)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(labelCreativity))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5))
                                 .addGap(77, 77, 77)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnGreatEscavation)
+                                .addComponent(jLabel2)
+                                .addContainerGap(97, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnPickAxe)
                                     .addComponent(btnStoneProduction)
-                                    .addComponent(jLabel2)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(btnSair)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                                    .addComponent(btnGreatEscavation))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(btnSair)
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

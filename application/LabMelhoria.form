@@ -46,7 +46,7 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnGreatResearch" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -135,17 +135,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Creativity Production"/>
+        <Property name="text" type="java.lang.String" value="Produ&#xe7;&#xe3;o de Criatividade:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Basic Research"/>
+        <Property name="text" type="java.lang.String" value="Pesquisa B&#xe1;sica:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Great Research"/>
+        <Property name="text" type="java.lang.String" value="Grande Pesquisa:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnCreativityProduction">
@@ -165,7 +165,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSair">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Close"/>
+        <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
@@ -173,7 +173,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Creativity:"/>
+        <Property name="text" type="java.lang.String" value="Criatividade"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelCreativity">

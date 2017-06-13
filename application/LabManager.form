@@ -51,7 +51,7 @@
                                       <Component id="CheckBoxGreatResearch" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="157" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="SpinnerCocos" min="-2" pref="64" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -62,7 +62,7 @@
                               <Component id="CheckBoxBasicResearch" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                      <EmptySpace pref="43" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -175,7 +175,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Oopyies Available:"/>
+        <Property name="text" type="java.lang.String" value="Oopyies Dispon&#xed;veis:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelOopyiesEdit">
@@ -185,17 +185,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Creativity Production:"/>
+        <Property name="text" type="java.lang.String" value="Produ&#xe7;&#xe3;o de Criatividade:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Basic Research"/>
+        <Property name="text" type="java.lang.String" value="Pesquisa B&#xe1;sica:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnResources">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Resources"/>
+        <Property name="text" type="java.lang.String" value="Recursos"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResourcesActionPerformed"/>
@@ -203,7 +203,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSair">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Close"/>
+        <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
@@ -211,17 +211,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cocos Used:"/>
+        <Property name="text" type="java.lang.String" value="Cocos Usados:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Oopyies Allocated:"/>
+        <Property name="text" type="java.lang.String" value="Oopyies Alocados:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Great Research"/>
+        <Property name="text" type="java.lang.String" value="Grande Pesquisa:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSpinner" name="SpinnerOopyies">

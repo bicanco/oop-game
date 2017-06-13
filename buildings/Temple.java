@@ -24,7 +24,7 @@ public class Temple implements Building {
 	public final static boolean PERL = false;//tipo de gema produzida
 	public final static boolean PYRAMID = true;
 	
-	private static String name = "Temple";//inicializa��o das vari�veis est�ticas que s�o heran�a da classe Building
+	private static String name = "Templo";//inicializa��o das vari�veis est�ticas que s�o heran�a da classe Building
 	private static String description = "Produz Magic Perls e PYramids";
 	private static String iconPath = "Temple.png";
 	private static int unlockCost = TEMPLE_CREATIVITY_COST;

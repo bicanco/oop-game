@@ -53,11 +53,11 @@ public class LabMelhoria extends javax.swing.JFrame {
         labelLAB.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelLAB.setText("LAB");
 
-        jLabel3.setText("Creativity Production");
+        jLabel3.setText("Produção de Criatividade:");
 
-        jLabel4.setText("Basic Research");
+        jLabel4.setText("Pesquisa Básica:");
 
-        jLabel5.setText("Great Research");
+        jLabel5.setText("Grande Pesquisa:");
 
         btnCreativityProduction.setText("Locked: 30");
 
@@ -65,14 +65,14 @@ public class LabMelhoria extends javax.swing.JFrame {
 
         btnGreatResearch.setText("Locked: 30");
 
-        btnSair.setText("Close");
+        btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Creativity:");
+        jLabel1.setText("Criatividade");
 
         labelCreativity.setText("0");
 
@@ -100,7 +100,7 @@ public class LabMelhoria extends javax.swing.JFrame {
                                     .addComponent(btnCreativityProduction))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel5)
-                                    .addGap(104, 104, 104)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnGreatResearch))))
                         .addGap(48, 48, 48))
                     .addGroup(layout.createSequentialGroup()
