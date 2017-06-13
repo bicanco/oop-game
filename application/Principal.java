@@ -31,6 +31,9 @@ public class Principal extends javax.swing.JFrame {
         labelUser.setText(gameData.username);
         labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
         labelOopyies.setText(Integer.toString(gameData.resources.getOopyies()));
+        
+        labelDiaAtual.setText(Integer.toString(gameData.turns.getCurrentTurn()));
+        labelDiadePagamento.setText(Integer.toString(gameData.turns.getNextPayTurn()));
     }
 
            

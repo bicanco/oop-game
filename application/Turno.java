@@ -131,8 +131,37 @@ public class Turno extends javax.swing.JFrame {
     	gameData.resources.incorpore(tomorrow);
     	gameData.grid.reset();
     	
+    	gameData.turns.nextTurn();
+    	
+    	// alimentar oopyies
+    	int oopyiesGone = gameData.turns.feedOopyies(gameData.resources);
+    	if (oopyiesGone > 0) {
+    		JOptionPane.showMessageDialog(this, "Por falta de comida, " + oopyiesGone + " Oopyies foram embora. Triste. "
+    				+ "Não deixe mais isso acontecer. Eles não merecem.", "Bando de Antropólogos Noruegueses Dando Estruturas de Comida para Oopyies",
+					JOptionPane.ERROR_MESSAGE);
+    	} else {
+    		
+    	}
+    	
+    	// checagem do dia de pagamento
+    	if (gameData.turns.isPayTurn()){
+    		if (gameData.turns.executePayTurn(gameData.resources)){
+    			JOptionPane.showMessageDialog(this, "Para continuar usando o sistema, você deverá pagar " +
+							gameData.turns.getPayTurnRubies() + " Great Rubies no dia " +
+							gameData.turns.getNextPayTurn() + ".", "Serviço Semi-Voluntário de Colaboração Monetária",
+							JOptionPane.INFORMATION_MESSAGE);
+    			new Principal(gameData).setVisible(true);
+    		} else {
+    			JOptionPane.showMessageDialog(this, "Você não colaborou com Great Rubies no dia correto. Você está sendo"
+    					+ "desligado do nosso sistema.", "Serviço Semi-Voluntário de Colaboração Monetária",
+						JOptionPane.ERROR_MESSAGE);
+    		}
+    	} else {
+    		new Principal(gameData).setVisible(true);
+    	}
+    	
         this.dispose();
-        new Principal(gameData).setVisible(true);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 //
 //    /**

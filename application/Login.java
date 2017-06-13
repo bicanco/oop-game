@@ -8,6 +8,8 @@ package application;
 import core.GameManager;
 import core.ResourceManager;
 import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 
@@ -136,7 +138,11 @@ public class Login extends javax.swing.JFrame {
        gameData.iconname = image;
         
        this.dispose();
-        new Principal(gameData).setVisible(true);
+       JOptionPane.showMessageDialog(this, "Para continuar usando o sistema, você deverá pagar " +
+    		   							gameData.turns.getPayTurnRubies() + " Great Rubies no dia " +
+    		   							gameData.turns.getNextPayTurn() + ".", "Serviço Semi-Voluntário de Colaboração Monetária",
+    		   							JOptionPane.INFORMATION_MESSAGE);
+       new Principal(gameData).setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
