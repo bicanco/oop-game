@@ -268,6 +268,7 @@ public class FarmManager extends javax.swing.JFrame {
         if(CheckBoxGreatProduction.isSelected()){
         	// great production
         	farm.checkGreatProduction(true);
+        	gameData.resources.updateGreatRubies(-1);
         } else {
         	// food type
         	if(ComboBoxFoodProduction.getSelectedItem().toString().equals("Seeds"))
