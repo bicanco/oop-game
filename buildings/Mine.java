@@ -88,6 +88,10 @@ public class Mine implements Building {
 			return MAX_PRODUCTION;
 	}
 	
+	public void setSeeds(int seeds){
+		seedsUsed = seeds;
+	}
+	
 	@Override
 	public String getName() {
 		return name;
