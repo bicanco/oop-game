@@ -34,6 +34,19 @@ public class TempleManager extends javax.swing.JFrame {
         initComponents();
         labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
         
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        
+        SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getOopyies(), 1));
+        SpinnerSeeds.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getJavaSeeds(), 1));
+        SpinnerCoco.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getSharpCocos(), 1));
+        
         jComboBox1.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.GEM_PRODUCTION));
         SpinnerOopyies.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.GEM_PRODUCTION));   
         CheckBoxPerlRitual.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PERL_RITUAL));  
@@ -83,11 +96,11 @@ public class TempleManager extends javax.swing.JFrame {
         labelTEMPLE.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelTEMPLE.setText("TEMPLO");
 
-        jLabel3.setText("Oopyies DisponÃ­veis:");
+        jLabel3.setText("Oopyies Disponíveis:");
 
         labelOopyiesEdit.setText("0");
 
-        jLabel5.setText("ProduÃ§Ã£o de Gema:");
+        jLabel5.setText("Produção Mágica:");
 
         jLabel6.setText("Oopyies Alocados:");
 
@@ -98,15 +111,15 @@ public class TempleManager extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("Perl Ritual:");
+        jLabel7.setText("Ritual das Sombras:");
 
-        jLabel8.setText("Sementes Usadas:");
+        jLabel8.setText("Seeds Usadas:");
 
-        jLabel9.setText("Pyramid Ritual:");
+        jLabel9.setText("Ritual das Luzes:");
 
         jLabel10.setText("Cocos Usados:");
 
-        jLabel11.setText("Grande Ritual:");
+        jLabel11.setText("Grande Ritual Rubro:");
 
         CheckBoxPerlRitual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -254,13 +267,85 @@ public class TempleManager extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckBoxPyramidRitualActionPerformed
 
     private void CheckBoxGreatRitualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxGreatRitualActionPerformed
-        // TODO add your handling code here:
+    	if (CheckBoxGreatRitual.isSelected()){
+    		SpinnerOopyies.setEnabled(false);   
+            CheckBoxPerlRitual.setEnabled(false);
+            SpinnerSeeds.setEnabled(false);  
+            CheckBoxPyramidRitual.setEnabled(false);  
+            SpinnerCoco.setEnabled(false);
+            
+    	} else {
+    		SpinnerOopyies.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.GEM_PRODUCTION));   
+            CheckBoxPerlRitual.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PERL_RITUAL));  
+            SpinnerSeeds.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PERL_RITUAL));  
+            CheckBoxPyramidRitual.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL));  
+            SpinnerCoco.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL));
+            
+            CheckBoxPyramidRitual.setEnabled(false);
+            SpinnerCoco.setEnabled(false);
+    	}
     }//GEN-LAST:event_CheckBoxGreatRitualActionPerformed
+    
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxFoodProductionActionPerformed
+        if(jComboBox1.getSelectedItem().toString().equals("Perl")){
+            CheckBoxPyramidRitual.setEnabled(false);
+            CheckBoxPyramidRitual.setSelected(false);
+            SpinnerCoco.setEnabled(false);
+            SpinnerCoco.setValue(0);
+            
+            if (BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PERL_RITUAL)){
+            	CheckBoxPerlRitual.setEnabled(true);
+                SpinnerSeeds.setEnabled(true);
+            }
+        } else if(jComboBox1.getSelectedItem().toString().equals("PYramid")){
+        	CheckBoxPerlRitual.setEnabled(false);
+        	CheckBoxPerlRitual.setSelected(false);
+        	SpinnerSeeds.setEnabled(false);
+        	SpinnerSeeds.setValue(0);
+            
+            if (BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL)){
+            	CheckBoxPyramidRitual.setEnabled(true);
+            	SpinnerCoco.setEnabled(true);
+            }
+        }
+        
+    }//GEN-LAST:event_ComboBoxFoodProductionActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // TODO add your handling code here:
-         this.dispose();
-         new MapaParaUso(gameData).setVisible(true);
+    	Temple temple = (Temple) gameData.grid.getBuilding(row, col);
+    	
+        if(CheckBoxGreatRitual.isSelected()){
+        	// great production
+        	temple.checkGreatRitual(true);
+        	gameData.resources.updateGreatRubies(-1);
+        } else {
+        	// gem type
+        	if(jComboBox1.getSelectedItem().toString().equals("Perl"))
+        		temple.setGemType(Temple.PERL);
+        	else temple.setGemType(Temple.PYRAMID);
+        	
+        	// oopyies allocated
+        	int oopyies = (Integer) SpinnerOopyies.getValue();
+        	temple.allocateOopyies(oopyies);
+        	gameData.resources.updateOopyies(-oopyies);
+        	
+        	// perl ritual
+        	if (CheckBoxPerlRitual.isSelected()){
+        		int seeds = (Integer) SpinnerSeeds.getValue();
+        		temple.setSeeds(seeds);
+        		gameData.resources.updateJavaSeeds(-seeds);
+        	}
+        	
+        	// pyramid ritual
+        	if (CheckBoxPyramidRitual.isSelected()){
+        		int cocos = (Integer) SpinnerCoco.getValue();
+        		temple.setCocos(cocos);
+        		gameData.resources.updateSharpCocos(-cocos);
+        	}
+        } 	
+    	
+        this.dispose();
+        new MapaParaUso(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResourcesActionPerformed

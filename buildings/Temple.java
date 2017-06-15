@@ -59,6 +59,18 @@ public class Temple implements Building {
 		reset();
 	}
 	
+	public void setSeeds(int seeds){
+		seedsUsed = seeds;
+	}
+
+	public void setCocos(int cocos){
+		cocosUsed = cocos;
+	}
+
+	public void checkGreatRitual(boolean toUse){
+		greatRitualActivated = toUse;
+	}
+	
 	/**
 	 * M�todo que define a gema a ser produzida
 	 */
@@ -229,6 +241,7 @@ public class Temple implements Building {
 			if (greatRitualActivated)
 				resources.updateMagicPerls(greatRitual());
 			else {
+				resources.updateOopyies(oopyiesAllocated);
 				if (seedsUsed > 0) resources.updateMagicPerls(gemProduction(seedsUsed));
 				else resources.updateMagicPerls(gemProduction());
 			}
@@ -236,9 +249,11 @@ public class Temple implements Building {
 			if (greatRitualActivated)
 				resources.updatePyramids(greatRitual());
 			else {
+				resources.updateOopyies(oopyiesAllocated);
 				if (cocosUsed > 0) resources.updatePyramids(gemProduction(cocosUsed));
 				else resources.updatePyramids(gemProduction());
 			}
 		}
 	}
+	
 }
