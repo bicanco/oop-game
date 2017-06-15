@@ -11,7 +11,7 @@ public class Game {
 	public static GameManager gameData = new GameManager();
 	
 	public static void main(String[] args) {
-		gameData.resources.updateMagicPerls(50000);
+		gameData.resources.updateMagicPerls(5);
 		gameData.resources.updatePyramids(50000);
 		gameData.resources.updateGreatRubies(50000);
 		gameData.resources.updateJavaSeeds(50000);

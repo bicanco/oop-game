@@ -84,7 +84,7 @@ public class FarmManager extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        jLabel1.setText("ROÃ‡A");
+        jLabel1.setText("ROÇA");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FarmBig.png"))); // NOI18N
 
@@ -92,7 +92,7 @@ public class FarmManager extends javax.swing.JFrame {
 
         SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 300, 1));
 
-        jLabel4.setText("Oopyies DisponÃ­veis:");
+        jLabel4.setText("Oopyies Disponíveis:");
 
         labelOopyiesEdit.setText("0");
 
@@ -116,11 +116,11 @@ public class FarmManager extends javax.swing.JFrame {
 
         jLabel7.setText("Magic Perls Usadas:");
 
-        jLabel8.setText("Fertilizador de Cocos");
+        jLabel8.setText("Fertilizador de Coco:");
 
         jLabel9.setText("Pyramids Usadas:");
 
-        jLabel10.setText("Grande ProduÃ§Ã£o:");
+        jLabel10.setText("Produção Exorbitante:");
 
         CheckBoxSeedFertilizer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,9 +134,11 @@ public class FarmManager extends javax.swing.JFrame {
             }
         });
 
-        SpinnerMagicPerls.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+        SpinnerMagicPerls.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getMagicPerls(), 1));
 
-        SpinnerPyramids.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+        SpinnerPyramids.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getPyramids(), 1));
 
         CheckBoxGreatProduction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

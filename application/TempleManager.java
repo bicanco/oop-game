@@ -5,6 +5,9 @@
  */
 package application;
 
+import buildings.Farm;
+import buildings.Temple;
+import core.BuildingTools;
 import core.GameManager;
 import core.ResourceManager;
 
@@ -24,8 +27,23 @@ public class TempleManager extends javax.swing.JFrame {
         this.gameData = gameData;
         this.row = row;
         this.col = col;
+        
+        Temple temple = (Temple) gameData.grid.getBuilding(row, col);
+        temple.reconfig(gameData.resources);
+        
         initComponents();
         labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
+        
+        jComboBox1.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.GEM_PRODUCTION));
+        SpinnerOopyies.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.GEM_PRODUCTION));   
+        CheckBoxPerlRitual.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PERL_RITUAL));  
+        SpinnerSeeds.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PERL_RITUAL));  
+        CheckBoxPyramidRitual.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL));  
+        SpinnerCoco.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL));
+        CheckBoxGreatRitual.setEnabled(BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.GREAT_RITUAL));
+        
+        CheckBoxPyramidRitual.setEnabled(false);
+        SpinnerCoco.setEnabled(false);
     }
 
     /**
@@ -115,7 +133,7 @@ public class TempleManager extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perl", "Pyramid", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perl", "PYramid"}));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

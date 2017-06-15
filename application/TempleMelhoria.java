@@ -5,6 +5,10 @@
  */
 package application;
 
+import javax.swing.JOptionPane;
+
+import buildings.Temple;
+import core.BuildingTools;
 import core.GameManager;
 import core.ResourceManager;
 
@@ -23,6 +27,54 @@ public class TempleMelhoria extends javax.swing.JFrame {
         this.gameData = gameData;
         initComponents();
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+        
+        if (BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.GEM_PRODUCTION)){
+    		btnGemProduction.setText("Liberado");
+    		btnGemProduction.setEnabled(false);
+    	} else {
+    		btnGemProduction.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.GEM_PRODUCTION));
+            btnGemProduction.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnGemProductionActionPerformed(evt);
+                }
+            });
+    	}
+        
+        if (BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PERL_RITUAL)){
+    		btnPerlR.setText("Liberado");
+    		btnPerlR.setEnabled(false);
+    	} else {
+    		btnPerlR.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PERL_RITUAL));
+            btnPerlR.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnPerlRActionPerformed(evt);
+                }
+            });
+    	}
+        
+        if (BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL)){
+    		btnPyR.setText("Liberado");
+    		btnPyR.setEnabled(false);
+    	} else {
+    		btnPyR.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL));
+            btnPyR.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnPyRActionPerformed(evt);
+                }
+            });
+    	}
+        
+        if (BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.GREAT_RITUAL)){
+    		btnGreatRitual.setText("Liberado");
+    		btnGreatRitual.setEnabled(false);
+    	} else {
+    		btnGreatRitual.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.GREAT_RITUAL));
+            btnGreatRitual.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnGreatRitualActionPerformed(evt);
+                }
+            });
+    	}
     }
 
     /**
@@ -63,7 +115,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
 
         jLabel6.setText("Grande Ritual:");
 
-        btnSair.setText("Sair");
+        btnSair.setText("Fechar");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -169,7 +221,65 @@ public class TempleMelhoria extends javax.swing.JFrame {
          new LojaVirtual(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
-   
+    private void btnGemProductionActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.GEM_PRODUCTION)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.GEM_PRODUCTION));
+    		BuildingTools.unlockUpgrade(BuildingTools.TEMPLE, Temple.GEM_PRODUCTION);
+    		
+    		btnGemProduction.setText("Liberado");
+    		btnGemProduction.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
+    
+    private void btnPerlRActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PERL_RITUAL)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PERL_RITUAL));
+    		BuildingTools.unlockUpgrade(BuildingTools.TEMPLE, Temple.PERL_RITUAL);
+    		
+    		btnPerlR.setText("Liberado");
+    		btnPerlR.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
+    
+    private void btnPyRActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL));
+    		BuildingTools.unlockUpgrade(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL);
+    		
+    		btnPyR.setText("Liberado");
+    		btnPyR.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
+    
+    private void btnGreatRitualActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.GREAT_RITUAL)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.GREAT_RITUAL));
+    		BuildingTools.unlockUpgrade(BuildingTools.TEMPLE, Temple.GREAT_RITUAL);
+    		
+    		btnGreatRitual.setText("Liberado");
+    		btnGreatRitual.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGemProduction;
