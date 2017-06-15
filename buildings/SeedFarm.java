@@ -1,5 +1,7 @@
 package buildings;
 
+import core.ResourceManager;
+
 /**
  * Classe que representa uma fazenda de sementes
  * @author David
@@ -15,21 +17,24 @@ public class SeedFarm extends Farm{
 	public final static int GREAT_PRODUCTION = 2;
 	public final static int NUMBER_OF_UPGRADES = 3;//numero de up grades
 	
+	private static String name = "Roça de sementes";//inicializaï¿½ï¿½o das variï¿½veis estï¿½ticas que sï¿½o heranï¿½a da classe Building
+	private static String description = "Produz JavaSeeds";
+	private static String iconPath = "Farm.png"; 
+	private static int unlockCost = FARM_CREATIVITY_COST;
+	private static int buildCost = 250;
+	private static int upgradeNumber = NUMBER_OF_UPGRADES;
+	private static boolean[] upgradesAvailable = new boolean[upgradeNumber];
+	private static int[] upgradesCost = new int[upgradeNumber];
+	
 	static{
-		name = "Fazenda de sementes";//inicialização das variáveis estáticas que são herança da classe Building
-		description = "Produz JavaSeeds em grande quantidade";
-		creativityCost = FARM_CREATIVITY_COST;
-		upgradeNumber = NUMBER_OF_UPGRADES;
-		upgradesAvailable = new boolean[upgradeNumber];
 		upgradesAvailable[FOOD_PRODUCTION] = true;//o único método que começa já adquirido
 		upgradesAvailable[SEED_FERTILIZER] = false;//os outros começam como não adquiridos
 		upgradesAvailable[GREAT_PRODUCTION] = false;
-		upgradesCost = new int[upgradeNumber];
-		Farm.setUpgradeCost(0, FOOD_PRODUCTION);
-		Farm.setUpgradeCost(0, SEED_FERTILIZER);
-		Farm.setUpgradeCost(0, GREAT_PRODUCTION);
+		
+		upgradesCost[FOOD_PRODUCTION] = 0;
+		upgradesCost[SEED_FERTILIZER] = 300;
+		upgradesCost[GREAT_PRODUCTION] = 300;
 	}
-	
 	/**
 	 * Método construtor da classe SeedFarm
 	 */
@@ -83,5 +88,5 @@ public class SeedFarm extends Farm{
 		}else
 			return MAX_PRODUCTION;
 	}
-
+	
 }
