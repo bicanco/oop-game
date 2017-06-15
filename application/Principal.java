@@ -283,7 +283,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMapaActionPerformed
 
     private void btnTrocasDiariasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocasDiariasActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new TrocasDiarias(gameData).setVisible(true);
     }//GEN-LAST:event_btnTrocasDiariasActionPerformed
 
     private void btnTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTurnoActionPerformed

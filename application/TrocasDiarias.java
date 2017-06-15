@@ -5,17 +5,123 @@
  */
 package application;
 
+import javax.swing.JOptionPane;
+
+import core.GameManager;
+
 /**
  *
  * @author Fer
  */
 public class TrocasDiarias extends javax.swing.JFrame {
-
+	GameManager gameData;
+	
     /**
      * Creates new form TrocasDiarias
      */
-    public TrocasDiarias() {
+    public TrocasDiarias(GameManager gameData) {
+    	this.gameData = gameData;
         initComponents();
+        
+        labelProduto1Escolha1.setText(gameData.daily.getOptions()[0].getTypesString(0));
+        labelProduto2Escolha1.setText(gameData.daily.getOptions()[0].getTypesString(1));
+        labelProduto3Escolha1.setText(gameData.daily.getOptions()[0].getTypesString(2));
+        
+        labelProduto1Escolha2.setText(gameData.daily.getOptions()[1].getTypesString(0));
+        labelProduto2Escolha2.setText(gameData.daily.getOptions()[1].getTypesString(1));
+        labelProduto3Escolha2.setText(gameData.daily.getOptions()[1].getTypesString(2));
+        
+        labelProduto1Escolha3.setText(gameData.daily.getOptions()[2].getTypesString(0));
+        labelProduto2Escolha3.setText(gameData.daily.getOptions()[2].getTypesString(1));
+        labelProduto3Escolha3.setText(gameData.daily.getOptions()[2].getTypesString(2));
+        
+        labelValorProduto1Escolha1.setText(Integer.toString(gameData.daily.getOptions()[0].getValues(0)));
+        labelValorProduto2Escolha1.setText(Integer.toString(gameData.daily.getOptions()[0].getValues(1)));
+        labelValorProduto3Escolha1.setText(Integer.toString(gameData.daily.getOptions()[0].getValues(2)));
+        
+        labelValorProduto1Escolha2.setText(Integer.toString(gameData.daily.getOptions()[1].getValues(0)));
+        labelValorProduto2Escolha2.setText(Integer.toString(gameData.daily.getOptions()[1].getValues(1)));
+        labelValorProduto3Escolha2.setText(Integer.toString(gameData.daily.getOptions()[1].getValues(2)));
+        
+        labelValorProduto1Escolha3.setText(Integer.toString(gameData.daily.getOptions()[2].getValues(0)));
+        labelValorProduto2Escolha3.setText(Integer.toString(gameData.daily.getOptions()[2].getValues(1)));
+        labelValorProduto3Escolha3.setText(Integer.toString(gameData.daily.getOptions()[2].getValues(2)));
+   
+        btnEscolha1.setEnabled(!gameData.daily.getOptions()[0].isPaid());
+        btnEscolha2.setEnabled(!gameData.daily.getOptions()[1].isPaid());
+        btnEscolha3.setEnabled(!gameData.daily.getOptions()[2].isPaid());
+        
+        btnEscolha1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEscolha1ActionPerformed(evt);
+            }
+        });
+        
+        btnEscolha2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEscolha2ActionPerformed(evt);
+            }
+        });
+        
+        btnEscolha3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEscolha3ActionPerformed(evt);
+            }
+        });
+    }
+    
+    private void btnEscolha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
+        // TODO add your handling code here:
+        if (gameData.daily.getOptions()[0].checkPayment(gameData.resources)){
+        	gameData.daily.getOptions()[0].pay(gameData.resources);
+        	
+        	JOptionPane.showMessageDialog(this, "Parabéns! Você acaba de gastar o trabalho "
+        			+ "de vários Oopyies em uma única gema brilhante.", "Capitalismo Selvagem",
+					JOptionPane.INFORMATION_MESSAGE);
+        	
+        	this.dispose();
+        	new Principal(gameData).setVisible(true);
+        } else {
+        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou você tem o que ele quer, "
+        			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
+					JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void btnEscolha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
+        // TODO add your handling code here:
+        if (gameData.daily.getOptions()[1].checkPayment(gameData.resources)){
+        	gameData.daily.getOptions()[1].pay(gameData.resources);
+        	
+        	JOptionPane.showMessageDialog(this, "Parabéns! Você acaba de gastar o trabalho "
+        			+ "de vários Oopyies em uma única gema brilhante.", "Capitalismo Selvagem",
+					JOptionPane.INFORMATION_MESSAGE);
+        	
+        	this.dispose();
+        	new Principal(gameData).setVisible(true);
+        } else {
+        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou você tem o que ele quer, "
+        			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
+					JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void btnEscolha3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
+        // TODO add your handling code here:
+        if (gameData.daily.getOptions()[2].checkPayment(gameData.resources)){
+        	gameData.daily.getOptions()[2].pay(gameData.resources);
+        	
+        	JOptionPane.showMessageDialog(this, "Parabéns! Você acaba de gastar o trabalho "
+        			+ "de vários Oopyies em uma única gema brilhante.", "Capitalismo Selvagem",
+					JOptionPane.INFORMATION_MESSAGE);
+        	
+        	this.dispose();
+        	new Principal(gameData).setVisible(true);
+        } else {
+        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou você tem o que ele quer, "
+        			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
+					JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     /**
@@ -76,7 +182,7 @@ public class TrocasDiarias extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        jLabel1.setText("Trocas DiÃ¡rias");
+        jLabel1.setText("Trocas Diárias");
 
         labelProduto1Escolha1.setText("Produto1");
 
@@ -271,13 +377,13 @@ public class TrocasDiarias extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+   /* public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+       /* try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -296,12 +402,12 @@ public class TrocasDiarias extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TrocasDiarias().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEscolha1;

@@ -133,6 +133,9 @@ public class Turno extends javax.swing.JFrame {
     	
     	gameData.turns.nextTurn();
     	
+    	// novas trocas diarias
+    	gameData.daily.turnDay();
+    	
     	// alimentar oopyies
     	gameData.turns.feedOopyies(gameData.resources);
     	if (gameData.turns.getLastOopyiesGone() > 0) {

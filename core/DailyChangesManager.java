@@ -15,7 +15,7 @@ public class DailyChangesManager {
 			options[i] = new DailyChangeOption();
 			for(int j = 0; j < 3; j++){
 				try{
-					options[i].setDailyChageOption(i, R.nextInt(5), R.nextInt(901)+100);
+					options[i].setDailyChangeOption(j, R.nextInt(5), R.nextInt(901)+100);
 				}catch (Exception e){
 					j--;
 				}

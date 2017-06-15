@@ -1,7 +1,5 @@
 package core;
 
-import java.awt.Image;
-
 import buildings.Building;
 
 public class GridManager {
