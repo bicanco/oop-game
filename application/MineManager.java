@@ -5,6 +5,10 @@
  */
 package application;
 
+import buildings.Farm;
+import buildings.Lab;
+import buildings.Mine;
+import core.BuildingTools;
 import core.GameManager;
 import core.ResourceManager;
 
@@ -24,8 +28,30 @@ public class MineManager extends javax.swing.JFrame {
         this.gameData = gameData;
         this.row = row;
         this.col = col;
+        
+        Mine mine = (Mine) gameData.grid.getBuilding(row, col);
+        mine.reconfig(gameData.resources);
+        
         initComponents();
         labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
+        
+        CheckBoxStoneProduction.setEnabled(BuildingTools.getUpgrade(BuildingTools.MINE, Mine.STONE_PRODUCTION));
+        SpinnerOopyies.setEnabled(BuildingTools.getUpgrade(BuildingTools.MINE, Mine.STONE_PRODUCTION));
+        CheckBoxPickAxe.setEnabled(BuildingTools.getUpgrade(BuildingTools.MINE, Mine.USE_PICKAXE));
+        SpinnerSeeds.setEnabled(BuildingTools.getUpgrade(BuildingTools.MINE, Mine.USE_PICKAXE));
+        CheckBoxGreatEscavation.setEnabled(BuildingTools.getUpgrade(BuildingTools.MINE, Mine.GREAT_ESCAVATION));
+        
+        CheckBoxGreatEscavation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckBoxGreatEscavationActionPerformed(evt);
+            }
+        });
+        
+        SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getOopyies(), 1));
+
+        SpinnerSeeds.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getJavaSeeds(), 1));
     }
 
     /**
@@ -61,17 +87,17 @@ public class MineManager extends javax.swing.JFrame {
         labelMINE.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelMINE.setText("MINA");
 
-        jLabel3.setText("Oopyies DisponÃ­veis:");
+        jLabel3.setText("Oopyies Disponíveis:");
 
-        jLabel4.setText("ProduÃ§Ã£o de Pedra:");
+        jLabel4.setText("Escavação de Pedras:");
 
         jLabel5.setText("Oopyies Usados:");
 
-        jLabel6.setText("Usar Machado:");
+        jLabel6.setText("Usar Picaretas:");
 
         jLabel7.setText("Sementes Usadas:");
 
-        jLabel8.setText("Grande EscavaÃ§Ã£o:");
+        jLabel8.setText("Grande Escavação:");
 
         btnResources.setText("Recursos");
         btnResources.addActionListener(new java.awt.event.ActionListener() {
@@ -187,10 +213,43 @@ public class MineManager extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void CheckBoxGreatEscavationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxGreatResearchActionPerformed
+    	if (CheckBoxGreatEscavation.isSelected()){
+    		CheckBoxStoneProduction.setEnabled(false);
+            SpinnerOopyies.setEnabled(false);
+            CheckBoxPickAxe.setEnabled(false);
+            SpinnerSeeds.setEnabled(false);
+    	} else {
+    		CheckBoxStoneProduction.setEnabled(BuildingTools.getUpgrade(BuildingTools.MINE, Mine.STONE_PRODUCTION));
+            SpinnerOopyies.setEnabled(BuildingTools.getUpgrade(BuildingTools.MINE, Mine.STONE_PRODUCTION));
+            CheckBoxPickAxe.setEnabled(BuildingTools.getUpgrade(BuildingTools.MINE, Mine.USE_PICKAXE));
+            SpinnerSeeds.setEnabled(BuildingTools.getUpgrade(BuildingTools.MINE, Mine.USE_PICKAXE));
+    	}
+    }
+    
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // TODO add your handling code here:
+    	Mine mine = (Mine) gameData.grid.getBuilding(row, col);
+    	
+        if(CheckBoxGreatEscavation.isSelected()){
+        	// great production
+        	mine.checkGreatEscavation(true);
+        	gameData.resources.updateGreatRubies(-1);
+        } else {       	
+        	// oopyies allocated
+        	int oopyies = (Integer) SpinnerOopyies.getValue();
+        	mine.allocateOopyies(oopyies);
+        	gameData.resources.updateOopyies(-oopyies);
+        	
+        	// basic research
+        	if (CheckBoxPickAxe.isSelected()){
+        		int seeds = (Integer) SpinnerSeeds.getValue();
+        		mine.setSeeds(seeds);
+        		gameData.resources.updateJavaSeeds(-seeds);
+        	}
+        }
+        
         this.dispose();
-         new MapaParaUso(gameData).setVisible(true);
+        new MapaParaUso(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResourcesActionPerformed

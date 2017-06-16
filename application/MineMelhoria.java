@@ -5,6 +5,11 @@
  */
 package application;
 
+import javax.swing.JOptionPane;
+
+import buildings.Farm;
+import buildings.Mine;
+import core.BuildingTools;
 import core.GameManager;
 import core.ResourceManager;
 
@@ -22,6 +27,7 @@ public class MineMelhoria extends javax.swing.JFrame {
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
+        
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     }
 
@@ -53,21 +59,51 @@ public class MineMelhoria extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         jLabel2.setText("MINA");
 
-        jLabel3.setText("ProduÃ§Ã£o de Pedras:");
+        jLabel3.setText("Escavação de Pedras:");
 
-        jLabel4.setText("Machado:");
+        jLabel4.setText("Usar Picaretas:");
 
-        jLabel5.setText("Grande EscavaÃ§Ã£o:");
+        jLabel5.setText("Grande Escavação:");
 
         jLabel6.setText("Criatividade:");
 
         labelCreativity.setText("0");
+        
+        if (BuildingTools.getUpgrade(BuildingTools.MINE, Mine.STONE_PRODUCTION)){
+    		btnStoneProduction.setText("Liberado");
+    		btnStoneProduction.setEnabled(false);
+    	} else {
+    		btnStoneProduction.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.STONE_PRODUCTION));
+            btnStoneProduction.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnStoneProductionActionPerformed(evt);
+                }
+            });
+    	}
 
-        btnStoneProduction.setText("Bloqueado: 30");
+        if (BuildingTools.getUpgrade(BuildingTools.MINE, Mine.USE_PICKAXE)){
+    		btnPickAxe.setText("Liberado");
+    		btnPickAxe.setEnabled(false);
+    	} else {
+    		btnPickAxe.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.USE_PICKAXE));
+            btnPickAxe.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnPickAxeActionPerformed(evt);
+                }
+            });
+    	}
 
-        btnPickAxe.setText("Bloqueado: 30");
-
-        btnGreatEscavation.setText("Bloqueado: 30");
+        if (BuildingTools.getUpgrade(BuildingTools.MINE, Mine.GREAT_ESCAVATION)){
+    		btnGreatEscavation.setText("Liberado");
+    		btnGreatEscavation.setEnabled(false);
+    	} else {
+    		btnGreatEscavation.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.GREAT_ESCAVATION));
+            btnGreatEscavation.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnGreatEscavationActionPerformed(evt);
+                }
+            });
+    	}
 
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +186,52 @@ public class MineMelhoria extends javax.swing.JFrame {
         this.dispose();
         new LojaVirtual(gameData).setVisible(true);
         
-    }//GEN-LAST:event_btnSairActionPerformed
+    }
+    
+    private void btnStoneProductionActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.STONE_PRODUCTION)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.STONE_PRODUCTION));
+    		BuildingTools.unlockUpgrade(BuildingTools.MINE, Mine.STONE_PRODUCTION);
+    		
+    		btnStoneProduction.setText("Liberado");
+    		btnStoneProduction.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
+    
+    private void btnPickAxeActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.USE_PICKAXE)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.USE_PICKAXE));
+    		BuildingTools.unlockUpgrade(BuildingTools.MINE, Mine.USE_PICKAXE);
+    		
+    		btnPickAxe.setText("Liberado");
+    		btnPickAxe.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
+    
+    private void btnGreatEscavationActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.GREAT_ESCAVATION)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.GREAT_ESCAVATION));
+    		BuildingTools.unlockUpgrade(BuildingTools.MINE, Mine.GREAT_ESCAVATION);
+    		
+    		btnGreatEscavation.setText("Liberado");
+    		btnGreatEscavation.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGreatEscavation;

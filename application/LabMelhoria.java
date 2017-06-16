@@ -27,6 +27,7 @@ public class LabMelhoria extends javax.swing.JFrame {
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
         initComponents();
+        
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     }
 

@@ -8,9 +8,9 @@ import core.ResourceManager;
  */
 public class Mine implements Building {
 	private final static int MINE_CREATIVITY_COST = 0;//custo inicial da mina
-	private final static int MAX_PRODUCTION = 0;//produ��o m�xima poss�vel
-	private final static int STONES_PER_OOPYIE = 0;//valor de stones produzidas por oopyie
-	private final static int STONES_PER_SEED = 0;//valor de stones produzidas por seeds
+	private final static int MAX_PRODUCTION = 600;//produ��o m�xima poss�vel
+	private final static int STONES_PER_OOPYIE = 5;//valor de stones produzidas por oopyie
+	private final static int STONES_PER_SEED = 3;//valor de stones produzidas por seeds
 
 	public final static int STONE_PRODUCTION = 0;//valores das posi��es dos m�todos no vetor de up grades
 	public final static int USE_PICKAXE = 1;
@@ -32,8 +32,8 @@ public class Mine implements Building {
 		upgradesAvailable[GREAT_ESCAVATION] = false;
 		
 		upgradesCost[STONE_PRODUCTION] = 0;
-		upgradesCost[USE_PICKAXE] = 0;
-		upgradesCost[GREAT_ESCAVATION] = 0;
+		upgradesCost[USE_PICKAXE] = 200;
+		upgradesCost[GREAT_ESCAVATION] = 500;
 	}
 	
 	protected int oopyiesAllocated;
@@ -90,6 +90,10 @@ public class Mine implements Building {
 	
 	public void setSeeds(int seeds){
 		seedsUsed = seeds;
+	}
+	
+	public void checkGreatEscavation(boolean isUsed){
+		greatEscavationActivated = isUsed;
 	}
 	
 	@Override
@@ -158,6 +162,8 @@ public class Mine implements Building {
 	@Override
 	public void reset() {
 		oopyiesAllocated = 0;
+		seedsUsed = 0;
+		greatEscavationActivated = false;
 	}
 
 	@Override
@@ -171,11 +177,11 @@ public class Mine implements Building {
 	@Override
 	public void runTurn(ResourceManager resources){
 		if (greatEscavationActivated)
-			resources.updateJavaSeeds(greatEscavation());
+			resources.updateScalaStones(greatEscavation());
 		else {
-			if (seedsUsed > 0) resources.updateJavaSeeds(stoneProduction(seedsUsed));
-			else resources.updateJavaSeeds(stoneProduction());
+			resources.updateOopyies(oopyiesAllocated);
+			if (seedsUsed > 0) resources.updateScalaStones(stoneProduction(seedsUsed));
+			else resources.updateScalaStones(stoneProduction());
 		}
-		
 	}
 }
