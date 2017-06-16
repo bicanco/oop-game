@@ -138,9 +138,9 @@ public class Login extends javax.swing.JFrame {
        gameData.iconname = image;
         
        this.dispose();
-       JOptionPane.showMessageDialog(this, "Para continuar usando o sistema, você deverá pagar " +
+       JOptionPane.showMessageDialog(this, "Para continuar usando o sistema, voce devera pagar " +
     		   							gameData.turns.getPayTurnRubies() + " Great Rubies no dia " +
-    		   							gameData.turns.getNextPayTurn() + ".", "Serviço Semi-Voluntário de Colaboração Monetária",
+    		   							gameData.turns.getNextPayTurn() + ".", "Servico Semi-Voluntario de Colaboracao Monetaria",
     		   							JOptionPane.INFORMATION_MESSAGE);
        new Principal(gameData).setVisible(true);
         

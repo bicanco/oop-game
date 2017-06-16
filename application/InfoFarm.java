@@ -47,7 +47,7 @@ public class InfoFarm extends javax.swing.JFrame {
 
         jLabel4.setText("Seeds/Tree");
 
-        jLabel5.setText("Produção Diária/Oopyies");
+        jLabel5.setText("Produção Diaria/Oopyies");
 
         jLabel7.setText("10");
 

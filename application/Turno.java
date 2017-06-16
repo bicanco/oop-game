@@ -140,34 +140,34 @@ public class Turno extends javax.swing.JFrame {
     	gameData.turns.feedOopyies(gameData.resources);
     	if (gameData.turns.getLastOopyiesGone() > 0) {
     		JOptionPane.showMessageDialog(this, "Por falta de comida, " + gameData.turns.getLastOopyiesGone() + " Oopyies foram embora. Triste. "
-    				+ "Não deixe mais isso acontecer. Eles não merecem.", "Bando de Antropólogos Noruegueses Dando Estruturas de Comida para Oopyies",
+    				+ "Nao deixe mais isso acontecer. Eles nao merecem.", "Bando de Antropologos Noruegueses Dando Estruturas de Comida para Oopyies",
 					JOptionPane.ERROR_MESSAGE);
     	} else {
-    		JOptionPane.showMessageDialog(this, "Todos os seus Oopyies foram alimentados. Seus armazéns, agora, tem "
+    		JOptionPane.showMessageDialog(this, "Todos os seus Oopyies foram alimentados. Seus armazens, agora, tem "
     				+ gameData.turns.getLastSeedsUsed() + " Java Seeds e " + gameData.turns.getLastCocosUsed()
-    				+ " Sharp Cocos a menos.", "Bando de Antropólogos Noruegueses Dando Estruturas de Comida para Oopyies",
+    				+ " Sharp Cocos a menos.", "Bando de Antropologos Noruegueses Dando Estruturas de Comida para Oopyies",
 					JOptionPane.INFORMATION_MESSAGE);
     	}
     	
     	// novos oopyies
     	int newOopyies = gameData.turns.newOopyies(gameData.resources);
     	int acceptOopyies = JOptionPane.showConfirmDialog(this, "Acabaram de chegar "
-    			+ newOopyies + " Oopyies por aqui. Eles querem trabalhar para você."
-    					+ " Você aceita?", "Êxodo Oopyral", JOptionPane.YES_NO_OPTION);
+    			+ newOopyies + " Oopyies por aqui. Eles querem trabalhar para voce."
+    					+ " Voce aceita?", "Exodo Oopyral", JOptionPane.YES_NO_OPTION);
     	if (acceptOopyies == JOptionPane.YES_OPTION)
     		gameData.resources.updateOopyies(newOopyies);
     	
     	// checagem do dia de pagamento
     	if (gameData.turns.isPayTurn()){
     		if (gameData.turns.executePayTurn(gameData.resources)){
-    			JOptionPane.showMessageDialog(this, "Para continuar usando o sistema, você deverá pagar " +
+    			JOptionPane.showMessageDialog(this, "Para continuar usando o sistema, voce devera pagar " +
 							gameData.turns.getPayTurnRubies() + " Great Rubies no dia " +
-							gameData.turns.getNextPayTurn() + ".", "Serviço Semi-Voluntário de Colaboração Monetária",
+							gameData.turns.getNextPayTurn() + ".", "Servico Semi-Voluntario de Colaboracao Monetaria",
 							JOptionPane.INFORMATION_MESSAGE);
     			new Principal(gameData).setVisible(true);
     		} else {
-    			JOptionPane.showMessageDialog(this, "Você não colaborou com Great Rubies no dia correto. Você está sendo"
-    					+ "desligado do nosso sistema.", "Serviço Semi-Voluntário de Colaboração Monetária",
+    			JOptionPane.showMessageDialog(this, "Voce nao colaborou com Great Rubies no dia correto. Voce esta sendo"
+    					+ "desligado do nosso sistema.", "Servico Semi-Voluntario de Colaboracao Monetaria",
 						JOptionPane.ERROR_MESSAGE);
     		}
     	} else {

@@ -77,11 +77,11 @@ public class LabManager extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         jLabel2.setText("LAB");
 
-        jLabel3.setText("Oopyies Disponíveis:");
+        jLabel3.setText("Oopyies Disponiveis:");
 
         labelOopyiesEdit.setText("0");
 
-        jLabel5.setText("Pesquisa Científica:");
+        jLabel5.setText("Pesquisa Cientifica:");
 
         jLabel6.setText("Grupo de Controle:");
 

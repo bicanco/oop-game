@@ -231,7 +231,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }
@@ -246,7 +246,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }
@@ -261,7 +261,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }
@@ -276,7 +276,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }

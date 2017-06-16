@@ -96,11 +96,11 @@ public class TempleManager extends javax.swing.JFrame {
         labelTEMPLE.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelTEMPLE.setText("TEMPLO");
 
-        jLabel3.setText("Oopyies Disponíveis:");
+        jLabel3.setText("Oopyies Disponiveis:");
 
         labelOopyiesEdit.setText("0");
 
-        jLabel5.setText("Produção Mágica:");
+        jLabel5.setText("Producao Magica:");
 
         jLabel6.setText("Oopyies Alocados:");
 

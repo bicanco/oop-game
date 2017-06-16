@@ -124,7 +124,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
           
         }else {
             btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn0x0.setText("À Venda");
+            btn0x0.setText("A Venda");
             
          }
          btn0x0.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +142,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn0x1.setText("À Venda");
+            btn0x1.setText("A Venda");
             btn0x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn0x1ActionPerformed(evt);
@@ -158,7 +158,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
            
             btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn0x2.setText("À Venda");
+            btn0x2.setText("A Venda");
             btn0x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn0x2ActionPerformed(evt);
@@ -174,7 +174,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
              // NOI18N
             btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn0x3.setText("À Venda");
+            btn0x3.setText("A Venda");
             btn0x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn0x3ActionPerformed(evt);
@@ -190,7 +190,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn0x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn0x4.setText("À Venda");
+            btn0x4.setText("A Venda");
             btn0x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn0x4ActionPerformed(evt);
@@ -207,7 +207,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn1x0.setText("À Venda");
+            btn1x0.setText("A Venda");
             btn1x0.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn1x0ActionPerformed(evt);
@@ -223,7 +223,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn1x1.setText("À Venda");
+            btn1x1.setText("A Venda");
             btn1x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn1x1ActionPerformed(evt);
@@ -238,7 +238,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
           
         }else {
             
-            btn1x2.setText("À Venda");
+            btn1x2.setText("A Venda");
             btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png")));
             btn1x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,7 +255,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn1x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn1x3.setText("À Venda");
+            btn1x3.setText("A Venda");
             btn1x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn1x3ActionPerformed(evt);
@@ -271,7 +271,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
            
             btn1x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn1x4.setText("À Venda");
+            btn1x4.setText("A Venda");
             btn1x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn1x4ActionPerformed(evt);
@@ -288,7 +288,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn2x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn2x0.setText("À Venda");
+            btn2x0.setText("A Venda");
             btn2x0.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn2x0ActionPerformed(evt);
@@ -303,7 +303,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
           
         }else {
             btn2x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn2x1.setText("À Venda");
+            btn2x1.setText("A Venda");
             btn2x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn2x1ActionPerformed(evt);
@@ -319,7 +319,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
            
             btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn2x2.setText("À Venda");
+            btn2x2.setText("A Venda");
             btn2x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn2x2ActionPerformed(evt);
@@ -335,7 +335,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn2x3.setText("À Venda");
+            btn2x3.setText("A Venda");
             btn2x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn2x3ActionPerformed(evt);
@@ -351,7 +351,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn2x4.setText("À Venda");
+            btn2x4.setText("A Venda");
             btn2x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn2x4ActionPerformed(evt);
@@ -368,7 +368,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn3x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn3x0.setText("À Venda");
+            btn3x0.setText("A Venda");
             btn3x0.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn3x0ActionPerformed(evt);
@@ -385,7 +385,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn3x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn3x1.setText("À Venda");
+            btn3x1.setText("A Venda");
             btn3x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn3x1ActionPerformed(evt);
@@ -401,7 +401,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
            
             btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn3x2.setText("À Venda");
+            btn3x2.setText("A Venda");
             btn3x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn3x2ActionPerformed(evt);
@@ -417,7 +417,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
            
             btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn3x3.setText("À Venda");
+            btn3x3.setText("A Venda");
             btn3x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn3x3ActionPerformed(evt);
@@ -433,7 +433,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn3x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn3x4.setText("À Venda");
+            btn3x4.setText("A Venda");
             btn3x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn3x4ActionPerformed(evt);
@@ -449,7 +449,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn4x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn4x0.setText("À Venda");
+            btn4x0.setText("A Venda");
             btn4x0.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn4x0ActionPerformed(evt);
@@ -465,7 +465,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn4x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn4x1.setText("À Venda");
+            btn4x1.setText("A Venda");
             btn4x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn4x1ActionPerformed(evt);
@@ -481,7 +481,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn4x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn4x2.setText("À Venda");
+            btn4x2.setText("A Venda");
             btn4x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn4x2ActionPerformed(evt);
@@ -497,7 +497,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
            
             btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn4x3.setText("À Venda");
+            btn4x3.setText("A Venda");
             btn4x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn4x3ActionPerformed(evt);
@@ -513,7 +513,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
            
             btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn4x4.setText("À Venda");
+            btn4x4.setText("A Venda");
             btn4x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn4x4ActionPerformed(evt);
@@ -529,7 +529,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn5x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn5x0.setText("À Venda");
+            btn5x0.setText("A Venda");
             btn5x0.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn5x0ActionPerformed(evt);
@@ -546,7 +546,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn5x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn5x1.setText("À Venda");
+            btn5x1.setText("A Venda");
             btn5x1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn5x1ActionPerformed(evt);
@@ -562,7 +562,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
            
             btn5x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn5x2.setText("À Venda");
+            btn5x2.setText("A Venda");
             btn5x2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn5x2ActionPerformed(evt);
@@ -578,7 +578,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
           
         }else {
                        btn5x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn5x3.setText("À Venda");
+            btn5x3.setText("A Venda");
             btn5x3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn5x3ActionPerformed(evt);
@@ -594,7 +594,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
         }else {
             
             btn5x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn5x4.setText("À Venda");
+            btn5x4.setText("A Venda");
             btn5x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btn5x4ActionPerformed(evt);
@@ -794,7 +794,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn0x0.setEnabled(false);
             gameData.grid.build(0, 0, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
             
@@ -813,7 +813,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn0x1.setEnabled(false);
             gameData.grid.build(0, 1, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
         
@@ -828,7 +828,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn0x2.setEnabled(false);
             gameData.grid.build(0, 2, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
         
@@ -845,7 +845,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn0x3.setEnabled(false);
             gameData.grid.build(0, 3, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn0x3ActionPerformed
@@ -859,7 +859,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn0x4.setEnabled(false);
             gameData.grid.build(0, 4, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn0x4ActionPerformed
@@ -873,7 +873,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn1x0.setEnabled(false);
             gameData.grid.build(1, 0, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn1x0ActionPerformed
@@ -887,7 +887,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn1x1.setEnabled(false);
             gameData.grid.build(1,1, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn1x1ActionPerformed
@@ -901,7 +901,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn1x2.setEnabled(false);
             gameData.grid.build(1,2, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn1x2ActionPerformed
@@ -915,7 +915,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn1x3.setEnabled(false);
             gameData.grid.build(1,3, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn1x3ActionPerformed
@@ -929,7 +929,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn1x4.setEnabled(false);
             gameData.grid.build(1,4, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn1x4ActionPerformed
@@ -943,7 +943,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn2x0.setEnabled(false);
             gameData.grid.build(2,0, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn2x0ActionPerformed
@@ -957,7 +957,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn2x1.setEnabled(false);
             gameData.grid.build(2,1, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn2x1ActionPerformed
@@ -971,7 +971,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn2x2.setEnabled(false);
             gameData.grid.build(2,2, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn2x2ActionPerformed
@@ -985,7 +985,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn2x3.setEnabled(false);
             gameData.grid.build(2,3, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn2x3ActionPerformed
@@ -999,7 +999,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn2x4.setEnabled(false);
             gameData.grid.build(2,4, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn2x4ActionPerformed
@@ -1013,7 +1013,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn3x0.setEnabled(false);
             gameData.grid.build(3,0, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn3x0ActionPerformed
@@ -1027,7 +1027,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn3x1.setEnabled(false);
             gameData.grid.build(3,1, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn3x1ActionPerformed
@@ -1041,7 +1041,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn3x2.setEnabled(false);
             gameData.grid.build(3,2, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn3x2ActionPerformed
@@ -1055,7 +1055,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn3x3.setEnabled(false);
             gameData.grid.build(3,3, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn3x3ActionPerformed
@@ -1069,7 +1069,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn3x4.setEnabled(false);
             gameData.grid.build(3,4, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn3x4ActionPerformed
@@ -1083,7 +1083,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn4x0.setEnabled(false);
             gameData.grid.build(4,0, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn4x0ActionPerformed
@@ -1097,7 +1097,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn4x1.setEnabled(false);
             gameData.grid.build(4,1, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn4x1ActionPerformed
@@ -1111,7 +1111,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn4x2.setEnabled(false);
             gameData.grid.build(4,2, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn4x2ActionPerformed
@@ -1125,7 +1125,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn4x3.setEnabled(false);
             gameData.grid.build(4,3, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn4x3ActionPerformed
@@ -1139,7 +1139,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn4x4.setEnabled(false);
             gameData.grid.build(4,4, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn4x4ActionPerformed
@@ -1153,7 +1153,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn5x0.setEnabled(false);
             gameData.grid.build(5,0, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn5x0ActionPerformed
@@ -1167,7 +1167,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn5x1.setEnabled(false);
             gameData.grid.build(5,1, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn5x1ActionPerformed
@@ -1181,7 +1181,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn5x2.setEnabled(false);
             gameData.grid.build(5,2, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn5x2ActionPerformed
@@ -1195,7 +1195,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn5x3.setEnabled(false);
             gameData.grid.build(5,3, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn5x3ActionPerformed
@@ -1209,7 +1209,7 @@ public class MapaParaConstruir extends javax.swing.JFrame {
             btn5x4.setEnabled(false);
             gameData.grid.build(5,4, BuildingTools.instantiateBuilding(type), gameData.resources);
         } else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }//GEN-LAST:event_btn5x4ActionPerformed

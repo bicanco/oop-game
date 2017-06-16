@@ -59,7 +59,7 @@ public class LabMelhoria extends javax.swing.JFrame {
         labelLAB.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelLAB.setText("LAB");
 
-        jLabel3.setText("Pesquisa Científica:");
+        jLabel3.setText("Pesquisa Cientifica:");
 
         jLabel4.setText("Grupo de Controle:");
 
@@ -198,7 +198,7 @@ public class LabMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }
@@ -213,7 +213,7 @@ public class LabMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }
@@ -228,7 +228,7 @@ public class LabMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }

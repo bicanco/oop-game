@@ -59,11 +59,11 @@ public class MineMelhoria extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         jLabel2.setText("MINA");
 
-        jLabel3.setText("Escavação de Pedras:");
+        jLabel3.setText("Escavacao de Pedras:");
 
         jLabel4.setText("Usar Picaretas:");
 
-        jLabel5.setText("Grande Escavação:");
+        jLabel5.setText("Grande Escavacao:");
 
         jLabel6.setText("Criatividade:");
 
@@ -198,7 +198,7 @@ public class MineMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }
@@ -213,7 +213,7 @@ public class MineMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }
@@ -228,7 +228,7 @@ public class MineMelhoria extends javax.swing.JFrame {
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
-    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    		JOptionPane.showMessageDialog(null, "Voce nao esta inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
     				JOptionPane.ERROR_MESSAGE);
     	}
     }
