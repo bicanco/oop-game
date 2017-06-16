@@ -1,5 +1,5 @@
 package buildings;
-//teste баг зз
+
 import core.ResourceManager;
 
 public interface Building {
