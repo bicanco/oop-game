@@ -2,19 +2,19 @@ package buildings;
 import core.ResourceManager;
 public class Farm implements Building {
 	private final static int FARM_CREATIVITY_COST = 20;//custo inicial da fazenda
-	private final static int MAX_PRODUCTION = 500;//produï¿½ï¿½o mï¿½xima possï¿½vel
+	private final static int MAX_PRODUCTION = 500;//producao maxima possivel
 	private final static int SEEDS_PER_PERL = 2;//valor de seedss produzidas por perl
 	private final static int SEEDS_PER_OOPYIE = 1;//valor de seeds produzidas po oopyie
 	private final static int COCOS_PER_OOPYIE = 1;//valor de cocos produzidos por oopyie
 	private final static int COCOS_PER_PYRAMID = 2;//valor de cocos produzidos por pyramids
-	public final static int FOOD_PRODUCTION = 0;//valores das posiï¿½ï¿½es dos mï¿½todos no vetor de up grades
+	public final static int FOOD_PRODUCTION = 0;//valores das posiveis dos metodos no vetor de up grades
 	public final static int SEED_FERTILIZER = 1;
 	public final static int COCO_FERTILIZER = 2;
 	public final static int GREAT_PRODUCTION = 3;
 	public final static int NUMBER_OF_UPGRADES = 4;//numero de upgrades
 	public final static boolean SEED = false;//tipo de comida produzida
 	public final static boolean COCO = true;
-	private static String name = "Roça";//inicializaï¿½ï¿½o das variï¿½veis estï¿½ticas que sï¿½o heranï¿½a da classe Building
+	private static String name = "Roï¿½a";//inicializacao das variaveis estaticas que sao heranca da classe Building
 	private static String description = "Produz JavaSeeds e SharpCocos";
 	private static String iconPath = "Farm.png"; 
 	private static int unlockCost = FARM_CREATIVITY_COST;
@@ -23,8 +23,8 @@ public class Farm implements Building {
 	private static boolean[] upgradesAvailable = new boolean[upgradeNumber];
 	private static int[] upgradesCost = new int[upgradeNumber];
 	static {
-		upgradesAvailable[FOOD_PRODUCTION] = true;//o ï¿½nico mï¿½todo que comeï¿½a jï¿½ adquirido
-		upgradesAvailable[SEED_FERTILIZER] = false;//os outros comeï¿½am como nï¿½o adquiridos
+		upgradesAvailable[FOOD_PRODUCTION] = true;//o unico metodo que comeca ja adquirido
+		upgradesAvailable[SEED_FERTILIZER] = false;//os outros comecam como nao adquiridos
 		upgradesAvailable[COCO_FERTILIZER] = false;
 		upgradesAvailable[GREAT_PRODUCTION] = false;
 		upgradesCost[FOOD_PRODUCTION] = 0;
@@ -73,21 +73,21 @@ public class Farm implements Building {
 	}
 	public int seedFertilizer(int perls){
 		if(upgradesAvailable[SEED_FERTILIZER] == false){
-			return 1;//produz Seeds se o mï¿½todo jï¿½ foi adquirido
+			return 1;//produz Seeds se o metodo ja foi adquirido
 		}else{
 			return perls*SEEDS_PER_PERL;
 		}
 	}
 	public int cocoFertilizer(int pyramids){
 		if(upgradesAvailable[COCO_FERTILIZER] == false){
-			return 1;//produz Cocos se o mï¿½todo jï¿½ foi adquirido
+			return 1;//produz Cocos se o metodo ja foi adquirido
 		}else{
 			return pyramids*COCOS_PER_PYRAMID;
 		}
 	}
 	public int greatProduction(){
 		if(upgradesAvailable[GREAT_PRODUCTION] == false){
-			return 0;//produz a produï¿½ï¿½o se o mï¿½todo jï¿½ foi adquirido
+			return 0;//produz a producao se o metodo ja foi adquirido
 		}else
 			return MAX_PRODUCTION;	}
 

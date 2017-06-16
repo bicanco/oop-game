@@ -47,7 +47,7 @@ public class ResourceManager {
 	private int buildings;
 	
 	/**
-	 * Construtor padrao, zera todos os recursos.
+	 * Construtor padr�o, zera todos os recursos.
 	 */
 	public ResourceManager(){
 		javaSeeds = 0;
@@ -235,7 +235,7 @@ public class ResourceManager {
         
 	
 	/**
-	 * Retorna uma representa��o em String, para depuracao.
+	 * Retorna uma representa��o em String, para depura��o.
 	 */
 	@Override
 	public String toString(){

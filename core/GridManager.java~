@@ -4,21 +4,21 @@ import buildings.Building;
 
 public class GridManager {
 	/**
-	 * Numero de linhas na grade de construcoes.
+	 * Número de linhas na grade de construções.
 	 */
 	public static final int GRID_ROW_NUM = 6;
 	/**
-	 * Numero de colunas na grade de construcoes.
+	 * Número de colunas na grade de construções.
 	 */
 	public static final int GRID_COL_NUM = 5;
 	
 	/**
-	 * Grade de construcoes atuais na partida.
+	 * Grade de construções atuais na partida.
 	 */
 	private Building[][] grid = new Building[GRID_ROW_NUM][GRID_COL_NUM];
 	
 	/**
-	 * Construtor basico, que inicializa uma grade de construcoes vazia.
+	 * Construtor básico, que inicializa uma grade de construções vazia.
 	 */
 	public GridManager(){
 		// inicializando a grade de construcoes
@@ -30,11 +30,11 @@ public class GridManager {
 	}
 	
 	/**
-	 * Coloca uma nova construcao na grade. Nao e possivel construir em um espaco
-	 * que ja tenha outra construcao.
+	 * Coloca uma nova construção na grade. Não é possível construir em um espaço
+	 * que já tenha outra construção.
 	 * @param row linha da grade
 	 * @param col coluna da grade
-	 * @param building construcaoo a ser colocada
+	 * @param building construção a ser colocada
 	 */
 	public void build(int row, int col, Building building, ResourceManager resources){		
 		if (grid[row][col] == null){
@@ -46,8 +46,8 @@ public class GridManager {
 	}
 	
 	/**
-	 * Tira uma construcao que esteja na grade. Nao e possivel tirar uma construcao
-	 * de um espaco vazio.
+	 * Tira uma construção que esteja na grade. Não é possível tirar uma construção
+	 * de um espaço vazio.
 	 * @param row linha da grade
 	 * @param col coluna da grade 
 	 */
@@ -60,10 +60,10 @@ public class GridManager {
 	}
 	
 	/**
-	 * Retorna o nome de uma construcao da grade.
+	 * Retorna o nome de uma construção da grade.
 	 * @param row linha da grade
 	 * @param col coluna da grade
-	 * @return nome da construcao
+	 * @return nome da construção
 	 */
 	public String getName(int row, int col){
 		if (grid[row][col] != null){
@@ -74,10 +74,10 @@ public class GridManager {
 	}
 	
 	/**
-	 * Retorna uma construcao da grade.
+	 * Retorna uma construção da grade.
 	 * @param row linha da grade
 	 * @param col coluna da grade
-	 * @return construcao
+	 * @return construção
 	 */
 	public Building getBuilding(int row, int col){
 		if (grid[row][col] != null){
@@ -88,10 +88,10 @@ public class GridManager {
 	}
 	
 	/**
-	 * Retorna o nome de uma construcao da grade.
+	 * Retorna o nome de uma construção da grade.
 	 * @param row linha da grade
 	 * @param col coluna da grade
-	 * @return nome da construcao
+	 * @return nome da construção
 	 */
 	public String getDescription(int row, int col){
 		if (grid[row][col] != null){
@@ -102,10 +102,10 @@ public class GridManager {
 	}
 	
 	/**
-	 * Retorna o icone de uma construcao da grade.
+	 * Retorna o ícone de uma construção da grade.
 	 * @param row linha da grade
 	 * @param col coluna da grade
-	 * @return icone da construcao
+	 * @return ícone da construção
 	 */
 	public String getIcon(int row, int col){
 		if (grid[row][col] != null){

@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Classe que gerencia a passagem dos turnos e algumas rotinas do jogo
  * relacionadas a isso, como o pagamento de Rubies em certos turnos e
- * a geracao de recursos a partir das construcoes.
+ * a gera��o de recursos a partir das constru��es.
  * @author Gabriel Toschi (@gabrieltoschi)
  *
  */
@@ -16,7 +16,7 @@ public class TurnManager {
 	private final int INITIAL_TURN = 1;
 	
 	/**
-	 * Gerador de numeros pseudo-aleatorios.
+	 * Gerador de n�meros pseudo-aleat�rios.
 	 */
 	Random rand = new Random(System.currentTimeMillis());
 	
@@ -26,49 +26,49 @@ public class TurnManager {
 	private int currentTurn;
 	
 	/**
-	 * Minimo para escolha aleatoria de tempo (em turnos) para o proximo turno
+	 * M�nimo para escolha aleat�ria de tempo (em turnos) para o pr�ximo turno
 	 * a ser feito um pagamento em Rubies.
 	 */
 	private int payTurnRangeMin = 17;
 	/**
-	 * M�ximo para escolha aleatoria de tempo (em turnos) para o proximo turno
+	 * M�ximo para escolha aleat�ria de tempo (em turnos) para o pr�ximo turno
 	 * a ser feito um pagamento em Rubies. 
 	 */
 	private int payTurnRangeMax = 20;
 	/**
-	 * Acrescimo a ser feito no intervalo de tempo dos pagamentos a cada aumento
+	 * Acr�scimo a ser feito no intervalo de tempo dos pagamentos a cada aumento
 	 * na quantidade de Rubies.
 	 */
 	private int payTurnRangeIncrease = 2;
 	/**
-	 * Proximo turno de pagamento.
+	 * Pr�ximo turno de pagamento.
 	 */
 	private int nextPayTurn = INITIAL_TURN;
 	/**
-	 * Rubies a serem pagos no proximo turno de pagamento.
+	 * Rubies a serem pagos no pr�ximo turno de pagamento.
 	 */
 	private int payTurnRubies = 2;
 	/**
-	 * Acrescimo a ser feito na quantidade de Rubies a serem pagos.
+	 * Acr�scimo a ser feito na quantidade de Rubies a serem pagos.
 	 */
 	private int payTurnRubiesIncrease = 1;
 	/**
-	 * Se verdadeiro, indica que o n�mero de Rubies a serem pagos no proximo turno
+	 * Se verdadeiro, indica que o n�mero de Rubies a serem pagos no pr�ximo turno
 	 * deve aumentar.
 	 */
 	private boolean increasePayTurn = false;
 	
 	
 	/**
-	 * N�mero de Oopyies que compoem cada grupo de comida.
+	 * N�mero de Oopyies que comp�em cada grupo de comida.
 	 */
 	private int oopyiesPerFoodGroup = 5;
 	/**
-	 * Numero de Java Seeds usadas para alimentar cada grupo de comida.
+	 * N�mero de Java Seeds usadas para alimentar cada grupo de comida.
 	 */
 	private int seedsPerFoodGroup = 2;
 	/**
-	 * Numero de Sharp Cocos usados para alimentar cada grupo de comida.
+	 * N�mero de Sharp Cocos usados para alimentar cada grupo de comida.
 	 */
 	private int cocosPerFoodGroup = 2;
 	
@@ -77,7 +77,7 @@ public class TurnManager {
 	private int lastCocosUsed = 0;
 	
 	/**
-	 * Construtor padrao, inicia a partida no turno inicial.
+	 * Construtor padr�o, inicia a partida no turno inicial.
 	 */
 	public TurnManager(){
 		// inicializa no turno inicial
@@ -103,8 +103,8 @@ public class TurnManager {
 	}
 	
 	/**
-	 * Gera o proximo turno de pagamento e atualiza a quantidade de rubis e o
-	 * novo intervalo de tempo, caso necessario.
+	 * Gera o pr�ximo turno de pagamento e atualiza a quantidade de rubis e o
+	 * novo intervalo de tempo, caso necess�rio.
 	 */
 	private void nextPayTurn(){
 		// se a quantidade de rubis deve ser incrementada
@@ -125,24 +125,24 @@ public class TurnManager {
 	}
 	
 	/**
-	 * Retorna o numero do proximo turno de pagamento.
-	 * @return numero do proximo turno de pagamento
+	 * Retorna o n�mero do pr�ximo turno de pagamento.
+	 * @return n�mero do pr�ximo turno de pagamento
 	 */
 	public int getNextPayTurn(){
 		return nextPayTurn;
 	}
 	
 	/**
-	 * Retorna a quantidade de Rubies a ser paga no proximo turno de pagamento.
-	 * @return quantidade de Rubies para o proximo turno de pagamento
+	 * Retorna a quantidade de Rubies a ser paga no pr�ximo turno de pagamento.
+	 * @return quantidade de Rubies para o pr�ximo turno de pagamento
 	 */
 	public int getPayTurnRubies(){
 		return payTurnRubies;
 	}
 	
 	/**
-	 * Checa se o turno atual e um turno de pagamento.
-	 * @return true, caso o turno atual seja de pagamento; false, caso contrario
+	 * Checa se o turno atual � um turno de pagamento.
+	 * @return true, caso o turno atual seja de pagamento; false, caso contr�rio
 	 */
 	public boolean isPayTurn(){
 		if (currentTurn == nextPayTurn) return true;
@@ -151,14 +151,14 @@ public class TurnManager {
 	
 	/**
 	 * Executa as rotinas do turno de pagamento, sem checar se, efetivamente,
-	 * e um turno de pagamento. 
+	 * � um turno de pagamento. 
 	 * @param resources gerenciador de recursos da partida
-	 * @return false, caso nao tenha Rubies suficientes; true, caso contrario
+	 * @return false, caso n�o tenha Rubies suficientes; true, caso contr�rio
 	 */
 	public boolean executePayTurn(ResourceManager resources){
 		boolean paymentExecuted = true;
 		
-		// caso nao tenha rubis suficientes para pagar
+		// caso n�o tenha rubis suficientes para pagar
 		if (resources.getGreatRubies() < payTurnRubies)		
 			paymentExecuted = false;
 		
@@ -166,7 +166,7 @@ public class TurnManager {
 		//acho que era pra ter um else aqui, att marcelo <<<<<<<<<<<<
 		resources.updateGreatRubies(-payTurnRubies);
 		
-		// gere o proximo turno de pagamento
+		// gere o pr�ximo turno de pagamento
 		nextPayTurn = currentTurn; // caso o pagamento seja feito antes do turno correto
 		nextPayTurn();
 		
@@ -175,7 +175,7 @@ public class TurnManager {
 	
 	/**
 	 * Alimenta os Oopyies para um turno de jogo, a partir de grupos de comida. Cada grupo de comida precisa
-	 * ser alimentado com um numero fixo de Java Seeds e Sharp Cocos por turno. Caso nao tenha comida suficiente
+	 * ser alimentado com um n�mero fixo de Java Seeds e Sharp Cocos por turno. Caso n�o tenha comida suficiente
 	 * para um grupo, eles saem da vila. 
 	 * 
 	 * @param resources gerenciador de recursos
@@ -189,7 +189,7 @@ public class TurnManager {
 		
 		// para cada um dos grupos de oopyies
 		for (int i = 0; i < foodGroups; i++){
-			// se houver comida suficiente para alimenta-los
+			// se houver comida suficiente para aliment�-los
 			if (resources.getJavaSeeds() >= seedsPerFoodGroup &&
 					resources.getSharpCocos() >= cocosPerFoodGroup){
 				// diminuia os recursos, mantenha os oopyies
@@ -230,7 +230,7 @@ public class TurnManager {
 	}
 	
 	/**
-	 * Retorna uma representacao em String, para depuracao.
+	 * Retorna uma representa��o em String, para depura��o.
 	 */
 	@Override
 	public String toString(){

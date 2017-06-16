@@ -15,7 +15,7 @@ public class Score implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Nome do jogador que estï¿½ com essa pontuacao.
+	 * Nome do jogador que está com essa pontuacao.
 	 */
 	private String playerName;
 	
@@ -25,9 +25,9 @@ public class Score implements Serializable{
 	private int points;
 	
 	/**
-	 * Construtor que cria uma nova pontuacao de um jogador.
+	 * Construtor que cria uma nova pontuação de um jogador.
 	 * @param playerName nome do jogador
-	 * @param points pontuacao inicial do jogador
+	 * @param points pontuação inicial do jogador
 	 */
 	public Score(String playerName, int points){
 		this.playerName = playerName;
@@ -52,16 +52,16 @@ public class Score implements Serializable{
 	
 	/**
 	 * Atualiza a pontuacao, a partir de um valor a ser somado na pontuacao.
-	 * @param offset valor a ser somado na pontuacao
+	 * @param offset valor a ser somado na pontuação
 	 */
 	public void updatePoints(int offset){
 		this.points += offset;
 	}
 	
 	/**
-	 * Faz a escrita de uma pontuacao em um arquivo.
+	 * Faz a escrita de uma pontuação em um arquivo.
 	 * Utilizado por um ObjectOutputStream.
-	 * @param stream stream de dados de saida
+	 * @param stream stream de dados de saída
 	 * @throws IOException
 	 */
 	private void writeObject(java.io.ObjectOutputStream stream)
@@ -71,7 +71,7 @@ public class Score implements Serializable{
     }
 	
 	/**
-	 * Faz a leitura de uma pontuacao em um arquivo.
+	 * Faz a leitura de uma pontuação em um arquivo.
 	 * Utilizado por um ObjectInputStream.
 	 * @param stream stream de dados de entrada
 	 * @throws IOException
@@ -84,7 +84,7 @@ public class Score implements Serializable{
     }
 	
 	/**
-	 * Retorna uma representacao em String, para depuracao.
+	 * Retorna uma representação em String, para depuração.
 	 */
 	@Override
 	public String toString(){

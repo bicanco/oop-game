@@ -8,16 +8,16 @@ import core.ResourceManager;
  */
 public class Mine implements Building {
 	private final static int MINE_CREATIVITY_COST = 0;//custo inicial da mina
-	private final static int MAX_PRODUCTION = 600;//produ��o m�xima poss�vel
+	private final static int MAX_PRODUCTION = 600;//producao maxima possivel
 	private final static int STONES_PER_OOPYIE = 5;//valor de stones produzidas por oopyie
 	private final static int STONES_PER_SEED = 3;//valor de stones produzidas por seeds
 
-	public final static int STONE_PRODUCTION = 0;//valores das posi��es dos m�todos no vetor de up grades
+	public final static int STONE_PRODUCTION = 0;//valores das posicoes dos metodos no vetor de up grades
 	public final static int USE_PICKAXE = 1;
 	public final static int GREAT_ESCAVATION = 2;
 	public final static int NUMBER_OF_UPGRADES = 3;//numero de up grades
 	
-	private static String name = "Mina";//inicializa��o das vari�veis est�ticas que s�o heran�a da classe Building
+	private static String name = "Mina";//inicializacao das variaveis estaticas que sao heranca da classe Building
 	private static String description = "Produz Scala Stones";
 	private static String iconPath = "Mine.png";
 	private static int unlockCost = MINE_CREATIVITY_COST;
@@ -27,8 +27,8 @@ public class Mine implements Building {
 	private static int[] upgradesCost = new int[upgradeNumber];
 	
 	static {
-		upgradesAvailable[STONE_PRODUCTION] = true;//o �nico m�todo que come�a j� adquirido
-		upgradesAvailable[USE_PICKAXE] = false;//os outros come�am como n�o adquiridos
+		upgradesAvailable[STONE_PRODUCTION] = true;//o unico metodo que comeca ja adquirido
+		upgradesAvailable[USE_PICKAXE] = false;//os outros comecam como nao adquiridos
 		upgradesAvailable[GREAT_ESCAVATION] = false;
 		
 		upgradesCost[STONE_PRODUCTION] = 0;
@@ -41,14 +41,14 @@ public class Mine implements Building {
 	protected boolean greatEscavationActivated;
 
 	/**
-	 * M�todo construtor da classe Mine
+	 * Metodo construtor da classe Mine
 	 */
 	public Mine(){
 		reset();
 	}
 	
 	/**
-	 * M�todo que produz as Scala Stones e aumaneta a produ��o de acordo com o a quantidade de recurso passada como par�metro
+	 * Metodo que produz as Scala Stones e aumaneta a producao de acordo com o a quantidade de recurso passada como parametro
 	 * @param A quantidade de recurso para o boost
 	 * @return O valor produzido
 	 */
@@ -57,7 +57,7 @@ public class Mine implements Building {
 	}
 	
 	/**
-	 * M�todo que produz as Scala Stones
+	 * Metodo que produz as Scala Stones
 	 * @return O valor produzido
 	 */
 	public int stoneProduction(){
@@ -66,24 +66,24 @@ public class Mine implements Building {
 	
 	
 	/**
-	 * M�todo que produz Stones em fun��o do n�mero de seeds alocadas, se n�o adquiriu o m�todo a produ��o ser� 0
-	 * @param O n�mero de seeds alocadas
-	 * @return A produ��o
+	 * Metodo que produz Stones em funcao do numero de seeds alocadas, se nao adquiriu o metodo a producao sera 0
+	 * @param O n�umero de seeds alocadas
+	 * @return A producao
 	 */
 	public int usePickaxe(int seeds){
 		if(upgradesAvailable[USE_PICKAXE] == false){
-			return 0;//produz Stones se o m�todo j� foi adquirido
+			return 0;//produz Stones se o metodo ja foi adquirido
 		}else
 			return seeds*STONES_PER_SEED;
 	}
 	
 	/**
-	 * M�todo que produz a produ��o m�xima de uma mina, se n�o adquiriu o m�todo a produ��o ser� 0
-	 * @return A produ��o
+	 * M�todo que produz a producao maxima de uma mina, se nao adquiriu o metodo a producao sera 0
+	 * @return A producao
 	 */
 	public int greatEscavation(){
 		if(upgradesAvailable[GREAT_ESCAVATION] == false){
-			return 0;//produz a produ��o se o m�todo j� foi adquirido
+			return 0;//produz a producao se o metodo ja foi adquirido
 		}else
 			return MAX_PRODUCTION;
 	}

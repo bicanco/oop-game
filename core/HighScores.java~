@@ -8,36 +8,36 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * Classe que armazena as maiores pontuacoes do jogo, alem de armazena-las em arquivos
+ * Classe que armazena as maiores pontuações do jogo, além de armazená-las em arquivos
  * para outras vezes que o programa for aberto.
  * @author Gabriel Toschi
  *
  */
 public class HighScores implements Serializable{
 	/**
-	 * Necessario para implementar a interface Serializable
+	 * Necessário para implementar a interface Serializable
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Numero de melhores pontuacoes a serem guardadas.
+	 * Número de melhores pontuações a serem guardadas.
 	 */
 	public int scoreNumber = 3;
 
 	/**
-	 * Melhores pontuacoes.
+	 * Melhores pontuações.
 	 */
 	public Score[] highScores;
 	
 	/**
-	 * Nome do arquivo onde ficam guardadas as melhores pontuacoes.
+	 * Nome do arquivo onde ficam guardadas as melhores pontuações.
 	 */
 	public static String highScoresFilename = "bestUsers.dat";
 	
 	/**
-	 * Faz a escrita de uma tabela de melhores pontuacoes em um arquivo.
+	 * Faz a escrita de uma tabela de melhores pontuações em um arquivo.
 	 * Utilizado por um ObjectOutputStream.
-	 * @param stream stream de dados de saida
+	 * @param stream stream de dados de saída
 	 * @throws IOException
 	 */
 	private void writeObject(java.io.ObjectOutputStream stream)
@@ -48,7 +48,7 @@ public class HighScores implements Serializable{
     }
 	
 	/**
-	 * Faz a leitura de uma tabela de melhores pontuacoes em um arquivo.
+	 * Faz a leitura de uma tabela de melhores pontuações em um arquivo.
 	 * Utilizado por um ObjectInputStream.
 	 * @param stream stream de dados de entrada
 	 * @throws IOException
@@ -64,14 +64,14 @@ public class HighScores implements Serializable{
     }
 	
 	/**
-	 * Le o arquivo de melhores pontuacoes e recria o objeto salvo no ultimo acesso ao programa.
-	 * Caso o arquivo nao exista, um novo objeto limpo e criado.
+	 * Lê o arquivo de melhores pontuações e recria o objeto salvo no último acesso ao programa.
+	 * Caso o arquivo não exista, um novo objeto limpo é criado.
 	 */
 	public HighScores(){
 		HighScores objRead = null;
 		
 		try {
-			// lendo o arquivo de melhores pontuacoes
+			// lendo o arquivo de melhores pontuações
 			FileInputStream fis = new FileInputStream(highScoresFilename);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			objRead = (HighScores) ois.readObject();
@@ -92,9 +92,9 @@ public class HighScores implements Serializable{
 	}
 	
 	/**
-	 * Adiciona uma nova pontuacao ao vetor, caso ele seja maior que algum dos
+	 * Adiciona uma nova pontuação ao vetor, caso ele seja maior que algum dos
 	 * recordes atuais.
-	 * @param score nova ponutacao a ser adicionada
+	 * @param score nova ponutação a ser adicionada
 	 * @return true, caso tenha sido adicionada
 	 */
 	public boolean insertNewScore(Score score){
@@ -115,7 +115,7 @@ public class HighScores implements Serializable{
 	}
 	
 	/**
-	 * Salva as maiores pontuacoes em um arquivo, para ser lido posteriormente.
+	 * Salva as maiores pontuações em um arquivo, para ser lido posteriormente.
 	 */
 	public static void saveHighScore(HighScores hs){
 		try {
@@ -129,7 +129,7 @@ public class HighScores implements Serializable{
 	}
 	
 	/**
-	 * Retorna uma representacao em String, para depuracao.
+	 * Retorna uma representação em String, para depuração.
 	 */
 	@Override
 	public String toString(){

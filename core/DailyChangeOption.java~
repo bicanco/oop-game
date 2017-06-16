@@ -1,7 +1,7 @@
 package core;
 
 /**
- * Classe que representa uma opcao de troca diaria
+ * Classe que representa uma opção de troca diária
  * @author David
  *
  */
@@ -17,7 +17,7 @@ public class DailyChangeOption {
 	private boolean isPaid = false;
 	
 	/**
-	 * Metodo Construtor da classe DailyChangeOption
+	 * Método Construtor da classe DailyChangeOption
 	 */
 	public DailyChangeOption(){
 		for(int i = 0 ; i < 3; i++)
@@ -25,8 +25,8 @@ public class DailyChangeOption {
 	}
 	
 	/**
-	 * Metodo utilizado para definir os tipos e os valores dos recursos da troca diaria
-	 * @param n numero do recurso
+	 * Método utilizado para definir os tipos e os valores dos recursos da troca diaria
+	 * @param n número do recurso
 	 * @param type tipo do recurso
 	 * @param value valor do recurso
 	 */
@@ -38,8 +38,8 @@ public class DailyChangeOption {
 	}
 
 	/**
-	 * Metodo que retorna um recurso
-	 * @param n o numero do recurso
+	 * Método que retorna um recurso
+	 * @param n o número do recurso
 	 * @return type o recurso
 	 */
 	public int getTypes(int n){
@@ -59,8 +59,8 @@ public class DailyChangeOption {
 	}
 	
 	/**
-	 * Metodo que retorna o custo de um recurso
-	 * @param n o numero do recurso
+	 * Método que retorna o custo de um recurso
+	 * @param n o número do recurso
 	 * @return o custo
 	 */
 	public int getValues(int n){

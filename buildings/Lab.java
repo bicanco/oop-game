@@ -8,16 +8,16 @@ import core.ResourceManager;
  */
 public class Lab implements Building {
 	private final static int LAB_CREATIVITY_COST = 0;//custo inicial do laboratorio
-	private final static int MAX_PRODUCTION = 0;//produ��o m�xima poss�vel
+	private final static int MAX_PRODUCTION = 0;//producao maxima possivel
 	private final static int CREATIVITY_PER_OOPYIE = 2;//valor de criatividades produzidas por oopyie
 	private final static int CREATIVITY_PER_COCO = 2;//valor de criativades produzidas por cocos
 
-	public final static int CREATIVITY_PRODUCTION = 0;//valores das posi��es dos m�todos no vetor de up grades
+	public final static int CREATIVITY_PRODUCTION = 0;//valores das posicoes dos metodos no vetor de up grades
 	public final static int BASIC_RESEARCH = 1;
 	public final static int GREAT_RESEARCH = 2;
 	public final static int NUMBER_OF_UPGRADES = 3;//numero de up grades
 	
-	private static String name = "Lab";//inicializa��o das vari�veis est�ticas que s�o heran�a da classe Building
+	private static String name = "Lab";//inicializacao das variaveis estaticas que sao heranca da classe Building
 	private static String description = "Produz Criatividade";
 	private static String iconPath = "Lab.png";
 	private static int unlockCost = LAB_CREATIVITY_COST;
@@ -27,8 +27,8 @@ public class Lab implements Building {
 	private static int[] upgradesCost = new int[upgradeNumber];
 	
 	static {
-		upgradesAvailable[CREATIVITY_PRODUCTION] = true;//o �nico m�todo que come�a j� adquirido
-		upgradesAvailable[BASIC_RESEARCH] = false;//os outros come�am como n�o adquiridos
+		upgradesAvailable[CREATIVITY_PRODUCTION] = true;//o unico metodo que comeca ja adquirido
+		upgradesAvailable[BASIC_RESEARCH] = false;//os outros comecam como nao adquiridos
 		upgradesAvailable[GREAT_RESEARCH] = false;
 		
 		upgradesCost[CREATIVITY_PRODUCTION] = 0;
@@ -41,14 +41,14 @@ public class Lab implements Building {
 	protected boolean greatResearchActivated;
 	
 	/**
-	 * M�todo construtor da classe Lab
+	 * Metodo construtor da classe Lab
 	 */
 	public Lab(){
 		reset();
 	}
 	
 	/**
-	 * M�todo que produz as Criatividade e aumaneta a produ��o de acordo com o a quantidade de recurso passada como par�metro
+	 * Metodo que produz as Criatividade e aumaneta a producao de acordo com o a quantidade de recurso passada como parametro
 	 * @param A quantidade de recurso para o boost
 	 * @return O valor produzido
 	 */
@@ -57,7 +57,7 @@ public class Lab implements Building {
 	}
 	
 	/**
-	 * M�todo que produz Criatividade
+	 * Metodo que produz Criatividade
 	 * @return O valor produzido
 	 */
 	public int creativityProduction(){
@@ -66,24 +66,24 @@ public class Lab implements Building {
 	
 	
 	/**
-	 * M�todo que produz Criatividade em fun��o do n�mero de Cocos alocados, se n�o adquiriu o m�todo a produ��o ser� 0
-	 * @param O n�mero de cocos alocados
-	 * @return A produ��o
+	 * Metodo que produz Criatividade em funcao do numero de Cocos alocados, se nao adquiriu o metodo a producao sera 0
+	 * @param O numero de cocos alocados
+	 * @return A producao
 	 */
 	public int basicResearch(int cocos){
 		if(upgradesAvailable[BASIC_RESEARCH] == false){
-			return 0;//produz Criatividade se o m�todo j� foi adquirido
+			return 0;//produz Criatividade se o metodo ja foi adquirido
 		}else
 			return cocos*CREATIVITY_PER_COCO;
 	}
 	
 	/**
-	 * M�todo que produz a produ��o m�xima de um laboratorio, se n�o adquiriu o m�todo a produ��o ser� 0
-	 * @return A produ��o
+	 * M�todo que produz a producao maxima de um laboratorio, se nao adquiriu o metodo a producao sera 0
+	 * @return A producao
 	 */
 	public int greatResearch(){
 		if(upgradesAvailable[GREAT_RESEARCH] == false){
-			return 0;//produz a produ��o se o m�todo j� foi adquirido
+			return 0;//produz a producao se o metodo ja foi adquirido
 		}else
 			return MAX_PRODUCTION;
 	}

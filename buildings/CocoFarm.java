@@ -8,21 +8,21 @@ package buildings;
 public class CocoFarm extends Farm {
 	private final static int FARM_CREATIVITY_COST = 0;//custo inicial da fazenda
 	private final static int COCOS_PER_OOPYIE = 0;//valor de cocos produzidas po oopyie
-	private final static int MAX_PRODUCTION = 0;//produção máxima possível
+	private final static int MAX_PRODUCTION = 0;//producao maxima possivel
 	
-	public final static int FOOD_PRODUCTION = 0;//valores das posições dos métodos no vetor de up grades
+	public final static int FOOD_PRODUCTION = 0;//valores das posicoes dos metodos no vetor de up grades
 	public final static int COCO_FERTILIZER = 1;
 	public final static int GREAT_PRODUCTION = 2;
 	public final static int NUMBER_OF_UPGRADES = 3;//numero de up grades
 	
 	static{
-		name = "Fazenda de cocos";//inicialização das variáveis estáticas que são herança da classe Building
+		name = "Fazenda de cocos";//inicializacao das variaveis estaticas que sao heranca da classe Building
 		description = "Produz SharpCocos em grande quantidade";
 		creativityCost = FARM_CREATIVITY_COST;
 		upgradeNumber = NUMBER_OF_UPGRADES;
 		upgradesAvailable = new boolean[upgradeNumber];
-		upgradesAvailable[FOOD_PRODUCTION] = true;//o único método que começa já adquirido
-		upgradesAvailable[COCO_FERTILIZER] = false;//os outros começam como não adquiridos
+		upgradesAvailable[FOOD_PRODUCTION] = true;//o unico metodo que comeca ja adquirido
+		upgradesAvailable[COCO_FERTILIZER] = false;//os outros comecam como nao adquiridos
 		upgradesAvailable[GREAT_PRODUCTION] = false;
 		upgradesCost = new int[upgradeNumber];
 		Farm.setUpgradeCost(0, FOOD_PRODUCTION);
@@ -31,7 +31,7 @@ public class CocoFarm extends Farm {
 	}
 	
 	/**
-	 * Método construtor da classe CocoFarm
+	 * Mï¿½todo construtor da classe CocoFarm
 	 */
 	public CocoFarm(){
 		super();
@@ -39,7 +39,7 @@ public class CocoFarm extends Farm {
 	}
 	
 	/**
-	 * Método que produz SharpCocos
+	 * Metodo que produz SharpCocos
 	 * @return O valor produzido
 	 */
 	@Override
@@ -48,7 +48,7 @@ public class CocoFarm extends Farm {
 	}
 	
 	/**
-	 * Método que produz SharpCocos e aumenta a produção de acordo com o a quantidade de recurso passada como parâmetro
+	 * Metodo que produz SharpCocos e aumenta a producao de acordo com o a quantidade de recurso passada como parametro
 	 * @param A quantidade de recurso para o boost
 	 * @return O valor produzido
 	 */
@@ -58,7 +58,7 @@ public class CocoFarm extends Farm {
 	}
 	
 	/**
-	 * Método inutilizado para esta classe
+	 * Metodo inutilizado para esta classe
 	 */
 	@Override
 	public void setFoodType(boolean type){
@@ -66,7 +66,7 @@ public class CocoFarm extends Farm {
 	}
 	
 	/**
-	 * Método inutilizado para esta classe
+	 * Metodo inutilizado para esta classe
 	 */
 	@Override
 	public int seedFertilizer(int pyramids) {
@@ -74,13 +74,13 @@ public class CocoFarm extends Farm {
 	}
 	
 	/**
-	 * Método que produz a produção máxima de uma fazenda, se não adquiriu o método a produção será 0
-	 * @return A produção
+	 * Metodo que produz a producao maxima de uma fazenda, se nao adquiriu o metodo a producao sera 0
+	 * @return A producao
 	 */
 	@Override
 	public int greatProduction(){
 		if(upgradesAvailable[GREAT_PRODUCTION] == false){
-			return 0;//produz a produção se o método já foi adquirido
+			return 0;//produz a producao se o metodo ja foi adquirido
 		}else
 			return MAX_PRODUCTION;
 	}

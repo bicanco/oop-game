@@ -3,7 +3,7 @@ package core;
 import application.Login;
 
 /**
- * Classe que gerencia o nucleo do jogo e da partida.
+ * Classe que gerencia o núcleo do jogo e da partida.
  * @author Gabriel Toschi (@gabrieltoschi)
  *
  */

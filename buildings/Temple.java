@@ -9,13 +9,13 @@ import core.ResourceManager;
  */ 
 public class Temple implements Building {
 	private final static int TEMPLE_CREATIVITY_COST = 0;//custo inicial do Templo
-	private final static int MAX_PRODUCTION = 200;//produ��o m�xima poss�vel
+	private final static int MAX_PRODUCTION = 200;//producao maxima possivel
 	private final static int PERL_PER_SEED = 2;//valor de Perls produzidos por Seed
 	private final static int PERL_PER_OOPYIE = 1;//valor de Perls produzidos por oopyie
 	private final static int PYRAMID_PER_OOPYIE = 1;//valor de Pyramids produzidos por oopyie
 	private final static int PYRAMID_PER_COCO = 2;//valor de Pyramids produzidos por cocos
 
-	public final static int GEM_PRODUCTION = 0;//valores das posi��es dos m�todos no vetor de up grades
+	public final static int GEM_PRODUCTION = 0;//valores das posicoes dos metodos no vetor de up grades
 	public final static int PERL_RITUAL = 1;
 	public final static int PYRAMID_RITUAL = 2;
 	public final static int GREAT_RITUAL = 3;
@@ -24,7 +24,7 @@ public class Temple implements Building {
 	public final static boolean PERL = false;//tipo de gema produzida
 	public final static boolean PYRAMID = true;
 	
-	private static String name = "Templo";//inicializa��o das vari�veis est�ticas que s�o heran�a da classe Building
+	private static String name = "Templo";//inicializacao das variaveis estaticas que sao heranca da classe Building
 	private static String description = "Produz Magic Perls e PYramids";
 	private static String iconPath = "Temple.png";
 	private static int unlockCost = TEMPLE_CREATIVITY_COST;
@@ -35,8 +35,8 @@ public class Temple implements Building {
 	private static int[] upgradesCost = new int[upgradeNumber];
 	
 	static {
-		upgradesAvailable[GEM_PRODUCTION] = true;//o �nico m�todo que come�a j� adquirido
-		upgradesAvailable[PERL_RITUAL] = false;//os outros come�am como n�o adquiridos
+		upgradesAvailable[GEM_PRODUCTION] = true;//o unico metodo que comeca ja adquirido
+		upgradesAvailable[PERL_RITUAL] = false;//os outros comecam como nao adquiridos
 		upgradesAvailable[PYRAMID_RITUAL] = false;
 		upgradesAvailable[GREAT_RITUAL] = false;
 		
@@ -53,7 +53,7 @@ public class Temple implements Building {
 	protected boolean greatRitualActivated;
 	
 	/**
-	 * M�todo construtor da classe Temple
+	 * Metodo construtor da classe Temple
 	 */
 	public Temple(){
 		reset();
@@ -72,14 +72,14 @@ public class Temple implements Building {
 	}
 	
 	/**
-	 * M�todo que define a gema a ser produzida
+	 * Metodo que define a gema a ser produzida
 	 */
 	public void setGemType(boolean type){
 		gemType = type;//define o tipo de gema a ser produzida
 	}
 	
 	/**
-	 * M�todo que retorna o tipo de gema produzida
+	 * Metodo que retorna o tipo de gema produzida
 	 * @return o tipo de gema produzida
 	 */
 	public boolean setGemType(){
@@ -88,7 +88,7 @@ public class Temple implements Building {
 	
 	
 	/**
-	 * M�todo que produz o rescurso de acordo com o que est� definido no templo e aumenta a produ��o de acordo com o a quantidade de recurso passada como par�metro
+	 * Metodo que produz o rescurso de acordo com o que esta definido no templo e aumenta a producao de acordo com o a quantidade de recurso passada como par�metro
 	 * @param A quantidade de recurso para o boost
 	 * @return O valor produzido
 	 */
@@ -102,7 +102,7 @@ public class Temple implements Building {
 	}
 	
 	/**
-	 * M�todo que produz o rescurso de acordo com o que est� definido na fazenda
+	 * Metodo que produz o rescurso de acordo com o que esta definido na fazenda
 	 * @return O valor produzido
 	 */
 	public int gemProduction(){
@@ -116,13 +116,13 @@ public class Temple implements Building {
 	
 	
 	/**
-	 * M�todo que produz Perls em fun��o do n�mero de Seeds alocadas, se n�o adquiriu o m�todo a produ��o ser� 0
-	 * @param O n�mero de Seeds alocadas
-	 * @return A produ��o
+	 * Metodo que produz Perls em funcao do numero de Seeds alocadas, se nao adquiriu o metodo a producao sera 0
+	 * @param O numero de Seeds alocadas
+	 * @return A producao
 	 */
 	public int perlRitual(int seeds){
 		if(upgradesAvailable[PERL_RITUAL] == false){
-			return 1;//produz Seeds se o m�todo j� foi adquirido
+			return 1;//produz Seeds se o metodo ja foi adquirido
 		}else{
 			setGemType(PERL);
 			return seeds*PERL_PER_SEED;
@@ -130,13 +130,13 @@ public class Temple implements Building {
 	}
 	
 	/**
-	 * M�todo que produz PYramids em fun��o do n�mero de Cocos alocados, se n�o adquiriu o m�todo a produ��o ser� 0
-	 * @param O n�mero de cocos alocados
-	 * @return A produ��o
+	 * Metodo que produz PYramids em funcao do numero de Cocos alocados, se nao adquiriu o metodo a producao sera 0
+	 * @param O numero de cocos alocados
+	 * @return A producao
 	 */
 	public int pyramidRitual(int cocos){
 		if(upgradesAvailable[PYRAMID_RITUAL] == false){
-			return 1;//produz PYramids se o m�todo j� foi adquirido
+			return 1;//produz PYramids se o metodo ja foi adquirido
 		}else{
 			setGemType(PYRAMID);
 			return cocos*PYRAMID_PER_COCO;
@@ -144,12 +144,12 @@ public class Temple implements Building {
 	}
 	
 	/**
-	 * M�todo que produz a produ��o m�xima de um templo, se n�o adquiriu o m�todo a produ��o ser� 0
-	 * @return A produ��o
+	 * M�todo que produz a producao maxima de um templo, se nao adquiriu o metodo a producao sera 0
+	 * @return A producao
 	 */
 	public int greatRitual(){
 		if(upgradesAvailable[GREAT_RITUAL] == false){
-			return 0;//produz a produ��o se o m�todo j� foi adquirido
+			return 0;//produz a producao se o metodo ja foi adquirido
 		}else
 			return MAX_PRODUCTION;
 	}

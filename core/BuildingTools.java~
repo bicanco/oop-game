@@ -14,10 +14,10 @@ public class BuildingTools {
 	private static Mine mine = new Mine();
 	
 	/**
-	 * Retorna o custo de construcao de uma certa classe, de acordo com sua identificacao,
+	 * Retorna o custo de construção de uma certa classe, de acordo com sua identificação,
 	 * feita por constantes em BuildingTools.
-	 * @param reference identificacao da classe
-	 * @return custo de construcao de um objeto dessa classe
+	 * @param reference identificação da classe
+	 * @return custo de construção de um objeto dessa classe
 	 */
 	public static int getBuildCost(int reference){
 		switch (reference){
@@ -31,9 +31,9 @@ public class BuildingTools {
 	}
 	
 	/**
-	 * Retorna o nome de uma certa classe, de acordo com sua identificacao,
+	 * Retorna o nome de uma certa classe, de acordo com sua identificação,
 	 * feita por constantes em BuildingTools.
-	 * @param reference identificacao da classe
+	 * @param reference identificação da classe
 	 * @return nome da classe
 	 */
 	public static String getName(int reference){
@@ -48,10 +48,10 @@ public class BuildingTools {
 	}
 	
 	/**
-	 * Retorna o caminho do icone de uma certa classe, de acordo com sua identificacao,
+	 * Retorna o caminho do ícone de uma certa classe, de acordo com sua identificação,
 	 * feita por constantes em BuildingTools.
-	 * @param reference identificacao da classe
-	 * @return caminho do icone da classe
+	 * @param reference identificação da classe
+	 * @return caminho do ícone da classe
 	 */
 	public static String getIcon(int reference){
 		switch (reference){
@@ -65,10 +65,10 @@ public class BuildingTools {
 	}
 	
 	/**
-	 * Instancia uma construcao a partir da identificacao de uma classe, feita por
+	 * Instancia uma construção a partir da identificação de uma classe, feita por
 	 * constantes em BuildingTools.
-	 * @param reference identificacao da classe
-	 * @return objeto de construcao instanciado
+	 * @param reference identificação da classe
+	 * @return objeto de construção instanciado
 	 */
 	public static Building instantiateBuilding(int reference){
 		switch (reference){
@@ -120,7 +120,7 @@ public class BuildingTools {
 			case MINE: mine.unlockUpgrade(upgradeId);
 			}
 		} catch (Exception e){
-			// Posicao ja esta preenchida, nada ocorre
+			// Posição já está preenchida, nada ocorre
 		}
 	}
 }
