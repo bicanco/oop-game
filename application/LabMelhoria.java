@@ -5,6 +5,11 @@
  */
 package application;
 
+import javax.swing.JOptionPane;
+
+import buildings.Farm;
+import buildings.Lab;
+import core.BuildingTools;
 import core.GameManager;
 import core.ResourceManager;
 
@@ -53,17 +58,47 @@ public class LabMelhoria extends javax.swing.JFrame {
         labelLAB.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelLAB.setText("LAB");
 
-        jLabel3.setText("ProduÃ§Ã£o de Criatividade:");
+        jLabel3.setText("Pesquisa Científica:");
 
-        jLabel4.setText("Pesquisa BÃ¡sica:");
+        jLabel4.setText("Grupo de Controle:");
 
-        jLabel5.setText("Grande Pesquisa:");
+        jLabel5.setText("Grande Investimento:");
+        
+        if (BuildingTools.getUpgrade(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION)){
+    		btnCreativityProduction.setText("Liberado");
+    		btnCreativityProduction.setEnabled(false);
+    	} else {
+    		btnCreativityProduction.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION));
+            btnCreativityProduction.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnCreativityProductionActionPerformed(evt);
+                }
+            });
+    	}
 
-        btnCreativityProduction.setText("Locked: 30");
+        if (BuildingTools.getUpgrade(BuildingTools.LAB, Lab.BASIC_RESEARCH)){
+    		btnBasicResearch.setText("Liberado");
+    		btnBasicResearch.setEnabled(false);
+    	} else {
+    		btnBasicResearch.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.BASIC_RESEARCH));
+            btnBasicResearch.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnBasicResearchActionPerformed(evt);
+                }
+            });
+    	}
 
-        btnBasicResearch.setText("Locked: 30");
-
-        btnGreatResearch.setText("Locked: 30");
+        if (BuildingTools.getUpgrade(BuildingTools.LAB, Lab.GREAT_RESEARCH)){
+    		btnGreatResearch.setText("Liberado");
+    		btnGreatResearch.setEnabled(false);
+    	} else {
+    		btnGreatResearch.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.GREAT_RESEARCH));
+            btnGreatResearch.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnGreatResearchActionPerformed(evt);
+                }
+            });
+    	}
 
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +107,7 @@ public class LabMelhoria extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Criatividade");
+        jLabel1.setText("Criatividade: ");
 
         labelCreativity.setText("0");
 
@@ -151,6 +186,51 @@ public class LabMelhoria extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void btnCreativityProductionActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION));
+    		BuildingTools.unlockUpgrade(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION);
+    		
+    		btnCreativityProduction.setText("Liberado");
+    		btnCreativityProduction.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
+    
+    private void btnBasicResearchActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.BASIC_RESEARCH)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.BASIC_RESEARCH));
+    		BuildingTools.unlockUpgrade(BuildingTools.LAB, Lab.BASIC_RESEARCH);
+    		
+    		btnBasicResearch.setText("Liberado");
+    		btnBasicResearch.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
+    
+    private void btnGreatResearchActionPerformed(java.awt.event.ActionEvent evt) {
+    	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.GREAT_RESEARCH)){
+    		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.GREAT_RESEARCH));
+    		BuildingTools.unlockUpgrade(BuildingTools.LAB, Lab.GREAT_RESEARCH);
+    		
+    		btnGreatResearch.setText("Liberado");
+    		btnGreatResearch.setEnabled(false);
+    		
+    		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Você não está inspirado o suficiente para entender como isso funciona... Busque mais criatividade!", "Bloqueio Criativo",
+    				JOptionPane.ERROR_MESSAGE);
+    	}
+    }
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:

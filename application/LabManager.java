@@ -5,6 +5,9 @@
  */
 package application;
 
+import buildings.Farm;
+import buildings.Lab;
+import core.BuildingTools;
 import core.GameManager;
 import core.ResourceManager;
 
@@ -24,8 +27,18 @@ public class LabManager extends javax.swing.JFrame {
         this.gameData = gameData;
         this.row = row;
         this.col = col;
+        
+        Lab lab = (Lab) gameData.grid.getBuilding(row, col);
+        lab.reconfig(gameData.resources);
+        
         initComponents();
         labelOopyiesEdit.setText(Integer.toString(gameData.resources.getOopyies()));
+        
+        CheckBoxCreativityProduction.setEnabled(BuildingTools.getUpgrade(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION));
+        SpinnerOopyies.setEnabled(BuildingTools.getUpgrade(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION));
+        CheckBoxBasicResearch.setEnabled(BuildingTools.getUpgrade(BuildingTools.LAB, Lab.BASIC_RESEARCH));
+        SpinnerCocos.setEnabled(BuildingTools.getUpgrade(BuildingTools.LAB, Lab.BASIC_RESEARCH));
+        CheckBoxGreatResearch.setEnabled(BuildingTools.getUpgrade(BuildingTools.LAB, Lab.GREAT_RESEARCH));
     }
 
     /**
@@ -64,13 +77,13 @@ public class LabManager extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         jLabel2.setText("LAB");
 
-        jLabel3.setText("Oopyies Disponíveis:");
+        jLabel3.setText("Oopyies Dispon�veis:");
 
         labelOopyiesEdit.setText("0");
 
-        jLabel5.setText("Produção de Criatividade:");
+        jLabel5.setText("Pesquisa Cient�fica:");
 
-        jLabel6.setText("Pesquisa Básica:");
+        jLabel6.setText("Grupo de Controle:");
 
         btnResources.setText("Recursos");
         btnResources.addActionListener(new java.awt.event.ActionListener() {
@@ -90,11 +103,13 @@ public class LabManager extends javax.swing.JFrame {
 
         jLabel8.setText("Oopyies Alocados:");
 
-        jLabel9.setText("Grande Pesquisa:");
+        jLabel9.setText("Grande Investimento:");
 
-        SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+        SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getOopyies(), 1));
 
-        SpinnerCocos.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+        SpinnerCocos.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getSharpCocos(), 1));
 
         CheckBoxCreativityProduction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,13 +238,43 @@ public class LabManager extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckBoxBasicResearchActionPerformed
 
     private void CheckBoxGreatResearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxGreatResearchActionPerformed
-        // TODO add your handling code here:
+    	if (CheckBoxGreatResearch.isSelected()){
+    		CheckBoxCreativityProduction.setEnabled(false);
+            SpinnerOopyies.setEnabled(false);
+            CheckBoxBasicResearch.setEnabled(false);
+            SpinnerCocos.setEnabled(false);
+    	} else {
+    		CheckBoxCreativityProduction.setEnabled(BuildingTools.getUpgrade(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION));
+            SpinnerOopyies.setEnabled(BuildingTools.getUpgrade(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION));
+            CheckBoxBasicResearch.setEnabled(BuildingTools.getUpgrade(BuildingTools.LAB, Lab.BASIC_RESEARCH));
+            SpinnerCocos.setEnabled(BuildingTools.getUpgrade(BuildingTools.LAB, Lab.BASIC_RESEARCH));
+    	}
     }//GEN-LAST:event_CheckBoxGreatResearchActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // TODO add your handling code here:
-         this.dispose();
-         new MapaParaUso(gameData).setVisible(true);
+    	Lab lab = (Lab) gameData.grid.getBuilding(row, col);
+    	
+        if(CheckBoxGreatResearch.isSelected()){
+        	// great production
+        	lab.checkGreatResearch(true);
+        	gameData.resources.updateGreatRubies(-1);
+        } else {
+        	       	
+        	// oopyies allocated
+        	int oopyies = (Integer) SpinnerOopyies.getValue();
+        	lab.allocateOopyies(oopyies);
+        	gameData.resources.updateOopyies(-oopyies);
+        	
+        	// basic research
+        	if (CheckBoxBasicResearch.isSelected()){
+        		int cocos = (Integer) SpinnerCocos.getValue();
+        		lab.updateCocosUsed(cocos);
+        		gameData.resources.updateSharpCocos(-cocos);
+        	}
+        }
+        
+        this.dispose();
+        new MapaParaUso(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResourcesActionPerformed

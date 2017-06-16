@@ -9,8 +9,8 @@ import core.ResourceManager;
 public class Lab implements Building {
 	private final static int LAB_CREATIVITY_COST = 0;//custo inicial do laboratorio
 	private final static int MAX_PRODUCTION = 0;//produ��o m�xima poss�vel
-	private final static int CREATIVITY_PER_OOPYIE = 0;//valor de criatividades produzidas por oopyie
-	private final static int CREATIVITY_PER_COCO = 0;//valor de criativades produzidas por cocos
+	private final static int CREATIVITY_PER_OOPYIE = 2;//valor de criatividades produzidas por oopyie
+	private final static int CREATIVITY_PER_COCO = 2;//valor de criativades produzidas por cocos
 
 	public final static int CREATIVITY_PRODUCTION = 0;//valores das posi��es dos m�todos no vetor de up grades
 	public final static int BASIC_RESEARCH = 1;
@@ -32,8 +32,8 @@ public class Lab implements Building {
 		upgradesAvailable[GREAT_RESEARCH] = false;
 		
 		upgradesCost[CREATIVITY_PRODUCTION] = 0;
-		upgradesCost[BASIC_RESEARCH] = 0;
-		upgradesCost[GREAT_RESEARCH] = 0;
+		upgradesCost[BASIC_RESEARCH] = 500;
+		upgradesCost[GREAT_RESEARCH] = 2000;
 	}
 	
 	protected static int oopyiesAllocated;
@@ -123,12 +123,12 @@ public class Lab implements Building {
 		oopyiesAllocated = oopyies;
 	}
 	
-	public int getCocosUsed(){
-		return cocosUsed;
-	}
-	
 	public void updateCocosUsed(int cocos){
 		cocosUsed = cocos;
+	}
+	
+	public void checkGreatResearch(boolean isUsed){
+		greatResearchActivated = isUsed;
 	}
 
 	@Override
@@ -162,6 +162,8 @@ public class Lab implements Building {
 	@Override
 	public void reset() {
 		oopyiesAllocated = 0;
+		cocosUsed = 0;
+		greatResearchActivated = false;
 	}
 	
 	@Override
@@ -172,13 +174,12 @@ public class Lab implements Building {
 		this.reset();
 	}
 		
-
-
 	@Override
 	public void runTurn(ResourceManager resources) {
 		if (greatResearchActivated)
 			resources.updateCreativity(greatResearch());
 		else {
+			resources.updateOopyies(oopyiesAllocated);
 			if (cocosUsed > 0) resources.updateCreativity(creativityProduction(cocosUsed));
 			else resources.updateCreativity(creativityProduction());
 		}
