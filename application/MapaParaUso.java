@@ -124,7 +124,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn0x0.setEnabled(false);
             btn0x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn0x0.setText("Sale");
+            btn0x0.setText("À Venda");
             
 
          }
@@ -143,7 +143,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn0x1.setEnabled(false);
             btn0x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn0x1.setText("Sale");
+            btn0x1.setText("À Venda");
             
         }
         btn0x1.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +161,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
            btn0x2.setEnabled(false);
             btn0x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn0x2.setText("Sale");
+            btn0x2.setText("À Venda");
            
         }
           btn0x2.addActionListener(new java.awt.event.ActionListener() {
@@ -179,7 +179,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn0x3.setEnabled(false);
             btn0x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn0x3.setText("Sale");
+            btn0x3.setText("À Venda");
             
         }
           btn0x3.addActionListener(new java.awt.event.ActionListener() {
@@ -197,7 +197,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
              btn0x4.setEnabled(false);
             btn0x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn0x4.setText("Sale");
+            btn0x4.setText("À Venda");
             
         }
           btn0x4.addActionListener(new java.awt.event.ActionListener() {
@@ -215,7 +215,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn1x0.setEnabled(false);
             btn1x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn1x0.setText("Sale");
+            btn1x0.setText("À Venda");
            
         }
           btn1x0.addActionListener(new java.awt.event.ActionListener() {
@@ -232,7 +232,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
              btn1x1.setEnabled(false);
             btn1x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn1x1.setText("Sale");
+            btn1x1.setText("À Venda");
             
         }
          btn1x1.addActionListener(new java.awt.event.ActionListener() {
@@ -249,7 +249,7 @@ public class MapaParaUso extends javax.swing.JFrame {
           
         }else {
             btn1x2.setEnabled(false);
-            btn1x2.setText("Sale");
+            btn1x2.setText("À Venda");
             btn1x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png")));
            
         }
@@ -268,7 +268,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
              btn1x3.setEnabled(false);
             btn1x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn1x3.setText("Sale");
+            btn1x3.setText("À Venda");
             
         }
           btn1x3.addActionListener(new java.awt.event.ActionListener() {
@@ -286,7 +286,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn1x4.setEnabled(false);
             btn1x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn1x4.setText("Sale");
+            btn1x4.setText("À Venda");
             
         }
           btn1x4.addActionListener(new java.awt.event.ActionListener() {
@@ -305,7 +305,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
              btn2x0.setEnabled(false);
             btn2x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn2x0.setText("Sale");
+            btn2x0.setText("À Venda");
             
         }
           btn2x0.addActionListener(new java.awt.event.ActionListener() {
@@ -323,7 +323,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
              btn2x1.setEnabled(false);
             btn2x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn2x1.setText("Sale");
+            btn2x1.setText("À Venda");
             
         }
           btn2x1.addActionListener(new java.awt.event.ActionListener() {
@@ -341,7 +341,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
            btn2x2.setEnabled(false);
             btn2x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn2x2.setText("Sale");
+            btn2x2.setText("À Venda");
             
         }  
         btn2x2.addActionListener(new java.awt.event.ActionListener() {
@@ -358,7 +358,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn2x3.setEnabled(false);
             btn2x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn2x3.setText("Sale");
+            btn2x3.setText("À Venda");
             
         }
           btn2x3.addActionListener(new java.awt.event.ActionListener() {
@@ -376,7 +376,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
            btn2x4.setEnabled(false); 
             btn2x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn2x4.setText("Sale");
+            btn2x4.setText("À Venda");
         }
             btn2x4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -393,7 +393,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn3x0.setEnabled(false);
             btn3x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn3x0.setText("Sale");
+            btn3x0.setText("À Venda");
             
         }
             btn3x0.addActionListener(new java.awt.event.ActionListener() {
@@ -411,7 +411,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn3x1.setEnabled(false);
             btn3x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn3x1.setText("Sale");
+            btn3x1.setText("À Venda");
             
         }
             btn3x1.addActionListener(new java.awt.event.ActionListener() {
@@ -429,7 +429,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn3x2.setEnabled(false);
             btn3x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn3x2.setText("Sale");
+            btn3x2.setText("À Venda");
             
         }
             btn3x2.addActionListener(new java.awt.event.ActionListener() {
@@ -447,7 +447,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn3x3.setEnabled(false);
             btn3x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn3x3.setText("Sale");
+            btn3x3.setText("À Venda");
             
         }
             btn3x3.addActionListener(new java.awt.event.ActionListener() {
@@ -465,7 +465,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn3x4.setEnabled(false);
             btn3x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn3x4.setText("Sale");
+            btn3x4.setText("À Venda");
             
         }
             btn3x4.addActionListener(new java.awt.event.ActionListener() {
@@ -483,7 +483,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
              btn4x0.setEnabled(false);
             btn4x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn4x0.setText("Sale");
+            btn4x0.setText("À Venda");
             
         }
         
@@ -503,7 +503,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn4x1.setEnabled(false);
             btn4x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn4x1.setText("Sale");
+            btn4x1.setText("À Venda");
             
         }
             btn4x1.addActionListener(new java.awt.event.ActionListener() {
@@ -521,7 +521,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
              btn4x2.setEnabled(false);
             btn4x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn4x2.setText("Sale");
+            btn4x2.setText("À Venda");
             
         }
             btn4x2.addActionListener(new java.awt.event.ActionListener() {
@@ -539,7 +539,7 @@ public class MapaParaUso extends javax.swing.JFrame {
            btn4x3.setEnabled(false);
           
             btn4x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn4x3.setText("Sale");
+            btn4x3.setText("À Venda");
             
         }
             btn4x3.addActionListener(new java.awt.event.ActionListener() {
@@ -557,7 +557,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn4x4.setEnabled(false);
             btn4x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn4x4.setText("Sale");
+            btn4x4.setText("À Venda");
             
         }
             btn4x4.addActionListener(new java.awt.event.ActionListener() {
@@ -575,7 +575,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn5x0.setEnabled(false);
             btn5x0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn5x0.setText("Sale");
+            btn5x0.setText("À Venda");
             
         }
             btn5x0.addActionListener(new java.awt.event.ActionListener() {
@@ -593,7 +593,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
              btn5x1.setEnabled(false);
             btn5x1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn5x1.setText("Sale");
+            btn5x1.setText("À Venda");
             
         }
             btn5x1.addActionListener(new java.awt.event.ActionListener() {
@@ -612,7 +612,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
             btn5x2.setEnabled(false);
             btn5x2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn5x2.setText("Sale");
+            btn5x2.setText("À Venda");
            
         }
         
@@ -632,7 +632,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
              btn5x3.setEnabled(false);
                        btn5x3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn5x3.setText("Sale");
+            btn5x3.setText("À Venda");
             
         }
             btn5x3.addActionListener(new java.awt.event.ActionListener() {
@@ -650,7 +650,7 @@ public class MapaParaUso extends javax.swing.JFrame {
         }else {
              btn5x4.setEnabled(false);
             btn5x4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sale.png"))); // NOI18N
-            btn5x4.setText("Sale");
+            btn5x4.setText("À Venda");
             
         }
             btn5x4.addActionListener(new java.awt.event.ActionListener() {
