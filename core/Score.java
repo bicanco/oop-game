@@ -15,7 +15,7 @@ public class Score implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Nome do jogador que est� com essa pontuacao.
+	 * Nome do jogador que esta com essa pontuacao.
 	 */
 	private String playerName;
 	

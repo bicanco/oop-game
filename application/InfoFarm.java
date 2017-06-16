@@ -39,7 +39,7 @@ public class InfoFarm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        jLabel1.setText("Fazenda");
+        jLabel1.setText("Roca");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FarmBig.png"))); // NOI18N
 
@@ -47,7 +47,7 @@ public class InfoFarm extends javax.swing.JFrame {
 
         jLabel4.setText("Seeds/Tree");
 
-        jLabel5.setText("Produção Diaria/Oopyies");
+        jLabel5.setText("Producao Diaria/Oopyies");
 
         jLabel7.setText("10");
 

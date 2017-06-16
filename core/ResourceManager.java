@@ -235,7 +235,7 @@ public class ResourceManager {
         
 	
 	/**
-	 * Retorna uma representa��o em String, para depuracao.
+	 * Retorna uma representacao em String, para depuracao.
 	 */
 	@Override
 	public String toString(){

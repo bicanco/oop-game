@@ -31,7 +31,7 @@ public class TurnManager {
 	 */
 	private int payTurnRangeMin = 17;
 	/**
-	 * M�ximo para escolha aleatoria de tempo (em turnos) para o proximo turno
+	 * Maximo para escolha aleatoria de tempo (em turnos) para o proximo turno
 	 * a ser feito um pagamento em Rubies. 
 	 */
 	private int payTurnRangeMax = 20;
@@ -53,14 +53,14 @@ public class TurnManager {
 	 */
 	private int payTurnRubiesIncrease = 1;
 	/**
-	 * Se verdadeiro, indica que o n�mero de Rubies a serem pagos no proximo turno
+	 * Se verdadeiro, indica que o numero de Rubies a serem pagos no proximo turno
 	 * deve aumentar.
 	 */
 	private boolean increasePayTurn = false;
 	
 	
 	/**
-	 * N�mero de Oopyies que compoem cada grupo de comida.
+	 * Numero de Oopyies que compoem cada grupo de comida.
 	 */
 	private int oopyiesPerFoodGroup = 5;
 	/**
