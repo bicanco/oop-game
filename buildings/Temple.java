@@ -212,10 +212,10 @@ public class Temple implements Building {
 		return upgradesCost[upgradeId];
 	}
 
-	@Override
+/*	@Override
 	public void setUpgradeCost(int value, int upgrade) {
 		upgradesCost[upgrade] = value;
-	}
+	}*/
 
 	@Override
 	public void reset() {
