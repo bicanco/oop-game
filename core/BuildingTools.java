@@ -114,10 +114,10 @@ public class BuildingTools {
 	public static void unlockUpgrade(int reference, int upgradeId) {
 		try {
 			switch (reference){
-			case FARM: farm.unlockUpgrade(upgradeId);
-			case LAB:  lab.unlockUpgrade(upgradeId);
-			case TEMPLE: temple.unlockUpgrade(upgradeId);
-			case MINE: mine.unlockUpgrade(upgradeId);
+			case FARM: farm.unlockUpgrade(upgradeId); break;
+			case LAB:  lab.unlockUpgrade(upgradeId); break;
+			case TEMPLE: temple.unlockUpgrade(upgradeId); break;
+			case MINE: mine.unlockUpgrade(upgradeId); break;
 			}
 		} catch (Exception e){
 			// Posicao ja esta preenchida, nada ocorre
