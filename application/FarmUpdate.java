@@ -16,12 +16,12 @@ import buildings.Farm;
  *
  * @author Fer
  */
-public class FarmMelhoria extends javax.swing.JFrame {
+public class FarmUpdate extends javax.swing.JFrame {
     GameManager gameData;
     /**
      * Creates new form FarmUso
      */
-    public FarmMelhoria(GameManager gameData) {
+    public FarmUpdate(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
@@ -60,65 +60,30 @@ public class FarmMelhoria extends javax.swing.JFrame {
         labelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FarmBig.png"))); // NOI18N
 
         labelFARM.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        labelFARM.setText("FARM");
+        labelFARM.setText("ROÇA");
 
-        labelFP.setText("Food Production");
+        labelFP.setText("Produção de Comida:");
 
-        labelSF.setText("Seed Fertilizer");
+        labelSF.setText("Fertilizador de Semente:");
 
-        labelCF.setText("Coco Fertilizer");
+        labelCF.setText("Fertilizador de Coco:");
 
-        labelGP.setText("Great Production");
+        labelGP.setText("Grande Produção:");
 
-    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.FOOD_PRODUCTION)){
-    		btnFoodProduction.setText("Liberado");
-    		btnFoodProduction.setEnabled(false);
-    	} else {
-    		btnFoodProduction.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.FOOD_PRODUCTION));
-            btnFoodProduction.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnFoodProductionActionPerformed(evt);
-                }
-            });
-    	}
-    	
-    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.SEED_FERTILIZER)){
-    		btnSeedFertilizer.setText("Liberado");
-    		btnSeedFertilizer.setEnabled(false);
-    	} else {
-        	btnSeedFertilizer.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.SEED_FERTILIZER));
-        	btnSeedFertilizer.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnSeedFertilizerActionPerformed(evt);
-                }
-            });
-    	}
-    	
-    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER)){
-    		btnCocoFertilizer.setText("Liberado");
-    		btnCocoFertilizer.setEnabled(false);
-    	} else {
-    		btnCocoFertilizer.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.COCO_FERTILIZER));
-    		btnCocoFertilizer.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnCocoFertilizerActionPerformed(evt);
-                }
-            });
-    	}
-    	
-    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.GREAT_PRODUCTION)){
-    		btnGreatProduction.setText("Liberado");
-    		btnGreatProduction.setEnabled(false);
-    	} else {
-    		btnGreatProduction.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.GREAT_PRODUCTION));
-    		btnGreatProduction.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnGreatProductionActionPerformed(evt);
-                }
-            });
-    	}
+        btnFoodProduction.setText("Bloqueado: 30");
+        btnFoodProduction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFoodProductionActionPerformed(evt);
+            }
+        });
 
-        btnSair.setText("Fechar");
+        btnSeedFertilizer.setText("Bloquedo: 30");
+
+        btnCocoFertilizer.setText("Bloqueado: 30");
+
+        btnGreatProduction.setText("Bloqueado: 60");
+
+        btnSair.setText("Close");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -142,18 +107,12 @@ public class FarmMelhoria extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelSF)
-                            .addComponent(labelFP)))
+                            .addComponent(labelFP)
+                            .addComponent(labelCF)
+                            .addComponent(labelGP)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(labelGP)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(labelImage)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(labelCF)
-                                .addGap(15, 15, 15)))))
+                        .addGap(88, 88, 88)
+                        .addComponent(labelImage)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,19 +122,15 @@ public class FarmMelhoria extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
                                 .addComponent(labelCreativity)))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnFoodProduction)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCocoFertilizer)
-                                    .addComponent(btnGreatProduction)
-                                    .addComponent(btnSeedFertilizer))
-                                .addContainerGap(42, Short.MAX_VALUE))))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnFoodProduction)
+                            .addComponent(btnCocoFertilizer)
+                            .addComponent(btnSeedFertilizer, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnGreatProduction))
+                        .addGap(42, 42, 42))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(154, 154, 154)
                 .addComponent(btnSair)
@@ -221,7 +176,7 @@ public class FarmMelhoria extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new LojaVirtual(gameData).setVisible(true);
+        new MyClasses(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnFoodProductionActionPerformed(java.awt.event.ActionEvent evt) {

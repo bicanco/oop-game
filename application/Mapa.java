@@ -737,7 +737,7 @@ public class Mapa extends javax.swing.JFrame {
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Principal(gameData).setVisible(true);
+        new Main(gameData).setVisible(true);
     }//GEN-LAST:event_sairActionPerformed
 
     private void btn0x0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0x0ActionPerformed
@@ -1365,7 +1365,7 @@ public class Mapa extends javax.swing.JFrame {
     private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosActionPerformed
         // TODO add your handling code here:
         
-        new Recursos(gameData, 1).setVisible(true);
+        new Resources(gameData, 1).setVisible(true);
     }//GEN-LAST:event_btnRecursosActionPerformed
 //
 //    /**

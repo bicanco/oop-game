@@ -299,7 +299,7 @@ public class FarmManager extends javax.swing.JFrame {
         }
         
         this.dispose();
-        new MapaParaUso(gameData).setVisible(true);
+        new MapForUse(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void CheckBoxSeedFertilizerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxSeedFertilizerActionPerformed
@@ -357,7 +357,7 @@ public class FarmManager extends javax.swing.JFrame {
     private void btnResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResourcesActionPerformed
         // TODO add your handling code here:
  
-        new Recursos(gameData, 1).setVisible(true);
+         new application.Resources(gameData, 1).setVisible(true); 
     }//GEN-LAST:event_btnResourcesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

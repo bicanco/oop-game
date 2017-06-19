@@ -61,14 +61,14 @@
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="86" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnSeedFertilizer" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="btnFoodProduction" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnCocoFertilizer" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnGreatProduction" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCocoFertilizer" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSeedFertilizer" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGreatProduction" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -160,7 +160,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnFoodProduction">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Locked: 30"/>
+        <Property name="text" type="java.lang.String" value="Bloqueado: 30"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFoodProductionActionPerformed"/>
@@ -168,17 +168,17 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSeedFertilizer">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Locked: 30"/>
+        <Property name="text" type="java.lang.String" value="Bloquedo: 30"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnCocoFertilizer">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Locked: 30"/>
+        <Property name="text" type="java.lang.String" value="Bloqueado: 30"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnGreatProduction">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Locked: 60"/>
+        <Property name="text" type="java.lang.String" value="Bloqueado: 60"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnSair">

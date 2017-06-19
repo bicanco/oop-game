@@ -17,12 +17,12 @@ import core.ResourceManager;
  *
  * @author Fer
  */
-public class LabMelhoria extends javax.swing.JFrame {
+public class LabUpdate extends javax.swing.JFrame {
     GameManager gameData;
     /**
      * Creates new form LabMelhoria
      */
-    public LabMelhoria(GameManager gameData) {
+    public LabUpdate(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
@@ -59,47 +59,17 @@ public class LabMelhoria extends javax.swing.JFrame {
         labelLAB.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelLAB.setText("LAB");
 
-        jLabel3.setText("Pesquisa Cientifica:");
+        jLabel3.setText("Produção de Criatividade:");
 
-        jLabel4.setText("Grupo de Controle:");
+        jLabel4.setText("Pesquisa Básica:");
 
-        jLabel5.setText("Grande Investimento:");
-        
-        if (BuildingTools.getUpgrade(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION)){
-    		btnCreativityProduction.setText("Liberado");
-    		btnCreativityProduction.setEnabled(false);
-    	} else {
-    		btnCreativityProduction.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION));
-            btnCreativityProduction.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnCreativityProductionActionPerformed(evt);
-                }
-            });
-    	}
+        jLabel5.setText("Grande Pesquisa:");
 
-        if (BuildingTools.getUpgrade(BuildingTools.LAB, Lab.BASIC_RESEARCH)){
-    		btnBasicResearch.setText("Liberado");
-    		btnBasicResearch.setEnabled(false);
-    	} else {
-    		btnBasicResearch.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.BASIC_RESEARCH));
-            btnBasicResearch.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnBasicResearchActionPerformed(evt);
-                }
-            });
-    	}
+        btnCreativityProduction.setText("Bloqueado: 30");
 
-        if (BuildingTools.getUpgrade(BuildingTools.LAB, Lab.GREAT_RESEARCH)){
-    		btnGreatResearch.setText("Liberado");
-    		btnGreatResearch.setEnabled(false);
-    	} else {
-    		btnGreatResearch.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.GREAT_RESEARCH));
-            btnGreatResearch.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnGreatResearchActionPerformed(evt);
-                }
-            });
-    	}
+        btnBasicResearch.setText("Bloqueado: 30");
+
+        btnGreatResearch.setText("Bloqueado: 30");
 
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +78,7 @@ public class LabMelhoria extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Criatividade: ");
+        jLabel1.setText("Criatividade");
 
         labelCreativity.setText("0");
 
@@ -124,22 +94,6 @@ public class LabMelhoria extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(105, 105, 105)
-                                .addComponent(btnBasicResearch))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnCreativityProduction))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnGreatResearch))))
-                        .addGap(48, 48, 48))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(13, 13, 13)
@@ -150,7 +104,23 @@ public class LabMelhoria extends javax.swing.JFrame {
                                 .addComponent(labelCreativity)))
                         .addGap(72, 72, 72)
                         .addComponent(labelLAB)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(85, 85, 85))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnGreatResearch)
+                            .addComponent(btnBasicResearch)
+                            .addComponent(btnCreativityProduction))
+                        .addGap(48, 48, 48))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,18 +140,19 @@ public class LabMelhoria extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(btnCreativityProduction))
-                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(btnBasicResearch)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(btnGreatResearch))
                         .addGap(25, 25, 25)
-                        .addComponent(btnSair))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnBasicResearch)
-                        .addComponent(jLabel4)))
+                        .addComponent(btnSair)))
                 .addGap(39, 39, 39))
         );
 
@@ -236,7 +207,7 @@ public class LabMelhoria extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new LojaVirtual(gameData).setVisible(true);
+        new MyClasses(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
   

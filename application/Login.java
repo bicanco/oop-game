@@ -142,7 +142,7 @@ public class Login extends javax.swing.JFrame {
     		   							gameData.turns.getPayTurnRubies() + " Great Rubies no dia " +
     		   							gameData.turns.getNextPayTurn() + ".", "Servico Semi-Voluntario de Colaboracao Monetaria",
     		   							JOptionPane.INFORMATION_MESSAGE);
-       new Principal(gameData).setVisible(true);
+       new Main(gameData).setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

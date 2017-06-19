@@ -17,10 +17,10 @@ import core.ResourceManager;
  *
  * @author Fer
  */
-public class Principal extends javax.swing.JFrame {
+public class Main extends javax.swing.JFrame {
     int value;
     GameManager gameData;
-    public Principal(GameManager gameData) {
+    public Main(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
       
@@ -266,31 +266,31 @@ public class Principal extends javax.swing.JFrame {
     private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Recursos(gameData, 0).setVisible(true); 
+        new Resources(gameData, 0).setVisible(true); 
     }//GEN-LAST:event_btnRecursosActionPerformed
 
     private void btnLojaVirtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLojaVirtualActionPerformed
         // TODO add your handling code here:
          this.dispose();
-        new LojaVirtual(gameData).setVisible(true);
+        new MyClasses(gameData).setVisible(true);
         
     }//GEN-LAST:event_btnLojaVirtualActionPerformed
 
     private void btnMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
         // TODO add your handling code here:
          this.dispose();
-        new MapaParaUso(gameData).setVisible(true);
+        new MapForUse(gameData).setVisible(true);
     }//GEN-LAST:event_btnMapaActionPerformed
 
     private void btnTrocasDiariasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocasDiariasActionPerformed
         this.dispose();
-        new TrocasDiarias(gameData).setVisible(true);
+        new DailyChanges(gameData).setVisible(true);
     }//GEN-LAST:event_btnTrocasDiariasActionPerformed
 
     private void btnTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTurnoActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Turno(gameData).setVisible(true);
+        new NextTurn(gameData).setVisible(true);
     }//GEN-LAST:event_btnTurnoActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

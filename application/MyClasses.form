@@ -28,37 +28,20 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="btnAboutFarm" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="btnAboutTemple" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnAboutLab" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnAboutMine" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="labelMine" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="labelLab" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="labelTemple" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="labelFarm" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnSair" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="110" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -75,42 +58,38 @@
                               <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="6" pref="35" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="btnFarmBuy" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnFarmUpgrade" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDropLab" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnUpdateLab" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="btnLabBuy" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnLabUpgrade" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDropTemple" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnUpdateTemple" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="btnTempleBuy" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnTempleUpgrade" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDropMine" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnUpdateMine" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="btnMineBuy" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnMineUpgrade" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="btnDropFarm" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnUpdateFarm" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="261" max="-2" attributes="0"/>
-                      <Component id="btnSair" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="275" max="-2" attributes="0"/>
@@ -133,39 +112,35 @@
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnFarmUpgrade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnUpdateFarm" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnFarmBuy" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDropFarm" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelFarm" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnAboutFarm" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelLab" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnLabBuy" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnLabUpgrade" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnAboutLab" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDropLab" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnUpdateLab" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelTemple" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnTempleBuy" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnTempleUpgrade" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnAboutTemple" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDropTemple" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnUpdateTemple" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelMine" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnMineBuy" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnMineUpgrade" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnAboutMine" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDropMine" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnUpdateMine" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnSair" min="-2" max="-2" attributes="0"/>
@@ -180,23 +155,23 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Fax" size="24" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Loja Virtual"/>
+        <Property name="text" type="java.lang.String" value="Minhas Classes"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnSair">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Finalizar Compra"/>
+        <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnFarmUpgrade">
+    <Component class="javax.swing.JButton" name="btnUpdateFarm">
       <Properties>
         <Property name="text" type="java.lang.String" value="Melhorias"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFarmUpgradeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateFarmActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -231,12 +206,12 @@
         <Property name="text" type="java.lang.String" value="Mina"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnFarmBuy">
+    <Component class="javax.swing.JButton" name="btnDropFarm">
       <Properties>
         <Property name="text" type="java.lang.String" value="Construir"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFarmBuyActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDropFarmActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
@@ -279,52 +254,52 @@
         <Property name="text" type="java.lang.String" value="$400,00"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnLabBuy">
+    <Component class="javax.swing.JButton" name="btnDropLab">
       <Properties>
         <Property name="text" type="java.lang.String" value="Construir"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLabBuyActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDropLabActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnTempleBuy">
+    <Component class="javax.swing.JButton" name="btnDropTemple">
       <Properties>
         <Property name="text" type="java.lang.String" value="Construir"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTempleBuyActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDropTempleActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnMineBuy">
+    <Component class="javax.swing.JButton" name="btnDropMine">
       <Properties>
         <Property name="text" type="java.lang.String" value="Construir"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMineBuyActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDropMineActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnLabUpgrade">
+    <Component class="javax.swing.JButton" name="btnUpdateLab">
       <Properties>
         <Property name="text" type="java.lang.String" value="Melhorias"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLabUpgradeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateLabActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnTempleUpgrade">
+    <Component class="javax.swing.JButton" name="btnUpdateTemple">
       <Properties>
         <Property name="text" type="java.lang.String" value="Melhorias"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTempleUpgradeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateTempleActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnMineUpgrade">
+    <Component class="javax.swing.JButton" name="btnUpdateMine">
       <Properties>
         <Property name="text" type="java.lang.String" value="Melhorias"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMineUpgradeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateMineActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
@@ -336,38 +311,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="$500,00"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnAboutLab">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Info"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAboutLabActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnAboutFarm">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Info"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAboutFarmActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnAboutTemple">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Info"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAboutTempleActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnAboutMine">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Info"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAboutMineActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>

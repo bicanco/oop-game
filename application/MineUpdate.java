@@ -17,12 +17,12 @@ import core.ResourceManager;
  *
  * @author Fer
  */
-public class MineMelhoria extends javax.swing.JFrame {
+public class MineUpdate extends javax.swing.JFrame {
     GameManager gameData;
     /**
      * Creates new form MineMelhoria
      */
-    public MineMelhoria(GameManager gameData) {
+    public MineUpdate(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
@@ -59,51 +59,21 @@ public class MineMelhoria extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         jLabel2.setText("MINA");
 
-        jLabel3.setText("Escavacao de Pedras:");
+        jLabel3.setText("Produção de Pedras:");
 
-        jLabel4.setText("Usar Picaretas:");
+        jLabel4.setText("Machado:");
 
-        jLabel5.setText("Grande Escavacao:");
+        jLabel5.setText("Grande Escavação:");
 
         jLabel6.setText("Criatividade:");
 
         labelCreativity.setText("0");
-        
-        if (BuildingTools.getUpgrade(BuildingTools.MINE, Mine.STONE_PRODUCTION)){
-    		btnStoneProduction.setText("Liberado");
-    		btnStoneProduction.setEnabled(false);
-    	} else {
-    		btnStoneProduction.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.STONE_PRODUCTION));
-            btnStoneProduction.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnStoneProductionActionPerformed(evt);
-                }
-            });
-    	}
 
-        if (BuildingTools.getUpgrade(BuildingTools.MINE, Mine.USE_PICKAXE)){
-    		btnPickAxe.setText("Liberado");
-    		btnPickAxe.setEnabled(false);
-    	} else {
-    		btnPickAxe.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.USE_PICKAXE));
-            btnPickAxe.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnPickAxeActionPerformed(evt);
-                }
-            });
-    	}
+        btnStoneProduction.setText("Bloqueado: 30");
 
-        if (BuildingTools.getUpgrade(BuildingTools.MINE, Mine.GREAT_ESCAVATION)){
-    		btnGreatEscavation.setText("Liberado");
-    		btnGreatEscavation.setEnabled(false);
-    	} else {
-    		btnGreatEscavation.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.GREAT_ESCAVATION));
-            btnGreatEscavation.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btnGreatEscavationActionPerformed(evt);
-                }
-            });
-    	}
+        btnPickAxe.setText("Bloqueado: 30");
+
+        btnGreatEscavation.setText("Bloqueado: 30");
 
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -181,10 +151,10 @@ public class MineMelhoria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
         this.dispose();
-        new LojaVirtual(gameData).setVisible(true);
+        new MyClasses(gameData).setVisible(true);
         
     }
     

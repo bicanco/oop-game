@@ -73,7 +73,7 @@ public class MineManager extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         btnResources = new javax.swing.JButton();
         labelOopyiesEdit = new javax.swing.JLabel();
-        btnSair = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         CheckBoxGreatEscavation = new javax.swing.JCheckBox();
         SpinnerOopyies = new javax.swing.JSpinner();
         SpinnerSeeds = new javax.swing.JSpinner();
@@ -87,17 +87,17 @@ public class MineManager extends javax.swing.JFrame {
         labelMINE.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelMINE.setText("MINA");
 
-        jLabel3.setText("Oopyies Disponiveis:");
+        jLabel3.setText("Oopyies Disponíveis:");
 
-        jLabel4.setText("Escavacao de Pedras:");
+        jLabel4.setText("Produção de Pedra:");
 
         jLabel5.setText("Oopyies Usados:");
 
-        jLabel6.setText("Usar Picaretas:");
+        jLabel6.setText("Usar Machado:");
 
         jLabel7.setText("Sementes Usadas:");
 
-        jLabel8.setText("Grande Escavacao:");
+        jLabel8.setText("Grande Escavação:");
 
         btnResources.setText("Recursos");
         btnResources.addActionListener(new java.awt.event.ActionListener() {
@@ -108,10 +108,10 @@ public class MineManager extends javax.swing.JFrame {
 
         labelOopyiesEdit.setText("0");
 
-        btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Sair");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
 
@@ -148,7 +148,7 @@ public class MineManager extends javax.swing.JFrame {
                                     .addComponent(jLabel8)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(111, 111, 111)
-                                        .addComponent(btnSair)))
+                                        .addComponent(btnClose)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(SpinnerSeeds, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,14 +206,14 @@ public class MineManager extends javax.swing.JFrame {
                     .addComponent(CheckBoxGreatEscavation)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(btnSair)
+                .addComponent(btnClose)
                 .addGap(41, 41, 41))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CheckBoxGreatEscavationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxGreatResearchActionPerformed
+    private void CheckBoxGreatEscavationActionPerformed(java.awt.event.ActionEvent evt) {                                                      
     	if (CheckBoxGreatEscavation.isSelected()){
     		CheckBoxStoneProduction.setEnabled(false);
             SpinnerOopyies.setEnabled(false);
@@ -227,7 +227,7 @@ public class MineManager extends javax.swing.JFrame {
     	}
     }
     
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
     	Mine mine = (Mine) gameData.grid.getBuilding(row, col);
     	
         if(CheckBoxGreatEscavation.isSelected()){
@@ -249,13 +249,13 @@ public class MineManager extends javax.swing.JFrame {
         }
         
         this.dispose();
-        new MapaParaUso(gameData).setVisible(true);
-    }//GEN-LAST:event_btnSairActionPerformed
+        new MapForUse(gameData).setVisible(true);
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResourcesActionPerformed
         // TODO add your handling code here:
         
-        new Recursos(gameData,1).setVisible(true);
+        new Resources(gameData,1).setVisible(true);
     }//GEN-LAST:event_btnResourcesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -264,8 +264,8 @@ public class MineManager extends javax.swing.JFrame {
     private javax.swing.JCheckBox CheckBoxStoneProduction;
     private javax.swing.JSpinner SpinnerOopyies;
     private javax.swing.JSpinner SpinnerSeeds;
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnResources;
-    private javax.swing.JButton btnSair;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

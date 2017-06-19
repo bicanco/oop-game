@@ -16,12 +16,12 @@ import javax.swing.Timer;
  *
  * @author Fer
  */
-public class Turno extends javax.swing.JFrame {
+public class NextTurn extends javax.swing.JFrame {
     GameManager gameData;
     /**
      * Creates new form Turno
      */
-    public Turno(GameManager gameData) {
+    public NextTurn(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
@@ -164,14 +164,14 @@ public class Turno extends javax.swing.JFrame {
 							gameData.turns.getPayTurnRubies() + " Great Rubies no dia " +
 							gameData.turns.getNextPayTurn() + ".", "Servico Semi-Voluntario de Colaboracao Monetaria",
 							JOptionPane.INFORMATION_MESSAGE);
-    			new Principal(gameData).setVisible(true);
+    			new Main(gameData).setVisible(true);
     		} else {
     			JOptionPane.showMessageDialog(this, "Voce nao colaborou com Great Rubies no dia correto. Voce esta sendo"
     					+ "desligado do nosso sistema.", "Servico Semi-Voluntario de Colaboracao Monetaria",
 						JOptionPane.ERROR_MESSAGE);
     		}
     	} else {
-    		new Principal(gameData).setVisible(true);
+    		new Main(gameData).setVisible(true);
     	}
     	
         this.dispose();

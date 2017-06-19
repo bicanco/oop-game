@@ -13,14 +13,15 @@ import core.GameManager;
  *
  * @author Fer
  */
-public class TrocasDiarias extends javax.swing.JFrame {
+public class DailyChanges extends javax.swing.JFrame {
 	GameManager gameData;
 	
     /**
      * Creates new form TrocasDiarias
      */
-    public TrocasDiarias(GameManager gameData) {
+    public DailyChanges(GameManager gameData) {
     	this.gameData = gameData;
+         this.setResizable(false);
         initComponents();
         
         labelProduto1Escolha1.setText(gameData.daily.getOptions()[0].getTypesString(0));
@@ -70,55 +71,55 @@ public class TrocasDiarias extends javax.swing.JFrame {
         });
     }
     
-    private void btnEscolha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
+    private void btnEscolha1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
         if (gameData.daily.getOptions()[0].checkPayment(gameData.resources)){
         	gameData.daily.getOptions()[0].pay(gameData.resources);
         	
-        	JOptionPane.showMessageDialog(this, "Parabéns! Você acaba de gastar o trabalho "
-        			+ "de vários Oopyies em uma única gema brilhante.", "Capitalismo Selvagem",
+        	JOptionPane.showMessageDialog(this, "Parabï¿½ns! Vocï¿½ acaba de gastar o trabalho "
+        			+ "de vï¿½rios Oopyies em uma ï¿½nica gema brilhante.", "Capitalismo Selvagem",
 					JOptionPane.INFORMATION_MESSAGE);
         	
         	this.dispose();
-        	new Principal(gameData).setVisible(true);
+        	new Main(gameData).setVisible(true);
         } else {
-        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou você tem o que ele quer, "
+        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou vocï¿½ tem o que ele quer, "
         			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
 					JOptionPane.ERROR_MESSAGE);
         }
     }
     
-    private void btnEscolha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
+    private void btnEscolha2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
         if (gameData.daily.getOptions()[1].checkPayment(gameData.resources)){
         	gameData.daily.getOptions()[1].pay(gameData.resources);
         	
-        	JOptionPane.showMessageDialog(this, "Parabéns! Você acaba de gastar o trabalho "
-        			+ "de vários Oopyies em uma única gema brilhante.", "Capitalismo Selvagem",
+        	JOptionPane.showMessageDialog(this, "Parabï¿½ns! Vocï¿½ acaba de gastar o trabalho "
+        			+ "de vï¿½rios Oopyies em uma ï¿½nica gema brilhante.", "Capitalismo Selvagem",
 					JOptionPane.INFORMATION_MESSAGE);
         	
         	this.dispose();
-        	new Principal(gameData).setVisible(true);
+        	new Main(gameData).setVisible(true);
         } else {
-        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou você tem o que ele quer, "
+        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou vocï¿½ tem o que ele quer, "
         			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
 					JOptionPane.ERROR_MESSAGE);
         }
     }
     
-    private void btnEscolha3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
+    private void btnEscolha3ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
         if (gameData.daily.getOptions()[2].checkPayment(gameData.resources)){
         	gameData.daily.getOptions()[2].pay(gameData.resources);
         	
-        	JOptionPane.showMessageDialog(this, "Parabéns! Você acaba de gastar o trabalho "
-        			+ "de vários Oopyies em uma única gema brilhante.", "Capitalismo Selvagem",
+        	JOptionPane.showMessageDialog(this, "Parabï¿½ns! Vocï¿½ acaba de gastar o trabalho "
+        			+ "de vï¿½rios Oopyies em uma ï¿½nica gema brilhante.", "Capitalismo Selvagem",
 					JOptionPane.INFORMATION_MESSAGE);
         	
         	this.dispose();
-        	new Principal(gameData).setVisible(true);
+        	new Main(gameData).setVisible(true);
         } else {
-        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou você tem o que ele quer, "
+        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou vocï¿½ tem o que ele quer, "
         			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
 					JOptionPane.ERROR_MESSAGE);
         }
@@ -169,6 +170,7 @@ public class TrocasDiarias extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        btnClose = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -182,7 +184,7 @@ public class TrocasDiarias extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        jLabel1.setText("Trocas Diárias");
+        jLabel1.setText("Trocas DiÃ¡rias");
 
         labelProduto1Escolha1.setText("Produto1");
 
@@ -245,6 +247,13 @@ public class TrocasDiarias extends javax.swing.JFrame {
         jLabel9.setText("=");
 
         jLabel10.setText("=");
+
+        btnClose.setText("Sair");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCloseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -321,8 +330,13 @@ public class TrocasDiarias extends javax.swing.JFrame {
                             .addComponent(btnEscolha3))))
                 .addContainerGap(51, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(232, 232, 232)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(232, 232, 232)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(298, 298, 298)
+                        .addComponent(btnClose)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -368,11 +382,20 @@ public class TrocasDiarias extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel7)
                     .addComponent(jLabel10))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnClose)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new Main(gameData).setVisible(true);
+        
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -410,6 +433,7 @@ public class TrocasDiarias extends javax.swing.JFrame {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnEscolha1;
     private javax.swing.JButton btnEscolha2;
     private javax.swing.JButton btnEscolha3;

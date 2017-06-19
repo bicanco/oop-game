@@ -215,13 +215,13 @@ public class Test02 extends javax.swing.JFrame {
 
     private void btnRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosActionPerformed
             // TODO add your handling code here:
-              new Recursos(gameData).setVisible(true); 
+              new Resources(gameData).setVisible(true); 
             
     }//GEN-LAST:event_btnRecursosActionPerformed
  
     private void btnLojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLojaActionPerformed
         // TODO add your handling code here:
-         new LojaVirtual(gameData).setVisible(true);
+         new MyClasses(gameData).setVisible(true);
     }//GEN-LAST:event_btnLojaActionPerformed
 
     private void btnMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
@@ -231,7 +231,7 @@ public class Test02 extends javax.swing.JFrame {
 
     private void btnIniciarDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarDiaActionPerformed
         // TODO add your handling code here:
-        new Turno().setVisible(true);
+        new NextTurn().setVisible(true);
     }//GEN-LAST:event_btnIniciarDiaActionPerformed
 
 

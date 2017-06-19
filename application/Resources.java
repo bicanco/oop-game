@@ -12,13 +12,13 @@ import core.ResourceManager;
  *
  * @author Fer
  */
-public class Recursos extends javax.swing.JFrame {
+public class Resources extends javax.swing.JFrame {
     GameManager gameData;
     int from;
     /**
      * Creates new form Recursos
      */
-    public Recursos(GameManager gameData, int from) {
+    public Resources(GameManager gameData, int from) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         
@@ -168,7 +168,7 @@ public class Recursos extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
         if(from==0){
-            new Principal(gameData).setVisible(true);
+            new Main(gameData).setVisible(true);
         }
         
        

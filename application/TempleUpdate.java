@@ -16,12 +16,12 @@ import core.ResourceManager;
  *
  * @author Fer
  */
-public class TempleMelhoria extends javax.swing.JFrame {
+public class TempleUpdate extends javax.swing.JFrame {
     GameManager gameData;
     /**
      * Creates new form TempleMelhoria
      */
-    public TempleMelhoria(GameManager gameData) {
+    public TempleUpdate(GameManager gameData) {
         this.setResizable(false);
         //this.setLocationRelativeTo(null);
         this.gameData = gameData;
@@ -115,7 +115,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
 
         jLabel6.setText("Grande Ritual:");
 
-        btnSair.setText("Fechar");
+        btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -218,7 +218,7 @@ public class TempleMelhoria extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
          this.dispose();
-         new LojaVirtual(gameData).setVisible(true);
+         new MyClasses(gameData).setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnGemProductionActionPerformed(java.awt.event.ActionEvent evt) {
