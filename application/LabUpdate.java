@@ -29,6 +29,42 @@ public class LabUpdate extends javax.swing.JFrame {
         initComponents();
         
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+        
+        if (BuildingTools.getUpgrade(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION)){
+    		btnCreativityProduction.setText("Liberado");
+    		btnCreativityProduction.setEnabled(false);
+    	} else {
+    		btnCreativityProduction.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.CREATIVITY_PRODUCTION));
+            btnCreativityProduction.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnCreativityProductionActionPerformed(evt);
+                }
+            });
+    	}
+
+        if (BuildingTools.getUpgrade(BuildingTools.LAB, Lab.BASIC_RESEARCH)){
+    		btnBasicResearch.setText("Liberado");
+    		btnBasicResearch.setEnabled(false);
+    	} else {
+    		btnBasicResearch.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.BASIC_RESEARCH));
+            btnBasicResearch.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnBasicResearchActionPerformed(evt);
+                }
+            });
+    	}
+
+        if (BuildingTools.getUpgrade(BuildingTools.LAB, Lab.GREAT_RESEARCH)){
+    		btnGreatResearch.setText("Liberado");
+    		btnGreatResearch.setEnabled(false);
+    	} else {
+    		btnGreatResearch.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.LAB, Lab.GREAT_RESEARCH));
+            btnGreatResearch.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnGreatResearchActionPerformed(evt);
+                }
+            });
+    	}
     }
 
     /**
@@ -59,11 +95,11 @@ public class LabUpdate extends javax.swing.JFrame {
         labelLAB.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelLAB.setText("LAB");
 
-        jLabel3.setText("Produção de Criatividade:");
+        jLabel3.setText("Pesquisa Cientifica:");
 
-        jLabel4.setText("Pesquisa Básica:");
+        jLabel4.setText("Grupo de Controle:");
 
-        jLabel5.setText("Grande Pesquisa:");
+        jLabel5.setText("Inspiracao Rubra:");
 
         btnCreativityProduction.setText("Bloqueado: 30");
 
@@ -78,7 +114,7 @@ public class LabUpdate extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Criatividade");
+        jLabel1.setText("Criatividade:");
 
         labelCreativity.setText("0");
 

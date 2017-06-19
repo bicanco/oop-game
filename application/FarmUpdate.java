@@ -29,6 +29,54 @@ public class FarmUpdate extends javax.swing.JFrame {
         
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
         
+        if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.FOOD_PRODUCTION)){
+    		btnFoodProduction.setText("Liberado");
+    		btnFoodProduction.setEnabled(false);
+    	} else {
+    		btnFoodProduction.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.FOOD_PRODUCTION));
+            btnFoodProduction.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnFoodProductionActionPerformed(evt);
+                }
+            });
+    	}
+    	
+    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.SEED_FERTILIZER)){
+    		btnSeedFertilizer.setText("Liberado");
+    		btnSeedFertilizer.setEnabled(false);
+    	} else {
+        	btnSeedFertilizer.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.SEED_FERTILIZER));
+        	btnSeedFertilizer.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnSeedFertilizerActionPerformed(evt);
+                }
+            });
+    	}
+    	
+    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.COCO_FERTILIZER)){
+    		btnCocoFertilizer.setText("Liberado");
+    		btnCocoFertilizer.setEnabled(false);
+    	} else {
+    		btnCocoFertilizer.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.COCO_FERTILIZER));
+    		btnCocoFertilizer.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnCocoFertilizerActionPerformed(evt);
+                }
+            });
+    	}
+    	
+    	if (BuildingTools.getUpgrade(BuildingTools.FARM, Farm.GREAT_PRODUCTION)){
+    		btnGreatProduction.setText("Liberado");
+    		btnGreatProduction.setEnabled(false);
+    	} else {
+    		btnGreatProduction.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.GREAT_PRODUCTION));
+    		btnGreatProduction.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnGreatProductionActionPerformed(evt);
+                }
+            });
+    	}
+        
     }
 
     /**
@@ -60,15 +108,15 @@ public class FarmUpdate extends javax.swing.JFrame {
         labelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FarmBig.png"))); // NOI18N
 
         labelFARM.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        labelFARM.setText("ROÇA");
+        labelFARM.setText("RO�A");
 
-        labelFP.setText("Produção de Comida:");
+        labelFP.setText("Producao de Comida:");
 
         labelSF.setText("Fertilizador de Semente:");
 
         labelCF.setText("Fertilizador de Coco:");
 
-        labelGP.setText("Grande Produção:");
+        labelGP.setText("Producao Exorbitante:");
 
         btnFoodProduction.setText("Bloqueado: 30");
         btnFoodProduction.addActionListener(new java.awt.event.ActionListener() {

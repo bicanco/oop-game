@@ -29,6 +29,42 @@ public class MineUpdate extends javax.swing.JFrame {
         initComponents();
         
         labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
+        
+        if (BuildingTools.getUpgrade(BuildingTools.MINE, Mine.STONE_PRODUCTION)){
+    		btnStoneProduction.setText("Liberado");
+    		btnStoneProduction.setEnabled(false);
+    	} else {
+    		btnStoneProduction.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.STONE_PRODUCTION));
+            btnStoneProduction.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnStoneProductionActionPerformed(evt);
+                }
+            });
+    	}
+
+        if (BuildingTools.getUpgrade(BuildingTools.MINE, Mine.USE_PICKAXE)){
+    		btnPickAxe.setText("Liberado");
+    		btnPickAxe.setEnabled(false);
+    	} else {
+    		btnPickAxe.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.USE_PICKAXE));
+            btnPickAxe.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnPickAxeActionPerformed(evt);
+                }
+            });
+    	}
+
+        if (BuildingTools.getUpgrade(BuildingTools.MINE, Mine.GREAT_ESCAVATION)){
+    		btnGreatEscavation.setText("Liberado");
+    		btnGreatEscavation.setEnabled(false);
+    	} else {
+    		btnGreatEscavation.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.MINE, Mine.GREAT_ESCAVATION));
+            btnGreatEscavation.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnGreatEscavationActionPerformed(evt);
+                }
+            });
+    	}
     }
 
     /**
@@ -59,11 +95,11 @@ public class MineUpdate extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         jLabel2.setText("MINA");
 
-        jLabel3.setText("Produção de Pedras:");
+        jLabel3.setText("Escavacao de Pedras:");
 
-        jLabel4.setText("Machado:");
+        jLabel4.setText("Usar Picaretas:");
 
-        jLabel5.setText("Grande Escavação:");
+        jLabel5.setText("Explosao Rubra:");
 
         jLabel6.setText("Criatividade:");
 
@@ -78,7 +114,7 @@ public class MineUpdate extends javax.swing.JFrame {
         btnClose.setText("Sair");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCloseActionPerformed(evt);
+                btnSairActionPerformed(evt);
             }
         });
 
