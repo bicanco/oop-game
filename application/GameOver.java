@@ -6,6 +6,9 @@
 package application;
 
 import core.GameManager;
+import core.HighScores;
+import core.Score;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +24,14 @@ public class GameOver extends javax.swing.JFrame {
          this.setResizable(false);
         initComponents();
         this.gameData = gameData;
+        
+        labelUserName1.setText(gameData.highScores.highScores[0].getPlayerName());
+        labelUserName2.setText(gameData.highScores.highScores[1].getPlayerName());
+        labelUserName3.setText(gameData.highScores.highScores[2].getPlayerName());
+        
+        labelHighScore1.setText(Integer.toString(gameData.highScores.highScores[0].getPoints()));
+        labelHighScore2.setText(Integer.toString(gameData.highScores.highScores[1].getPoints()));
+        labelHighScore3.setText(Integer.toString(gameData.highScores.highScores[2].getPoints()));
     }
 
     /**
@@ -60,25 +71,25 @@ public class GameOver extends javax.swing.JFrame {
         jLabel2.setText("Deseja uma Segunda Chance?");
 
         jLabel3.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
-        jLabel3.setText("Os dados de seu computador foram perdidos porque sua participação");
+        jLabel3.setText("Os dados de seu computador foram perdidos porque sua participacao");
 
         jLabel5.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
-        jLabel5.setText("do SimulaTM Operações Dimensionais foi interrompida.");
+        jLabel5.setText("do Simula(TM) Operacoes Dimensionais foi interrompida.");
 
         jLabel6.setFont(new java.awt.Font("Lucida Sans Typewriter", 1, 14)); // NOI18N
-        jLabel6.setText("Usuários");
+        jLabel6.setText("Usuarios");
 
         jLabel7.setFont(new java.awt.Font("Lucida Sans Typewriter", 1, 14)); // NOI18N
         jLabel7.setText("Dias Trabalhando");
 
         labelUserName1.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-        labelUserName1.setText("Usuários");
+        labelUserName1.setText("Usuarios");
 
         labelUserName2.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-        labelUserName2.setText("Usuários");
+        labelUserName2.setText("Usuarios");
 
         labelUserName3.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-        labelUserName3.setText("Usuários");
+        labelUserName3.setText("Usuarios");
 
         labelHighScore1.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
         labelHighScore1.setText("High Score");
@@ -93,13 +104,13 @@ public class GameOver extends javax.swing.JFrame {
         jLabel4.setText("Mural de Melhores Empreedendores");
 
         jLabel14.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
-        jLabel14.setText("A SimulaTM Operações Dimensionais está sempre de portas abertas para a");
+        jLabel14.setText("A Simula(TM) Operacoes Dimensionais esta sempre de portas abertas para a");
 
         jLabel15.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
-        jLabel15.setText("determinação de empreendedores que sonham em crescer na empresa.");
+        jLabel15.setText("determinacao de empreendedores que sonham em crescer na empresa.");
 
         jLabel16.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
-        jLabel16.setText("Envie seu curriculo hoje e ganhe uma nova chance de lucrar!");
+        jLabel16.setText("Envie seus dados do sistema hoje e ganhe uma nova chance de lucrar!");
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/curriculo.png"))); // NOI18N
 
@@ -209,9 +220,17 @@ public class GameOver extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Sua inscricao foi aceita.\n Bem vindo ao SimulaTM Operações Dimensionais\n", null, 0, new javax.swing.ImageIcon(getClass().getResource("/Imagens/happypc.png")));
+        JOptionPane.showMessageDialog(null, "Seus dados foram aceitos pelo sistema.\nEntraremos em contato em breve.\n"
+        		+ "Entre novamente no sistema para voltar a lucrar.", null, 0, new javax.swing.ImageIcon(getClass().getResource("/Imagens/happypc.png")));
                 jButton1.setVisible(true);
-        
+        gameData.highScores.insertNewScore(new Score(gameData.username, gameData.turns.getCurrentTurn() - 1));
+        try {
+        	HighScores.saveHighScore(gameData.highScores);
+        } catch (Exception e){
+        	System.out.println("Nossos sistemas estao congestionados. Tente novamente daqui alguns minutos.");
+        } finally {
+        	System.exit(0);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
   

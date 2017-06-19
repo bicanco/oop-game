@@ -149,33 +149,37 @@ public class NextTurn extends javax.swing.JFrame {
 					JOptionPane.INFORMATION_MESSAGE);
     	}
     	
-    	if(gameData.resources.getOopyies()==0)
+    	// sem oopyies, fim de jogo
+    	if(gameData.resources.getOopyies() == 0){
+    		this.dispose();
 			new GameOver(gameData).setVisible(true);
-    	else{
-    	// novos oopyies
-    	int newOopyies = gameData.turns.newOopyies(gameData.resources);
-    	int acceptOopyies = JOptionPane.showConfirmDialog(this, "Acabaram de chegar "
-    			+ newOopyies + " Oopyies por aqui. Eles querem trabalhar para voce."
-    					+ " Voce aceita?", "Exodo Oopyral", JOptionPane.YES_NO_OPTION);
-    	if (acceptOopyies == JOptionPane.YES_OPTION)
-    		gameData.resources.updateOopyies(newOopyies);
-   
-    	// checagem do dia de pagamento
-    	if (gameData.turns.isPayTurn()){
-    		if (gameData.turns.executePayTurn(gameData.resources)){
-    			JOptionPane.showMessageDialog(this, "Para continuar usando o sistema, voce devera pagar " +
-							gameData.turns.getPayTurnRubies() + " Great Rubies no dia " +
-							gameData.turns.getNextPayTurn() + ".", "Servico Semi-Voluntario de Colaboracao Monetaria",
-							JOptionPane.INFORMATION_MESSAGE);
-    			new Main(gameData).setVisible(true);
-    		} else {
-    			JOptionPane.showMessageDialog(this, "Voce nao colaborou com Great Rubies no dia correto. Voce esta sendo"
-    					+ "desligado do nosso sistema.", "Servico Semi-Voluntario de Colaboracao Monetaria",
-						JOptionPane.ERROR_MESSAGE);
-    		}
     	} else {
-    		new Main(gameData).setVisible(true);
-    	}
+	    	// novos oopyies
+	    	int newOopyies = gameData.turns.newOopyies(gameData.resources);
+	    	int acceptOopyies = JOptionPane.showConfirmDialog(this, "Acabaram de chegar "
+	    			+ newOopyies + " Oopyies por aqui. Eles querem trabalhar para voce."
+	    					+ " Voce aceita?", "Exodo Oopyral", JOptionPane.YES_NO_OPTION);
+	    	if (acceptOopyies == JOptionPane.YES_OPTION)
+	    		gameData.resources.updateOopyies(newOopyies);
+	   
+	    	// checagem do dia de pagamento
+	    	if (gameData.turns.isPayTurn()){
+	    		if (gameData.turns.executePayTurn(gameData.resources)){
+	    			JOptionPane.showMessageDialog(this, "Para continuar usando o sistema, voce devera pagar " +
+								gameData.turns.getPayTurnRubies() + " Great Rubies no dia " +
+								gameData.turns.getNextPayTurn() + ".", "Servico Semi-Voluntario de Colaboracao Monetaria",
+								JOptionPane.INFORMATION_MESSAGE);
+	    			new Main(gameData).setVisible(true);
+	    		} else {
+	    			JOptionPane.showMessageDialog(this, "Voce nao colaborou com Great Rubies no dia correto. Voce esta sendo"
+	    					+ "desligado do nosso sistema.", "Servico Semi-Voluntario de Colaboracao Monetaria",
+							JOptionPane.ERROR_MESSAGE);
+	    			this.dispose();
+	    			new GameOver(gameData).setVisible(true);
+	    		}
+	    	} else {
+	    		new Main(gameData).setVisible(true);
+	    	}
     	}
         this.dispose();
         

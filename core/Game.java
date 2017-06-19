@@ -20,14 +20,13 @@ public class Game {
 		gameData.resources.updateScalaStones(50000);
 		gameData.resources.updateOopyies(10);
 		gameData.resources.updateCreativity(1000000);
-		 java.awt.EventQueue.invokeLater(new Runnable() {
+		java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
                 new Login(gameData).setVisible(true);
                 
             }
         });
-		
 		
 	}
 }
