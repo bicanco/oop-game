@@ -52,7 +52,7 @@ public class Mine implements Building {
 	 * @param boost a quantidade de recursos alocados para aumentar a produção
 	 * @return a produção
 	 */
-	public int stoneProduction(int boost){
+	private int stoneProduction(int boost){
 		return oopyiesAllocated*STONES_PER_OOPYIE*usePickaxe(boost);
 	}
 	
@@ -60,7 +60,7 @@ public class Mine implements Building {
 	 * Método que retorna a produção da mina
 	 * @return a produção
 	 */
-	public int stoneProduction(){
+	private int stoneProduction(){
 		return oopyiesAllocated*STONES_PER_OOPYIE;
 	}
 	
@@ -70,7 +70,7 @@ public class Mine implements Building {
 	 * @param seeds o número de seeds alocadas
 	 * @return a produção
 	 */
-	public int usePickaxe(int seeds){
+	private int usePickaxe(int seeds){
 		if(upgradesAvailable[USE_PICKAXE] == false){
 			return 0;//produz Stones se o metodo ja foi adquirido
 		}else
@@ -81,7 +81,7 @@ public class Mine implements Building {
 	 * Método que retorna a produção máxima da mina
 	 * @return a produção máxima
 	 */
-	public int greatEscavation(){
+	private int greatEscavation(){
 		if(upgradesAvailable[GREAT_ESCAVATION] == false){
 			return 0;//produz a producao se o metodo ja foi adquirido
 		}else

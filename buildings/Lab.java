@@ -52,7 +52,7 @@ public class Lab implements Building {
 	 * @param boost a quantidade de recursos alocados para aumentar a produção
 	 * @return a produção
 	 */
-	public int creativityProduction(int boost){
+	private int creativityProduction(int boost){
 		return oopyiesAllocated*CREATIVITY_PER_OOPYIE*basicResearch(boost);
 	}
 	
@@ -60,7 +60,7 @@ public class Lab implements Building {
 	 * Método que retorna a produção do lab
 	 * @return a produção
 	 */
-	public int creativityProduction(){
+	private int creativityProduction(){
 		return oopyiesAllocated*CREATIVITY_PER_OOPYIE;
 	}
 	
@@ -70,7 +70,7 @@ public class Lab implements Building {
 	 * @param cocos o número de cocos alocados
 	 * @return a produção
 	 */
-	public int basicResearch(int cocos){
+	private int basicResearch(int cocos){
 		if(upgradesAvailable[BASIC_RESEARCH] == false){
 			return 0;//produz Criatividade se o metodo ja foi adquirido
 		}else
@@ -81,7 +81,7 @@ public class Lab implements Building {
 	 * Método que retorna a produção máxima do lab
 	 * @return a produção máxima
 	 */
-	public int greatResearch(){
+	private int greatResearch(){
 		if(upgradesAvailable[GREAT_RESEARCH] == false){
 			return 0;//produz a producao se o metodo ja foi adquirido
 		}else

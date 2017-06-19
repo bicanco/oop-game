@@ -1,5 +1,10 @@
 package core;
 
+/**
+ * Classe que gerencia o jogo
+ * @author Gabriel Toschi (@gabrieltoschi)
+ *
+ */
 public class GameManager {
 	public HighScores highScores = new HighScores();
 	public ResourceManager resources = new ResourceManager();
@@ -9,7 +14,10 @@ public class GameManager {
 	
 	public String username;
     public int iconname;
-        
+    
+    /**
+     * Método construtor da classe GameManager
+     */
 	public GameManager(){
 		
 	}

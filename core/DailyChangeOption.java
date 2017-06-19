@@ -67,6 +67,11 @@ public class DailyChangeOption {
 		return values[n];
 	}
 	
+	/**
+	 * Método que checa se o pagamento é possível
+	 * @param resources um ResourceManager do jogo
+	 * @return true se tem condições e false se não
+	 */
 	public boolean checkPayment(ResourceManager resources){
 		int actual = -1;
 		
@@ -85,10 +90,18 @@ public class DailyChangeOption {
 		return true;
 	}
 	
+	/**
+	 * Método que retorna se a opção diária foi pagada
+	 * @return true se sim e false se não
+	 */
 	public boolean isPaid(){
 		return isPaid;
 	}
 	
+	/**
+	 * Método que excuta o pafamento de um opção de troca diária
+	 * @param resources um ResourceManager do jogo
+	 */
 	public void pay(ResourceManager resources){
 		for (int i = 0; i < 3; i++){
 			switch (types[i]){
