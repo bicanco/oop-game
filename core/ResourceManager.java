@@ -236,6 +236,7 @@ public class ResourceManager {
 	
 	/**
 	 * Retorna uma representacao em String, para depuracao.
+	 * @return uma representação em String do ResourceManager
 	 */
 	@Override
 	public String toString(){
@@ -251,6 +252,10 @@ public class ResourceManager {
 		return str;
 	}
 	
+	/**
+	 * Método que retorno uma String que representa a produção diária
+	 * @return uma String que representa a produção diária
+	 */
 	public String resultsToString(){
 		String str = "Durante o dia, os Oopyies produziram:\n";
 		str += "Java Seeds: " + javaSeeds + "\n";
@@ -262,6 +267,10 @@ public class ResourceManager {
 		return str;
 	}
 	
+	/**
+	 * Método que atualiza os valores do ResourceManager passado como parâmetro
+	 * @param r2 um ResourceManager do jogo
+	 */
 	public void incorpore(ResourceManager r2){
 		this.updateCreativity(r2.getCreativity());
 		this.updateGreatRubies(r2.getGreatRubies());

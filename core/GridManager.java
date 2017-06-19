@@ -2,6 +2,11 @@ package core;
 
 import buildings.Building;
 
+/**
+ * Classe que representa uma matriz com as construções
+ * @author Gabriel Toschi (@gabrieltoschi)
+ *
+ */
 public class GridManager {
 	/**
 	 * Numero de linhas na grade de construcoes.
@@ -115,11 +120,21 @@ public class GridManager {
 		}	
 	}
 	
+	/**
+	 * Método que retorna se a posição da matriz está vazia
+	 * @param row linha
+	 * @param col coluna
+	 * @return true se estiver e false se não
+	 */
 	public boolean isEmpty(int row, int col){
 		if (grid[row][col] == null) return true;
 		return false;
 	}
 	
+	/**
+	 * Método que gerencia a troca de truno para a matriz de contruções
+	 * @return um ResourceManager
+	 */
 	public ResourceManager runTurn(){
 		ResourceManager tomorrow = new ResourceManager();
 		
@@ -133,6 +148,9 @@ public class GridManager {
 		return tomorrow;
 	}
 	
+	/**
+	 * Método que reinicia os atributos de um GridManager
+	 */
 	public void reset(){	
 		for (int i = 0; i < GRID_ROW_NUM; i++){
 			for (int j = 0; j < GRID_COL_NUM; j++){

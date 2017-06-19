@@ -205,14 +205,26 @@ public class TurnManager {
 		}
 	}
 	
+	/**
+	 * Método que retorna o número dos últimos oopyies a serem utilizados
+	 * @return o número de oopyies
+	 */
 	public int getLastOopyiesGone(){
 		return lastOopyiesGone;
 	}
 	
+	/**
+	 * Método que retorna o número de seeds utilizadas por último
+	 * @return o número de seeds
+	 */
 	public int getLastSeedsUsed(){
 		return lastSeedsUsed;
 	}
 	
+	/**
+	 * Método que retorna o número de cocos utilizados por último
+	 * @return o número de cocos
+	 */
 	public int getLastCocosUsed(){
 		return lastCocosUsed;
 	}
