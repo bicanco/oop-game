@@ -80,8 +80,7 @@ public class DailyChanges extends javax.swing.JFrame {
         			+ "de v�rios Oopyies em uma �nica gema brilhante.", "Capitalismo Selvagem",
 					JOptionPane.INFORMATION_MESSAGE);
         	
-        	this.dispose();
-        	new Main(gameData).setVisible(true);
+        	btnEscolha1.setEnabled(false);
         } else {
         	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou voc� tem o que ele quer, "
         			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
@@ -98,8 +97,7 @@ public class DailyChanges extends javax.swing.JFrame {
         			+ "de v�rios Oopyies em uma �nica gema brilhante.", "Capitalismo Selvagem",
 					JOptionPane.INFORMATION_MESSAGE);
         	
-        	this.dispose();
-        	new Main(gameData).setVisible(true);
+        	btnEscolha2.setEnabled(false);
         } else {
         	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou voc� tem o que ele quer, "
         			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
@@ -116,8 +114,7 @@ public class DailyChanges extends javax.swing.JFrame {
         			+ "de v�rios Oopyies em uma �nica gema brilhante.", "Capitalismo Selvagem",
 					JOptionPane.INFORMATION_MESSAGE);
         	
-        	this.dispose();
-        	new Main(gameData).setVisible(true);
+        	btnEscolha3.setEnabled(false);
         } else {
         	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou voc� tem o que ele quer, "
         			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
