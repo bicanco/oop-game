@@ -3,7 +3,7 @@ package buildings;
 import core.ResourceManager;
 
 /**
- * Classe que representa um laboratorio
+ * Classe que representa um laboratorio implementando a interface Building
  * @author Marcelo
  */
 public class Lab implements Building {
@@ -48,17 +48,17 @@ public class Lab implements Building {
 	}
 	
 	/**
-	 * Metodo que produz as Criatividade e aumaneta a producao de acordo com o a quantidade de recurso passada como parametro
-	 * @param A quantidade de recurso para o boost
-	 * @return O valor produzido
+	 * Método que retorna a produção do lab passando parâmetros para aumentar a produção
+	 * @param boost a quantidade de recursos alocados para aumentar a produção
+	 * @return a produção
 	 */
 	public int creativityProduction(int boost){
 		return oopyiesAllocated*CREATIVITY_PER_OOPYIE*basicResearch(boost);
 	}
 	
 	/**
-	 * Metodo que produz Criatividade
-	 * @return O valor produzido
+	 * Método que retorna a produção do lab
+	 * @return a produção
 	 */
 	public int creativityProduction(){
 		return oopyiesAllocated*CREATIVITY_PER_OOPYIE;
@@ -66,9 +66,9 @@ public class Lab implements Building {
 	
 	
 	/**
-	 * Metodo que produz Criatividade em funcao do numero de Cocos alocados, se nao adquiriu o metodo a producao sera 0
-	 * @param O numero de cocos alocados
-	 * @return A producao
+	 * Método que melhora a produção de criatividade do lab
+	 * @param cocos o número de cocos alocados
+	 * @return a produção
 	 */
 	public int basicResearch(int cocos){
 		if(upgradesAvailable[BASIC_RESEARCH] == false){
@@ -78,8 +78,8 @@ public class Lab implements Building {
 	}
 	
 	/**
-	 * Mï¿½todo que produz a producao maxima de um laboratorio, se nao adquiriu o metodo a producao sera 0
-	 * @return A producao
+	 * Método que retorna a produção máxima do lab
+	 * @return a produção máxima
 	 */
 	public int greatResearch(){
 		if(upgradesAvailable[GREAT_RESEARCH] == false){
@@ -88,49 +88,90 @@ public class Lab implements Building {
 			return MAX_PRODUCTION;
 	}
 	
+	/**
+	 * Método que retorna o nome da classe
+	 * @return o nome da classe
+	 */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * Método que retorna a descrição da classe
+	 * @return a descrição da classe
+	 */
 	@Override
 	public String getDescription() {
 		return description;
 	}
 
+	/**
+	 *Método que retorna o ícone da classe
+	 *@return o ícone da classe
+	 */
 	@Override
 	public String getIcon() {
 		return iconPath;
 	}
 
+	/**
+	 *Método que retona o preço para desqloquear um lab
+	 *@return o preço para desbloquear um lab
+	 */
 	@Override
 	public int getUnlockCost() {
 		return unlockCost;
 	}
 
+	/**
+	 * Método que retorna o custo de um lab
+	 * @return o custo de um lab
+	 */
 	@Override
 	public int getBuildCost() {
 		return buildCost;
 	}
 
+	/**
+	 * Método que retorna o número de Oopyies alocados
+	 * @return o número de Oopyiues alocados
+	 */
 	@Override
 	public int getOopyiesAllocated() {
 		return oopyiesAllocated;
 	}
 
+	/**
+	 * Método que aloca Oopyies
+	 * @param oopyies o número de oopyies a serem alocados 
+	 */
 	@Override
 	public void allocateOopyies(int oopyies) {
 		oopyiesAllocated = oopyies;
 	}
 	
+	/**
+	 * Método que define a quantidade de cocos alocadas no lab
+	 * @param cocos o número de cocos a serem alocados
+	 */
 	public void updateCocosUsed(int cocos){
 		cocosUsed = cocos;
 	}
 	
+	/**
+	 * Método que define se o Método greatResearch já foi chamado
+	 * @param toUse true se foi chamado e false se não foi
+	 */
 	public void checkGreatResearch(boolean isUsed){
 		greatResearchActivated = isUsed;
 	}
 
+	/**
+	 * Método que desbloqueia um upgrade da classe
+	 * @param upgradeId o id do upgrade
+	 * @throws Exception se o upgrade já estiver desbloqueado
+	 */
 	@Override
 	public void unlockUpgrade(int upgradeId) throws Exception {
 		if(upgradesAvailable[upgradeId] == true){
@@ -140,6 +181,11 @@ public class Lab implements Building {
 		}
 	}
 
+	/**
+	 * Método que retorna um boolean que representa se o upgrade já foi desbloqueado ou não
+	 * @param upgradeId o id do upgrade
+	 * @throws Exception se o upgrade já estiver desbloqueado
+	 */
 	@Override
 	public boolean getUpgrade(int upgradeId) throws Exception {
 		if(upgradeId >= upgradeNumber || upgradeId < 0){
@@ -149,16 +195,19 @@ public class Lab implements Building {
 		}
 	}
 
+	/**
+	 * Método que retorna o custo de um upgrade
+	 * @param upgradeId o id do upgrade
+	 * @return o custo do upgrade
+	 */
 	@Override
 	public int getUpgradeCost(int upgradeId) {
 		return upgradesCost[upgradeId];
 	}
 
-/*	@Override
-	public void setUpgradeCost(int value, int upgrade) {
-		upgradesCost[upgrade] = value;
-	}*/
-
+	/**
+	 * Método que reinicia os atributos de um lab
+	 */
 	@Override
 	public void reset() {
 		oopyiesAllocated = 0;
@@ -166,6 +215,10 @@ public class Lab implements Building {
 		greatResearchActivated = false;
 	}
 	
+	/**
+	 * Método que retorna para os recursos do jogo os recursos que não foram utilizados
+	 * @param resources um ResourceManager do jogo
+	 */
 	@Override
 	public void reconfig(ResourceManager resources) {
 		resources.updateOopyies(oopyiesAllocated);
@@ -174,6 +227,10 @@ public class Lab implements Building {
 		this.reset();
 	}
 		
+	/**
+	 * Método que gerencia uma troca de turno para um lab
+	 * @param resources um ResourceManager do jogo
+	 */
 	@Override
 	public void runTurn(ResourceManager resources) {
 		if (greatResearchActivated)
@@ -186,20 +243,3 @@ public class Lab implements Building {
 		
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

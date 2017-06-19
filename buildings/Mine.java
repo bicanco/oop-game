@@ -3,7 +3,7 @@ package buildings;
 import core.ResourceManager;
 
 /**
- * Classe que representa uma mina
+ * Classe que representa uma mina implementando a interface Building
  * @author David
  */
 public class Mine implements Building {
@@ -48,17 +48,17 @@ public class Mine implements Building {
 	}
 	
 	/**
-	 * Metodo que produz as Scala Stones e aumaneta a producao de acordo com o a quantidade de recurso passada como parametro
-	 * @param A quantidade de recurso para o boost
-	 * @return O valor produzido
+	 * Método que retorna a produção da mina passando parâmetros para aumentar a produção
+	 * @param boost a quantidade de recursos alocados para aumentar a produção
+	 * @return a produção
 	 */
 	public int stoneProduction(int boost){
 		return oopyiesAllocated*STONES_PER_OOPYIE*usePickaxe(boost);
 	}
 	
 	/**
-	 * Metodo que produz as Scala Stones
-	 * @return O valor produzido
+	 * Método que retorna a produção da mina
+	 * @return a produção
 	 */
 	public int stoneProduction(){
 		return oopyiesAllocated*STONES_PER_OOPYIE;
@@ -66,9 +66,9 @@ public class Mine implements Building {
 	
 	
 	/**
-	 * Metodo que produz Stones em funcao do numero de seeds alocadas, se nao adquiriu o metodo a producao sera 0
-	 * @param O nï¿½umero de seeds alocadas
-	 * @return A producao
+	 * Método que melhora a produção de Stones da mina
+	 * @param seeds o número de seeds alocadas
+	 * @return a produção
 	 */
 	public int usePickaxe(int seeds){
 		if(upgradesAvailable[USE_PICKAXE] == false){
@@ -78,8 +78,8 @@ public class Mine implements Building {
 	}
 	
 	/**
-	 * Mï¿½todo que produz a producao maxima de uma mina, se nao adquiriu o metodo a producao sera 0
-	 * @return A producao
+	 * Método que retorna a produção máxima da mina
+	 * @return a produção máxima
 	 */
 	public int greatEscavation(){
 		if(upgradesAvailable[GREAT_ESCAVATION] == false){
@@ -88,49 +88,90 @@ public class Mine implements Building {
 			return MAX_PRODUCTION;
 	}
 	
+	/**
+	 * Método que define a quantidade de seeds alocadas na mina
+	 * @param seeds o número de seeds a serem alocadas
+	 */
 	public void setSeeds(int seeds){
 		seedsUsed = seeds;
 	}
 	
+	/**
+	 * Método que define se o Método greatEscavation já foi chamado
+	 * @param toUse true se foi chamado e false se não foi
+	 */
 	public void checkGreatEscavation(boolean isUsed){
 		greatEscavationActivated = isUsed;
 	}
 	
+	/**
+	 * Método que retorna o nome da classe
+	 * @return o nome da classe
+	 */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * Método que retorna a descrição da classe
+	 * @return a descrição da classe
+	 */
 	@Override
 	public String getDescription() {
 		return description;
 	}
 
+	/**
+	 *Método que retorna o ícone da classe
+	 *@return o ícone da classe
+	 */
 	@Override
 	public String getIcon() {
 		return iconPath;
 	}
 
+	/**
+	 *Método que retona o preço para desqloquear uma mina
+	 *@return o preço para desbloquear uma mina
+	 */
 	@Override
 	public int getUnlockCost() {
 		return unlockCost;
 	}
 
+	/**
+	 * Método que retorna o custo de uma mina
+	 * @return o custo de uma mina
+	 */
 	@Override
 	public int getBuildCost() {
 		return buildCost;
 	}
 
+	/**
+	 * Método que retorna o número de Oopyies alocados
+	 * @return o número de Oopyiues alocados
+	 */
 	@Override
 	public int getOopyiesAllocated() {
 		return oopyiesAllocated;
 	}
 
+	/**
+	 * Método que aloca Oopyies
+	 * @param oopyies o número de oopyies a serem alocados 
+	 */
 	@Override
 	public void allocateOopyies(int oopyies) {
 		oopyiesAllocated = oopyies;
 	}
 
+	/**
+	 * Método que desbloqueia um upgrade da classe
+	 * @param upgradeId o id do upgrade
+	 * @throws Exception se o upgrade já estiver desbloqueado
+	 */
 	@Override
 	public void unlockUpgrade(int upgradeId) throws Exception {
 		if(upgradesAvailable[upgradeId] == true){
@@ -140,6 +181,11 @@ public class Mine implements Building {
 		}
 	}
 
+	/**
+	 * Método que retorna um boolean que representa se o upgrade já foi desbloqueado ou não
+	 * @param upgradeId o id do upgrade
+	 * @throws Exception se o upgrade já estiver desbloqueado
+	 */
 	@Override
 	public boolean getUpgrade(int upgradeId) throws Exception {
 		if(upgradeId >= upgradeNumber || upgradeId < 0){
@@ -149,16 +195,19 @@ public class Mine implements Building {
 		}
 	}
 
+	/**
+	 * Método que retorna o custo de um upgrade
+	 * @param upgradeId o id do upgrade
+	 * @return o custo do upgrade
+	 */
 	@Override
 	public int getUpgradeCost(int upgradeId) {
 		return upgradesCost[upgradeId];
 	}
 
-/*	@Override
-	public void setUpgradeCost(int value, int upgrade) {
-		upgradesCost[upgrade] = value;
-	}*/
-
+	/**
+	 * Método que reinicia os atributos de uma mina
+	 */
 	@Override
 	public void reset() {
 		oopyiesAllocated = 0;
@@ -166,6 +215,10 @@ public class Mine implements Building {
 		greatEscavationActivated = false;
 	}
 
+	/**
+	 * Método que retorna para os recursos do jogo os recursos que não foram utilizados
+	 * @param resources um ResourceManager do jogo
+	 */
 	@Override
 	public void reconfig(ResourceManager resources){
 		resources.updateOopyies(oopyiesAllocated);
@@ -174,6 +227,10 @@ public class Mine implements Building {
 		this.reset();
 	}
 
+	/**
+	 * Método que gerencia uma troca de turno para uma mina
+	 * @param resources um ResourceManager do jogo
+	 */
 	@Override
 	public void runTurn(ResourceManager resources){
 		if (greatEscavationActivated)

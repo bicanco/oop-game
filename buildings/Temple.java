@@ -3,7 +3,7 @@ package buildings;
 import core.ResourceManager;
 
 /**
- * Classe que representa um Templo
+ * Classe que representa um Templo implementando a interface Building
  * @author Marcelo
  *
  */ 
@@ -59,40 +59,53 @@ public class Temple implements Building {
 		reset();
 	}
 	
+	/**
+	 * Método que define a quantidade de Seeds alocadas no templo
+	 * @param seeds o número de seeds a serem alocadas
+	 */
 	public void setSeeds(int seeds){
 		seedsUsed = seeds;
 	}
 
+	/**
+	 * Método que define a quantidade de Cocos alocadas no templo
+	 * @param cocos o número de cocos a serem alocados
+	 */
 	public void setCocos(int cocos){
 		cocosUsed = cocos;
 	}
 
+	/**
+	 * Método que define se o Método greatRitual já foi chamado
+	 * @param toUse true se foi chamado e false se não foi
+	 */
 	public void checkGreatRitual(boolean toUse){
 		greatRitualActivated = toUse;
 	}
 	
 	/**
-	 * Metodo que define a gema a ser produzida
+	 * Método que define o tipo de gema a ser produzida no templo
+	 * @param type boolean que representa um tipo segundo constantes públicas definidas na classe
 	 */
 	public void setGemType(boolean type){
 		gemType = type;//define o tipo de gema a ser produzida
 	}
 	
 	/**
-	 * Metodo que retorna o tipo de gema produzida
+	 * Metodo que retorna o tipo de gema produzida no templo
 	 * @return o tipo de gema produzida
 	 */
-	public boolean setGemType(){
+	public boolean getGemType(){
 		return gemType;//retorna o tipo de gema produzida
 	}
 	
 	
 	/**
-	 * Metodo que produz o rescurso de acordo com o que esta definido no templo e aumenta a producao de acordo com o a quantidade de recurso passada como parï¿½metro
-	 * @param A quantidade de recurso para o boost
-	 * @return O valor produzido
+	 * Método que retorna a produção do templo passando parâmetros para aumentar a produção
+	 * @param boost a quantidade de recursos alocados para aumentar a produção
+	 * @return a produção
 	 */
-	public int gemProduction(int boost){
+	private int gemProduction(int boost){
 		if(gemType == PERL){//produz os rescursos de acordo com o tipo previamente definido na fazenda e faz o boost
 			return oopyiesAllocated*PERL_PER_OOPYIE*perlRitual(boost);
 		}else if(gemType == PYRAMID){
@@ -102,10 +115,10 @@ public class Temple implements Building {
 	}
 	
 	/**
-	 * Metodo que produz o rescurso de acordo com o que esta definido na fazenda
-	 * @return O valor produzido
+	 * Método que retorna a produção do templo
+	 * @return a produção
 	 */
-	public int gemProduction(){
+	private int gemProduction(){
 		if(gemType == PERL){//produz os rescursos de acordo com o tipo previamente definido no templo
 			return oopyiesAllocated*PERL_PER_OOPYIE;
 		}else if(gemType == PYRAMID){
@@ -116,11 +129,11 @@ public class Temple implements Building {
 	
 	
 	/**
-	 * Metodo que produz Perls em funcao do numero de Seeds alocadas, se nao adquiriu o metodo a producao sera 0
-	 * @param O numero de Seeds alocadas
-	 * @return A producao
+	 * Método que melhora a produção de perls do templo
+	 * @param seeds o número de seeds alocadas
+	 * @return a produção
 	 */
-	public int perlRitual(int seeds){
+	private int perlRitual(int seeds){
 		if(upgradesAvailable[PERL_RITUAL] == false){
 			return 1;//produz Seeds se o metodo ja foi adquirido
 		}else{
@@ -130,11 +143,11 @@ public class Temple implements Building {
 	}
 	
 	/**
-	 * Metodo que produz PYramids em funcao do numero de Cocos alocados, se nao adquiriu o metodo a producao sera 0
-	 * @param O numero de cocos alocados
-	 * @return A producao
+	 * Método que melhora a produção de Pyramids do templo
+	 * @param cocos o número de cocos alocados
+	 * @return a produção
 	 */
-	public int pyramidRitual(int cocos){
+	private int pyramidRitual(int cocos){
 		if(upgradesAvailable[PYRAMID_RITUAL] == false){
 			return 1;//produz PYramids se o metodo ja foi adquirido
 		}else{
@@ -144,8 +157,8 @@ public class Temple implements Building {
 	}
 	
 	/**
-	 * Mï¿½todo que produz a producao maxima de um templo, se nao adquiriu o metodo a producao sera 0
-	 * @return A producao
+	 * Método que retorna a produção máxima do templo
+	 * @return a produção máxima
 	 */
 	public int greatRitual(){
 		if(upgradesAvailable[GREAT_RITUAL] == false){
@@ -154,41 +167,74 @@ public class Temple implements Building {
 			return MAX_PRODUCTION;
 	}
 	
+	/**
+	 * Método que retorna o nome da classe
+	 * @return o nome da classe
+	 */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * Método que retorna a descrição da classe
+	 * @return a descrição da classe
+	 */
 	@Override
 	public String getDescription() {
 		return description;
 	}
 
+	/**
+	 *Método que retorna o ícone da classe
+	 *@return o ícone da classe
+	 */
 	@Override
 	public String getIcon() {
 		return iconPath;
 	}
 
+	/**
+	 *Método que retona o preço para desqloquear um templo
+	 *@return o preço para desbloquear um templo
+	 */
 	@Override
 	public int getUnlockCost() {
 		return unlockCost;
 	}
 
+	/**
+	 * Método que retorna o custo de um templo
+	 * @return o custo de um templo
+	 */
 	@Override
 	public int getBuildCost() {
 		return buildCost;
 	}
 
+	/**
+	 * Método que retorna o número de Oopyies alocados
+	 * @return o número de Oopyiues alocados
+	 */
 	@Override
 	public int getOopyiesAllocated() {
 		return oopyiesAllocated;
 	}
 
+	/**
+	 * Método que aloca Oopyies
+	 * @param oopyies o número de oopyies a serem alocados 
+	 */
 	@Override
 	public void allocateOopyies(int oopyies) {
 		oopyiesAllocated = oopyies;
 	}
 
+	/**
+	 * Método que desbloqueia um upgrade da classe
+	 * @param upgradeId o id do upgrade
+	 * @throws Exception se o upgrade já estiver desbloqueado
+	 */
 	@Override
 	public void unlockUpgrade(int upgradeId) throws Exception {
 		if(upgradesAvailable[upgradeId] == true){
@@ -198,6 +244,11 @@ public class Temple implements Building {
 		}
 	}
 
+	/**
+	 * Método que retorna um boolean que representa se o upgrade já foi desbloqueado ou não
+	 * @param upgradeId o id do upgrade
+	 * @throws Exception se o upgrade já estiver desbloqueado
+	 */
 	@Override
 	public boolean getUpgrade(int upgradeId) throws Exception {
 		if(upgradeId >= upgradeNumber || upgradeId < 0){
@@ -207,16 +258,20 @@ public class Temple implements Building {
 		}
 	}
 
+	/**
+	 * Método que retorna o custo de um upgrade
+	 * @param upgradeId o id do upgrade
+	 * @return o custo do upgrade
+	 */
 	@Override
 	public int getUpgradeCost(int upgradeId) {
 		return upgradesCost[upgradeId];
 	}
 
-/*	@Override
-	public void setUpgradeCost(int value, int upgrade) {
-		upgradesCost[upgrade] = value;
-	}*/
 
+	/**
+	 * Método que reinicia os atributos de um templo
+	 */
 	@Override
 	public void reset() {
 		gemType = PERL;//inicializa o objeto produzindo Perls
@@ -226,6 +281,10 @@ public class Temple implements Building {
 		greatRitualActivated = false;
 	}
 
+	/**
+	 * Método que retorna para os recursos do jogo os recursos que não foram utilizados
+	 * @param resources um ResourceManager do jogo
+	 */
 	@Override
 	public void reconfig(ResourceManager resources) {
 		resources.updateOopyies(oopyiesAllocated);
@@ -235,6 +294,10 @@ public class Temple implements Building {
 		this.reset();
 	}
 
+	/**
+	 * Método que gerencia uma troca de turno para um templo
+	 * @param resources um ResourceManager do jogo
+	 */
 	@Override
 	public void runTurn(ResourceManager resources) {
 		if (gemType == PERL){

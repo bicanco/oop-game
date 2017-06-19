@@ -62,7 +62,7 @@ public class Farm implements Building {
 			return oopyiesAllocated*COCOS_PER_OOPYIE*cocoFertilizer(boost);
 		}
 		return 0;
-	}	/**	 * Método que retorna a produção da roça passando parâmetros para aumentar a produção	 * @return a produção	 */
+	}	/**	 * Método que retorna a produção da roça	 * @return a produção	 */
 	private int foodProduction(){
 		if(foodType == SEED){//produz os rescursos de acordo com o tipo previamente definido na fazenda
 			return oopyiesAllocated*SEEDS_PER_OOPYIE;
@@ -157,7 +157,7 @@ public class Farm implements Building {
 		resources.updatePyramids(pyramidsUsed);
 		if (greatProductionActivated) resources.updateGreatRubies(1);
 		this.reset();
-	}	/**	 * Método que gerencia uma troca de turno para um roça	 * @param resources um ResourceManager do jogo	 */
+	}	/**	 * Método que gerencia uma troca de turno para uma roça	 * @param resources um ResourceManager do jogo	 */
 	@Override
 	public void runTurn(ResourceManager resources){
 		if (foodType == SEED){
