@@ -81,6 +81,12 @@ public class BuildingTools {
 		return null;
 	}
 	
+	/**
+	 * Método que retorna se possui um upgrade de uma construção
+	 * @param reference o tipo da construção
+	 * @param upgradeId o Id do upgrade
+	 * @return true se possuir e false se não
+	 */
 	public static boolean getUpgrade(int reference, int upgradeId) {
 		try {
 			switch (reference){
@@ -96,6 +102,12 @@ public class BuildingTools {
 		return false;
 	}
 	
+	/**
+	 * Método queretorna o custo de um upgrade de uma construção
+	 * @param reference o tipo da construção
+	 * @param upgradeId o Id do upgrade
+	 * @return o custo do upgrade
+	 */
 	public static int getUpgradeCost(int reference, int upgradeId){
 		try {
 			switch (reference){
@@ -111,6 +123,11 @@ public class BuildingTools {
 		return -1;
 	}
 	
+	/**
+	 * Método que desbloqueia um upgrade de uma construção
+	 * @param reference o tipo da construção
+	 * @param upgradeId o Id do upgrade
+	 */
 	public static void unlockUpgrade(int reference, int upgradeId) {
 		try {
 			switch (reference){
