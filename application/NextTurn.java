@@ -149,6 +149,9 @@ public class NextTurn extends javax.swing.JFrame {
 					JOptionPane.INFORMATION_MESSAGE);
     	}
     	
+    	if(gameData.resources.getOopyies()==0)
+			new GameOver(gameData).setVisible(true);
+    	else{
     	// novos oopyies
     	int newOopyies = gameData.turns.newOopyies(gameData.resources);
     	int acceptOopyies = JOptionPane.showConfirmDialog(this, "Acabaram de chegar "
@@ -156,7 +159,7 @@ public class NextTurn extends javax.swing.JFrame {
     					+ " Voce aceita?", "Exodo Oopyral", JOptionPane.YES_NO_OPTION);
     	if (acceptOopyies == JOptionPane.YES_OPTION)
     		gameData.resources.updateOopyies(newOopyies);
-    	
+   
     	// checagem do dia de pagamento
     	if (gameData.turns.isPayTurn()){
     		if (gameData.turns.executePayTurn(gameData.resources)){
@@ -173,7 +176,7 @@ public class NextTurn extends javax.swing.JFrame {
     	} else {
     		new Main(gameData).setVisible(true);
     	}
-    	
+    	}
         this.dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
