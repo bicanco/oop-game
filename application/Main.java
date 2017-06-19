@@ -82,7 +82,7 @@ public class Main extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnRecursos = new javax.swing.JButton();
-        btnLojaVirtual = new javax.swing.JButton();
+        btnMyClasses = new javax.swing.JButton();
         btnTrocasDiarias = new javax.swing.JButton();
         btnMapa = new javax.swing.JButton();
         btnTurno = new javax.swing.JButton();
@@ -122,10 +122,10 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        btnLojaVirtual.setText("Loja Virtual");
-        btnLojaVirtual.addActionListener(new java.awt.event.ActionListener() {
+        btnMyClasses.setText("Minhas Classes");
+        btnMyClasses.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLojaVirtualActionPerformed(evt);
+                btnMyClassesActionPerformed(evt);
             }
         });
 
@@ -171,15 +171,6 @@ public class Main extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 289, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnLojaVirtual)
-                        .addGap(141, 141, 141))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnTrocasDiarias)
-                        .addGap(131, 131, 131))))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
@@ -216,6 +207,12 @@ public class Main extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addComponent(jLabel1)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnMyClasses)
+                    .addComponent(btnTrocasDiarias))
+                .addGap(131, 131, 131))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,7 +245,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnRecursos)
-                            .addComponent(btnLojaVirtual))
+                            .addComponent(btnMyClasses))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
@@ -269,12 +266,12 @@ public class Main extends javax.swing.JFrame {
         new Resources(gameData, 0).setVisible(true); 
     }//GEN-LAST:event_btnRecursosActionPerformed
 
-    private void btnLojaVirtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLojaVirtualActionPerformed
+    private void btnMyClassesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMyClassesActionPerformed
         // TODO add your handling code here:
          this.dispose();
         new MyClasses(gameData).setVisible(true);
         
-    }//GEN-LAST:event_btnLojaVirtualActionPerformed
+    }//GEN-LAST:event_btnMyClassesActionPerformed
 
     private void btnMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMapaActionPerformed
         // TODO add your handling code here:
@@ -311,8 +308,8 @@ public class Main extends javax.swing.JFrame {
     
     private Timer timer;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLojaVirtual;
     private javax.swing.JButton btnMapa;
+    private javax.swing.JButton btnMyClasses;
     private javax.swing.JButton btnRecursos;
     private javax.swing.JButton btnTrocasDiarias;
     private javax.swing.JButton btnTurno;

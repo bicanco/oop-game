@@ -50,7 +50,7 @@ public class MineUpdate extends javax.swing.JFrame {
         btnStoneProduction = new javax.swing.JButton();
         btnPickAxe = new javax.swing.JButton();
         btnGreatEscavation = new javax.swing.JButton();
-        btnSair = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,10 +75,10 @@ public class MineUpdate extends javax.swing.JFrame {
 
         btnGreatEscavation.setText("Bloqueado: 30");
 
-        btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Sair");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
 
@@ -114,7 +114,7 @@ public class MineUpdate extends javax.swing.JFrame {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(139, 139, 139)
-                .addComponent(btnSair)
+                .addComponent(btnClose)
                 .addContainerGap(186, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -144,7 +144,7 @@ public class MineUpdate extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(btnGreatEscavation))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(btnSair)
+                .addComponent(btnClose)
                 .addGap(33, 33, 33))
         );
 
@@ -204,9 +204,9 @@ public class MineUpdate extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnGreatEscavation;
     private javax.swing.JButton btnPickAxe;
-    private javax.swing.JButton btnSair;
     private javax.swing.JButton btnStoneProduction;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

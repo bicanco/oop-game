@@ -48,7 +48,7 @@ public class LabUpdate extends javax.swing.JFrame {
         btnCreativityProduction = new javax.swing.JButton();
         btnBasicResearch = new javax.swing.JButton();
         btnGreatResearch = new javax.swing.JButton();
-        btnSair = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         labelCreativity = new javax.swing.JLabel();
 
@@ -71,10 +71,10 @@ public class LabUpdate extends javax.swing.JFrame {
 
         btnGreatResearch.setText("Bloqueado: 30");
 
-        btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Sair");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
 
@@ -88,7 +88,7 @@ public class LabUpdate extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(130, 130, 130)
-                .addComponent(btnSair)
+                .addComponent(btnClose)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
@@ -152,7 +152,7 @@ public class LabUpdate extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(btnGreatResearch))
                         .addGap(25, 25, 25)
-                        .addComponent(btnSair)))
+                        .addComponent(btnClose)))
                 .addGap(39, 39, 39))
         );
 
@@ -204,19 +204,19 @@ public class LabUpdate extends javax.swing.JFrame {
     	}
     }
 
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         // TODO add your handling code here:
         this.dispose();
         new MyClasses(gameData).setVisible(true);
-    }//GEN-LAST:event_btnSairActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBasicResearch;
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnCreativityProduction;
     private javax.swing.JButton btnGreatResearch;
-    private javax.swing.JButton btnSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

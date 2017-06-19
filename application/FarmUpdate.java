@@ -50,7 +50,7 @@ public class FarmUpdate extends javax.swing.JFrame {
         btnSeedFertilizer = new javax.swing.JButton();
         btnCocoFertilizer = new javax.swing.JButton();
         btnGreatProduction = new javax.swing.JButton();
-        btnSair = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         labelCreativityDONTEDIT = new javax.swing.JLabel();
         labelCreativity = new javax.swing.JLabel();
 
@@ -83,10 +83,10 @@ public class FarmUpdate extends javax.swing.JFrame {
 
         btnGreatProduction.setText("Bloqueado: 60");
 
-        btnSair.setText("Close");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
 
@@ -133,7 +133,7 @@ public class FarmUpdate extends javax.swing.JFrame {
                         .addGap(42, 42, 42))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(154, 154, 154)
-                .addComponent(btnSair)
+                .addComponent(btnClose)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -166,18 +166,18 @@ public class FarmUpdate extends javax.swing.JFrame {
                     .addComponent(labelGP)
                     .addComponent(btnGreatProduction))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(btnSair)
+                .addComponent(btnClose)
                 .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         // TODO add your handling code here:
         this.dispose();
         new MyClasses(gameData).setVisible(true);
-    }//GEN-LAST:event_btnSairActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnFoodProductionActionPerformed(java.awt.event.ActionEvent evt) {
     	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.FARM, Farm.FOOD_PRODUCTION)){
@@ -240,10 +240,10 @@ public class FarmUpdate extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnCocoFertilizer;
     private javax.swing.JButton btnFoodProduction;
     private javax.swing.JButton btnGreatProduction;
-    private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSeedFertilizer;
     private javax.swing.JLabel labelCF;
     private javax.swing.JLabel labelCreativity;

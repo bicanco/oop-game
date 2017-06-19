@@ -65,7 +65,7 @@ public class FarmManager extends javax.swing.JFrame {
         SpinnerOopyies = new javax.swing.JSpinner();
         jLabel4 = new javax.swing.JLabel();
         labelOopyiesEdit = new javax.swing.JLabel();
-        btnSair = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         btnResources = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -84,23 +84,22 @@ public class FarmManager extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
-        jLabel1.setText("ROCA");
+        jLabel1.setText("ROÇA");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FarmBig.png"))); // NOI18N
 
         jLabel3.setText("Oopyies Alocados:");
 
-        SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
-        			gameData.resources.getOopyies(), 1));
+        SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 300, 1));
 
-        jLabel4.setText("Oopyies Disponiveis:");
+        jLabel4.setText("Oopyies Disponíveis:");
 
         labelOopyiesEdit.setText("0");
 
-        btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Sair");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
 
@@ -117,11 +116,11 @@ public class FarmManager extends javax.swing.JFrame {
 
         jLabel7.setText("Magic Perls Usadas:");
 
-        jLabel8.setText("Fertilizador de Coco:");
+        jLabel8.setText("Fertilizador de Cocos");
 
         jLabel9.setText("Pyramids Usadas:");
 
-        jLabel10.setText("Producao Exorbitante:");
+        jLabel10.setText("Grande Produção:");
 
         CheckBoxSeedFertilizer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,11 +134,9 @@ public class FarmManager extends javax.swing.JFrame {
             }
         });
 
-        SpinnerMagicPerls.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
-        		gameData.resources.getMagicPerls(), 1));
+        SpinnerMagicPerls.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
 
-        SpinnerPyramids.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
-        		gameData.resources.getPyramids(), 1));
+        SpinnerPyramids.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
 
         CheckBoxGreatProduction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +159,7 @@ public class FarmManager extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(btnSair))
+                        .addComponent(btnClose))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -258,14 +255,14 @@ public class FarmManager extends javax.swing.JFrame {
                         .addComponent(jLabel10))
                     .addComponent(CheckBoxGreatProduction))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addComponent(btnSair)
+                .addComponent(btnClose)
                 .addGap(31, 31, 31))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
     	Farm farm = (Farm) gameData.grid.getBuilding(row, col);
     	
         if(CheckBoxGreatProduction.isSelected()){
@@ -300,7 +297,7 @@ public class FarmManager extends javax.swing.JFrame {
         
         this.dispose();
         new MapForUse(gameData).setVisible(true);
-    }//GEN-LAST:event_btnSairActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void CheckBoxSeedFertilizerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxSeedFertilizerActionPerformed
         // TODO add your handling code here:
@@ -368,8 +365,8 @@ public class FarmManager extends javax.swing.JFrame {
     private javax.swing.JSpinner SpinnerMagicPerls;
     private javax.swing.JSpinner SpinnerOopyies;
     private javax.swing.JSpinner SpinnerPyramids;
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnResources;
-    private javax.swing.JButton btnSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

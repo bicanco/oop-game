@@ -41,11 +41,11 @@ public class TempleUpdate extends javax.swing.JFrame {
     	}
         
         if (BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PERL_RITUAL)){
-    		btnPerlR.setText("Liberado");
-    		btnPerlR.setEnabled(false);
+    		btnPerlRitual.setText("Liberado");
+    		btnPerlRitual.setEnabled(false);
     	} else {
-    		btnPerlR.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PERL_RITUAL));
-            btnPerlR.addActionListener(new java.awt.event.ActionListener() {
+    		btnPerlRitual.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PERL_RITUAL));
+            btnPerlRitual.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btnPerlRActionPerformed(evt);
                 }
@@ -53,11 +53,11 @@ public class TempleUpdate extends javax.swing.JFrame {
     	}
         
         if (BuildingTools.getUpgrade(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL)){
-    		btnPyR.setText("Liberado");
-    		btnPyR.setEnabled(false);
+    		btnPyramidRitual.setText("Liberado");
+    		btnPyramidRitual.setEnabled(false);
     	} else {
-    		btnPyR.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL));
-            btnPyR.addActionListener(new java.awt.event.ActionListener() {
+    		btnPyramidRitual.setText("Bloqueado: " + BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL));
+            btnPyramidRitual.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     btnPyRActionPerformed(evt);
                 }
@@ -92,12 +92,12 @@ public class TempleUpdate extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        btnSair = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         labelCreativity = new javax.swing.JLabel();
         btnGemProduction = new javax.swing.JButton();
-        btnPerlR = new javax.swing.JButton();
-        btnPyR = new javax.swing.JButton();
+        btnPerlRitual = new javax.swing.JButton();
+        btnPyramidRitual = new javax.swing.JButton();
         btnGreatRitual = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -115,10 +115,10 @@ public class TempleUpdate extends javax.swing.JFrame {
 
         jLabel6.setText("Grande Ritual:");
 
-        btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Sair");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
 
@@ -128,9 +128,9 @@ public class TempleUpdate extends javax.swing.JFrame {
 
         btnGemProduction.setText("Bloqueado: 30");
 
-        btnPerlR.setText("Bloqueado: 30");
+        btnPerlRitual.setText("Bloqueado: 30");
 
-        btnPyR.setText("Bloqueado: 30");
+        btnPyramidRitual.setText("Bloqueado: 30");
 
         btnGreatRitual.setText("Bloqueado: 30");
 
@@ -165,14 +165,14 @@ public class TempleUpdate extends javax.swing.JFrame {
                                         .addComponent(jLabel5))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnPyR, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(btnPerlR, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnPyramidRitual, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnPerlRitual, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(btnGemProduction, javax.swing.GroupLayout.Alignment.TRAILING)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(88, 88, 88))
             .addGroup(layout.createSequentialGroup()
                 .addGap(136, 136, 136)
-                .addComponent(btnSair)
+                .addComponent(btnClose)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -198,28 +198,28 @@ public class TempleUpdate extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(btnPerlR))
+                            .addComponent(btnPerlRitual))
                         .addGap(19, 19, 19)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(btnPyR))
+                            .addComponent(btnPyramidRitual))
                         .addGap(48, 48, 48))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnGreatRitual)
                         .addComponent(jLabel6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(btnSair)
+                .addComponent(btnClose)
                 .addGap(27, 27, 27))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         // TODO add your handling code here:
          this.dispose();
          new MyClasses(gameData).setVisible(true);
-    }//GEN-LAST:event_btnSairActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnGemProductionActionPerformed(java.awt.event.ActionEvent evt) {
     	if (gameData.resources.getCreativity() >= BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.GEM_PRODUCTION)){
@@ -241,8 +241,8 @@ public class TempleUpdate extends javax.swing.JFrame {
     		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PERL_RITUAL));
     		BuildingTools.unlockUpgrade(BuildingTools.TEMPLE, Temple.PERL_RITUAL);
     		
-    		btnPerlR.setText("Liberado");
-    		btnPerlR.setEnabled(false);
+    		btnPerlRitual.setText("Liberado");
+    		btnPerlRitual.setEnabled(false);
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
@@ -256,8 +256,8 @@ public class TempleUpdate extends javax.swing.JFrame {
     		gameData.resources.updateCreativity(-BuildingTools.getUpgradeCost(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL));
     		BuildingTools.unlockUpgrade(BuildingTools.TEMPLE, Temple.PYRAMID_RITUAL);
     		
-    		btnPyR.setText("Liberado");
-    		btnPyR.setEnabled(false);
+    		btnPyramidRitual.setText("Liberado");
+    		btnPyramidRitual.setEnabled(false);
     		
     		labelCreativity.setText(Integer.toString(gameData.resources.getCreativity()));
     	} else {
@@ -282,11 +282,11 @@ public class TempleUpdate extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnGemProduction;
     private javax.swing.JButton btnGreatRitual;
-    private javax.swing.JButton btnPerlR;
-    private javax.swing.JButton btnPyR;
-    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnPerlRitual;
+    private javax.swing.JButton btnPyramidRitual;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;

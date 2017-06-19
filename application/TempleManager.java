@@ -86,7 +86,7 @@ public class TempleManager extends javax.swing.JFrame {
         SpinnerOopyies = new javax.swing.JSpinner();
         SpinnerSeeds = new javax.swing.JSpinner();
         SpinnerCoco = new javax.swing.JSpinner();
-        btnSair = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -96,11 +96,11 @@ public class TempleManager extends javax.swing.JFrame {
         labelTEMPLE.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelTEMPLE.setText("TEMPLO");
 
-        jLabel3.setText("Oopyies Disponiveis:");
+        jLabel3.setText("Oopyies Disponíveis:");
 
         labelOopyiesEdit.setText("0");
 
-        jLabel5.setText("Producao Magica:");
+        jLabel5.setText("Produção de Gema:");
 
         jLabel6.setText("Oopyies Alocados:");
 
@@ -111,15 +111,15 @@ public class TempleManager extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("Ritual das Sombras:");
+        jLabel7.setText("Perl Ritual:");
 
-        jLabel8.setText("Seeds Usadas:");
+        jLabel8.setText("Sementes Usadas:");
 
-        jLabel9.setText("Ritual das Luzes:");
+        jLabel9.setText("Pyramid Ritual:");
 
         jLabel10.setText("Cocos Usados:");
 
-        jLabel11.setText("Grande Ritual Rubro:");
+        jLabel11.setText("Grande Ritual:");
 
         CheckBoxPerlRitual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,14 +139,14 @@ public class TempleManager extends javax.swing.JFrame {
             }
         });
 
-        btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Sair");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perl", "PYramid"}));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perl", "Pyramid", " " }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -202,7 +202,7 @@ public class TempleManager extends javax.swing.JFrame {
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(130, 130, 130)
-                        .addComponent(btnSair)))
+                        .addComponent(btnClose)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -251,7 +251,7 @@ public class TempleManager extends javax.swing.JFrame {
                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(CheckBoxGreatRitual, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(btnSair)
+                .addComponent(btnClose)
                 .addGap(17, 17, 17))
         );
 
@@ -311,7 +311,7 @@ public class TempleManager extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ComboBoxFoodProductionActionPerformed
 
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
     	Temple temple = (Temple) gameData.grid.getBuilding(row, col);
     	
         if(CheckBoxGreatRitual.isSelected()){
@@ -346,7 +346,7 @@ public class TempleManager extends javax.swing.JFrame {
     	
         this.dispose();
         new MapForUse(gameData).setVisible(true);
-    }//GEN-LAST:event_btnSairActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResourcesActionPerformed
         // TODO add your handling code here:
@@ -361,8 +361,8 @@ public class TempleManager extends javax.swing.JFrame {
     private javax.swing.JSpinner SpinnerCoco;
     private javax.swing.JSpinner SpinnerOopyies;
     private javax.swing.JSpinner SpinnerSeeds;
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnResources;
-    private javax.swing.JButton btnSair;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
