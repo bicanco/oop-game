@@ -1,4 +1,3 @@
-
 package application;
 
 import javax.swing.JOptionPane;
@@ -70,13 +69,13 @@ public class DailyChanges extends javax.swing.JFrame {
         if (gameData.daily.getOptions()[0].checkPayment(gameData.resources)){
         	gameData.daily.getOptions()[0].pay(gameData.resources);
         	
-        	JOptionPane.showMessageDialog(this, "Parab�ns! Voc� acaba de gastar o trabalho "
-        			+ "de v�rios Oopyies em uma �nica gema brilhante.", "Capitalismo Selvagem",
+        	JOptionPane.showMessageDialog(this, "Parabens! Voce acaba de gastar o trabalho "
+        			+ "de varios Oopyies em uma unica gema brilhante.", "Capitalismo Selvagem",
 					JOptionPane.INFORMATION_MESSAGE);
         	
         	btnEscolha1.setEnabled(false);
         } else {
-        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou voc� tem o que ele quer, "
+        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou voce tem o que ele quer, "
         			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
 					JOptionPane.ERROR_MESSAGE);
         }
@@ -86,13 +85,13 @@ public class DailyChanges extends javax.swing.JFrame {
         if (gameData.daily.getOptions()[1].checkPayment(gameData.resources)){
         	gameData.daily.getOptions()[1].pay(gameData.resources);
         	
-        	JOptionPane.showMessageDialog(this, "Parab�ns! Voc� acaba de gastar o trabalho "
-        			+ "de v�rios Oopyies em uma �nica gema brilhante.", "Capitalismo Selvagem",
+        	JOptionPane.showMessageDialog(this, "Parabens! Voce acaba de gastar o trabalho "
+        			+ "de varios Oopyies em uma unica gema brilhante.", "Capitalismo Selvagem",
 					JOptionPane.INFORMATION_MESSAGE);
         	
         	btnEscolha2.setEnabled(false);
         } else {
-        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou voc� tem o que ele quer, "
+        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou voce tem o que ele quer, "
         			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
 					JOptionPane.ERROR_MESSAGE);
         }
@@ -103,13 +102,13 @@ public class DailyChanges extends javax.swing.JFrame {
         if (gameData.daily.getOptions()[2].checkPayment(gameData.resources)){
         	gameData.daily.getOptions()[2].pay(gameData.resources);
         	
-        	JOptionPane.showMessageDialog(this, "Parab�ns! Voc� acaba de gastar o trabalho "
-        			+ "de v�rios Oopyies em uma �nica gema brilhante.", "Capitalismo Selvagem",
+        	JOptionPane.showMessageDialog(this, "Parabens! Voce acaba de gastar o trabalho "
+        			+ "de varios Oopyies em uma unica gema brilhante.", "Capitalismo Selvagem",
 					JOptionPane.INFORMATION_MESSAGE);
         	
         	btnEscolha3.setEnabled(false);
         } else {
-        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou voc� tem o que ele quer, "
+        	JOptionPane.showMessageDialog(this, "Sem pechincha por aqui. Ou voce tem o que ele quer, "
         			+ "ou vai ficar sem aquele Great Ruby.", "Capitalismo Selvagem",
 					JOptionPane.ERROR_MESSAGE);
         }
@@ -168,7 +167,7 @@ public class DailyChanges extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24));
-        jLabel1.setText("Trocas Diárias");
+        jLabel1.setText("Trocas Diarias");
 
         labelProduto1Escolha1.setText("Produto1");
 

@@ -48,6 +48,23 @@ public class BuildingTools {
 	}
 	
 	/**
+	 * Retorna a descricao de uma certa classe, de acordo com sua identificacao,
+	 * feita por constantes em BuildingTools.
+	 * @param reference identificacao da classe
+	 * @return descricao da classe
+	 */
+	public static String getDescription(int reference){
+		switch (reference){
+		case FARM: return farm.getDescription();
+		case LAB: return lab.getDescription();
+		case TEMPLE: return temple.getDescription();
+		case MINE: return mine.getDescription();
+		}
+		
+		return null;
+	}
+	
+	/**
 	 * Retorna o caminho do icone de uma certa classe, de acordo com sua identificacao,
 	 * feita por constantes em BuildingTools.
 	 * @param reference identificacao da classe

@@ -69,7 +69,7 @@ public class FarmManager extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24));
-        jLabel1.setText("ROÃ‡A");
+        jLabel1.setText("ROÇA");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FarmBig.png")));
 
@@ -78,7 +78,7 @@ public class FarmManager extends javax.swing.JFrame {
         SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
         		gameData.resources.getOopyies(), 1));
 
-        jLabel4.setText("Oopyies DisponÃ­veis:");
+        jLabel4.setText("Oopyies Disponiveis:");
 
         labelOopyiesEdit.setText("0");
 
@@ -106,7 +106,7 @@ public class FarmManager extends javax.swing.JFrame {
 
         jLabel9.setText("Pyramids Usadas:");
 
-        jLabel10.setText("Grande ProduÃ§Ã£o:");
+        jLabel10.setText("Produção Exorbitante:");
 
         CheckBoxSeedFertilizer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

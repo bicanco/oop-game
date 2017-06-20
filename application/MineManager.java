@@ -70,17 +70,17 @@ public class MineManager extends javax.swing.JFrame {
         labelMINE.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelMINE.setText("MINA");
 
-        jLabel3.setText("Oopyies Disponíveis:");
+        jLabel3.setText("Oopyies Disponiveis:");
 
-        jLabel4.setText("Produção de Pedra:");
+        jLabel4.setText("Escavacao de Pedras:");
 
-        jLabel5.setText("Oopyies Usados:");
+        jLabel5.setText("Oopyies Alocados:");
 
-        jLabel6.setText("Usar Machado:");
+        jLabel6.setText("Usar Picaretas:");
 
         jLabel7.setText("Sementes Usadas:");
 
-        jLabel8.setText("Grande Escavação:");
+        jLabel8.setText("Explosao Rubra:");
 
         btnResources.setText("Recursos");
         btnResources.addActionListener(new java.awt.event.ActionListener() {

@@ -19,7 +19,7 @@ public class MyClasses extends javax.swing.JFrame {
         labelLab.setText("");
         labelTemple.setText("");
         labelMine.setText("");
-        labelCriatividade.setText(Integer.toString(gameData.resources.getCreativity()));
+        labelCriatividade.setText("    " + Integer.toString(gameData.resources.getCreativity()));
     }
 
     private void initComponents() {
@@ -69,10 +69,10 @@ public class MyClasses extends javax.swing.JFrame {
         });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Farm.png"))); // NOI18N
-        jLabel2.setText("Fazenda");
+        jLabel2.setText("Roça");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Lab2.png"))); // NOI18N
-        jLabel3.setText("LaboratÃ³rio");
+        jLabel3.setText("Lab");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Temple.png"))); // NOI18N
         jLabel4.setText("Templo");
@@ -87,13 +87,13 @@ public class MyClasses extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("--------------");
+        jLabel6.setText("");
 
-        jLabel7.setText("--------------");
+        jLabel7.setText("");
 
-        jLabel8.setText("--------------");
+        jLabel8.setText("");
 
-        jLabel9.setText("--------------");
+        jLabel9.setText("");
 
         labelFarm.setText("$400,00");
 
@@ -145,7 +145,7 @@ public class MyClasses extends javax.swing.JFrame {
             }
         });
 
-        jLabel14.setText("Criatividade:");
+        jLabel14.setText("Criatividade:		");
 
         labelCriatividade.setText("$500,00");
 

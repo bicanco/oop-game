@@ -15,7 +15,7 @@ public class Farm implements Building {
 	public final static boolean SEED = false;//tipo de comida produzida
 	public final static boolean COCO = true;
 	private static String name = "Roça";//inicializacao das variaveis estaticas que sao heranca da classe Building
-	private static String description = "Produz JavaSeeds e SharpCocos";
+	private static String description = "Producao Agricola Dimensional de Comida";
 	private static String iconPath = "Farm.png"; 
 	private static int unlockCost = FARM_CREATIVITY_COST;
 	private static int buildCost = 50;

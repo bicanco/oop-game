@@ -95,7 +95,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        btnTrocasDiarias.setText("Trocas Diárias");
+        btnTrocasDiarias.setText("Trocas Diarias");
         btnTrocasDiarias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTrocasDiariasActionPerformed(evt);

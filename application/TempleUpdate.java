@@ -92,13 +92,13 @@ public class TempleUpdate extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         jLabel2.setText("TEMPLO");
 
-        jLabel3.setText("Gem Production:");
+        jLabel3.setText("Producao Magica:");
 
-        jLabel4.setText("Perl Ritual:");
+        jLabel4.setText("Ritual das Sombras:");
 
-        jLabel5.setText("Pyramid Ritual:");
+        jLabel5.setText("Ritual das Luzes:");
 
-        jLabel6.setText("Grande Ritual:");
+        jLabel6.setText("Grande Ritual Rubro:");
 
         btnClose.setText("Sair");
         btnClose.addActionListener(new java.awt.event.ActionListener() {

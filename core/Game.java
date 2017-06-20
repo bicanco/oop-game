@@ -19,7 +19,7 @@ public class Game {
 		gameData.resources.updatePyramids(0);
 		gameData.resources.updateScalaStones(0);
 		gameData.resources.updateOopyies(10);
-		gameData.resources.updateCreativity(110);
+		gameData.resources.updateCreativity(110000);
 		java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
             	// abre interface grafica

@@ -135,7 +135,6 @@ public class NextTurn extends javax.swing.JFrame {
     	
     	// sem oopyies, fim de jogo
     	if(gameData.resources.getOopyies() == 0){
-    		this.dispose();
 			new GameOver(gameData).setVisible(true);
     	} else {
 	    	// novos oopyies
@@ -155,10 +154,6 @@ public class NextTurn extends javax.swing.JFrame {
 								JOptionPane.INFORMATION_MESSAGE);
 	    			new Main(gameData).setVisible(true);
 	    		} else {
-	    			JOptionPane.showMessageDialog(this, "Voce nao colaborou com Great Rubies no dia correto. Voce esta sendo"
-	    					+ "desligado do nosso sistema.", "Servico Semi-Voluntario de Colaboracao Monetaria",
-							JOptionPane.ERROR_MESSAGE);
-	    			this.dispose();
 	    			new GameOver(gameData).setVisible(true);
 	    		}
 	    	} else {

@@ -18,7 +18,7 @@ public class Mine implements Building {
 	public final static int NUMBER_OF_UPGRADES = 3;//numero de up grades
 	
 	private static String name = "Mina";//inicializacao das variaveis estaticas que sao heranca da classe Building
-	private static String description = "Produz Scala Stones";
+	private static String description = "Escavacao de Pedras Interdimensional";
 	private static String iconPath = "Mine.png";
 	private static int unlockCost = MINE_CREATIVITY_COST;
 	private static int buildCost = 45;

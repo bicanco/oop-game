@@ -18,7 +18,7 @@ public class Lab implements Building {
 	public final static int NUMBER_OF_UPGRADES = 3;//numero de up grades
 	
 	private static String name = "Lab";//inicializacao das variaveis estaticas que sao heranca da classe Building
-	private static String description = "Produz Criatividade";
+	private static String description = "Estimulo Cientifico de Criatividade";
 	private static String iconPath = "Lab.png";
 	private static int unlockCost = LAB_CREATIVITY_COST;
 	private static int buildCost = 60;

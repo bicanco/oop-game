@@ -81,11 +81,11 @@ public class TempleManager extends javax.swing.JFrame {
         labelTEMPLE.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
         labelTEMPLE.setText("TEMPLO");
 
-        jLabel3.setText("Oopyies Disponíveis:");
+        jLabel3.setText("Oopyies Disponiveis:");
 
         labelOopyiesEdit.setText("0");
 
-        jLabel5.setText("Produção de Gema:");
+        jLabel5.setText("Producao Magica:");
 
         jLabel6.setText("Oopyies Alocados:");
 
@@ -96,15 +96,15 @@ public class TempleManager extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("Perl Ritual:");
+        jLabel7.setText("Ritual das Sombras:");
 
         jLabel8.setText("Sementes Usadas:");
 
-        jLabel9.setText("Pyramid Ritual:");
+        jLabel9.setText("Ritual das Luzes:");
 
         jLabel10.setText("Cocos Usados:");
 
-        jLabel11.setText("Grande Ritual:");
+        jLabel11.setText("Grande Ritual Rubro:");
 
         CheckBoxGreatRitual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -25,7 +25,7 @@ public class Temple implements Building {
 	public final static boolean PYRAMID = true;
 	
 	private static String name = "Templo";//inicializacao das variaveis estaticas que sao heranca da classe Building
-	private static String description = "Produz Magic Perls e PYramids";
+	private static String description = "Os Melhores Rituais Magicos de Simula";
 	private static String iconPath = "Temple.png";
 	private static int unlockCost = TEMPLE_CREATIVITY_COST;
 	private static int buildCost = 50;

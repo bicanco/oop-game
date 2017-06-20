@@ -62,13 +62,13 @@ public class LabManager extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); 
         jLabel2.setText("LAB");
 
-        jLabel3.setText("Oopyies Disponíveis:");
+        jLabel3.setText("Oopyies Disponiveis:");
 
         labelOopyiesEdit.setText("0");
 
-        jLabel5.setText("Produção de Criatividade:");
+        jLabel5.setText("Pesquisa Cientifica:");
 
-        jLabel6.setText("Pesquisa Básica:");
+        jLabel6.setText("Grupo de Controle:");
 
         btnResources.setText("Recursos");
         btnResources.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +88,7 @@ public class LabManager extends javax.swing.JFrame {
 
         jLabel8.setText("Oopyies Alocados:");
 
-        jLabel9.setText("Grande Pesquisa:");
+        jLabel9.setText("Inspiracao Rubra:");
 
         SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
         		gameData.resources.getOopyies(), 1));
