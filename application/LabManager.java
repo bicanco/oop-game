@@ -90,9 +90,11 @@ public class LabManager extends javax.swing.JFrame {
 
         jLabel9.setText("Grande Pesquisa:");
 
-        SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+        SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getOopyies(), 1));
 
-        SpinnerCocos.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+        SpinnerCocos.setModel(new javax.swing.SpinnerNumberModel(0, 0,
+        		gameData.resources.getSharpCocos(), 1));
 
         CheckBoxCreativityProduction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -22,9 +22,8 @@ public class Game {
 		gameData.resources.updateCreativity(110);
 		java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
-                new Login(gameData).setVisible(true);
-                
+            	// abre interface grafica
+                new Login(gameData).setVisible(true);    
             }
         });
 		

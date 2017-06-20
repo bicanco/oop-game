@@ -75,7 +75,8 @@ public class FarmManager extends javax.swing.JFrame {
 
         jLabel3.setText("Oopyies Alocados:");
 
-        SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 300, 1));
+        SpinnerOopyies.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getOopyies(), 1));
 
         jLabel4.setText("Oopyies Disponíveis:");
 
@@ -119,9 +120,11 @@ public class FarmManager extends javax.swing.JFrame {
             }
         });
 
-        SpinnerMagicPerls.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+        SpinnerMagicPerls.setModel(new javax.swing.SpinnerNumberModel(0, 0, 
+        		gameData.resources.getMagicPerls(), 1));
 
-        SpinnerPyramids.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+        SpinnerPyramids.setModel(new javax.swing.SpinnerNumberModel(0, 0,
+        		gameData.resources.getPyramids(), 1));
 
         CheckBoxGreatProduction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
