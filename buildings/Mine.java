@@ -7,10 +7,10 @@ import core.ResourceManager;
  * @author David
  */
 public class Mine implements Building {
-	private final static int MINE_CREATIVITY_COST = 0;//custo inicial da mina
-	private final static int MAX_PRODUCTION = 600;//producao maxima possivel
-	private final static int STONES_PER_OOPYIE = 5;//valor de stones produzidas por oopyie
-	private final static int STONES_PER_SEED = 3;//valor de stones produzidas por seeds
+	private final static int MINE_CREATIVITY_COST = 45;//custo inicial da mina
+	private final static int MAX_PRODUCTION = 1000;//producao maxima possivel
+	private final static int STONES_PER_OOPYIE = 4;//valor de stones produzidas por oopyie
+	private final static double STONES_PER_SEED = 0.5;//valor de stones produzidas por seeds
 
 	public final static int STONE_PRODUCTION = 0;//valores das posicoes dos metodos no vetor de up grades
 	public final static int USE_PICKAXE = 1;
@@ -21,7 +21,7 @@ public class Mine implements Building {
 	private static String description = "Produz Scala Stones";
 	private static String iconPath = "Mine.png";
 	private static int unlockCost = MINE_CREATIVITY_COST;
-	private static int buildCost = 789;
+	private static int buildCost = 45;
 	private static int upgradeNumber = NUMBER_OF_UPGRADES;
 	private static boolean[] upgradesAvailable = new boolean[upgradeNumber];
 	private static int[] upgradesCost = new int[upgradeNumber];
@@ -32,8 +32,8 @@ public class Mine implements Building {
 		upgradesAvailable[GREAT_ESCAVATION] = false;
 		
 		upgradesCost[STONE_PRODUCTION] = 0;
-		upgradesCost[USE_PICKAXE] = 200;
-		upgradesCost[GREAT_ESCAVATION] = 500;
+		upgradesCost[USE_PICKAXE] = 500;
+		upgradesCost[GREAT_ESCAVATION] = 800;
 	}
 	
 	protected int oopyiesAllocated;
@@ -73,8 +73,10 @@ public class Mine implements Building {
 	private int usePickaxe(int seeds){
 		if(upgradesAvailable[USE_PICKAXE] == false){
 			return 0;//produz Stones se o metodo ja foi adquirido
-		}else
-			return seeds*STONES_PER_SEED;
+		}else{
+			Double d = seeds*STONES_PER_SEED;
+			return d.intValue();
+		}
 	}
 	
 	/**

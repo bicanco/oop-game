@@ -62,7 +62,7 @@ public class TurnManager {
 	/**
 	 * Numero de Oopyies que compoem cada grupo de comida.
 	 */
-	private int oopyiesPerFoodGroup = 5;
+	private int oopyiesPerFoodGroup = 3;
 	/**
 	 * Numero de Java Seeds usadas para alimentar cada grupo de comida.
 	 */

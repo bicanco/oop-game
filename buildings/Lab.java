@@ -8,9 +8,9 @@ import core.ResourceManager;
  */
 public class Lab implements Building {
 	private final static int LAB_CREATIVITY_COST = 0;//custo inicial do laboratorio
-	private final static int MAX_PRODUCTION = 0;//producao maxima possivel
+	private final static int MAX_PRODUCTION = 800;//producao maxima possivel
 	private final static int CREATIVITY_PER_OOPYIE = 2;//valor de criatividades produzidas por oopyie
-	private final static int CREATIVITY_PER_COCO = 2;//valor de criativades produzidas por cocos
+	private final static double CREATIVITY_PER_COCO = 0.6;//valor de criativades produzidas por cocos
 
 	public final static int CREATIVITY_PRODUCTION = 0;//valores das posicoes dos metodos no vetor de up grades
 	public final static int BASIC_RESEARCH = 1;
@@ -21,7 +21,7 @@ public class Lab implements Building {
 	private static String description = "Produz Criatividade";
 	private static String iconPath = "Lab.png";
 	private static int unlockCost = LAB_CREATIVITY_COST;
-	private static int buildCost = 456;
+	private static int buildCost = 60;
 	private static int upgradeNumber = NUMBER_OF_UPGRADES;
 	private static boolean[] upgradesAvailable = new boolean[upgradeNumber];
 	private static int[] upgradesCost = new int[upgradeNumber];
@@ -32,7 +32,7 @@ public class Lab implements Building {
 		upgradesAvailable[GREAT_RESEARCH] = false;
 		
 		upgradesCost[CREATIVITY_PRODUCTION] = 0;
-		upgradesCost[BASIC_RESEARCH] = 500;
+		upgradesCost[BASIC_RESEARCH] = 700;
 		upgradesCost[GREAT_RESEARCH] = 2000;
 	}
 	
@@ -73,8 +73,10 @@ public class Lab implements Building {
 	private int basicResearch(int cocos){
 		if(upgradesAvailable[BASIC_RESEARCH] == false){
 			return 0;//produz Criatividade se o metodo ja foi adquirido
-		}else
-			return cocos*CREATIVITY_PER_COCO;
+		}else{
+			Double d = cocos*CREATIVITY_PER_COCO;
+			return d.intValue();
+		}
 	}
 	
 	/**

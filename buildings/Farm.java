@@ -2,11 +2,11 @@ package buildings;
 import core.ResourceManager;/** * Classe que representa uma roça implementando a interface Building * @author David * */
 public class Farm implements Building {
 	private final static int FARM_CREATIVITY_COST = 20;//custo inicial da fazenda
-	private final static int MAX_PRODUCTION = 500;//producao maxima possivel
-	private final static int SEEDS_PER_PERL = 2;//valor de seedss produzidas por perl
-	private final static int SEEDS_PER_OOPYIE = 1;//valor de seeds produzidas po oopyie
-	private final static int COCOS_PER_OOPYIE = 1;//valor de cocos produzidos por oopyie
-	private final static int COCOS_PER_PYRAMID = 2;//valor de cocos produzidos por pyramids
+	private final static int MAX_PRODUCTION = 600;//producao maxima possivel
+	private final static double SEEDS_PER_PERL = 0.4;//valor de seedss produzidas por perl
+	private final static int SEEDS_PER_OOPYIE = 2;//valor de seeds produzidas po oopyie
+	private final static int COCOS_PER_OOPYIE = 2;//valor de cocos produzidos por oopyie
+	private final static double COCOS_PER_PYRAMID = 0.4;//valor de cocos produzidos por pyramids
 	public final static int FOOD_PRODUCTION = 0;//valores das posiveis dos metodos no vetor de up grades
 	public final static int SEED_FERTILIZER = 1;
 	public final static int COCO_FERTILIZER = 2;
@@ -14,11 +14,11 @@ public class Farm implements Building {
 	public final static int NUMBER_OF_UPGRADES = 4;//numero de upgrades
 	public final static boolean SEED = false;//tipo de comida produzida
 	public final static boolean COCO = true;
-	private static String name = "Roca";//inicializacao das variaveis estaticas que sao heranca da classe Building
+	private static String name = "Roça";//inicializacao das variaveis estaticas que sao heranca da classe Building
 	private static String description = "Produz JavaSeeds e SharpCocos";
 	private static String iconPath = "Farm.png"; 
 	private static int unlockCost = FARM_CREATIVITY_COST;
-	private static int buildCost = 250;
+	private static int buildCost = 50;
 	private static int upgradeNumber = NUMBER_OF_UPGRADES;
 	private static boolean[] upgradesAvailable = new boolean[upgradeNumber];
 	private static int[] upgradesCost = new int[upgradeNumber];
@@ -28,9 +28,9 @@ public class Farm implements Building {
 		upgradesAvailable[COCO_FERTILIZER] = false;
 		upgradesAvailable[GREAT_PRODUCTION] = false;
 		upgradesCost[FOOD_PRODUCTION] = 0;
-		upgradesCost[SEED_FERTILIZER] = 300;
-		upgradesCost[COCO_FERTILIZER] = 300;
-		upgradesCost[GREAT_PRODUCTION] = 750;
+		upgradesCost[SEED_FERTILIZER] = 600;
+		upgradesCost[COCO_FERTILIZER] = 600;
+		upgradesCost[GREAT_PRODUCTION] = 1350;
 	}
 	protected boolean foodType;//tipo de comida produzida na fazenda
 	protected int oopyiesAllocated;
@@ -74,15 +74,13 @@ public class Farm implements Building {
 	private int seedFertilizer(int perls){
 		if(upgradesAvailable[SEED_FERTILIZER] == false){
 			return 1;//produz Seeds se o metodo ja foi adquirido
-		}else{
-			return perls*SEEDS_PER_PERL;
+		}else{			Double d = perls*SEEDS_PER_PERL;			return d.intValue();
 		}
 	}	/**	 * Método que melhora a produção de Cocos da roça	 * @param pyramids o número de Pyramids alocadas	 * @return a produção	 */
 	private int cocoFertilizer(int pyramids){
 		if(upgradesAvailable[COCO_FERTILIZER] == false){
 			return 1;//produz Cocos se o metodo ja foi adquirido
-		}else{
-			return pyramids*COCOS_PER_PYRAMID;
+		}else{			Double d = pyramids*COCOS_PER_PYRAMID;			return d.intValue();
 		}
 	}	/**	 * Método que retorna a produção máxima da roça	 * @return a produção máxima	 */
 	public int greatProduction(){

@@ -9,11 +9,11 @@ import core.ResourceManager;
  */ 
 public class Temple implements Building {
 	private final static int TEMPLE_CREATIVITY_COST = 0;//custo inicial do Templo
-	private final static int MAX_PRODUCTION = 200;//producao maxima possivel
-	private final static int PERL_PER_SEED = 2;//valor de Perls produzidos por Seed
-	private final static int PERL_PER_OOPYIE = 1;//valor de Perls produzidos por oopyie
-	private final static int PYRAMID_PER_OOPYIE = 1;//valor de Pyramids produzidos por oopyie
-	private final static int PYRAMID_PER_COCO = 2;//valor de Pyramids produzidos por cocos
+	private final static int MAX_PRODUCTION = 600;//producao maxima possivel
+	private final static double PERL_PER_SEED = 0.4;//valor de Perls produzidos por Seed
+	private final static int PERL_PER_OOPYIE = 2;//valor de Perls produzidos por oopyie
+	private final static int PYRAMID_PER_OOPYIE = 2;//valor de Pyramids produzidos por oopyie
+	private final static double PYRAMID_PER_COCO = 0.4;//valor de Pyramids produzidos por cocos
 
 	public final static int GEM_PRODUCTION = 0;//valores das posicoes dos metodos no vetor de up grades
 	public final static int PERL_RITUAL = 1;
@@ -28,7 +28,7 @@ public class Temple implements Building {
 	private static String description = "Produz Magic Perls e PYramids";
 	private static String iconPath = "Temple.png";
 	private static int unlockCost = TEMPLE_CREATIVITY_COST;
-	private static int buildCost = 300;
+	private static int buildCost = 50;
 	private static int upgradeNumber = NUMBER_OF_UPGRADES;
 	private static boolean[] upgradesAvailable = new boolean[upgradeNumber];
 		
@@ -41,9 +41,9 @@ public class Temple implements Building {
 		upgradesAvailable[GREAT_RITUAL] = false;
 		
 		upgradesCost[GEM_PRODUCTION] = 0;
-		upgradesCost[PERL_RITUAL] = 300;
-		upgradesCost[PYRAMID_RITUAL] = 300;
-		upgradesCost[GREAT_RITUAL] = 750;
+		upgradesCost[PERL_RITUAL] = 600;
+		upgradesCost[PYRAMID_RITUAL] = 600;
+		upgradesCost[GREAT_RITUAL] = 1350;
 	}
 	
 	protected boolean gemType; //tipo de gema produzida no templo
@@ -138,7 +138,8 @@ public class Temple implements Building {
 			return 1;//produz Seeds se o metodo ja foi adquirido
 		}else{
 			setGemType(PERL);
-			return seeds*PERL_PER_SEED;
+			Double d = seeds*PERL_PER_SEED;
+			return d.intValue();
 		}
 	}
 	
@@ -152,7 +153,8 @@ public class Temple implements Building {
 			return 1;//produz PYramids se o metodo ja foi adquirido
 		}else{
 			setGemType(PYRAMID);
-			return cocos*PYRAMID_PER_COCO;
+			Double d = cocos*PYRAMID_PER_COCO;
+			return d.intValue();
 		}
 	}
 	
